@@ -20,9 +20,10 @@ private struct Provider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
+        let luckyNumber = UserDefaults.appGroup.integer(forKey: UserDefaults.Keys.luckyNumber.rawValue)
         let midnight = Calendar.current.startOfDay(for: Date())
         let nextMidnight = Calendar.current.date(byAdding: .day, value: 1, to: midnight)!
-        let entries = [SimpleEntry(date: midnight)]
+        let entries = [SimpleEntry(date: midnight, luckyNumber: luckyNumber)]
         let timeline = Timeline(entries: entries, policy: .after(nextMidnight))
         completion(timeline)
     }
@@ -30,13 +31,17 @@ private struct Provider: TimelineProvider {
 
 private struct SimpleEntry: TimelineEntry {
     let date: Date
+    var luckyNumber = 9
 }
 
 private struct AppGroupWidgetEntryView: View {
     var entry: Provider.Entry
 
     var body: some View {
-        Text(entry.date, style: .timer)
+        VStack {
+            Text(entry.date, style: .date)
+            Text("Lucky number: \(entry.luckyNumber)")
+        }
     }
 }
 

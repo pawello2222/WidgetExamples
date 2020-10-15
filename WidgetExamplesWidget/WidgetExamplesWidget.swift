@@ -12,6 +12,6 @@ import WidgetKit
 @main
 struct WidgetExamplesWidgetBundle: WidgetBundle {
     var body: some Widget {
-        EnvironmentWidget()
+        AppGroupWidget()
     }
 }

@@ -24,6 +24,8 @@
 		E54213BB2538864E00CCC9C3 /* CurrencyWebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213BA2538864E00CCC9C3 /* CurrencyWebRepository.swift */; };
 		E54213C0253890DB00CCC9C3 /* EnvironmentWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213BF253890DB00CCC9C3 /* EnvironmentWidget.swift */; };
 		E54213C9253891F300CCC9C3 /* AppGroupWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213C8253891F300CCC9C3 /* AppGroupWidget.swift */; };
+		E54213D42538931900CCC9C3 /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213D32538931900CCC9C3 /* UserDefaults+Ext.swift */; };
+		E54213D92538932300CCC9C3 /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213D32538931900CCC9C3 /* UserDefaults+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,7 @@
 		E54213C8253891F300CCC9C3 /* AppGroupWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroupWidget.swift; sourceTree = "<group>"; };
 		E54213CE2538928F00CCC9C3 /* WidgetExamples.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetExamples.entitlements; sourceTree = "<group>"; };
 		E54213CF253892AB00CCC9C3 /* WidgetExamplesWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetExamplesWidgetExtension.entitlements; sourceTree = "<group>"; };
+		E54213D32538931900CCC9C3 /* UserDefaults+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 				E54213CF253892AB00CCC9C3 /* WidgetExamplesWidgetExtension.entitlements */,
 				E5421358253879B700CCC9C3 /* WidgetExamples */,
 				E542137325387A0300CCC9C3 /* WidgetExamplesWidget */,
+				E54213D22538930900CCC9C3 /* Shared */,
 				E542136E25387A0200CCC9C3 /* Frameworks */,
 				E5421357253879B700CCC9C3 /* Products */,
 			);
@@ -227,6 +231,14 @@
 			path = AppGroupWidget;
 			sourceTree = "<group>";
 		};
+		E54213D22538930900CCC9C3 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				E54213D32538931900CCC9C3 /* UserDefaults+Ext.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -330,6 +342,7 @@
 			files = (
 				E542135C253879B700CCC9C3 /* ContentView.swift in Sources */,
 				E542135A253879B700CCC9C3 /* WidgetExamplesApp.swift in Sources */,
+				E54213D92538932300CCC9C3 /* UserDefaults+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +358,7 @@
 				E54213AA2538829A00CCC9C3 /* TimerWidget.swift in Sources */,
 				E54213A3253881B200CCC9C3 /* CountdownWidget.swift in Sources */,
 				E542137525387A0300CCC9C3 /* WidgetExamplesWidget.swift in Sources */,
+				E54213D42538931900CCC9C3 /* UserDefaults+Ext.swift in Sources */,
 				E54213C9253891F300CCC9C3 /* AppGroupWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

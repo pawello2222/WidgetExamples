@@ -6,11 +6,19 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct ContentView: View {
+    @AppStorage(UserDefaults.Keys.luckyNumber.rawValue, store: UserDefaults.appGroup) var luckyNumber = 1
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Text("Lucky number: \(luckyNumber)")
+            Button("Generate new lucky number") {
+                luckyNumber = Int.random(in: 1...99)
+                WidgetCenter.shared.reloadTimelines(ofKind: "AppGroupWidget")
+            }
+        }
     }
 }
 
