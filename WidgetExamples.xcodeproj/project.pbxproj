@@ -36,6 +36,11 @@
 		E542140F2538AF8500CCC9C3 /* PreviewWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542140E2538AF8500CCC9C3 /* PreviewWidgetView.swift */; };
 		E54214122538AFEC00CCC9C3 /* PreviewWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542140A2538AF7800CCC9C3 /* PreviewWidgetEntry.swift */; };
 		E54214152538AFF000CCC9C3 /* PreviewWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542140E2538AF8500CCC9C3 /* PreviewWidgetView.swift */; };
+		E542141A2538B58600CCC9C3 /* CoreDataWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54214192538B58600CCC9C3 /* CoreDataWidget.swift */; };
+		E542141E2538B68200CCC9C3 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542141D2538B68200CCC9C3 /* CoreDataStack.swift */; };
+		E54214232538B76C00CCC9C3 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E54214212538B76C00CCC9C3 /* DataModel.xcdatamodeld */; };
+		E54214262538B77500CCC9C3 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E54214212538B76C00CCC9C3 /* DataModel.xcdatamodeld */; };
+		E54214292538B77900CCC9C3 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542141D2538B68200CCC9C3 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +98,9 @@
 		E54214022538AF2000CCC9C3 /* PreviewWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewWidget.swift; sourceTree = "<group>"; };
 		E542140A2538AF7800CCC9C3 /* PreviewWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewWidgetEntry.swift; sourceTree = "<group>"; };
 		E542140E2538AF8500CCC9C3 /* PreviewWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewWidgetView.swift; sourceTree = "<group>"; };
+		E54214192538B58600CCC9C3 /* CoreDataWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWidget.swift; sourceTree = "<group>"; };
+		E542141D2538B68200CCC9C3 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		E54214222538B76C00CCC9C3 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +178,7 @@
 				E542137425387A0300CCC9C3 /* WidgetExamplesWidget.swift */,
 				E54213C7253891CB00CCC9C3 /* AppGroupWidget */,
 				E542139725387ECE00CCC9C3 /* ClockWidget */,
+				E54214182538B57400CCC9C3 /* CoreDataWidget */,
 				E542139A2538806F00CCC9C3 /* CountdownWidget */,
 				E54213F42538A9A300CCC9C3 /* DeepLinkWidget */,
 				E54213BE253890CD00CCC9C3 /* EnvironmentWidget */,
@@ -287,6 +296,16 @@
 			path = PreviewWidget;
 			sourceTree = "<group>";
 		};
+		E54214182538B57400CCC9C3 /* CoreDataWidget */ = {
+			isa = PBXGroup;
+			children = (
+				E54214192538B58600CCC9C3 /* CoreDataWidget.swift */,
+				E542141D2538B68200CCC9C3 /* CoreDataStack.swift */,
+				E54214212538B76C00CCC9C3 /* DataModel.xcdatamodeld */,
+			);
+			path = CoreDataWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -391,9 +410,11 @@
 				E542135C253879B700CCC9C3 /* ContentView.swift in Sources */,
 				E542135A253879B700CCC9C3 /* WidgetExamplesApp.swift in Sources */,
 				E54213D92538932300CCC9C3 /* UserDefaults+Ext.swift in Sources */,
+				E54214262538B77500CCC9C3 /* DataModel.xcdatamodeld in Sources */,
 				E54214152538AFF000CCC9C3 /* PreviewWidgetView.swift in Sources */,
 				E54214122538AFEC00CCC9C3 /* PreviewWidgetEntry.swift in Sources */,
 				E54213E2253898DA00CCC9C3 /* FileManager+Ext.swift in Sources */,
+				E54214292538B77900CCC9C3 /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E54213EB2538A14800CCC9C3 /* URLImageView.swift in Sources */,
+				E54214232538B76C00CCC9C3 /* DataModel.xcdatamodeld in Sources */,
 				E54213F62538A9B600CCC9C3 /* DeepLinkWidget.swift in Sources */,
 				E54213B52538857F00CCC9C3 /* WebRepository.swift in Sources */,
 				E542140F2538AF8500CCC9C3 /* PreviewWidgetView.swift in Sources */,
@@ -409,8 +431,10 @@
 				E54214032538AF2000CCC9C3 /* PreviewWidget.swift in Sources */,
 				E542139225387BEA00CCC9C3 /* ClockWidget.swift in Sources */,
 				E54213C0253890DB00CCC9C3 /* EnvironmentWidget.swift in Sources */,
+				E542141E2538B68200CCC9C3 /* CoreDataStack.swift in Sources */,
 				E54213B1253884D200CCC9C3 /* NetworkWidget.swift in Sources */,
 				E54213AA2538829A00CCC9C3 /* TimerWidget.swift in Sources */,
+				E542141A2538B58600CCC9C3 /* CoreDataWidget.swift in Sources */,
 				E54213A3253881B200CCC9C3 /* CountdownWidget.swift in Sources */,
 				E54213DD2538979B00CCC9C3 /* FileManager+Ext.swift in Sources */,
 				E542140B2538AF7800CCC9C3 /* PreviewWidgetEntry.swift in Sources */,
@@ -671,6 +695,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E54214212538B76C00CCC9C3 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E54214222538B76C00CCC9C3 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = E54214222538B76C00CCC9C3 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E542134E253879B700CCC9C3 /* Project object */;
 }

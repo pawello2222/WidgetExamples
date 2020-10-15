@@ -9,11 +9,14 @@ import SwiftUI
 import WidgetKit
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) private var managedObjectContext
+    
     @AppStorage(UserDefaults.Keys.luckyNumber.rawValue, store: UserDefaults.appGroup) private var luckyNumber = 0
-
+    
     var body: some View {
         List {
             appGroupWidgetSection
+            coreDataWidgetSection
             deepLinkWidgetSection
             previewWidgetSection
         }
@@ -36,9 +39,25 @@ struct ContentView: View {
         }
     }
 
+    var coreDataWidgetSection: some View {
+        return Section(header: Text("CoreData Widget")) {
+            Text("Lucky number: \(managedObjectContext)")
+            Button("Generate new lucky number") {
+                luckyNumber = Int.random(in: 1...99)
+                WidgetCenter.shared.reloadTimelines(ofKind: "AppGroupWidget")
+            }
+            .buttonStyle(PlainButtonStyle())
+            .foregroundColor(.accentColor)
+        }
+        .onChange(of: luckyNumber) { _ in
+            let url = FileManager.appGroupContainerURL.appendingPathComponent(FileManager.luckyNumberFilename)
+            try? String(luckyNumber).write(to: url, atomically: false, encoding: .utf8)
+        }
+    }
+
     var deepLinkWidgetSection: some View {
         Section(header: Text("DeepLink Widget")) {
-            Text("Last opened widget")
+            Text("")
                 .onOpenURL { url in
                     if url.scheme == "widget-DeepLinkWidget", url.host == "widgetFamily" {
                         let widgetFamily = url.lastPathComponent
@@ -57,11 +76,5 @@ struct ContentView: View {
             }
             .frame(maxWidth: .infinity)
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
