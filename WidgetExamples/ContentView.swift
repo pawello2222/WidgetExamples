@@ -10,7 +10,6 @@ import WidgetKit
 
 struct ContentView: View {
     @AppStorage(UserDefaults.Keys.luckyNumber.rawValue, store: UserDefaults.appGroup) private var luckyNumber = 0
-    @State private var widgetFamily: WidgetFamily?
 
     var body: some View {
         List {
