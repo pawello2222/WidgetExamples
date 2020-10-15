@@ -49,6 +49,6 @@ struct URLImageWidget: Widget {
             URLImageWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("URLImage Widget")
-        .description("This is an example widget.")
+        .description("A Widget that displays an Image downloaded from an external URL.")
     }
 }

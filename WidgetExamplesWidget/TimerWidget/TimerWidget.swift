@@ -48,6 +48,6 @@ struct TimerWidget: Widget {
             TimerWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Timer Widget")
-        .description("This is an example widget.")
+        .description("A Widget that displays the current time (including seconds) as a timer.")
     }
 }

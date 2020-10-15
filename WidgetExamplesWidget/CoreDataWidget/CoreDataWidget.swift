@@ -59,6 +59,6 @@ struct CoreDataWidget: Widget {
             CoreDataWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("CoreData Widget")
-        .description("This is an example widget.")
+        .description("A demo showcasing how to use Core Data in a Widget.")
     }
 }

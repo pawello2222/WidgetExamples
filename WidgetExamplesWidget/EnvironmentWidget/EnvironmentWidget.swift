@@ -61,6 +61,6 @@ struct EnvironmentWidget: Widget {
             EnvironmentWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Environment Widget")
-        .description("This is an example widget.")
+        .description("A demo showcasing how to adjust a Widget View depending on Environment variables.")
     }
 }

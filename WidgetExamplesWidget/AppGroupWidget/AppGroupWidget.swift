@@ -64,6 +64,6 @@ struct AppGroupWidget: Widget {
             AppGroupWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("AppGroup Widget")
-        .description("This is an example widget.")
+        .description("A demo showcasing how to use an App Group to share data between an App and its Widget.")
     }
 }

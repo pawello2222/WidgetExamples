@@ -57,6 +57,6 @@ struct CountdownWidget: Widget {
             CountdownWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Countdown Widget")
-        .description("This is an example widget.")
+        .description("A Widget that displays the remaining time in seconds and changes color when the end date is approaching.")
     }
 }

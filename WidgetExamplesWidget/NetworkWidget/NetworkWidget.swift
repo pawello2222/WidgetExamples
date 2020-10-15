@@ -85,6 +85,6 @@ struct NetworkWidget: Widget {
             NetworkWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Network Widget")
-        .description("This is an example widget.")
+        .description("A demo showcasing how to load data from a network request and populate the Widget Timeline.")
     }
 }

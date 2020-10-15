@@ -65,6 +65,6 @@ struct ClockWidget: Widget {
             ClockWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Clock Widget")
-        .description("This is an example widget.")
+        .description("A Widget that displays the current time (in various formats) and refreshes every minute.")
     }
 }

@@ -60,6 +60,6 @@ struct DeepLinkWidget: Widget {
             DeepLinkWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("DeepLink Widget")
-        .description("This is an example widget.")
+        .description("A demo showcasing how to use Deep Links to pass events / information from a Widget to the parent App.")
     }
 }

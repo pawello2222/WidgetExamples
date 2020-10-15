@@ -36,6 +36,6 @@ struct PreviewWidget: Widget {
             PreviewWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Preview Widget")
-        .description("This is an example widget.")
+        .description("A demo showcasing how to display a Widget View directly in the parent App.")
     }
 }
