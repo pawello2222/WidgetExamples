@@ -22,6 +22,7 @@
 		E54213B1253884D200CCC9C3 /* NetworkWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213B0253884D200CCC9C3 /* NetworkWidget.swift */; };
 		E54213B52538857F00CCC9C3 /* WebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213B42538857F00CCC9C3 /* WebRepository.swift */; };
 		E54213BB2538864E00CCC9C3 /* CurrencyWebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213BA2538864E00CCC9C3 /* CurrencyWebRepository.swift */; };
+		E54213C0253890DB00CCC9C3 /* EnvironmentWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213BF253890DB00CCC9C3 /* EnvironmentWidget.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		E54213B0253884D200CCC9C3 /* NetworkWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWidget.swift; sourceTree = "<group>"; };
 		E54213B42538857F00CCC9C3 /* WebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRepository.swift; sourceTree = "<group>"; };
 		E54213BA2538864E00CCC9C3 /* CurrencyWebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyWebRepository.swift; sourceTree = "<group>"; };
+		E54213BF253890DB00CCC9C3 /* EnvironmentWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentWidget.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				E542137425387A0300CCC9C3 /* WidgetExamplesWidget.swift */,
 				E542139725387ECE00CCC9C3 /* ClockWidget */,
 				E542139A2538806F00CCC9C3 /* CountdownWidget */,
+				E54213BE253890CD00CCC9C3 /* EnvironmentWidget */,
 				E54213AF253884C300CCC9C3 /* NetworkWidget */,
 				E54213A82538827100CCC9C3 /* TimerWidget */,
 				E542138D25387AED00CCC9C3 /* Resources */,
@@ -199,6 +202,14 @@
 				E54213BA2538864E00CCC9C3 /* CurrencyWebRepository.swift */,
 			);
 			path = NetworkWidget;
+			sourceTree = "<group>";
+		};
+		E54213BE253890CD00CCC9C3 /* EnvironmentWidget */ = {
+			isa = PBXGroup;
+			children = (
+				E54213BF253890DB00CCC9C3 /* EnvironmentWidget.swift */,
+			);
+			path = EnvironmentWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +325,7 @@
 				E54213B52538857F00CCC9C3 /* WebRepository.swift in Sources */,
 				E54213BB2538864E00CCC9C3 /* CurrencyWebRepository.swift in Sources */,
 				E542139225387BEA00CCC9C3 /* ClockWidget.swift in Sources */,
+				E54213C0253890DB00CCC9C3 /* EnvironmentWidget.swift in Sources */,
 				E54213B1253884D200CCC9C3 /* NetworkWidget.swift in Sources */,
 				E54213AA2538829A00CCC9C3 /* TimerWidget.swift in Sources */,
 				E54213A3253881B200CCC9C3 /* CountdownWidget.swift in Sources */,
