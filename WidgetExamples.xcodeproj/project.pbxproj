@@ -263,6 +263,7 @@
 		E54213D22538930900CCC9C3 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				E54C257B2538D02C000FFA46 /* CoreData */,
 				E54213D32538931900CCC9C3 /* UserDefaults+Ext.swift */,
 				E54213DC2538979B00CCC9C3 /* FileManager+Ext.swift */,
 			);
@@ -300,10 +301,17 @@
 			isa = PBXGroup;
 			children = (
 				E54214192538B58600CCC9C3 /* CoreDataWidget.swift */,
+			);
+			path = CoreDataWidget;
+			sourceTree = "<group>";
+		};
+		E54C257B2538D02C000FFA46 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
 				E542141D2538B68200CCC9C3 /* CoreDataStack.swift */,
 				E54214212538B76C00CCC9C3 /* DataModel.xcdatamodeld */,
 			);
-			path = CoreDataWidget;
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
