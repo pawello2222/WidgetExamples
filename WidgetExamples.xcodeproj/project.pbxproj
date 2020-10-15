@@ -31,6 +31,11 @@
 		E54213E72538A0C700CCC9C3 /* URLImageWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213E62538A0C700CCC9C3 /* URLImageWidget.swift */; };
 		E54213EB2538A14800CCC9C3 /* URLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213EA2538A14800CCC9C3 /* URLImageView.swift */; };
 		E54213F62538A9B600CCC9C3 /* DeepLinkWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213F52538A9B600CCC9C3 /* DeepLinkWidget.swift */; };
+		E54214032538AF2000CCC9C3 /* PreviewWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54214022538AF2000CCC9C3 /* PreviewWidget.swift */; };
+		E542140B2538AF7800CCC9C3 /* PreviewWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542140A2538AF7800CCC9C3 /* PreviewWidgetEntry.swift */; };
+		E542140F2538AF8500CCC9C3 /* PreviewWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542140E2538AF8500CCC9C3 /* PreviewWidgetView.swift */; };
+		E54214122538AFEC00CCC9C3 /* PreviewWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542140A2538AF7800CCC9C3 /* PreviewWidgetEntry.swift */; };
+		E54214152538AFF000CCC9C3 /* PreviewWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542140E2538AF8500CCC9C3 /* PreviewWidgetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +90,9 @@
 		E54213E62538A0C700CCC9C3 /* URLImageWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageWidget.swift; sourceTree = "<group>"; };
 		E54213EA2538A14800CCC9C3 /* URLImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageView.swift; sourceTree = "<group>"; };
 		E54213F52538A9B600CCC9C3 /* DeepLinkWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkWidget.swift; sourceTree = "<group>"; };
+		E54214022538AF2000CCC9C3 /* PreviewWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewWidget.swift; sourceTree = "<group>"; };
+		E542140A2538AF7800CCC9C3 /* PreviewWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewWidgetEntry.swift; sourceTree = "<group>"; };
+		E542140E2538AF8500CCC9C3 /* PreviewWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewWidgetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +174,7 @@
 				E54213F42538A9A300CCC9C3 /* DeepLinkWidget */,
 				E54213BE253890CD00CCC9C3 /* EnvironmentWidget */,
 				E54213AF253884C300CCC9C3 /* NetworkWidget */,
+				E54214012538AF1100CCC9C3 /* PreviewWidget */,
 				E54213A82538827100CCC9C3 /* TimerWidget */,
 				E54213E52538A0B500CCC9C3 /* URLImageWidget */,
 				E542138D25387AED00CCC9C3 /* Resources */,
@@ -266,6 +275,16 @@
 				E54213F52538A9B600CCC9C3 /* DeepLinkWidget.swift */,
 			);
 			path = DeepLinkWidget;
+			sourceTree = "<group>";
+		};
+		E54214012538AF1100CCC9C3 /* PreviewWidget */ = {
+			isa = PBXGroup;
+			children = (
+				E54214022538AF2000CCC9C3 /* PreviewWidget.swift */,
+				E542140A2538AF7800CCC9C3 /* PreviewWidgetEntry.swift */,
+				E542140E2538AF8500CCC9C3 /* PreviewWidgetView.swift */,
+			);
+			path = PreviewWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,6 +391,8 @@
 				E542135C253879B700CCC9C3 /* ContentView.swift in Sources */,
 				E542135A253879B700CCC9C3 /* WidgetExamplesApp.swift in Sources */,
 				E54213D92538932300CCC9C3 /* UserDefaults+Ext.swift in Sources */,
+				E54214152538AFF000CCC9C3 /* PreviewWidgetView.swift in Sources */,
+				E54214122538AFEC00CCC9C3 /* PreviewWidgetEntry.swift in Sources */,
 				E54213E2253898DA00CCC9C3 /* FileManager+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,13 +404,16 @@
 				E54213EB2538A14800CCC9C3 /* URLImageView.swift in Sources */,
 				E54213F62538A9B600CCC9C3 /* DeepLinkWidget.swift in Sources */,
 				E54213B52538857F00CCC9C3 /* WebRepository.swift in Sources */,
+				E542140F2538AF8500CCC9C3 /* PreviewWidgetView.swift in Sources */,
 				E54213BB2538864E00CCC9C3 /* CurrencyWebRepository.swift in Sources */,
+				E54214032538AF2000CCC9C3 /* PreviewWidget.swift in Sources */,
 				E542139225387BEA00CCC9C3 /* ClockWidget.swift in Sources */,
 				E54213C0253890DB00CCC9C3 /* EnvironmentWidget.swift in Sources */,
 				E54213B1253884D200CCC9C3 /* NetworkWidget.swift in Sources */,
 				E54213AA2538829A00CCC9C3 /* TimerWidget.swift in Sources */,
 				E54213A3253881B200CCC9C3 /* CountdownWidget.swift in Sources */,
 				E54213DD2538979B00CCC9C3 /* FileManager+Ext.swift in Sources */,
+				E542140B2538AF7800CCC9C3 /* PreviewWidgetEntry.swift in Sources */,
 				E542137525387A0300CCC9C3 /* WidgetExamplesWidget.swift in Sources */,
 				E54213D42538931900CCC9C3 /* UserDefaults+Ext.swift in Sources */,
 				E54213E72538A0C700CCC9C3 /* URLImageWidget.swift in Sources */,
