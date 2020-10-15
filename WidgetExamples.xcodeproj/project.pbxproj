@@ -18,6 +18,7 @@
 		E542137B25387A0600CCC9C3 /* WidgetExamplesWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E542136D25387A0200CCC9C3 /* WidgetExamplesWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E542139225387BEA00CCC9C3 /* ClockWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542138225387A2400CCC9C3 /* ClockWidget.swift */; };
 		E54213A3253881B200CCC9C3 /* CountdownWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542139D253880EE00CCC9C3 /* CountdownWidget.swift */; };
+		E54213AA2538829A00CCC9C3 /* TimerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213A92538829A00CCC9C3 /* TimerWidget.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		E542137825387A0600CCC9C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E542138225387A2400CCC9C3 /* ClockWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockWidget.swift; sourceTree = "<group>"; };
 		E542139D253880EE00CCC9C3 /* CountdownWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownWidget.swift; sourceTree = "<group>"; };
+		E54213A92538829A00CCC9C3 /* TimerWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWidget.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				E542137425387A0300CCC9C3 /* WidgetExamplesWidget.swift */,
 				E542139725387ECE00CCC9C3 /* ClockWidget */,
 				E542139A2538806F00CCC9C3 /* CountdownWidget */,
+				E54213A82538827100CCC9C3 /* TimerWidget */,
 				E542138D25387AED00CCC9C3 /* Resources */,
 			);
 			path = WidgetExamplesWidget;
@@ -171,6 +174,14 @@
 				E542139D253880EE00CCC9C3 /* CountdownWidget.swift */,
 			);
 			path = CountdownWidget;
+			sourceTree = "<group>";
+		};
+		E54213A82538827100CCC9C3 /* TimerWidget */ = {
+			isa = PBXGroup;
+			children = (
+				E54213A92538829A00CCC9C3 /* TimerWidget.swift */,
+			);
+			path = TimerWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E542139225387BEA00CCC9C3 /* ClockWidget.swift in Sources */,
+				E54213AA2538829A00CCC9C3 /* TimerWidget.swift in Sources */,
 				E54213A3253881B200CCC9C3 /* CountdownWidget.swift in Sources */,
 				E542137525387A0300CCC9C3 /* WidgetExamplesWidget.swift in Sources */,
 			);
