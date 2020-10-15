@@ -128,6 +128,7 @@
 		E542137325387A0300CCC9C3 /* WidgetExamplesWidget */ = {
 			isa = PBXGroup;
 			children = (
+				E542139A2538806F00CCC9C3 /* CountdownWidget */,
 				E542137425387A0300CCC9C3 /* WidgetExamplesWidget.swift */,
 				E542139725387ECE00CCC9C3 /* ClockWidget */,
 				E542138D25387AED00CCC9C3 /* Resources */,
@@ -160,6 +161,13 @@
 				E542138225387A2400CCC9C3 /* ClockWidget.swift */,
 			);
 			path = ClockWidget;
+			sourceTree = "<group>";
+		};
+		E542139A2538806F00CCC9C3 /* CountdownWidget */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CountdownWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
