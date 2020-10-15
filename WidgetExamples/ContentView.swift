@@ -23,6 +23,12 @@ struct ContentView: View {
             let url = FileManager.appGroupContainerURL.appendingPathComponent(FileManager.luckyNumberFilename)
             try? String(luckyNumber).write(to: url, atomically: false, encoding: .utf8)
         }
+        .onOpenURL { url in
+            if url.scheme == "widget-DeepLinkWidget", url.host == "widgetFamily" {
+                let widgetFamily = url.lastPathComponent
+                print("Opened from widget of size: \(widgetFamily)")
+            }
+        }
     }
 }
 
