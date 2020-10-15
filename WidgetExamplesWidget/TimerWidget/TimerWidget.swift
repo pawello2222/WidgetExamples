@@ -49,5 +49,6 @@ struct TimerWidget: Widget {
         }
         .configurationDisplayName("Timer Widget")
         .description("A Widget that displays the current time (including seconds) as a timer.")
+        .supportedFamilies([.systemSmall])
     }
 }

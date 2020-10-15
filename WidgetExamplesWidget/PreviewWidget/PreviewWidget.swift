@@ -37,5 +37,6 @@ struct PreviewWidget: Widget {
         }
         .configurationDisplayName("Preview Widget")
         .description("A demo showcasing how to display a Widget View directly in the parent App.")
+        .supportedFamilies([.systemSmall])
     }
 }

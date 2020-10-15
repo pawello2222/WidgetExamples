@@ -60,5 +60,6 @@ struct CoreDataWidget: Widget {
         }
         .configurationDisplayName("CoreData Widget")
         .description("A demo showcasing how to use Core Data in a Widget.")
+        .supportedFamilies([.systemSmall])
     }
 }

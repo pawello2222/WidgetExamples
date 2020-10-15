@@ -50,5 +50,6 @@ struct URLImageWidget: Widget {
         }
         .configurationDisplayName("URLImage Widget")
         .description("A Widget that displays an Image downloaded from an external URL.")
+        .supportedFamilies([.systemSmall])
     }
 }

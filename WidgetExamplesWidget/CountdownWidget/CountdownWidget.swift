@@ -58,5 +58,6 @@ struct CountdownWidget: Widget {
         }
         .configurationDisplayName("Countdown Widget")
         .description("A Widget that displays the remaining time in seconds and changes color when the end date is approaching.")
+        .supportedFamilies([.systemSmall])
     }
 }

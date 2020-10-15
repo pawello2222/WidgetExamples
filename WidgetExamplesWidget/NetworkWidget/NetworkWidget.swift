@@ -86,5 +86,6 @@ struct NetworkWidget: Widget {
         }
         .configurationDisplayName("Network Widget")
         .description("A demo showcasing how to load data from a network request and populate the Widget Timeline.")
+        .supportedFamilies([.systemSmall])
     }
 }
