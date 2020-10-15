@@ -2,7 +2,7 @@
 
 # WidgetExamples
 
-A demo project presenting various types of Widgets created with SwiftUI and WidgetKit.
+A demo project showcasing different types of Widgets created with SwiftUI and WidgetKit.
 
 # Contents
 
@@ -45,3 +45,8 @@ A Widget that displays the current time (including seconds) as a timer.
 ### [URLImage Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExamplesWidget/URLImageWidget)
 
 A Widget that displays an Image downloaded from an external URL.
+
+## Notes
+
+Some examples depend on the App Group capability (e.g., [AppGroup Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExamplesWidget/AppGroupWidget)) or integrate with the main App (e.g., [Preview Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExamplesWidget/PreviewWidget)), so it's recommended to download the whole project to keep the configuration intact.
+
