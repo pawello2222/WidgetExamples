@@ -16,7 +16,7 @@
 		E542137525387A0300CCC9C3 /* WidgetExamplesWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542137425387A0300CCC9C3 /* WidgetExamplesWidget.swift */; };
 		E542137725387A0600CCC9C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E542137625387A0600CCC9C3 /* Assets.xcassets */; };
 		E542137B25387A0600CCC9C3 /* WidgetExamplesWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E542136D25387A0200CCC9C3 /* WidgetExamplesWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		E542138325387A2400CCC9C3 /* ClockWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542138225387A2400CCC9C3 /* ClockWidget.swift */; };
+		E542139225387BEA00CCC9C3 /* ClockWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542138225387A2400CCC9C3 /* ClockWidget.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,8 +128,8 @@
 		E542137325387A0300CCC9C3 /* WidgetExamplesWidget */ = {
 			isa = PBXGroup;
 			children = (
+				E542139725387ECE00CCC9C3 /* ClockWidget */,
 				E542137425387A0300CCC9C3 /* WidgetExamplesWidget.swift */,
-				E542138225387A2400CCC9C3 /* ClockWidget.swift */,
 				E542138D25387AED00CCC9C3 /* Resources */,
 			);
 			path = WidgetExamplesWidget;
@@ -152,6 +152,14 @@
 				E542137825387A0600CCC9C3 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E542139725387ECE00CCC9C3 /* ClockWidget */ = {
+			isa = PBXGroup;
+			children = (
+				E542138225387A2400CCC9C3 /* ClockWidget.swift */,
+			);
+			path = ClockWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +265,6 @@
 			files = (
 				E542135C253879B700CCC9C3 /* ContentView.swift in Sources */,
 				E542135A253879B700CCC9C3 /* WidgetExamplesApp.swift in Sources */,
-				E542138325387A2400CCC9C3 /* ClockWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E542139225387BEA00CCC9C3 /* ClockWidget.swift in Sources */,
 				E542137525387A0300CCC9C3 /* WidgetExamplesWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
