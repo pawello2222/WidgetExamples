@@ -20,10 +20,9 @@ private struct Provider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
-        let luckyNumber = UserDefaults.appGroup.integer(forKey: UserDefaults.Keys.luckyNumber.rawValue)
         let midnight = Calendar.current.startOfDay(for: Date())
         let nextMidnight = Calendar.current.date(byAdding: .day, value: 1, to: midnight)!
-        let entries = [SimpleEntry(date: midnight, luckyNumber: luckyNumber)]
+        let entries = [SimpleEntry(date: midnight)]
         let timeline = Timeline(entries: entries, policy: .after(nextMidnight))
         completion(timeline)
     }
@@ -31,7 +30,6 @@ private struct Provider: TimelineProvider {
 
 private struct SimpleEntry: TimelineEntry {
     let date: Date
-    var luckyNumber = 9
 }
 
 private struct AppGroupWidgetEntryView: View {
@@ -39,9 +37,22 @@ private struct AppGroupWidgetEntryView: View {
 
     var body: some View {
         VStack {
-            Text(entry.date, style: .date)
-            Text("Lucky number: \(entry.luckyNumber)")
+            Text("Lucky number")
+                .font(.callout)
+            Text("From UserDefaults: \(luckyNumberFromUserDefaults)")
+            Text("From File: \(luckyNumberFromFile)")
         }
+        .font(.footnote)
+    }
+
+    var luckyNumberFromUserDefaults: Int {
+        UserDefaults.appGroup.integer(forKey: UserDefaults.Keys.luckyNumber.rawValue)
+    }
+
+    var luckyNumberFromFile: Int {
+        let url = FileManager.appGroupContainerURL.appendingPathComponent(FileManager.luckyNumberFilename)
+        guard let text = try? String(contentsOf: url, encoding: .utf8) else { return 0 }
+        return Int(text) ?? 0
     }
 }
 

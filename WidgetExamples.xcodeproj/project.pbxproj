@@ -26,6 +26,8 @@
 		E54213C9253891F300CCC9C3 /* AppGroupWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213C8253891F300CCC9C3 /* AppGroupWidget.swift */; };
 		E54213D42538931900CCC9C3 /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213D32538931900CCC9C3 /* UserDefaults+Ext.swift */; };
 		E54213D92538932300CCC9C3 /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213D32538931900CCC9C3 /* UserDefaults+Ext.swift */; };
+		E54213DD2538979B00CCC9C3 /* FileManager+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213DC2538979B00CCC9C3 /* FileManager+Ext.swift */; };
+		E54213E2253898DA00CCC9C3 /* FileManager+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213DC2538979B00CCC9C3 /* FileManager+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,7 @@
 		E54213CE2538928F00CCC9C3 /* WidgetExamples.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetExamples.entitlements; sourceTree = "<group>"; };
 		E54213CF253892AB00CCC9C3 /* WidgetExamplesWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetExamplesWidgetExtension.entitlements; sourceTree = "<group>"; };
 		E54213D32538931900CCC9C3 /* UserDefaults+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Ext.swift"; sourceTree = "<group>"; };
+		E54213DC2538979B00CCC9C3 /* FileManager+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				E54213D32538931900CCC9C3 /* UserDefaults+Ext.swift */,
+				E54213DC2538979B00CCC9C3 /* FileManager+Ext.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -343,6 +347,7 @@
 				E542135C253879B700CCC9C3 /* ContentView.swift in Sources */,
 				E542135A253879B700CCC9C3 /* WidgetExamplesApp.swift in Sources */,
 				E54213D92538932300CCC9C3 /* UserDefaults+Ext.swift in Sources */,
+				E54213E2253898DA00CCC9C3 /* FileManager+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +362,7 @@
 				E54213B1253884D200CCC9C3 /* NetworkWidget.swift in Sources */,
 				E54213AA2538829A00CCC9C3 /* TimerWidget.swift in Sources */,
 				E54213A3253881B200CCC9C3 /* CountdownWidget.swift in Sources */,
+				E54213DD2538979B00CCC9C3 /* FileManager+Ext.swift in Sources */,
 				E542137525387A0300CCC9C3 /* WidgetExamplesWidget.swift in Sources */,
 				E54213D42538931900CCC9C3 /* UserDefaults+Ext.swift in Sources */,
 				E54213C9253891F300CCC9C3 /* AppGroupWidget.swift in Sources */,
