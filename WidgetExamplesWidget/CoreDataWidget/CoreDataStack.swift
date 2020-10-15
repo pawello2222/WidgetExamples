@@ -13,7 +13,7 @@ class CoreDataStack {
 
     private init() {}
 
-    lazy var persistentContainer: NSPersistentContainer = {
+    private let persistentContainer: NSPersistentContainer = {
         let storeURL = FileManager.appGroupContainerURL.appendingPathComponent("DataModel.sqlite")
         let container = NSPersistentContainer(name: "DataModel")
         container.persistentStoreDescriptions = [NSPersistentStoreDescription(url: storeURL)]
@@ -62,5 +62,19 @@ extension CoreDataStack {
         } catch {
             print(error.localizedDescription)
         }
+    }
+}
+
+/// Taken from: https://stackoverflow.com/a/60266079/8697793
+extension NSManagedObjectContext {
+    /// Executes the given `NSBatchDeleteRequest` and directly merges the changes to bring the given managed object context up to date.
+    ///
+    /// - Parameter batchDeleteRequest: The `NSBatchDeleteRequest` to execute.
+    /// - Throws: An error if anything went wrong executing the batch deletion.
+    public func executeAndMergeChanges(_ batchDeleteRequest: NSBatchDeleteRequest) throws {
+        batchDeleteRequest.resultType = .resultTypeObjectIDs
+        let result = try execute(batchDeleteRequest) as? NSBatchDeleteResult
+        let changes: [AnyHashable: Any] = [NSDeletedObjectsKey: result?.result as? [NSManagedObjectID] ?? []]
+        NSManagedObjectContext.mergeChanges(fromRemoteContextSave: changes, into: [self])
     }
 }

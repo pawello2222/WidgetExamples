@@ -6,6 +6,7 @@
 //  Copyright © 2020 Pawel Wiszenko. All rights reserved.
 //
 
+import CoreData
 import SwiftUI
 import WidgetKit
 
@@ -34,9 +35,19 @@ private struct SimpleEntry: TimelineEntry {
 
 private struct CoreDataWidgetEntryView: View {
     var entry: Provider.Entry
-    
+
     var body: some View {
-        Text(entry.date, style: .timer)
+        return Text("Items count: \(itemsCount)")
+    }
+
+    var itemsCount: Int {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
+        do {
+            return try CoreDataStack.shared.managedObjectContext.count(for: request)
+        } catch {
+            print(error.localizedDescription)
+            return 0
+        }
     }
 }
 

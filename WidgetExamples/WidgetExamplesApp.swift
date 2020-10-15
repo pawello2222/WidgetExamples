@@ -10,9 +10,10 @@ import SwiftUI
 @main
 struct WidgetExamplesApp: App {
     var body: some Scene {
-        WindowGroup {
+        let moc = CoreDataStack.shared.managedObjectContext
+        return WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, CoreDataStack.shared.managedObjectContext)
+                .environment(\.managedObjectContext, moc)
         }
     }
 }
