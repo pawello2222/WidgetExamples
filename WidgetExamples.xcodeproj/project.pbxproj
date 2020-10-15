@@ -28,6 +28,8 @@
 		E54213D92538932300CCC9C3 /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213D32538931900CCC9C3 /* UserDefaults+Ext.swift */; };
 		E54213DD2538979B00CCC9C3 /* FileManager+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213DC2538979B00CCC9C3 /* FileManager+Ext.swift */; };
 		E54213E2253898DA00CCC9C3 /* FileManager+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213DC2538979B00CCC9C3 /* FileManager+Ext.swift */; };
+		E54213E72538A0C700CCC9C3 /* URLImageWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213E62538A0C700CCC9C3 /* URLImageWidget.swift */; };
+		E54213EB2538A14800CCC9C3 /* URLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213EA2538A14800CCC9C3 /* URLImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		E54213CF253892AB00CCC9C3 /* WidgetExamplesWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetExamplesWidgetExtension.entitlements; sourceTree = "<group>"; };
 		E54213D32538931900CCC9C3 /* UserDefaults+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Ext.swift"; sourceTree = "<group>"; };
 		E54213DC2538979B00CCC9C3 /* FileManager+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Ext.swift"; sourceTree = "<group>"; };
+		E54213E62538A0C700CCC9C3 /* URLImageWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageWidget.swift; sourceTree = "<group>"; };
+		E54213EA2538A14800CCC9C3 /* URLImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,7 @@
 			children = (
 				E542137425387A0300CCC9C3 /* WidgetExamplesWidget.swift */,
 				E54213C7253891CB00CCC9C3 /* AppGroupWidget */,
+				E54213E52538A0B500CCC9C3 /* URLImageWidget */,
 				E542139725387ECE00CCC9C3 /* ClockWidget */,
 				E542139A2538806F00CCC9C3 /* CountdownWidget */,
 				E54213BE253890CD00CCC9C3 /* EnvironmentWidget */,
@@ -241,6 +246,15 @@
 				E54213DC2538979B00CCC9C3 /* FileManager+Ext.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		E54213E52538A0B500CCC9C3 /* URLImageWidget */ = {
+			isa = PBXGroup;
+			children = (
+				E54213E62538A0C700CCC9C3 /* URLImageWidget.swift */,
+				E54213EA2538A14800CCC9C3 /* URLImageView.swift */,
+			);
+			path = URLImageWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E54213EB2538A14800CCC9C3 /* URLImageView.swift in Sources */,
 				E54213B52538857F00CCC9C3 /* WebRepository.swift in Sources */,
 				E54213BB2538864E00CCC9C3 /* CurrencyWebRepository.swift in Sources */,
 				E542139225387BEA00CCC9C3 /* ClockWidget.swift in Sources */,
@@ -365,6 +380,7 @@
 				E54213DD2538979B00CCC9C3 /* FileManager+Ext.swift in Sources */,
 				E542137525387A0300CCC9C3 /* WidgetExamplesWidget.swift in Sources */,
 				E54213D42538931900CCC9C3 /* UserDefaults+Ext.swift in Sources */,
+				E54213E72538A0C700CCC9C3 /* URLImageWidget.swift in Sources */,
 				E54213C9253891F300CCC9C3 /* AppGroupWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
