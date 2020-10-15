@@ -103,9 +103,7 @@
 			children = (
 				E5421359253879B700CCC9C3 /* WidgetExamplesApp.swift */,
 				E542135B253879B700CCC9C3 /* ContentView.swift */,
-				E542135D253879BB00CCC9C3 /* Assets.xcassets */,
-				E5421362253879BB00CCC9C3 /* Info.plist */,
-				E542135F253879BB00CCC9C3 /* Preview Content */,
+				E542138825387AB600CCC9C3 /* Resources */,
 			);
 			path = WidgetExamples;
 			sourceTree = "<group>";
@@ -132,10 +130,28 @@
 			children = (
 				E542137425387A0300CCC9C3 /* WidgetExamplesWidget.swift */,
 				E542138225387A2400CCC9C3 /* ClockWidget.swift */,
+				E542138D25387AED00CCC9C3 /* Resources */,
+			);
+			path = WidgetExamplesWidget;
+			sourceTree = "<group>";
+		};
+		E542138825387AB600CCC9C3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E542135D253879BB00CCC9C3 /* Assets.xcassets */,
+				E5421362253879BB00CCC9C3 /* Info.plist */,
+				E542135F253879BB00CCC9C3 /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E542138D25387AED00CCC9C3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				E542137625387A0600CCC9C3 /* Assets.xcassets */,
 				E542137825387A0600CCC9C3 /* Info.plist */,
 			);
-			path = WidgetExamplesWidget;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,10 +403,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"WidgetExamples/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"WidgetExamples/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = DMCVYHA293;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = WidgetExamples/Info.plist;
+				INFOPLIST_FILE = WidgetExamples/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -410,10 +426,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"WidgetExamples/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"WidgetExamples/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = DMCVYHA293;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = WidgetExamples/Info.plist;
+				INFOPLIST_FILE = WidgetExamples/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -433,7 +449,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DMCVYHA293;
-				INFOPLIST_FILE = WidgetExamplesWidget/Info.plist;
+				INFOPLIST_FILE = WidgetExamplesWidget/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,7 +470,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DMCVYHA293;
-				INFOPLIST_FILE = WidgetExamplesWidget/Info.plist;
+				INFOPLIST_FILE = WidgetExamplesWidget/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
