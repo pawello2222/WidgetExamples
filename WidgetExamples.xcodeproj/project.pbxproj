@@ -128,8 +128,8 @@
 		E542137325387A0300CCC9C3 /* WidgetExamplesWidget */ = {
 			isa = PBXGroup;
 			children = (
-				E542139725387ECE00CCC9C3 /* ClockWidget */,
 				E542137425387A0300CCC9C3 /* WidgetExamplesWidget.swift */,
+				E542139725387ECE00CCC9C3 /* ClockWidget */,
 				E542138D25387AED00CCC9C3 /* Resources */,
 			);
 			path = WidgetExamplesWidget;
