@@ -17,6 +17,7 @@
 		E542137725387A0600CCC9C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E542137625387A0600CCC9C3 /* Assets.xcassets */; };
 		E542137B25387A0600CCC9C3 /* WidgetExamplesWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E542136D25387A0200CCC9C3 /* WidgetExamplesWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E542139225387BEA00CCC9C3 /* ClockWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542138225387A2400CCC9C3 /* ClockWidget.swift */; };
+		E54213A3253881B200CCC9C3 /* CountdownWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542139D253880EE00CCC9C3 /* CountdownWidget.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		E542137625387A0600CCC9C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E542137825387A0600CCC9C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E542138225387A2400CCC9C3 /* ClockWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockWidget.swift; sourceTree = "<group>"; };
+		E542139D253880EE00CCC9C3 /* CountdownWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownWidget.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,9 +130,9 @@
 		E542137325387A0300CCC9C3 /* WidgetExamplesWidget */ = {
 			isa = PBXGroup;
 			children = (
-				E542139A2538806F00CCC9C3 /* CountdownWidget */,
 				E542137425387A0300CCC9C3 /* WidgetExamplesWidget.swift */,
 				E542139725387ECE00CCC9C3 /* ClockWidget */,
+				E542139A2538806F00CCC9C3 /* CountdownWidget */,
 				E542138D25387AED00CCC9C3 /* Resources */,
 			);
 			path = WidgetExamplesWidget;
@@ -166,6 +168,7 @@
 		E542139A2538806F00CCC9C3 /* CountdownWidget */ = {
 			isa = PBXGroup;
 			children = (
+				E542139D253880EE00CCC9C3 /* CountdownWidget.swift */,
 			);
 			path = CountdownWidget;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E542139225387BEA00CCC9C3 /* ClockWidget.swift in Sources */,
+				E54213A3253881B200CCC9C3 /* CountdownWidget.swift in Sources */,
 				E542137525387A0300CCC9C3 /* WidgetExamplesWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
