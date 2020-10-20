@@ -1,6 +1,6 @@
 ![Language: Swift](https://img.shields.io/badge/language-swift-orange.svg)
 
-# WidgetExamples
+# Widget Examples
 
 A demo project showcasing different types of Widgets created with SwiftUI and WidgetKit.
 
