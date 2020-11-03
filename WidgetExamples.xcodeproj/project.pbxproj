@@ -41,6 +41,9 @@
 		E54214232538B76C00CCC9C3 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E54214212538B76C00CCC9C3 /* DataModel.xcdatamodeld */; };
 		E54214262538B77500CCC9C3 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E54214212538B76C00CCC9C3 /* DataModel.xcdatamodeld */; };
 		E54214292538B77900CCC9C3 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542141D2538B68200CCC9C3 /* CoreDataStack.swift */; };
+		E55497C425516F1B0066870B /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E591C57825516810002044C8 /* Intents.intentdefinition */; };
+		E591C5722551666A002044C8 /* IntentWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591C5712551666A002044C8 /* IntentWidget.swift */; };
+		E591C57925516810002044C8 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E591C57825516810002044C8 /* Intents.intentdefinition */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +104,8 @@
 		E54214192538B58600CCC9C3 /* CoreDataWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWidget.swift; sourceTree = "<group>"; };
 		E542141D2538B68200CCC9C3 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		E54214222538B76C00CCC9C3 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		E591C5712551666A002044C8 /* IntentWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentWidget.swift; sourceTree = "<group>"; };
+		E591C57825516810002044C8 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +187,7 @@
 				E542139A2538806F00CCC9C3 /* CountdownWidget */,
 				E54213F42538A9A300CCC9C3 /* DeepLinkWidget */,
 				E54213BE253890CD00CCC9C3 /* EnvironmentWidget */,
+				E591C5752551666F002044C8 /* IntentWidget */,
 				E54213AF253884C300CCC9C3 /* NetworkWidget */,
 				E54214012538AF1100CCC9C3 /* PreviewWidget */,
 				E54213A82538827100CCC9C3 /* TimerWidget */,
@@ -206,6 +212,7 @@
 			children = (
 				E542137625387A0600CCC9C3 /* Assets.xcassets */,
 				E542137825387A0600CCC9C3 /* Info.plist */,
+				E591C57825516810002044C8 /* Intents.intentdefinition */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -314,6 +321,14 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		E591C5752551666F002044C8 /* IntentWidget */ = {
+			isa = PBXGroup;
+			children = (
+				E591C5712551666A002044C8 /* IntentWidget.swift */,
+			);
+			path = IntentWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -418,6 +433,7 @@
 				E542135C253879B700CCC9C3 /* ContentView.swift in Sources */,
 				E542135A253879B700CCC9C3 /* WidgetExamplesApp.swift in Sources */,
 				E54213D92538932300CCC9C3 /* UserDefaults+Ext.swift in Sources */,
+				E55497C425516F1B0066870B /* Intents.intentdefinition in Sources */,
 				E54214262538B77500CCC9C3 /* DataModel.xcdatamodeld in Sources */,
 				E54214152538AFF000CCC9C3 /* PreviewWidgetView.swift in Sources */,
 				E54214122538AFEC00CCC9C3 /* PreviewWidgetEntry.swift in Sources */,
@@ -440,9 +456,11 @@
 				E542139225387BEA00CCC9C3 /* ClockWidget.swift in Sources */,
 				E54213C0253890DB00CCC9C3 /* EnvironmentWidget.swift in Sources */,
 				E542141E2538B68200CCC9C3 /* CoreDataStack.swift in Sources */,
+				E591C5722551666A002044C8 /* IntentWidget.swift in Sources */,
 				E54213B1253884D200CCC9C3 /* NetworkWidget.swift in Sources */,
 				E54213AA2538829A00CCC9C3 /* TimerWidget.swift in Sources */,
 				E542141A2538B58600CCC9C3 /* CoreDataWidget.swift in Sources */,
+				E591C57925516810002044C8 /* Intents.intentdefinition in Sources */,
 				E54213A3253881B200CCC9C3 /* CountdownWidget.swift in Sources */,
 				E54213DD2538979B00CCC9C3 /* FileManager+Ext.swift in Sources */,
 				E542140B2538AF7800CCC9C3 /* PreviewWidgetEntry.swift in Sources */,
