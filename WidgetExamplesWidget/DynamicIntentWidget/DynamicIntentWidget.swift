@@ -25,29 +25,38 @@ private struct Provider: IntentTimelineProvider {
         completion(timeline)
     }
 
-    func contact(for configuration: DynamicPersonSelectionIntent) -> Contact {
+    func contact(for configuration: DynamicPersonSelectionIntent) -> Contact? {
         if let id = configuration.person?.identifier, let contact = Contact.fromId(id) {
             return contact
         }
-        return .friend1
+        return nil
     }
 }
 
 private struct SimpleEntry: TimelineEntry {
     let date: Date
-    let contact: Contact
+    var contact: Contact?
 }
 
 private struct DynamicIntentWidgetEntryView: View {
     var entry: Provider.Entry
 
+    @ViewBuilder
     var body: some View {
+        if let contact = entry.contact {
+            contactView(for: contact)
+        } else {
+            Text("Choose contact")
+        }
+    }
+
+    func contactView(for contact: Contact) -> some View {
         VStack {
-            Text(entry.contact.name)
+            Text(contact.name)
                 .fontWeight(.semibold)
             Group {
                 Text("Date of birth:")
-                Text(entry.contact.dateOfBirth, style: .date)
+                Text(contact.dateOfBirth, style: .date)
                     .multilineTextAlignment(.center)
             }
             .font(.footnote)
