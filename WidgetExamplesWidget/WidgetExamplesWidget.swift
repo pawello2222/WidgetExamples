@@ -12,10 +12,9 @@ import WidgetKit
 @main
 struct WidgetExamplesWidgetBundle: WidgetBundle {
     var body: some Widget {
-        IntentWidget()
-//        WidgetBundle1().body
-//        WidgetBundle2().body
-//        WidgetBundle3().body
+        WidgetBundle1().body
+        WidgetBundle2().body
+        WidgetBundle3().body
     }
 }
 
@@ -42,5 +41,6 @@ struct WidgetBundle2: WidgetBundle {
 struct WidgetBundle3: WidgetBundle {
     var body: some Widget {
         IntentWidget()
+        DynamicIntentWidget()
     }
 }

@@ -3,75 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>INEnums</key>
-	<array>
-		<dict>
-			<key>INEnumDisplayName</key>
-			<string>Background Color</string>
-			<key>INEnumDisplayNameID</key>
-			<string>YM57Xh</string>
-			<key>INEnumGeneratesHeader</key>
-			<true/>
-			<key>INEnumName</key>
-			<string>BackgroundColor</string>
-			<key>INEnumType</key>
-			<string>Regular</string>
-			<key>INEnumValues</key>
-			<array>
-				<dict>
-					<key>INEnumValueDisplayName</key>
-					<string>unknown</string>
-					<key>INEnumValueDisplayNameID</key>
-					<string>UPihZS</string>
-					<key>INEnumValueName</key>
-					<string>unknown</string>
-				</dict>
-				<dict>
-					<key>INEnumValueDisplayName</key>
-					<string>red</string>
-					<key>INEnumValueDisplayNameID</key>
-					<string>rLgcoL</string>
-					<key>INEnumValueIndex</key>
-					<integer>1</integer>
-					<key>INEnumValueName</key>
-					<string>red</string>
-				</dict>
-				<dict>
-					<key>INEnumValueDisplayName</key>
-					<string>blue</string>
-					<key>INEnumValueDisplayNameID</key>
-					<string>VUFv0y</string>
-					<key>INEnumValueIndex</key>
-					<integer>2</integer>
-					<key>INEnumValueName</key>
-					<string>blue</string>
-				</dict>
-				<dict>
-					<key>INEnumValueDisplayName</key>
-					<string>green</string>
-					<key>INEnumValueDisplayNameID</key>
-					<string>TAEvhJ</string>
-					<key>INEnumValueIndex</key>
-					<integer>3</integer>
-					<key>INEnumValueName</key>
-					<string>green</string>
-				</dict>
-				<dict>
-					<key>INEnumValueDisplayName</key>
-					<string>orange</string>
-					<key>INEnumValueDisplayNameID</key>
-					<string>nLwSqe</string>
-					<key>INEnumValueIndex</key>
-					<integer>4</integer>
-					<key>INEnumValueName</key>
-					<string>orange</string>
-				</dict>
-			</array>
-		</dict>
-	</array>
+	<array/>
 	<key>INIntentDefinitionModelVersion</key>
 	<string>1.2</string>
 	<key>INIntentDefinitionNamespace</key>
-	<string>S9FmQa</string>
+	<string>mS8ez1</string>
 	<key>INIntentDefinitionSystemVersion</key>
 	<string>19G2021</string>
 	<key>INIntentDefinitionToolsBuildVersion</key>
@@ -84,34 +20,34 @@
 			<key>INIntentCategory</key>
 			<string>generic</string>
 			<key>INIntentDescription</key>
-			<string>Choose Background Color</string>
+			<string>Select Person</string>
 			<key>INIntentDescriptionID</key>
-			<string>daWB8S</string>
+			<string>uV2Gjn</string>
 			<key>INIntentEligibleForWidgets</key>
 			<true/>
 			<key>INIntentIneligibleForSuggestions</key>
 			<true/>
 			<key>INIntentLastParameterTag</key>
-			<integer>2</integer>
+			<integer>5</integer>
 			<key>INIntentName</key>
-			<string>BackgroundColor</string>
+			<string>DynamicPersonSelection</string>
 			<key>INIntentParameters</key>
 			<array>
 				<dict>
 					<key>INIntentParameterConfigurable</key>
 					<true/>
 					<key>INIntentParameterDisplayName</key>
-					<string>Background Color</string>
+					<string>Person</string>
 					<key>INIntentParameterDisplayNameID</key>
-					<string>BdAona</string>
+					<string>6UOZQp</string>
 					<key>INIntentParameterDisplayPriority</key>
 					<integer>1</integer>
-					<key>INIntentParameterEnumType</key>
-					<string>BackgroundColor</string>
-					<key>INIntentParameterEnumTypeNamespace</key>
-					<string>S9FmQa</string>
 					<key>INIntentParameterName</key>
-					<string>bgColor</string>
+					<string>person</string>
+					<key>INIntentParameterObjectType</key>
+					<string>Person</string>
+					<key>INIntentParameterObjectTypeNamespace</key>
+					<string>mS8ez1</string>
 					<key>INIntentParameterPromptDialogs</key>
 					<array>
 						<dict>
@@ -130,9 +66,9 @@
 							<key>INIntentParameterPromptDialogCustom</key>
 							<true/>
 							<key>INIntentParameterPromptDialogFormatString</key>
-							<string>There are ${count} options matching ‘${bgColor}’.</string>
+							<string>There are ${count} options matching ‘${person}’.</string>
 							<key>INIntentParameterPromptDialogFormatStringID</key>
-							<string>s4Cp3g</string>
+							<string>MJwysV</string>
 							<key>INIntentParameterPromptDialogType</key>
 							<string>DisambiguationIntroduction</string>
 						</dict>
@@ -140,17 +76,19 @@
 							<key>INIntentParameterPromptDialogCustom</key>
 							<true/>
 							<key>INIntentParameterPromptDialogFormatString</key>
-							<string>Just to confirm, you wanted ‘${bgColor}’?</string>
+							<string>Just to confirm, you wanted ‘${person}’?</string>
 							<key>INIntentParameterPromptDialogFormatStringID</key>
-							<string>TmrA0Y</string>
+							<string>zrGV1L</string>
 							<key>INIntentParameterPromptDialogType</key>
 							<string>Confirmation</string>
 						</dict>
 					</array>
+					<key>INIntentParameterSupportsDynamicEnumeration</key>
+					<true/>
 					<key>INIntentParameterTag</key>
-					<integer>2</integer>
+					<integer>5</integer>
 					<key>INIntentParameterType</key>
-					<string>Integer</string>
+					<string>Object</string>
 				</dict>
 			</array>
 			<key>INIntentResponse</key>
@@ -170,9 +108,9 @@
 				</array>
 			</dict>
 			<key>INIntentTitle</key>
-			<string>Background Color</string>
+			<string>Dynamic Person Selection</string>
 			<key>INIntentTitleID</key>
-			<string>yzlSfd</string>
+			<string>AIEzGf</string>
 			<key>INIntentType</key>
 			<string>Custom</string>
 			<key>INIntentVerb</key>
@@ -180,6 +118,70 @@
 		</dict>
 	</array>
 	<key>INTypes</key>
-	<array/>
+	<array>
+		<dict>
+			<key>INTypeDisplayName</key>
+			<string>Person</string>
+			<key>INTypeDisplayNameID</key>
+			<string>07kXNp</string>
+			<key>INTypeLastPropertyTag</key>
+			<integer>102</integer>
+			<key>INTypeName</key>
+			<string>Person</string>
+			<key>INTypeProperties</key>
+			<array>
+				<dict>
+					<key>INTypePropertyDefault</key>
+					<true/>
+					<key>INTypePropertyDisplayPriority</key>
+					<integer>1</integer>
+					<key>INTypePropertyName</key>
+					<string>identifier</string>
+					<key>INTypePropertyTag</key>
+					<integer>1</integer>
+					<key>INTypePropertyType</key>
+					<string>String</string>
+				</dict>
+				<dict>
+					<key>INTypePropertyDefault</key>
+					<true/>
+					<key>INTypePropertyDisplayPriority</key>
+					<integer>2</integer>
+					<key>INTypePropertyName</key>
+					<string>displayString</string>
+					<key>INTypePropertyTag</key>
+					<integer>2</integer>
+					<key>INTypePropertyType</key>
+					<string>String</string>
+				</dict>
+				<dict>
+					<key>INTypePropertyDefault</key>
+					<true/>
+					<key>INTypePropertyDisplayPriority</key>
+					<integer>3</integer>
+					<key>INTypePropertyName</key>
+					<string>pronunciationHint</string>
+					<key>INTypePropertyTag</key>
+					<integer>3</integer>
+					<key>INTypePropertyType</key>
+					<string>String</string>
+				</dict>
+				<dict>
+					<key>INTypePropertyDefault</key>
+					<true/>
+					<key>INTypePropertyDisplayPriority</key>
+					<integer>4</integer>
+					<key>INTypePropertyName</key>
+					<string>alternativeSpeakableMatches</string>
+					<key>INTypePropertySupportsMultipleValues</key>
+					<true/>
+					<key>INTypePropertyTag</key>
+					<integer>4</integer>
+					<key>INTypePropertyType</key>
+					<string>SpeakableString</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>

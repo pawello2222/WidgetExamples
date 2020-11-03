@@ -22,7 +22,8 @@
 	<true/>
 	<key>NSUserActivityTypes</key>
 	<array>
-		<string>BackgroundColorIntent</string>
+		<string>BackgroundColorSelectionIntent</string>
+		<string>DynamicPersonSelectionIntent</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

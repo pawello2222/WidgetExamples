@@ -14,12 +14,12 @@ private struct Provider: IntentTimelineProvider {
         SimpleEntry(date: Date())
     }
 
-    func getSnapshot(for configuration: BackgroundColorIntent, in context: Context, completion: @escaping (SimpleEntry) -> Void) {
+    func getSnapshot(for configuration: BackgroundColorSelectionIntent, in context: Context, completion: @escaping (SimpleEntry) -> Void) {
         let entry = SimpleEntry(date: Date(), bgColor: configuration.bgColor)
         completion(entry)
     }
 
-    func getTimeline(for configuration: BackgroundColorIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
+    func getTimeline(for configuration: BackgroundColorSelectionIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
         let entries = [SimpleEntry(date: Date(), bgColor: configuration.bgColor)]
         let timeline = Timeline(entries: entries, policy: .never)
         completion(timeline)
@@ -64,7 +64,7 @@ struct IntentWidget: Widget {
     let kind: String = "IntentWidget"
 
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: BackgroundColorIntent.self, provider: Provider()) { entry in
+        IntentConfiguration(kind: kind, intent: BackgroundColorSelectionIntent.self, provider: Provider()) { entry in
             IntentWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Intent Widget")

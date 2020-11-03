@@ -15,5 +15,6 @@ extension UserDefaults {
 extension UserDefaults {
     enum Keys: String {
         case luckyNumber
+        case contacts
     }
 }
