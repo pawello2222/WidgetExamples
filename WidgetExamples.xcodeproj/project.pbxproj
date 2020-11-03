@@ -41,7 +41,6 @@
 		E54214232538B76C00CCC9C3 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E54214212538B76C00CCC9C3 /* DataModel.xcdatamodeld */; };
 		E54214262538B77500CCC9C3 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E54214212538B76C00CCC9C3 /* DataModel.xcdatamodeld */; };
 		E54214292538B77900CCC9C3 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542141D2538B68200CCC9C3 /* CoreDataStack.swift */; };
-		E55497C425516F1B0066870B /* BackgroundColorSelection.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E591C57825516810002044C8 /* BackgroundColorSelection.intentdefinition */; };
 		E55497D32551C02E0066870B /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55497D22551C02E0066870B /* IntentHandler.swift */; };
 		E55497D72551C02E0066870B /* IntentHandler.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E55497D02551C02E0066870B /* IntentHandler.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E55497EC2551CA0B0066870B /* DynamicPersonSelection.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E55497EB2551CA0B0066870B /* DynamicPersonSelection.intentdefinition */; };
@@ -52,6 +51,8 @@
 		E55498392551D2160066870B /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55498372551D2160066870B /* Contact.swift */; };
 		E554983A2551D2160066870B /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55498372551D2160066870B /* Contact.swift */; };
 		E554984A2551D8060066870B /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213D32538931900CCC9C3 /* UserDefaults+Ext.swift */; };
+		E5549864255223EE0066870B /* BackgroundColorSelection.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E591C57825516810002044C8 /* BackgroundColorSelection.intentdefinition */; };
+		E5549868255224050066870B /* BackgroundColorSelection.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E591C57825516810002044C8 /* BackgroundColorSelection.intentdefinition */; };
 		E591C5722551666A002044C8 /* IntentWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591C5712551666A002044C8 /* IntentWidget.swift */; };
 		E591C57925516810002044C8 /* BackgroundColorSelection.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E591C57825516810002044C8 /* BackgroundColorSelection.intentdefinition */; };
 /* End PBXBuildFile section */
@@ -523,11 +524,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E542135C253879B700CCC9C3 /* ContentView.swift in Sources */,
+				E5549864255223EE0066870B /* BackgroundColorSelection.intentdefinition in Sources */,
 				E542135A253879B700CCC9C3 /* WidgetExamplesApp.swift in Sources */,
 				E54213D92538932300CCC9C3 /* UserDefaults+Ext.swift in Sources */,
 				E55497EC2551CA0B0066870B /* DynamicPersonSelection.intentdefinition in Sources */,
 				E55498382551D2160066870B /* Contact.swift in Sources */,
-				E55497C425516F1B0066870B /* BackgroundColorSelection.intentdefinition in Sources */,
 				E54214262538B77500CCC9C3 /* DataModel.xcdatamodeld in Sources */,
 				E54214152538AFF000CCC9C3 /* PreviewWidgetView.swift in Sources */,
 				E54214122538AFEC00CCC9C3 /* PreviewWidgetEntry.swift in Sources */,
@@ -573,6 +574,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E554984A2551D8060066870B /* UserDefaults+Ext.swift in Sources */,
+				E5549868255224050066870B /* BackgroundColorSelection.intentdefinition in Sources */,
 				E554983A2551D2160066870B /* Contact.swift in Sources */,
 				E55497EE2551CA0B0066870B /* DynamicPersonSelection.intentdefinition in Sources */,
 				E55497D32551C02E0066870B /* IntentHandler.swift in Sources */,

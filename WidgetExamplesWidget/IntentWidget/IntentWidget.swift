@@ -11,11 +11,11 @@ import WidgetKit
 
 private struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date())
+        SimpleEntry(date: Date(), bgColor: .orange)
     }
 
     func getSnapshot(for configuration: BackgroundColorSelectionIntent, in context: Context, completion: @escaping (SimpleEntry) -> Void) {
-        let entry = SimpleEntry(date: Date(), bgColor: configuration.bgColor)
+        let entry = SimpleEntry(date: Date(), bgColor: .orange)
         completion(entry)
     }
 
@@ -28,7 +28,7 @@ private struct Provider: IntentTimelineProvider {
 
 private struct SimpleEntry: TimelineEntry {
     let date: Date
-    var bgColor: BackgroundColor = .unknown
+    let bgColor: BackgroundColor
 }
 
 private struct IntentWidgetEntryView: View {
@@ -53,7 +53,7 @@ private struct IntentWidgetEntryView: View {
     var body: some View {
         ZStack {
             bgColor
-            Text("Lond press and select `Edit Widget` to choose a color.")
+            Text(entry.date, style: .date)
                 .font(.subheadline)
                 .multilineTextAlignment(.center)
         }

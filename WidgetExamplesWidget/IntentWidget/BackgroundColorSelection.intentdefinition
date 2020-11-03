@@ -110,6 +110,11 @@
 					<string>BackgroundColor</string>
 					<key>INIntentParameterEnumTypeNamespace</key>
 					<string>S9FmQa</string>
+					<key>INIntentParameterMetadata</key>
+					<dict>
+						<key>INIntentParameterMetadataDefaultValue</key>
+						<string>orange</string>
+					</dict>
 					<key>INIntentParameterName</key>
 					<string>bgColor</string>
 					<key>INIntentParameterPromptDialogs</key>
