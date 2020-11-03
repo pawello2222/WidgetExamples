@@ -26,9 +26,17 @@ A Widget that displays the remaining time in seconds and changes color when the 
 
 A demo showcasing how to use Deep Links to pass events / information from a Widget to the parent App.
 
+### [Dynamic Intent Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExamplesWidget/DynamicIntentWidget)
+
+A Widget that has dynamically configurable data.
+
 ### [Environment Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExamplesWidget/EnvironmentWidget)
 
 A demo showcasing how to adjust a Widget View depending on Environment variables.
+
+### [Intent Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExamplesWidget/IntentWidget)
+
+A Widget that has a configurable background color.
 
 ### [Network Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExamplesWidget/NetworkWidget)
 
