@@ -128,6 +128,7 @@
 		E55497D42551C02E0066870B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E55497EB2551CA0B0066870B /* DynamicPersonSelection.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = DynamicPersonSelection.intentdefinition; sourceTree = "<group>"; };
 		E55498372551D2160066870B /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		E554985A25521B8D0066870B /* IntentHandler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IntentHandler.entitlements; sourceTree = "<group>"; };
 		E591C5712551666A002044C8 /* IntentWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentWidget.swift; sourceTree = "<group>"; };
 		E591C57825516810002044C8 /* BackgroundColorSelection.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = BackgroundColorSelection.intentdefinition; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,7 +163,6 @@
 		E542134D253879B700CCC9C3 = {
 			isa = PBXGroup;
 			children = (
-				E54213CF253892AB00CCC9C3 /* WidgetExamplesWidgetExtension.entitlements */,
 				E5421358253879B700CCC9C3 /* WidgetExamples */,
 				E542137325387A0300CCC9C3 /* WidgetExamplesWidget */,
 				E55497D12551C02E0066870B /* IntentHandler */,
@@ -213,6 +213,7 @@
 		E542137325387A0300CCC9C3 /* WidgetExamplesWidget */ = {
 			isa = PBXGroup;
 			children = (
+				E54213CF253892AB00CCC9C3 /* WidgetExamplesWidgetExtension.entitlements */,
 				E542137425387A0300CCC9C3 /* WidgetExamplesWidget.swift */,
 				E54213C7253891CB00CCC9C3 /* AppGroupWidget */,
 				E542139725387ECE00CCC9C3 /* ClockWidget */,
@@ -367,6 +368,7 @@
 		E55497D12551C02E0066870B /* IntentHandler */ = {
 			isa = PBXGroup;
 			children = (
+				E554985A25521B8D0066870B /* IntentHandler.entitlements */,
 				E55497D22551C02E0066870B /* IntentHandler.swift */,
 				E55497D42551C02E0066870B /* Info.plist */,
 			);
@@ -762,7 +764,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = WidgetExamplesWidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = WidgetExamplesWidget/WidgetExamplesWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DMCVYHA293;
 				INFOPLIST_FILE = WidgetExamplesWidget/Resources/Info.plist;
@@ -784,7 +786,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = WidgetExamplesWidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = WidgetExamplesWidget/WidgetExamplesWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DMCVYHA293;
 				INFOPLIST_FILE = WidgetExamplesWidget/Resources/Info.plist;
@@ -804,6 +806,7 @@
 		E55497D92551C02E0066870B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = IntentHandler/IntentHandler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DMCVYHA293;
 				INFOPLIST_FILE = IntentHandler/Info.plist;
@@ -824,6 +827,7 @@
 		E55497DA2551C02E0066870B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = IntentHandler/IntentHandler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DMCVYHA293;
 				INFOPLIST_FILE = IntentHandler/Info.plist;

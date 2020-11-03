@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct Contact {
-    let name: String
-    let birthday: Date
+struct Contact: Hashable, Codable {
+    var name: String
+    var dateOfBirth: Date
 }
 
 extension Contact: Identifiable {
@@ -20,18 +20,22 @@ extension Contact: Identifiable {
 extension Contact {
     static func getAll() -> [Contact] {
         let key = UserDefaults.Keys.contacts.rawValue
-        let contacts = UserDefaults.appGroup.object(forKey: key) as? [Contact]
-        return contacts ?? [.friend1, .friend2]
+        guard let contacts: [Contact] = UserDefaults.appGroup.getArray(forKey: key) else {
+            let contacts: [Contact] = [.friend1, .friend2]
+            UserDefaults.appGroup.setArray(contacts, forKey: key)
+            return contacts
+        }
+        return contacts
     }
 
     static let friend1: Contact = {
-        let birthday = Calendar.current.date(byAdding: .day, value: 1, to: Date())!
-        return Contact(name: "Friend 1", birthday: birthday)
+        let date = Calendar.current.date(byAdding: .month, value: -2, to: Date())!
+        return Contact(name: "Friend 1", dateOfBirth: date)
     }()
 
     static let friend2: Contact = {
-        let birthday = Calendar.current.date(byAdding: .day, value: 3, to: Date())!
-        return Contact(name: "Friend 2", birthday: birthday)
+        let date = Calendar.current.date(byAdding: .year, value: -3, to: Date())!
+        return Contact(name: "Friend 2", dateOfBirth: date)
     }()
 }
 

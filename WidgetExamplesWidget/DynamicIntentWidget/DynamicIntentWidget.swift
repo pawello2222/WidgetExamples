@@ -11,11 +11,11 @@ import WidgetKit
 
 private struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date())
+        SimpleEntry(date: Date(), contact: .friend1)
     }
 
     func getSnapshot(for configuration: DynamicPersonSelectionIntent, in context: Context, completion: @escaping (SimpleEntry) -> Void) {
-        let entry = SimpleEntry(date: Date())
+        let entry = SimpleEntry(date: Date(), contact: .friend1)
         completion(entry)
     }
 
@@ -35,7 +35,7 @@ private struct Provider: IntentTimelineProvider {
 
 private struct SimpleEntry: TimelineEntry {
     let date: Date
-    var contact: Contact = .friend1
+    let contact: Contact
 }
 
 private struct DynamicIntentWidgetEntryView: View {
@@ -43,11 +43,11 @@ private struct DynamicIntentWidgetEntryView: View {
 
     var body: some View {
         VStack {
-            Text(String(describing: entry.contact.name))
+            Text(entry.contact.name)
                 .fontWeight(.semibold)
             Group {
-                Text("Born on:")
-                Text(entry.contact.birthday, style: .date)
+                Text("Date of birth:")
+                Text(entry.contact.dateOfBirth, style: .date)
                     .multilineTextAlignment(.center)
             }
             .font(.footnote)
@@ -64,7 +64,7 @@ struct DynamicIntentWidget: Widget {
             DynamicIntentWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Dynamic Intent Widget")
-        .description("A dynamically configurable Widget that displays the remaining time.")
+        .description("A Widget that has dynamically configurable data.")
         .supportedFamilies([.systemSmall])
     }
 }

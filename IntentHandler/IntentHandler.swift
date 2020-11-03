@@ -15,8 +15,4 @@ class IntentHandler: INExtension, DynamicPersonSelectionIntentHandling {
         let collection = INObjectCollection(items: persons)
         completion(collection, nil)
     }
-
-    override func handler(for intent: INIntent) -> Any {
-        return self
-    }
 }

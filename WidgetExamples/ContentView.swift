@@ -15,6 +15,8 @@ struct ContentView: View {
 
     @AppStorage(UserDefaults.Keys.luckyNumber.rawValue, store: UserDefaults.appGroup) private var luckyNumber = 0
 
+    @State private var contacts = Contact.getAll()
+
     @FetchRequest(entity: Item.entity(), sortDescriptors: []) private var items: FetchedResults<Item>
 
     var body: some View {
@@ -22,11 +24,14 @@ struct ContentView: View {
             appGroupWidgetSection
             coreDataWidgetSection
             deepLinkWidgetSection
+            dynamicIntentWidgetSection
             previewWidgetSection
         }
         .listStyle(InsetGroupedListStyle())
     }
+}
 
+private extension ContentView {
     var appGroupWidgetSection: some View {
         Section(header: Text("AppGroup Widget")) {
             Text("Lucky number: \(luckyNumber)")
@@ -42,9 +47,11 @@ struct ContentView: View {
             try? String(luckyNumber).write(to: url, atomically: false, encoding: .utf8)
         }
     }
+}
 
+private extension ContentView {
     var coreDataWidgetSection: some View {
-        return Section(header: Text("CoreData Widget")) {
+        Section(header: Text("CoreData Widget")) {
             Text("Items count: \(items.count)")
             Button("Add new item") {
                 let context = CoreDataStack.shared.workingContext
@@ -74,7 +81,9 @@ struct ContentView: View {
             try? String(luckyNumber).write(to: url, atomically: false, encoding: .utf8)
         }
     }
+}
 
+private extension ContentView {
     var deepLinkWidgetSection: some View {
         Section(header: Text("DeepLink Widget")) {
             Text("")
@@ -86,7 +95,33 @@ struct ContentView: View {
                 }
         }
     }
+}
 
+private extension ContentView {
+    var dynamicIntentWidgetSection: some View {
+        Section(header: Text("Dynamic Intent Widget")) {
+            ForEach(contacts.indices, id: \.self) { index in
+                HStack {
+                    TextField("", text: $contacts[index].name, onCommit: {
+                        saveContacts()
+                    })
+                    DatePicker("", selection: $contacts[index].dateOfBirth, displayedComponents: .date)
+                        .onChange(of: contacts[index].dateOfBirth) { _ in
+                            saveContacts()
+                        }
+                }
+            }
+        }
+    }
+
+    func saveContacts() {
+        let key = UserDefaults.Keys.contacts.rawValue
+        UserDefaults.appGroup.setArray(contacts, forKey: key)
+        WidgetCenter.shared.reloadTimelines(ofKind: "DynamicIntentWidget")
+    }
+}
+
+private extension ContentView {
     var previewWidgetSection: some View {
         let entry = PreviewWidgetEntry(date: Date(), systemImageName: "star.fill")
         return Section(header: Text("Preview Widget")) {
