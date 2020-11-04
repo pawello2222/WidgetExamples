@@ -367,9 +367,8 @@
 		E55497D12551C02E0066870B /* IntentHandler */ = {
 			isa = PBXGroup;
 			children = (
-				E554985A25521B8D0066870B /* IntentHandler.entitlements */,
 				E55497D22551C02E0066870B /* IntentHandler.swift */,
-				E55497D42551C02E0066870B /* Info.plist */,
+				E55498B92553339F0066870B /* Supporting Files */,
 			);
 			path = IntentHandler;
 			sourceTree = "<group>";
@@ -396,6 +395,15 @@
 			children = (
 				E542137825387A0600CCC9C3 /* Info.plist */,
 				E54213CF253892AB00CCC9C3 /* WidgetExtension.entitlements */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E55498B92553339F0066870B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E55497D42551C02E0066870B /* Info.plist */,
+				E554985A25521B8D0066870B /* IntentHandler.entitlements */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -824,10 +832,10 @@
 		E55497D92551C02E0066870B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = IntentHandler/IntentHandler.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "IntentHandler/Supporting Files/IntentHandler.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DMCVYHA293;
-				INFOPLIST_FILE = IntentHandler/Info.plist;
+				INFOPLIST_FILE = "IntentHandler/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -845,10 +853,10 @@
 		E55497DA2551C02E0066870B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = IntentHandler/IntentHandler.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "IntentHandler/Supporting Files/IntentHandler.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DMCVYHA293;
-				INFOPLIST_FILE = IntentHandler/Info.plist;
+				INFOPLIST_FILE = "IntentHandler/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
