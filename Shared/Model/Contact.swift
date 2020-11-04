@@ -8,13 +8,10 @@
 
 import Foundation
 
-struct Contact: Hashable, Codable {
+struct Contact: Identifiable, Hashable, Codable {
+    var id = UUID().uuidString
     var name: String
     var dateOfBirth: Date
-}
-
-extension Contact: Identifiable {
-    var id: String { name }
 }
 
 extension Contact {
