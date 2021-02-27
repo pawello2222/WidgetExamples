@@ -1,4 +1,5 @@
 ![Language: Swift](https://img.shields.io/badge/language-swift-orange.svg)
+![Framework: SwiftUI](https://img.shields.io/badge/framework-swiftui-brightgreen.svg)
 
 # Widget Examples
 
