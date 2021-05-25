@@ -36,7 +36,8 @@ private struct URLImageWidgetEntryView: View {
     var entry: Provider.Entry
 
     var body: some View {
-        URLImageView(url: URL(string: "https://raw.githubusercontent.com/hjnilsson/country-flags/master/png1000px/pl.png")!)
+        let path = "https://raw.githubusercontent.com/pawello2222/country-flags/main/png1000px/pl.png"
+        URLImageView(url: URL(string: path)!)
             .aspectRatio(contentMode: .fill)
     }
 }
