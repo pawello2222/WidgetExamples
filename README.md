@@ -1,11 +1,16 @@
-![Language: Swift](https://img.shields.io/badge/language-swift-orange.svg)
-![Framework: SwiftUI](https://img.shields.io/badge/framework-swiftui-brightgreen.svg)
+<p align="center">
+  <a href="https://github.com/pawello2222/WidgetExamples"><img src="https://img.shields.io/badge/language-swift-orange.svg" alt="Language"></a>
+  <a href="https://github.com/pawello2222/WidgetExamples"><img src="https://img.shields.io/badge/platform-iOS-lightgrey" alt="Supported Platform"></a>
+  <a href="https://github.com/pawello2222/WidgetExamples/releases"><img src="https://img.shields.io/github/v/release/pawello2222/WidgetExamples" alt="Release version"></a>
+  <a href="https://github.com/pawello2222/WidgetExamples/blob/main/LICENSE"><img src="https://img.shields.io/github/license/pawello2222/WidgetExamples" alt="License"></a>
+</p>
+<br>
 
 # Widget Examples
 
 A demo project showcasing different types of Widgets created with SwiftUI and WidgetKit.
 
-# Contents
+## Contents
 
 ### [AppGroup Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/AppGroupWidget)
 
@@ -59,3 +64,6 @@ A Widget that displays an Image downloaded from an external URL.
 
 Some examples depend on the App Group capability (e.g., [AppGroup Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/AppGroupWidget)) or integrate with the main App (e.g., [Preview Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/PreviewWidget)), so it's recommended to download the whole project to keep the configuration intact.
 
+## License
+
+Widget Examples project is available under the MIT license. See the [LICENSE](https://github.com/pawello2222/WidgetExamples/blob/main/LICENSE) file for more info.
