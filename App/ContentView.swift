@@ -13,7 +13,7 @@ import WidgetKit
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var managedObjectContext
 
-    @AppStorage(UserDefaults.Keys.luckyNumber.rawValue, store: UserDefaults.appGroup) private var luckyNumber = 0
+    @AppStorage(Key.luckyNumber.rawValue, store: .appGroup) private var luckyNumber = 0
 
     @State private var contacts = Contact.getAll()
 
@@ -31,12 +31,12 @@ struct ContentView: View {
     }
 }
 
-private extension ContentView {
-    var appGroupWidgetSection: some View {
+extension ContentView {
+    private var appGroupWidgetSection: some View {
         Section(header: Text("AppGroup Widget")) {
             Text("Lucky number: \(luckyNumber)")
             Button("Generate new lucky number") {
-                luckyNumber = Int.random(in: 1...99)
+                luckyNumber = Int.random(in: 1 ... 99)
                 WidgetCenter.shared.reloadTimelines(ofKind: "AppGroupWidget")
             }
             .buttonStyle(PlainButtonStyle())
@@ -49,8 +49,8 @@ private extension ContentView {
     }
 }
 
-private extension ContentView {
-    var coreDataWidgetSection: some View {
+extension ContentView {
+    private var coreDataWidgetSection: some View {
         Section(header: Text("CoreData Widget")) {
             Text("Items count: \(items.count)")
             Button("Add new item") {
@@ -83,8 +83,8 @@ private extension ContentView {
     }
 }
 
-private extension ContentView {
-    var deepLinkWidgetSection: some View {
+extension ContentView {
+    private var deepLinkWidgetSection: some View {
         Section(header: Text("DeepLink Widget")) {
             Text("")
                 .onOpenURL { url in
@@ -97,8 +97,8 @@ private extension ContentView {
     }
 }
 
-private extension ContentView {
-    var dynamicIntentWidgetSection: some View {
+extension ContentView {
+    private var dynamicIntentWidgetSection: some View {
         Section(header: Text("Dynamic Intent Widget")) {
             ForEach(contacts.indices, id: \.self) { index in
                 HStack {
@@ -114,15 +114,15 @@ private extension ContentView {
         }
     }
 
-    func saveContacts() {
+    private func saveContacts() {
         let key = UserDefaults.Keys.contacts.rawValue
         UserDefaults.appGroup.setArray(contacts, forKey: key)
         WidgetCenter.shared.reloadTimelines(ofKind: "DynamicIntentWidget")
     }
 }
 
-private extension ContentView {
-    var previewWidgetSection: some View {
+extension ContentView {
+    private var previewWidgetSection: some View {
         let entry = PreviewWidgetEntry(date: Date(), systemImageName: "star.fill")
         return Section(header: Text("Preview Widget")) {
             HStack {
