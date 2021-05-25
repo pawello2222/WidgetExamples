@@ -9,7 +9,10 @@
 import Intents
 
 class IntentHandler: INExtension, DynamicPersonSelectionIntentHandling {
-    func providePersonOptionsCollection(for intent: DynamicPersonSelectionIntent, with completion: @escaping (INObjectCollection<Person>?, Error?) -> Void) {
+    func providePersonOptionsCollection(
+        for intent: DynamicPersonSelectionIntent,
+        with completion: @escaping (INObjectCollection<Person>?, Error?) -> Void
+    ) {
         let persons = Contact.getAll()
             .map { Person(identifier: $0.id, display: $0.name) }
         let collection = INObjectCollection(items: persons)
