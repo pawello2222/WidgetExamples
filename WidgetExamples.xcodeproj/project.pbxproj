@@ -296,7 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				E54C257B2538D02C000FFA46 /* CoreData */,
-				E55498362551D1F40066870B /* Model */,
+				E55498362551D1F40066870B /* Models */,
 				E54213DC2538979B00CCC9C3 /* FileManager+Ext.swift */,
 				E54213D32538931900CCC9C3 /* UserDefaults+Ext.swift */,
 				E5638AE9265D859D00E73B05 /* Widget+Kind.swift */,
@@ -366,12 +366,12 @@
 			path = IntentHandler;
 			sourceTree = "<group>";
 		};
-		E55498362551D1F40066870B /* Model */ = {
+		E55498362551D1F40066870B /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				E55498372551D2160066870B /* Contact.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E554989C2552BE150066870B /* Supporting Files */ = {

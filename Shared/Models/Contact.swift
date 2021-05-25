@@ -16,7 +16,7 @@ struct Contact: Identifiable, Hashable, Codable {
 
 extension Contact {
     static func getAll() -> [Contact] {
-        let key = UserDefaults.Keys.contacts.rawValue
+        let key = Key.contacts.rawValue
         guard let contacts: [Contact] = UserDefaults.appGroup.getArray(forKey: key) else {
             let contacts: [Contact] = [.friend1, .friend2]
             UserDefaults.appGroup.setArray(contacts, forKey: key)
