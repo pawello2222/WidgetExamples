@@ -66,7 +66,7 @@ private struct DynamicIntentWidgetEntryView: View {
 }
 
 struct DynamicIntentWidget: Widget {
-    let kind: String = "DynamicIntentWidget"
+    let kind: String = WidgetKind.dynamicIntent
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: DynamicPersonSelectionIntent.self, provider: Provider()) { entry in

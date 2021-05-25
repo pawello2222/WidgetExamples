@@ -29,7 +29,7 @@ private struct Provider: TimelineProvider {
 }
 
 struct PreviewWidget: Widget {
-    let kind: String = "PreviewWidget"
+    let kind: String = WidgetKind.preview
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in

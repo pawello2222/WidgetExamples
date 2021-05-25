@@ -54,7 +54,7 @@ private struct EnvironmentWidgetEntryView: View {
 }
 
 struct EnvironmentWidget: Widget {
-    let kind: String = "EnvironmentWidget"
+    let kind: String = WidgetKind.environment
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in

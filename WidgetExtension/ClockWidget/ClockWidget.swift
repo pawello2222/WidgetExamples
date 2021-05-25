@@ -58,7 +58,7 @@ private struct ClockWidgetEntryView: View {
 }
 
 struct ClockWidget: Widget {
-    let kind: String = "ClockWidget"
+    let kind: String = WidgetKind.clock
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in

@@ -78,7 +78,7 @@ private struct NetworkWidgetEntryView: View {
 }
 
 struct NetworkWidget: Widget {
-    let kind: String = "NetworkWidget"
+    let kind: String = WidgetKind.network
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in

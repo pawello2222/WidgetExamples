@@ -53,6 +53,8 @@
 		E554984A2551D8060066870B /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213D32538931900CCC9C3 /* UserDefaults+Ext.swift */; };
 		E5549864255223EE0066870B /* BackgroundColorSelection.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E591C57825516810002044C8 /* BackgroundColorSelection.intentdefinition */; };
 		E5549868255224050066870B /* BackgroundColorSelection.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E591C57825516810002044C8 /* BackgroundColorSelection.intentdefinition */; };
+		E5638AEA265D859D00E73B05 /* Widget+Kind.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5638AE9265D859D00E73B05 /* Widget+Kind.swift */; };
+		E5638AEB265D859D00E73B05 /* Widget+Kind.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5638AE9265D859D00E73B05 /* Widget+Kind.swift */; };
 		E591C5722551666A002044C8 /* IntentWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591C5712551666A002044C8 /* IntentWidget.swift */; };
 		E591C57925516810002044C8 /* BackgroundColorSelection.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E591C57825516810002044C8 /* BackgroundColorSelection.intentdefinition */; };
 /* End PBXBuildFile section */
@@ -130,6 +132,7 @@
 		E55497EB2551CA0B0066870B /* DynamicPersonSelection.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = DynamicPersonSelection.intentdefinition; sourceTree = "<group>"; };
 		E55498372551D2160066870B /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		E554985A25521B8D0066870B /* IntentHandler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IntentHandler.entitlements; sourceTree = "<group>"; };
+		E5638AE9265D859D00E73B05 /* Widget+Kind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Widget+Kind.swift"; sourceTree = "<group>"; };
 		E591C5712551666A002044C8 /* IntentWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentWidget.swift; sourceTree = "<group>"; };
 		E591C57825516810002044C8 /* BackgroundColorSelection.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = BackgroundColorSelection.intentdefinition; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -305,8 +308,9 @@
 			children = (
 				E54C257B2538D02C000FFA46 /* CoreData */,
 				E55498362551D1F40066870B /* Model */,
-				E54213D32538931900CCC9C3 /* UserDefaults+Ext.swift */,
 				E54213DC2538979B00CCC9C3 /* FileManager+Ext.swift */,
+				E54213D32538931900CCC9C3 /* UserDefaults+Ext.swift */,
+				E5638AE9265D859D00E73B05 /* Widget+Kind.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -548,6 +552,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E542135C253879B700CCC9C3 /* ContentView.swift in Sources */,
+				E5638AEA265D859D00E73B05 /* Widget+Kind.swift in Sources */,
 				E5549864255223EE0066870B /* BackgroundColorSelection.intentdefinition in Sources */,
 				E542135A253879B700CCC9C3 /* App.swift in Sources */,
 				E54213D92538932300CCC9C3 /* UserDefaults+Ext.swift in Sources */,
@@ -580,6 +585,7 @@
 				E54213B1253884D200CCC9C3 /* NetworkWidget.swift in Sources */,
 				E54213AA2538829A00CCC9C3 /* TimerWidget.swift in Sources */,
 				E542141A2538B58600CCC9C3 /* CoreDataWidget.swift in Sources */,
+				E5638AEB265D859D00E73B05 /* Widget+Kind.swift in Sources */,
 				E591C57925516810002044C8 /* BackgroundColorSelection.intentdefinition in Sources */,
 				E54213A3253881B200CCC9C3 /* CountdownWidget.swift in Sources */,
 				E54213DD2538979B00CCC9C3 /* FileManager+Ext.swift in Sources */,

@@ -53,7 +53,7 @@ private struct DeepLinkWidgetEntryView: View {
 }
 
 struct DeepLinkWidget: Widget {
-    let kind: String = "DeepLinkWidget"
+    let kind: String = WidgetKind.deepLink
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in

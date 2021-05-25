@@ -57,7 +57,7 @@ private struct AppGroupWidgetEntryView: View {
 }
 
 struct AppGroupWidget: Widget {
-    let kind: String = "AppGroupWidget"
+    let kind: String = WidgetKind.appGroup
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in

@@ -28,13 +28,15 @@ struct ContentView: View {
     }
 }
 
+// MARK: - AppGroup Widget
+
 extension ContentView {
     private var appGroupWidgetSection: some View {
         Section(header: Text("AppGroup Widget")) {
             Text("Lucky number: \(luckyNumber)")
             Button("Generate new lucky number") {
                 luckyNumber = Int.random(in: 1 ... 99)
-                WidgetCenter.shared.reloadTimelines(ofKind: "AppGroupWidget")
+                WidgetCenter.shared.reloadTimelines(ofKind: WidgetKind.appGroup)
             }
             .buttonStyle(PlainButtonStyle())
             .foregroundColor(.accentColor)
@@ -46,6 +48,8 @@ extension ContentView {
     }
 }
 
+// MARK: - CoreData Widget
+
 extension ContentView {
     private var coreDataWidgetSection: some View {
         Section(header: Text("CoreData Widget")) {
@@ -56,7 +60,7 @@ extension ContentView {
                 item.name = "test"
                 item.count = 1
                 CoreDataStack.shared.saveWorkingContext(context: context)
-                WidgetCenter.shared.reloadTimelines(ofKind: "CoreDataWidget")
+                WidgetCenter.shared.reloadTimelines(ofKind: WidgetKind.coreData)
             }
             .buttonStyle(PlainButtonStyle())
             .foregroundColor(.accentColor)
@@ -68,7 +72,7 @@ extension ContentView {
                 } catch {
                     print(error.localizedDescription)
                 }
-                WidgetCenter.shared.reloadTimelines(ofKind: "CoreDataWidget")
+                WidgetCenter.shared.reloadTimelines(ofKind: WidgetKind.coreData)
             }
             .buttonStyle(PlainButtonStyle())
             .foregroundColor(.red)
@@ -79,6 +83,8 @@ extension ContentView {
         }
     }
 }
+
+// MARK: - DeepLink Widget
 
 extension ContentView {
     private var deepLinkWidgetSection: some View {
@@ -93,6 +99,8 @@ extension ContentView {
         }
     }
 }
+
+// MARK: - Dynamic Intent Widget
 
 extension ContentView {
     private var dynamicIntentWidgetSection: some View {
@@ -114,9 +122,11 @@ extension ContentView {
     private func saveContacts() {
         let key = UserDefaults.Keys.contacts.rawValue
         UserDefaults.appGroup.setArray(contacts, forKey: key)
-        WidgetCenter.shared.reloadTimelines(ofKind: "DynamicIntentWidget")
+        WidgetCenter.shared.reloadTimelines(ofKind: WidgetKind.dynamicIntent)
     }
 }
+
+// MARK: - Preview Widget
 
 extension ContentView {
     private var previewWidgetSection: some View {

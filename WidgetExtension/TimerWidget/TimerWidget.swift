@@ -41,7 +41,7 @@ private struct TimerWidgetEntryView: View {
 }
 
 struct TimerWidget: Widget {
-    let kind: String = "TimerWidget"
+    let kind: String = WidgetKind.timer
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in

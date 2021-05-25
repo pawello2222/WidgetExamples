@@ -52,7 +52,7 @@ private struct CoreDataWidgetEntryView: View {
 }
 
 struct CoreDataWidget: Widget {
-    let kind: String = "CoreDataWidget"
+    let kind: String = WidgetKind.coreData
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in

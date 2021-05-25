@@ -61,7 +61,7 @@ private struct IntentWidgetEntryView: View {
 }
 
 struct IntentWidget: Widget {
-    let kind: String = "IntentWidget"
+    let kind: String = WidgetKind.intent
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: BackgroundColorSelectionIntent.self, provider: Provider()) { entry in
