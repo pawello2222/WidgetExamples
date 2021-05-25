@@ -2,7 +2,7 @@
 //  IntentWidget.swift
 //  WidgetExtension
 //
-//  Created by Pawel on 03/11/2020.
+//  Created by Pawel Wiszenko on 03.11.2020.
 //  Copyright © 2020 Pawel Wiszenko. All rights reserved.
 //
 
