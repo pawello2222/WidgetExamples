@@ -27,6 +27,8 @@ extension WebRepository {
     }
 }
 
+// MARK: - APIResource
+
 protocol APIResource {
     associatedtype Response: Decodable
     var serverPath: String { get }
@@ -44,6 +46,8 @@ extension APIResource {
         return components.url
     }
 }
+
+// MARK: - APIError
 
 enum APIError: Error {
     case offline

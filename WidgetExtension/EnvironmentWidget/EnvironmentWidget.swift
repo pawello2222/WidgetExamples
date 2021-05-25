@@ -48,8 +48,8 @@ private struct EnvironmentWidgetEntryView: View {
         }
     }
 
-    var bgColor: some View {
-        colorScheme == .dark ? Color.red : Color.orange
+    var bgColor: Color {
+        colorScheme == .dark ? .red : .orange
     }
 }
 

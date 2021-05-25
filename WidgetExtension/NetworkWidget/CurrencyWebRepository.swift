@@ -47,6 +47,8 @@ extension CurrencyWebRepository {
     }
 }
 
+// MARK: - Resource
+
 struct CurrencyRatesResource: APIResource {
     let serverPath = "api.exchangeratesapi.io"
     let methodPath: String

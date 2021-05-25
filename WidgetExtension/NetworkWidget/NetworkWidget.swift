@@ -28,7 +28,7 @@ private struct Provider: TimelineProvider {
         let currentDate = Date()
         let nextDate = Calendar.current.date(byAdding: .minute, value: 1, to: currentDate)!
         currencyWebRepository.fetchAPIResource(CurrencyRatesResource("EUR", date: currentDate))
-            .receive(on: RunLoop.main)
+            .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: {
                 switch $0 {
                 case .failure(let error):
