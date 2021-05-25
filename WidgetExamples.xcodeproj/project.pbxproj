@@ -10,7 +10,6 @@
 		E542135A253879B700CCC9C3 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5421359253879B700CCC9C3 /* App.swift */; };
 		E542135C253879B700CCC9C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542135B253879B700CCC9C3 /* ContentView.swift */; };
 		E542135E253879BB00CCC9C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E542135D253879BB00CCC9C3 /* Assets.xcassets */; };
-		E5421361253879BB00CCC9C3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5421360253879BB00CCC9C3 /* Preview Assets.xcassets */; };
 		E542137025387A0200CCC9C3 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E542136F25387A0200CCC9C3 /* WidgetKit.framework */; };
 		E542137225387A0300CCC9C3 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E542137125387A0200CCC9C3 /* SwiftUI.framework */; };
 		E542137525387A0300CCC9C3 /* WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542137425387A0300CCC9C3 /* WidgetBundle.swift */; };
@@ -96,7 +95,6 @@
 		E5421359253879B700CCC9C3 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		E542135B253879B700CCC9C3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E542135D253879BB00CCC9C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E5421360253879BB00CCC9C3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E5421362253879BB00CCC9C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E542136D25387A0200CCC9C3 /* WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E542136F25387A0200CCC9C3 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -197,14 +195,6 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		E542135F253879BB00CCC9C3 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				E5421360253879BB00CCC9C3 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
 		E542136E25387A0200CCC9C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,7 +230,6 @@
 			isa = PBXGroup;
 			children = (
 				E542135D253879BB00CCC9C3 /* Assets.xcassets */,
-				E542135F253879BB00CCC9C3 /* Preview Content */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -524,7 +513,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5421361253879BB00CCC9C3 /* Preview Assets.xcassets in Resources */,
 				E542135E253879BB00CCC9C3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -751,7 +739,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "App/Supporting Files/App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"App/Resources/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = DMCVYHA293;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "App/Supporting Files/Info.plist";
@@ -775,7 +763,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "App/Supporting Files/App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"App/Resources/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = DMCVYHA293;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "App/Supporting Files/Info.plist";
