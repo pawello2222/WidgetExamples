@@ -12,12 +12,9 @@ import WidgetKit
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var managedObjectContext
-
-    @AppStorage(Key.luckyNumber.rawValue, store: .appGroup) private var luckyNumber = 0
-
-    @State private var contacts = Contact.getAll()
-
     @FetchRequest(entity: Item.entity(), sortDescriptors: []) private var items: FetchedResults<Item>
+    @AppStorage(Key.luckyNumber.rawValue, store: .appGroup) private var luckyNumber = 0
+    @State private var contacts = Contact.getAll()
 
     var body: some View {
         List {
