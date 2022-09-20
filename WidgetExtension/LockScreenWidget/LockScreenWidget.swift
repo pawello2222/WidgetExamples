@@ -84,6 +84,7 @@ private struct LockScreenWidgetEntryView: View {
         Text("\(entry.percent)")
             .font(.title)
             .foregroundStyle(.primary)
+            .fixedSize()
             .padding()
             .background {
                 Circle()
@@ -107,7 +108,7 @@ struct LockScreenWidget: Widget {
             LockScreenWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Lock Screen Widget")
-        .description("A Widget that can be displayed on the lock screen.")
+        .description("A Widget that can be displayed on both the lock screen and the home screen.")
         .supportedFamilies([.accessoryCircular, .accessoryRectangular, .accessoryInline, .systemSmall])
     }
 }

@@ -24,6 +24,6 @@ enum WidgetKind {
     static var urlImage: String { widgetKind(#function) }
 
     private static func widgetKind(_ kind: String) -> String {
-        kind.capitalized + "Widget"
+        kind + "Widget"
     }
 }
