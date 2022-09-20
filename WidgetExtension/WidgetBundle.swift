@@ -10,11 +10,10 @@ import SwiftUI
 import WidgetKit
 
 @main
+@available(iOSApplicationExtension 16.0, *)
 struct WidgetExamplesWidgetBundle: WidgetBundle {
     var body: some Widget {
-        WidgetBundle1().body
-        WidgetBundle2().body
-        WidgetBundle3().body
+        LockScreenWidget()
     }
 }
 
@@ -42,5 +41,12 @@ struct WidgetBundle3: WidgetBundle {
     var body: some Widget {
         IntentWidget()
         DynamicIntentWidget()
+    }
+}
+
+@available(iOSApplicationExtension 16.0, *)
+struct WidgetBundle4: WidgetBundle {
+    var body: some Widget {
+        LockScreenWidget()
     }
 }

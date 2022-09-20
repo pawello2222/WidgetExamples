@@ -9,16 +9,21 @@
 import Foundation
 
 enum WidgetKind {
-    static var appGroup: String { "AppGroupWidget" }
-    static var clock: String { "ClockWidget" }
-    static var coreData: String { "CoreDataWidget" }
-    static var countdown: String { "CountdownWidget" }
-    static var deepLink: String { "DeepLinkWidget" }
-    static var dynamicIntent: String { "DynamicIntentWidget" }
-    static var environment: String { "EnvironmentWidget" }
-    static var intent: String { "IntentWidget" }
-    static var network: String { "NetworkWidget" }
-    static var preview: String { "PreviewWidget" }
-    static var timer: String { "TimerWidget" }
-    static var urlImage: String { "URLImageWidget" }
+    static var appGroup: String { widgetKind(#function) }
+    static var clock: String { widgetKind(#function) }
+    static var coreData: String { widgetKind(#function) }
+    static var countdown: String { widgetKind(#function) }
+    static var deepLink: String { widgetKind(#function) }
+    static var dynamicIntent: String { widgetKind(#function) }
+    static var environment: String { widgetKind(#function) }
+    static var intent: String { widgetKind(#function) }
+    static var lockScreen: String { widgetKind(#function) }
+    static var network: String { widgetKind(#function) }
+    static var preview: String { widgetKind(#function) }
+    static var timer: String { widgetKind(#function) }
+    static var urlImage: String { widgetKind(#function) }
+
+    private static func widgetKind(_ kind: String) -> String {
+        kind.capitalized + "Widget"
+    }
 }

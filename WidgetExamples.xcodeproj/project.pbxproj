@@ -56,6 +56,7 @@
 		E5638AEB265D859D00E73B05 /* Widget+Kind.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5638AE9265D859D00E73B05 /* Widget+Kind.swift */; };
 		E591C5722551666A002044C8 /* IntentWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591C5712551666A002044C8 /* IntentWidget.swift */; };
 		E591C57925516810002044C8 /* BackgroundColorSelection.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E591C57825516810002044C8 /* BackgroundColorSelection.intentdefinition */; };
+		E5D2325E28DA5283002855D1 /* LockScreenWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D2325D28DA5283002855D1 /* LockScreenWidget.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		E5638AE9265D859D00E73B05 /* Widget+Kind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Widget+Kind.swift"; sourceTree = "<group>"; };
 		E591C5712551666A002044C8 /* IntentWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentWidget.swift; sourceTree = "<group>"; };
 		E591C57825516810002044C8 /* BackgroundColorSelection.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = BackgroundColorSelection.intentdefinition; sourceTree = "<group>"; };
+		E5D2325D28DA5283002855D1 /* LockScreenWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenWidget.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +218,7 @@
 				E55497C7255180B40066870B /* DynamicIntentWidget */,
 				E54213BE253890CD00CCC9C3 /* EnvironmentWidget */,
 				E591C5752551666F002044C8 /* IntentWidget */,
+				E5D2325C28DA5265002855D1 /* LockScreenWidget */,
 				E54213AF253884C300CCC9C3 /* NetworkWidget */,
 				E54214012538AF1100CCC9C3 /* PreviewWidget */,
 				E54213A82538827100CCC9C3 /* TimerWidget */,
@@ -410,6 +413,14 @@
 			path = IntentWidget;
 			sourceTree = "<group>";
 		};
+		E5D2325C28DA5265002855D1 /* LockScreenWidget */ = {
+			isa = PBXGroup;
+			children = (
+				E5D2325D28DA5283002855D1 /* LockScreenWidget.swift */,
+			);
+			path = LockScreenWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -565,6 +576,7 @@
 				E54213B52538857F00CCC9C3 /* WebRepository.swift in Sources */,
 				E542140F2538AF8500CCC9C3 /* PreviewWidgetView.swift in Sources */,
 				E54213BB2538864E00CCC9C3 /* CurrencyWebRepository.swift in Sources */,
+				E5D2325E28DA5283002855D1 /* LockScreenWidget.swift in Sources */,
 				E54214032538AF2000CCC9C3 /* PreviewWidget.swift in Sources */,
 				E542139225387BEA00CCC9C3 /* ClockWidget.swift in Sources */,
 				E54213C0253890DB00CCC9C3 /* EnvironmentWidget.swift in Sources */,
