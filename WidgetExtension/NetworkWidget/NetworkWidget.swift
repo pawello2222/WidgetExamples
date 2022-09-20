@@ -13,7 +13,7 @@ import WidgetKit
 private var cancellables = Set<AnyCancellable>()
 
 private struct Provider: TimelineProvider {
-    let currencyWebRepository = CurrencyWebRepository()
+    private let currencyWebRepository = CurrencyWebRepository()
 
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date())
@@ -62,23 +62,23 @@ private struct SimpleEntry: TimelineEntry {
 private struct NetworkWidgetEntryView: View {
     var entry: Provider.Entry
 
-    var text: String {
-        guard let currencyRate = entry.currencyRate, let firstRate = currencyRate.rates.first else {
-            return "?"
-        }
-        return "\(currencyRate.base)/\(firstRate.key): \(firstRate.value)"
-    }
-
     var body: some View {
         VStack {
             Text(entry.date, style: .date)
             Text(text)
         }
     }
+
+    private var text: String {
+        guard let currencyRate = entry.currencyRate, let firstRate = currencyRate.rates.first else {
+            return "?"
+        }
+        return "\(currencyRate.base)/\(firstRate.key): \(firstRate.value)"
+    }
 }
 
 struct NetworkWidget: Widget {
-    let kind: String = WidgetKind.network
+    private let kind: String = WidgetKind.network
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in

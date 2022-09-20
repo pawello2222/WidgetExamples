@@ -34,8 +34,17 @@ private struct SimpleEntry: TimelineEntry {
 private struct IntentWidgetEntryView: View {
     var entry: Provider.Entry
 
+    var body: some View {
+        ZStack {
+            bgColor
+            Text(entry.date, style: .date)
+                .font(.subheadline)
+                .multilineTextAlignment(.center)
+        }
+    }
+
     @ViewBuilder
-    var bgColor: some View {
+    private var bgColor: some View {
         switch entry.bgColor {
         case .blue:
             Color.blue
@@ -49,19 +58,10 @@ private struct IntentWidgetEntryView: View {
             Color.primary.colorInvert()
         }
     }
-
-    var body: some View {
-        ZStack {
-            bgColor
-            Text(entry.date, style: .date)
-                .font(.subheadline)
-                .multilineTextAlignment(.center)
-        }
-    }
 }
 
 struct IntentWidget: Widget {
-    let kind: String = WidgetKind.intent
+    private let kind: String = WidgetKind.intent
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: BackgroundColorSelectionIntent.self, provider: Provider()) { entry in

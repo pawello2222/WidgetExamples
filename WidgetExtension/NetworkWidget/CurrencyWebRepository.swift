@@ -34,7 +34,7 @@ extension CurrencyWebRepository {
             .eraseToAnyPublisher()
     }
 
-    func decode<Response>(data: Data) -> AnyPublisher<Response, APIError> where Response: Decodable {
+    private func decode<Response>(data: Data) -> AnyPublisher<Response, APIError> where Response: Decodable {
         if let response = try? JSONDecoder().decode(Response.self, from: data) {
             return Just(response).setFailureType(to: APIError.self).eraseToAnyPublisher()
         }

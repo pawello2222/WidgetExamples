@@ -40,7 +40,7 @@ private struct EnvironmentWidgetEntryView: View {
 
     var body: some View {
         ZStack {
-            bgColor
+            backgroundColor
             VStack {
                 Text(entry.date, style: .time)
                 Text("Widget family: \(String(describing: widgetFamily))")
@@ -48,13 +48,13 @@ private struct EnvironmentWidgetEntryView: View {
         }
     }
 
-    var bgColor: Color {
+    private var backgroundColor: Color {
         colorScheme == .dark ? .red : .orange
     }
 }
 
 struct EnvironmentWidget: Widget {
-    let kind: String = WidgetKind.environment
+    private let kind: String = WidgetKind.environment
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in

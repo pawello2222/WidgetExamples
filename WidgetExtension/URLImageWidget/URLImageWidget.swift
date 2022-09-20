@@ -43,7 +43,7 @@ private struct URLImageWidgetEntryView: View {
 }
 
 struct URLImageWidget: Widget {
-    let kind: String = WidgetKind.urlImage
+    private let kind: String = WidgetKind.urlImage
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
