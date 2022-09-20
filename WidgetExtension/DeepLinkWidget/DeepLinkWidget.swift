@@ -33,9 +33,9 @@ private struct SimpleEntry: TimelineEntry {
 }
 
 private struct DeepLinkWidgetEntryView: View {
-    @Environment(\.widgetFamily) var widgetFamily
-
     var entry: Provider.Entry
+
+    @Environment(\.widgetFamily) var widgetFamily
 
     @ViewBuilder
     var body: some View {

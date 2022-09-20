@@ -33,10 +33,10 @@ private struct SimpleEntry: TimelineEntry {
 }
 
 private struct EnvironmentWidgetEntryView: View {
+    var entry: Provider.Entry
+
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.widgetFamily) var widgetFamily
-
-    var entry: Provider.Entry
 
     var body: some View {
         ZStack {
