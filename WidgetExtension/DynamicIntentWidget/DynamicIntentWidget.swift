@@ -14,22 +14,33 @@ private struct Provider: IntentTimelineProvider {
         SimpleEntry(date: Date(), contact: .friend1)
     }
 
-    func getSnapshot(for configuration: DynamicPersonSelectionIntent, in context: Context, completion: @escaping (SimpleEntry) -> Void) {
+    func getSnapshot(
+        for configuration: DynamicPersonSelectionIntent,
+        in context: Context,
+        completion: @escaping (SimpleEntry) -> Void
+    ) {
         let entry = SimpleEntry(date: Date(), contact: .friend1)
         completion(entry)
     }
 
-    func getTimeline(for configuration: DynamicPersonSelectionIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
+    func getTimeline(
+        for configuration: DynamicPersonSelectionIntent,
+        in context: Context,
+        completion: @escaping (Timeline<Entry>) -> Void
+    ) {
         let entries = [SimpleEntry(date: Date(), contact: contact(for: configuration))]
         let timeline = Timeline(entries: entries, policy: .never)
         completion(timeline)
     }
 
     func contact(for configuration: DynamicPersonSelectionIntent) -> Contact? {
-        if let id = configuration.person?.identifier, let contact = Contact.fromId(id) {
-            return contact
+        guard
+            let id = configuration.person?.identifier,
+            let contact = Contact.fromId(id)
+        else {
+            return nil
         }
-        return nil
+        return contact
     }
 }
 
@@ -50,7 +61,7 @@ private struct DynamicIntentWidgetEntryView: View {
         }
     }
 
-    func contactView(for contact: Contact) -> some View {
+    private func contactView(for contact: Contact) -> some View {
         VStack {
             Text(contact.name)
                 .fontWeight(.semibold)
@@ -66,7 +77,7 @@ private struct DynamicIntentWidgetEntryView: View {
 }
 
 struct DynamicIntentWidget: Widget {
-    let kind: String = WidgetKind.dynamicIntent
+    private let kind: String = WidgetKind.dynamicIntent
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: DynamicPersonSelectionIntent.self, provider: Provider()) { entry in

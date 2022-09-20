@@ -50,7 +50,7 @@ private struct CountdownWidgetEntryView: View {
 }
 
 struct CountdownWidget: Widget {
-    let kind: String = WidgetKind.countdown
+    private let kind: String = WidgetKind.countdown
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in

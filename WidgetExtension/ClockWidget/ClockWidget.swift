@@ -42,7 +42,7 @@ private struct SimpleEntry: TimelineEntry {
 private struct ClockWidgetEntryView: View {
     var entry: Provider.Entry
 
-    static let dateFormatter: DateFormatter = {
+    private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.dateFormat = "HH:mm"
@@ -58,7 +58,7 @@ private struct ClockWidgetEntryView: View {
 }
 
 struct ClockWidget: Widget {
-    let kind: String = WidgetKind.clock
+    private let kind: String = WidgetKind.clock
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in

@@ -37,10 +37,6 @@ private struct DeepLinkWidgetEntryView: View {
 
     var entry: Provider.Entry
 
-    var deeplinkURL: URL {
-        URL(string: "widget-DeepLinkWidget://widgetFamily/\(widgetFamily)")!
-    }
-
     @ViewBuilder
     var body: some View {
         if widgetFamily == .systemSmall {
@@ -50,10 +46,14 @@ private struct DeepLinkWidgetEntryView: View {
             Link("Tap me", destination: deeplinkURL)
         }
     }
+
+    private var deeplinkURL: URL {
+        URL(string: "widget-DeepLinkWidget://widgetFamily/\(widgetFamily)")!
+    }
 }
 
 struct DeepLinkWidget: Widget {
-    let kind: String = WidgetKind.deepLink
+    private let kind: String = WidgetKind.deepLink
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in

@@ -45,19 +45,21 @@ private struct AppGroupWidgetEntryView: View {
         .font(.footnote)
     }
 
-    var luckyNumberFromUserDefaults: Int {
+    private var luckyNumberFromUserDefaults: Int {
         UserDefaults.appGroup.integer(forKey: UserDefaults.Keys.luckyNumber.rawValue)
     }
 
-    var luckyNumberFromFile: Int {
+    private var luckyNumberFromFile: Int {
         let url = FileManager.appGroupContainerURL.appendingPathComponent(FileManager.luckyNumberFilename)
-        guard let text = try? String(contentsOf: url, encoding: .utf8) else { return 0 }
+        guard let text = try? String(contentsOf: url, encoding: .utf8) else {
+            return 0
+        }
         return Int(text) ?? 0
     }
 }
 
 struct AppGroupWidget: Widget {
-    let kind: String = WidgetKind.appGroup
+    private let kind: String = WidgetKind.appGroup
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in

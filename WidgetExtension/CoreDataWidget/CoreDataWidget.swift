@@ -37,10 +37,10 @@ private struct CoreDataWidgetEntryView: View {
     var entry: Provider.Entry
 
     var body: some View {
-        return Text("Items count: \(itemsCount)")
+        Text("Items count: \(itemsCount)")
     }
 
-    var itemsCount: Int {
+    private var itemsCount: Int {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
         do {
             return try CoreDataStack.shared.managedObjectContext.count(for: request)
@@ -52,7 +52,7 @@ private struct CoreDataWidgetEntryView: View {
 }
 
 struct CoreDataWidget: Widget {
-    let kind: String = WidgetKind.coreData
+    private let kind: String = WidgetKind.coreData
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
