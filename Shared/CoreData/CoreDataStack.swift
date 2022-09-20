@@ -65,7 +65,7 @@ extension CoreDataStack {
     }
 }
 
-/// Taken from: https://stackoverflow.com/a/60266079/8697793
+/// See: https://stackoverflow.com/a/60266079/8697793
 extension NSManagedObjectContext {
     /// Executes the given `NSBatchDeleteRequest` and directly merges the changes to bring the given managed object context up to date.
     ///

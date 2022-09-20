@@ -54,33 +54,41 @@ extension ContentView {
     private var coreDataWidgetSection: some View {
         Section(header: Text("CoreData Widget")) {
             Text("Items count: \(items.count)")
-            Button("Add new item") {
-                let context = CoreDataStack.shared.workingContext
-                let item = Item(context: context)
-                item.name = "test"
-                item.count = 1
-                CoreDataStack.shared.saveWorkingContext(context: context)
-                WidgetCenter.shared.reloadTimelines(ofKind: WidgetKind.coreData)
-            }
-            .buttonStyle(PlainButtonStyle())
-            .foregroundColor(.accentColor)
-            Button("Delete all items") {
-                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
-                let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-                do {
-                    try CoreDataStack.shared.managedObjectContext.executeAndMergeChanges(deleteRequest)
-                } catch {
-                    print(error.localizedDescription)
-                }
-                WidgetCenter.shared.reloadTimelines(ofKind: WidgetKind.coreData)
-            }
-            .buttonStyle(PlainButtonStyle())
-            .foregroundColor(.red)
+            addNewItemsButton
+            deleteAllItemsButton
         }
         .onChange(of: luckyNumber) { _ in
             let url = FileManager.appGroupContainerURL.appendingPathComponent(FileManager.luckyNumberFilename)
             try? String(luckyNumber).write(to: url, atomically: false, encoding: .utf8)
         }
+    }
+
+    private var addNewItemsButton: some View {
+        Button("Add new item") {
+            let context = CoreDataStack.shared.workingContext
+            let item = Item(context: context)
+            item.name = "test"
+            item.count = 1
+            CoreDataStack.shared.saveWorkingContext(context: context)
+            WidgetCenter.shared.reloadTimelines(ofKind: WidgetKind.coreData)
+        }
+        .buttonStyle(PlainButtonStyle())
+        .foregroundColor(.accentColor)
+    }
+
+    private var deleteAllItemsButton: some View {
+        Button("Delete all items") {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
+            let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+            do {
+                try CoreDataStack.shared.managedObjectContext.executeAndMergeChanges(deleteRequest)
+            } catch {
+                print(error.localizedDescription)
+            }
+            WidgetCenter.shared.reloadTimelines(ofKind: WidgetKind.coreData)
+        }
+        .buttonStyle(PlainButtonStyle())
+        .foregroundColor(.red)
     }
 }
 
@@ -107,9 +115,7 @@ extension ContentView {
         Section(header: Text("Dynamic Intent Widget")) {
             ForEach(contacts.indices, id: \.self) { index in
                 HStack {
-                    TextField("", text: $contacts[index].name, onCommit: {
-                        saveContacts()
-                    })
+                    TextField("", text: $contacts[index].name, onCommit: saveContacts)
                     DatePicker("", selection: $contacts[index].dateOfBirth, displayedComponents: .date)
                         .onChange(of: contacts[index].dateOfBirth) { _ in
                             saveContacts()

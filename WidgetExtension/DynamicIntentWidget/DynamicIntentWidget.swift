@@ -35,8 +35,8 @@ private struct Provider: IntentTimelineProvider {
 
     func contact(for configuration: DynamicPersonSelectionIntent) -> Contact? {
         guard
-            let id = configuration.person?.identifier,
-            let contact = Contact.fromId(id)
+            let identifier = configuration.person?.identifier,
+            let contact = Contact.from(identifier: identifier)
         else {
             return nil
         }

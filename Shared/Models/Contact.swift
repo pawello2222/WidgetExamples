@@ -37,7 +37,7 @@ extension Contact {
 }
 
 extension Contact {
-    static func fromId(_ id: String) -> Contact? {
-        getAll().first { $0.id == id }
+    static func from(identifier: String) -> Contact? {
+        getAll().first { $0.id == identifier }
     }
 }
