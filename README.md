@@ -60,6 +60,10 @@ A Widget that displays the current time (including seconds) as a timer.
 
 A Widget that displays an Image downloaded from an external URL.
 
+### [Lock Screen Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/LockScreenWidget) [iOS 16+]
+
+A Widget that can be displayed on both the lock screen and the home screen.
+
 ## Notes
 
 Some examples depend on the App Group capability (e.g., [AppGroup Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/AppGroupWidget)) or integrate with the main App (e.g., [Preview Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/PreviewWidget)), so it's recommended to download the whole project to keep the configuration intact.
