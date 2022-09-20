@@ -46,7 +46,7 @@ private struct DynamicIntentWidgetEntryView: View {
         if let contact = entry.contact {
             contactView(for: contact)
         } else {
-            Text("Choose contact")
+            Text("Edit Widget to choose contact")
         }
     }
 
