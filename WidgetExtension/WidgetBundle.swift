@@ -10,10 +10,13 @@ import SwiftUI
 import WidgetKit
 
 @main
-@available(iOSApplicationExtension 16.0, *)
 struct WidgetExamplesWidgetBundle: WidgetBundle {
     var body: some Widget {
-        LockScreenWidget()
+        WidgetBundle1().body
+        WidgetBundle2().body
+        WidgetBundle3().body
+        // Uncomment below for iOS 16
+        // WidgetBundle4().body
     }
 }
 
