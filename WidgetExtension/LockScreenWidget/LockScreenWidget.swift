@@ -9,7 +9,6 @@
 import SwiftUI
 import WidgetKit
 
-@available(iOSApplicationExtension 16.0, *)
 private struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), percent: 67)
@@ -34,13 +33,11 @@ private struct Provider: TimelineProvider {
     }
 }
 
-@available(iOSApplicationExtension 16.0, *)
 private struct SimpleEntry: TimelineEntry {
     let date: Date
     let percent: Int
 }
 
-@available(iOSApplicationExtension 16.0, *)
 private struct LockScreenWidgetEntryView: View {
     var entry: Provider.Entry
 
@@ -99,7 +96,6 @@ private struct LockScreenWidgetEntryView: View {
     }
 }
 
-@available(iOSApplicationExtension 16.0, *)
 struct LockScreenWidget: Widget {
     private let kind: String = WidgetKind.lockScreen
 

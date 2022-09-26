@@ -15,8 +15,6 @@ struct WidgetExamplesWidgetBundle: WidgetBundle {
         WidgetBundle1().body
         WidgetBundle2().body
         WidgetBundle3().body
-        // Uncomment below for iOS 16
-        // WidgetBundle4().body
     }
 }
 
@@ -44,12 +42,6 @@ struct WidgetBundle3: WidgetBundle {
     var body: some Widget {
         IntentWidget()
         DynamicIntentWidget()
-    }
-}
-
-@available(iOSApplicationExtension 16.0, *)
-struct WidgetBundle4: WidgetBundle {
-    var body: some Widget {
         LockScreenWidget()
     }
 }

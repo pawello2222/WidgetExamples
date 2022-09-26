@@ -44,6 +44,10 @@ A demo showcasing how to adjust a Widget View depending on Environment variables
 
 A Widget that has a configurable background color.
 
+### [Lock Screen Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/LockScreenWidget)
+
+A Widget that can be displayed on both the lock screen and the home screen.
+
 ### [Network Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/NetworkWidget)
 
 A demo showcasing how to load data from a network request and populate the Widget Timeline.
@@ -59,10 +63,6 @@ A Widget that displays the current time (including seconds) as a timer.
 ### [URLImage Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/URLImageWidget)
 
 A Widget that displays an Image downloaded from an external URL.
-
-### [Lock Screen Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/LockScreenWidget) [iOS 16+]
-
-A Widget that can be displayed on both the lock screen and the home screen.
 
 ## Notes
 

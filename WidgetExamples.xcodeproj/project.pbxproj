@@ -52,6 +52,7 @@
 		E554984A2551D8060066870B /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213D32538931900CCC9C3 /* UserDefaults+Ext.swift */; };
 		E5549864255223EE0066870B /* BackgroundColorSelection.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E591C57825516810002044C8 /* BackgroundColorSelection.intentdefinition */; };
 		E5549868255224050066870B /* BackgroundColorSelection.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E591C57825516810002044C8 /* BackgroundColorSelection.intentdefinition */; };
+		E55551B328E1D3FF005A5321 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E55551B228E1D3FF005A5321 /* README.md */; };
 		E5638AEA265D859D00E73B05 /* Widget+Kind.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5638AE9265D859D00E73B05 /* Widget+Kind.swift */; };
 		E5638AEB265D859D00E73B05 /* Widget+Kind.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5638AE9265D859D00E73B05 /* Widget+Kind.swift */; };
 		E591C5722551666A002044C8 /* IntentWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591C5712551666A002044C8 /* IntentWidget.swift */; };
@@ -131,6 +132,7 @@
 		E55497EB2551CA0B0066870B /* DynamicPersonSelection.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = DynamicPersonSelection.intentdefinition; sourceTree = "<group>"; };
 		E55498372551D2160066870B /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		E554985A25521B8D0066870B /* IntentHandler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IntentHandler.entitlements; sourceTree = "<group>"; };
+		E55551B228E1D3FF005A5321 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E5638AE9265D859D00E73B05 /* Widget+Kind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Widget+Kind.swift"; sourceTree = "<group>"; };
 		E591C5712551666A002044C8 /* IntentWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentWidget.swift; sourceTree = "<group>"; };
 		E591C57825516810002044C8 /* BackgroundColorSelection.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = BackgroundColorSelection.intentdefinition; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		E542134D253879B700CCC9C3 = {
 			isa = PBXGroup;
 			children = (
+				E55551B228E1D3FF005A5321 /* README.md */,
 				E5421358253879B700CCC9C3 /* App */,
 				E542137325387A0300CCC9C3 /* WidgetExtension */,
 				E55497D12551C02E0066870B /* IntentHandler */,
@@ -524,6 +527,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E55551B328E1D3FF005A5321 /* README.md in Resources */,
 				E542135E253879BB00CCC9C3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -678,7 +682,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -733,7 +737,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -755,7 +759,7 @@
 				DEVELOPMENT_TEAM = DMCVYHA293;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "App/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -779,7 +783,7 @@
 				DEVELOPMENT_TEAM = DMCVYHA293;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "App/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -800,6 +804,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DMCVYHA293;
 				INFOPLIST_FILE = "WidgetExtension/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -822,6 +827,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DMCVYHA293;
 				INFOPLIST_FILE = "WidgetExtension/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -842,7 +848,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DMCVYHA293;
 				INFOPLIST_FILE = "IntentHandler/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -863,7 +869,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DMCVYHA293;
 				INFOPLIST_FILE = "IntentHandler/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
