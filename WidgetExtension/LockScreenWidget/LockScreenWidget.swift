@@ -22,13 +22,13 @@ private struct Provider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
         let currentDate = Date()
         let midnight = Calendar.current.startOfDay(for: currentDate)
-        let nextRefreshDate = Calendar.current.date(byAdding: .hour, value: 1, to: currentDate)!
+        let nextDate = Calendar.current.date(byAdding: .hour, value: 1, to: currentDate)!
 
         let hoursPassedSinceMidnight = Calendar.current.dateComponents([.hour], from: midnight, to: currentDate).hour ?? 0
         let passedFractionOfDay = hoursPassedSinceMidnight * 100 / 24
 
         let entries = [SimpleEntry(date: currentDate, percent: passedFractionOfDay)]
-        let timeline = Timeline(entries: entries, policy: .after(nextRefreshDate))
+        let timeline = Timeline(entries: entries, policy: .after(nextDate))
         completion(timeline)
     }
 }

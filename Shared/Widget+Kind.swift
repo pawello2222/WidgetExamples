@@ -22,6 +22,7 @@ enum WidgetKind {
     static var preview: String { widgetKind(#function) }
     static var timer: String { widgetKind(#function) }
     static var urlImage: String { widgetKind(#function) }
+    static var urlCachedImage: String { widgetKind(#function) }
 
     private static func widgetKind(_ kind: String) -> String {
         kind + "Widget"

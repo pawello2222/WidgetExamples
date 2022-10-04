@@ -29,7 +29,7 @@ private struct Provider: TimelineProvider {
         let nextDate = Calendar.current.date(byAdding: .minute, value: 1, to: currentDate)!
         currencyWebRepository.fetchAPIResource(CurrencyRatesResource("EUR", date: currentDate))
             .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: {
+            .sink {
                 switch $0 {
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -42,14 +42,14 @@ private struct Provider: TimelineProvider {
                 case .finished:
                     print("Request completed")
                 }
-            }, receiveValue: {
+            } receiveValue: {
                 let entries = [
                     SimpleEntry(date: currentDate, currencyRate: $0),
                     SimpleEntry(date: nextDate, currencyRate: $0),
                 ]
                 let timeline = Timeline(entries: entries, policy: .atEnd)
                 completion(timeline)
-            })
+            }
             .store(in: &cancellables)
     }
 }

@@ -53,6 +53,7 @@
 		E5549864255223EE0066870B /* BackgroundColorSelection.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E591C57825516810002044C8 /* BackgroundColorSelection.intentdefinition */; };
 		E5549868255224050066870B /* BackgroundColorSelection.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E591C57825516810002044C8 /* BackgroundColorSelection.intentdefinition */; };
 		E55551B328E1D3FF005A5321 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E55551B228E1D3FF005A5321 /* README.md */; };
+		E55551B628E4F582005A5321 /* URLCachedImageWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55551B528E4F582005A5321 /* URLCachedImageWidget.swift */; };
 		E5638AEA265D859D00E73B05 /* Widget+Kind.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5638AE9265D859D00E73B05 /* Widget+Kind.swift */; };
 		E5638AEB265D859D00E73B05 /* Widget+Kind.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5638AE9265D859D00E73B05 /* Widget+Kind.swift */; };
 		E591C5722551666A002044C8 /* IntentWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591C5712551666A002044C8 /* IntentWidget.swift */; };
@@ -133,6 +134,7 @@
 		E55498372551D2160066870B /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		E554985A25521B8D0066870B /* IntentHandler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IntentHandler.entitlements; sourceTree = "<group>"; };
 		E55551B228E1D3FF005A5321 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E55551B528E4F582005A5321 /* URLCachedImageWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLCachedImageWidget.swift; sourceTree = "<group>"; };
 		E5638AE9265D859D00E73B05 /* Widget+Kind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Widget+Kind.swift"; sourceTree = "<group>"; };
 		E591C5712551666A002044C8 /* IntentWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentWidget.swift; sourceTree = "<group>"; };
 		E591C57825516810002044C8 /* BackgroundColorSelection.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = BackgroundColorSelection.intentdefinition; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				E54214012538AF1100CCC9C3 /* PreviewWidget */,
 				E54213A82538827100CCC9C3 /* TimerWidget */,
 				E54213E52538A0B500CCC9C3 /* URLImageWidget */,
+				E55551B428E4F556005A5321 /* URLCachedImageWidget */,
 				E542138D25387AED00CCC9C3 /* Resources */,
 				E55498AF2552C0B30066870B /* Supporting Files */,
 			);
@@ -405,6 +408,14 @@
 				E554985A25521B8D0066870B /* IntentHandler.entitlements */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E55551B428E4F556005A5321 /* URLCachedImageWidget */ = {
+			isa = PBXGroup;
+			children = (
+				E55551B528E4F582005A5321 /* URLCachedImageWidget.swift */,
+			);
+			path = URLCachedImageWidget;
 			sourceTree = "<group>";
 		};
 		E591C5752551666F002044C8 /* IntentWidget */ = {
@@ -600,6 +611,7 @@
 				E54213C9253891F300CCC9C3 /* AppGroupWidget.swift in Sources */,
 				E55497ED2551CA0B0066870B /* DynamicPersonSelection.intentdefinition in Sources */,
 				E55497F82551CB5F0066870B /* DynamicIntentWidget.swift in Sources */,
+				E55551B628E4F582005A5321 /* URLCachedImageWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

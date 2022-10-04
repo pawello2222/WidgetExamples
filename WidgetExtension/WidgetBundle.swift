@@ -40,6 +40,7 @@ struct WidgetBundle2: WidgetBundle {
 
 struct WidgetBundle3: WidgetBundle {
     var body: some Widget {
+        URLCachedImageWidget()
         IntentWidget()
         DynamicIntentWidget()
         LockScreenWidget()

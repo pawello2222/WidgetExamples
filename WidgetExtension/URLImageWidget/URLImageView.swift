@@ -9,11 +9,10 @@
 import SwiftUI
 
 struct URLImageView: View {
-    let url: URL
+    let data: Data
 
-    @ViewBuilder
     var body: some View {
-        if let data = try? Data(contentsOf: url), let uiImage = UIImage(data: data) {
+        if let uiImage = UIImage(data: data) {
             Image(uiImage: uiImage)
                 .resizable()
         } else {
