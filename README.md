@@ -60,9 +60,13 @@ A demo showcasing how to display a Widget View directly in the parent App.
 
 A Widget that displays the current time (including seconds) as a timer.
 
-### [URLImage Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/URLImageWidget)
+### [URL Image Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/URLImageWidget)
 
 A Widget that displays an Image downloaded from an external URL.
+
+### [URL Cached Image Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/URLCachedImageWidget)
+
+A Widget that displays an Image downloaded from an external URL and caches it.
 
 ## Notes
 
