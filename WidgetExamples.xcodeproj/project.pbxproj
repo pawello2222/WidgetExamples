@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E517B32F2A6194BC009072A3 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = E517B32E2A6194BC009072A3 /* LICENSE.md */; };
 		E542135A253879B700CCC9C3 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5421359253879B700CCC9C3 /* App.swift */; };
 		E542135C253879B700CCC9C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542135B253879B700CCC9C3 /* ContentView.swift */; };
 		E542135E253879BB00CCC9C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E542135D253879BB00CCC9C3 /* Assets.xcassets */; };
@@ -94,6 +95,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E517B32E2A6194BC009072A3 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		E5421356253879B700CCC9C3 /* WidgetExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WidgetExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5421359253879B700CCC9C3 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		E542135B253879B700CCC9C3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		E542134D253879B700CCC9C3 = {
 			isa = PBXGroup;
 			children = (
+				E517B32E2A6194BC009072A3 /* LICENSE.md */,
 				E55551B228E1D3FF005A5321 /* README.md */,
 				E5421358253879B700CCC9C3 /* App */,
 				E542137325387A0300CCC9C3 /* WidgetExtension */,
@@ -539,6 +542,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E55551B328E1D3FF005A5321 /* README.md in Resources */,
+				E517B32F2A6194BC009072A3 /* LICENSE.md in Resources */,
 				E542135E253879BB00CCC9C3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
