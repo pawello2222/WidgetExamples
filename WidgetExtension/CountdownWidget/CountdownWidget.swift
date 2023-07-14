@@ -40,7 +40,7 @@ private struct Provider: TimelineProvider {
 
         let entries = [
             SimpleEntry(date: currentDate, displayDate: secondDate),
-            SimpleEntry(date: firstDate, displayDate: secondDate, isDateClose: true),
+            SimpleEntry(date: firstDate, displayDate: secondDate, isDateClose: true)
         ]
 
         let timeline = Timeline(entries: entries, policy: .atEnd)

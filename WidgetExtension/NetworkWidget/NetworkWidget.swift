@@ -49,7 +49,7 @@ private struct Provider: TimelineProvider {
                     print(error.localizedDescription)
                     let entries = [
                         SimpleEntry(date: currentDate),
-                        SimpleEntry(date: nextDate),
+                        SimpleEntry(date: nextDate)
                     ]
                     let timeline = Timeline(entries: entries, policy: .atEnd)
                     completion(timeline)
@@ -59,7 +59,7 @@ private struct Provider: TimelineProvider {
             } receiveValue: {
                 let entries = [
                     SimpleEntry(date: currentDate, currencyRate: $0),
-                    SimpleEntry(date: nextDate, currencyRate: $0),
+                    SimpleEntry(date: nextDate, currencyRate: $0)
                 ]
                 let timeline = Timeline(entries: entries, policy: .atEnd)
                 completion(timeline)
