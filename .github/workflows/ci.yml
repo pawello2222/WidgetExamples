@@ -1,0 +1,33 @@
+name: ci
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  SCHEME: WidgetExamples
+  IOS_SDK: iphonesimulator
+  IOS_DESTINATION: "platform=iOS Simulator,name=iPhone 13 Pro,OS=latest"
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: SwiftLint
+        uses: norio-nomura/action-swiftlint@3.2.1
+
+  build:
+    runs-on: macos-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Build
+      run: |
+        xcodebuild clean build \
+          -scheme "$SCHEME" \
+          -sdk "$IOS_SDK" \
+          -destination "$IOS_DESTINATION"
