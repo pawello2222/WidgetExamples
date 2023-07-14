@@ -1,10 +1,17 @@
 <p align="center">
-  <a href="https://github.com/pawello2222/WidgetExamples"><img src="https://img.shields.io/badge/language-swift-orange.svg" alt="Language"></a>
-  <a href="https://github.com/pawello2222/WidgetExamples"><img src="https://img.shields.io/badge/platform-iOS-lightgrey" alt="Supported Platform"></a>
-  <a href="https://github.com/pawello2222/WidgetExamples/releases"><img src="https://img.shields.io/github/v/release/pawello2222/WidgetExamples" alt="Release version"></a>
-  <a href="https://github.com/pawello2222/WidgetExamples/blob/main/LICENSE"><img src="https://img.shields.io/github/license/pawello2222/WidgetExamples" alt="License"></a>
+  <a href="https://github.com/pawello2222/WidgetExamples/actions?query=branch%3Amain">
+    <img src="https://img.shields.io/github/actions/workflow/status/pawello2222/WidgetExamples/ci.yml?logo=github" alt="Build">
+  </a>
+  <a href="https://github.com/pawello2222/WidgetExamples">
+    <img src="https://img.shields.io/badge/language-swift-orange.svg" alt="Language">
+  </a>
+  <a href="https://github.com/pawello2222/WidgetExamples/releases">
+    <img src="https://img.shields.io/github/v/release/pawello2222/WidgetExamples" alt="Release version">
+  </a>
+  <a href="https://github.com/pawello2222/WidgetExamples/blob/main/LICENSE.md">
+    <img src="https://img.shields.io/github/license/pawello2222/WidgetExamples" alt="License">
+  </a>
 </p>
-<br>
 
 # Widget Examples
 
@@ -74,4 +81,4 @@ Some examples depend on the App Group capability (e.g., [AppGroup Widget](https:
 
 ## License
 
-Widget Examples project is available under the MIT license. See the [LICENSE](https://github.com/pawello2222/WidgetExamples/blob/main/LICENSE) file for more info.
+Widget Examples project is available under the MIT license. See the [LICENSE](https://github.com/pawello2222/WidgetExamples/blob/main/LICENSE.md) file for more info.
