@@ -17,6 +17,12 @@
 
 A demo project showcasing different types of Widgets created with SwiftUI and WidgetKit.
 
+## ⚠️ Important
+
+This project is being refactored for iOS 17.
+
+All changes remain on the branch [`ios17-refactor`](https://github.com/pawello2222/WidgetExamples/tree/ios17-refactor) and will be merged once iOS 17 is released. Pre-iOS 17 project will always be available under [v0.6.2](https://github.com/pawello2222/WidgetExamples/releases/tag/0.6.2).
+
 ## Contents
 
 ### [AppGroup Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/AppGroupWidget)
