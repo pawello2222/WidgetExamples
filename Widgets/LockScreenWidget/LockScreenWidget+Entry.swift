@@ -20,52 +20,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftUI
 import WidgetKit
 
-extension SwiftDataWidget {
-    struct EntryView: View {
-        let entry: Entry
-
-        var body: some View {
-            VStack(alignment: .leading) {
-                headerView
-                Spacer()
-                contentView
-                Spacer()
-            }
-            .containerBackground(.clear, for: .widget)
-        }
+extension LockScreenWidget {
+    struct Entry: TimelineEntry {
+        var date: Date = .now
+        let fractionOfDay: Double
     }
 }
 
-// MARK: - Content
+// MARK: - Data
 
-extension SwiftDataWidget.EntryView {
-    private var headerView: some View {
-        HStack {
-            Text("SwiftData")
-                .font(.headline)
-            Spacer()
-        }
-    }
-
-    @ViewBuilder
-    private var contentView: some View {
-        if let productInfo = entry.productInfo {
-            Text("Count: \(productInfo.count)")
-                .font(.subheadline)
-                .bold()
-            if let lastProduct = productInfo.lastProduct {
-                Text("Last created:")
-                    .font(.subheadline)
-                Text(lastProduct.name)
-                    .font(.subheadline)
-            }
-        } else {
-            Text("Info unavailable")
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
-        }
+extension LockScreenWidget.Entry {
+    static var placeholder: Self {
+        .init(fractionOfDay: 0.67)
     }
 }

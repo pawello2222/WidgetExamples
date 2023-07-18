@@ -20,52 +20,31 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftUI
 import WidgetKit
 
-extension SwiftDataWidget {
-    struct EntryView: View {
-        let entry: Entry
-
-        var body: some View {
-            VStack(alignment: .leading) {
-                headerView
-                Spacer()
-                contentView
-                Spacer()
-            }
-            .containerBackground(.clear, for: .widget)
+extension LockScreenWidget {
+    struct Provider: TimelineProvider {
+        func placeholder(in context: Context) -> Entry {
+            .placeholder
         }
-    }
-}
 
-// MARK: - Content
-
-extension SwiftDataWidget.EntryView {
-    private var headerView: some View {
-        HStack {
-            Text("SwiftData")
-                .font(.headline)
-            Spacer()
+        func getSnapshot(in context: Context, completion: @escaping (Entry) -> Void) {
+            completion(.placeholder)
         }
-    }
 
-    @ViewBuilder
-    private var contentView: some View {
-        if let productInfo = entry.productInfo {
-            Text("Count: \(productInfo.count)")
-                .font(.subheadline)
-                .bold()
-            if let lastProduct = productInfo.lastProduct {
-                Text("Last created:")
-                    .font(.subheadline)
-                Text(lastProduct.name)
-                    .font(.subheadline)
-            }
-        } else {
-            Text("Info unavailable")
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
+        func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
+            let currentDate = Date()
+            let midnight = Calendar.current.startOfDay(for: currentDate)
+
+            let hoursPassed = Calendar.current
+                .dateComponents([.hour], from: midnight, to: currentDate)
+                .hour ?? 0
+            let fractionOfDay = Double(hoursPassed) / 24
+            let nextDate = Calendar.current.date(byAdding: .hour, value: hoursPassed + 1, to: midnight)!
+
+            let entries = [Entry(date: currentDate, fractionOfDay: fractionOfDay)]
+            let timeline = Timeline(entries: entries, policy: .after(nextDate))
+            completion(timeline)
         }
     }
 }

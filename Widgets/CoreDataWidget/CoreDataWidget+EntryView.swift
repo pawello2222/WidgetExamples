@@ -25,7 +25,7 @@ import WidgetKit
 
 extension CoreDataWidget {
     struct EntryView: View {
-        var entry: Entry
+        let entry: Entry
 
         var body: some View {
             VStack(alignment: .leading) {
@@ -54,11 +54,18 @@ extension CoreDataWidget.EntryView {
     private var contentView: some View {
         if let documentInfo = entry.documentInfo {
             Text("Count: \(documentInfo.count)")
+                .font(.subheadline)
+                .bold()
             if let lastDocument = documentInfo.lastDocument {
-                Text("Last: \(lastDocument.name)")
+                Text("Last created:")
+                    .font(.subheadline)
+                Text(lastDocument.name)
+                    .font(.subheadline)
             }
         } else {
             Text("Info unavailable")
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
         }
     }
 }

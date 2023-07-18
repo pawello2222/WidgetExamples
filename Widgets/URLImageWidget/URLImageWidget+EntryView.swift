@@ -25,7 +25,7 @@ import WidgetKit
 
 extension URLImageWidget {
     struct EntryView: View {
-        var entry: Entry
+        let entry: Entry
 
         var body: some View {
             VStack(alignment: .leading) {

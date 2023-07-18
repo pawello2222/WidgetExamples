@@ -39,6 +39,9 @@
 		E57C3DED2A66CA11002CF144 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C3DEB2A66CA11002CF144 /* UserDefaults+Extensions.swift */; };
 		E57C3DEF2A66D33B002CF144 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C3DEE2A66D33B002CF144 /* Document.swift */; };
 		E57C3DF02A66D33B002CF144 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C3DEE2A66D33B002CF144 /* Document.swift */; };
+		E57C3E112A674183002CF144 /* LockScreenWidget+Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C3E102A674183002CF144 /* LockScreenWidget+Entry.swift */; };
+		E57C3E132A674189002CF144 /* LockScreenWidget+EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C3E122A674189002CF144 /* LockScreenWidget+EntryView.swift */; };
+		E57C3E152A674190002CF144 /* LockScreenWidget+Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C3E142A674190002CF144 /* LockScreenWidget+Provider.swift */; };
 		E582466D2A630BF0008180CC /* URLImageWidget+Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E582466C2A630BF0008180CC /* URLImageWidget+Entry.swift */; };
 		E582466F2A630BF7008180CC /* URLImageWidget+EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E582466E2A630BF7008180CC /* URLImageWidget+EntryView.swift */; };
 		E58246712A630BFE008180CC /* URLImageWidget+Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58246702A630BFE008180CC /* URLImageWidget+Provider.swift */; };
@@ -205,6 +208,9 @@
 		E57C3DE82A66C8C2002CF144 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		E57C3DEB2A66CA11002CF144 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		E57C3DEE2A66D33B002CF144 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		E57C3E102A674183002CF144 /* LockScreenWidget+Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LockScreenWidget+Entry.swift"; sourceTree = "<group>"; };
+		E57C3E122A674189002CF144 /* LockScreenWidget+EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LockScreenWidget+EntryView.swift"; sourceTree = "<group>"; };
+		E57C3E142A674190002CF144 /* LockScreenWidget+Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LockScreenWidget+Provider.swift"; sourceTree = "<group>"; };
 		E582466C2A630BF0008180CC /* URLImageWidget+Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLImageWidget+Entry.swift"; sourceTree = "<group>"; };
 		E582466E2A630BF7008180CC /* URLImageWidget+EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLImageWidget+EntryView.swift"; sourceTree = "<group>"; };
 		E58246702A630BFE008180CC /* URLImageWidget+Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLImageWidget+Provider.swift"; sourceTree = "<group>"; };
@@ -648,6 +654,9 @@
 			isa = PBXGroup;
 			children = (
 				E5D2325D28DA5283002855D1 /* LockScreenWidget.swift */,
+				E57C3E102A674183002CF144 /* LockScreenWidget+Entry.swift */,
+				E57C3E122A674189002CF144 /* LockScreenWidget+EntryView.swift */,
+				E57C3E142A674190002CF144 /* LockScreenWidget+Provider.swift */,
 			);
 			path = LockScreenWidget;
 			sourceTree = "<group>";
@@ -759,6 +768,7 @@
 				E58BB8F72A62E32700DA8303 /* IntentWidget+Provider.swift in Sources */,
 				E58BB8D52A62D89E00DA8303 /* SharedViewWidgetEntryView.swift in Sources */,
 				E58BB8C32A62D87200DA8303 /* CoreDataWidget+EntryView.swift in Sources */,
+				E57C3E132A674189002CF144 /* LockScreenWidget+EntryView.swift in Sources */,
 				E58BB8CF2A62D88E00DA8303 /* DigitalClockWidget+Entry.swift in Sources */,
 				E58BB8CC2A62D88E00DA8303 /* DigitalClockWidget+Provider.swift in Sources */,
 				E58BB8C92A62D88A00DA8303 /* DeepLinkWidget+Provider.swift in Sources */,
@@ -772,6 +782,7 @@
 				E582467D2A643D95008180CC /* NetworkWidget+EntryView.swift in Sources */,
 				E58BB8CE2A62D88E00DA8303 /* DigitalClockWidget+EntryView.swift in Sources */,
 				E58BB8D62A62D89E00DA8303 /* SharedViewWidgetEntry.swift in Sources */,
+				E57C3E112A674183002CF144 /* LockScreenWidget+Entry.swift in Sources */,
 				E58BB8F12A62D92700DA8303 /* PersistenceController.swift in Sources */,
 				E58BB8D32A62D89500DA8303 /* EnvironmentWidget+Entry.swift in Sources */,
 				E58BB8C62A62D88500DA8303 /* CountdownWidget+Provider.swift in Sources */,
@@ -785,6 +796,7 @@
 				E58BB8C52A62D88500DA8303 /* CountdownWidget+Entry.swift in Sources */,
 				E582466D2A630BF0008180CC /* URLImageWidget+Entry.swift in Sources */,
 				E58246BC2A65CBAA008180CC /* SwiftDataWidget+Provider.swift in Sources */,
+				E57C3E152A674190002CF144 /* LockScreenWidget+Provider.swift in Sources */,
 				E58246932A645615008180CC /* InteractiveWidget+Provider.swift in Sources */,
 				E582468D2A644F4D008180CC /* InteractiveWidget.swift in Sources */,
 				E58246732A635A4B008180CC /* Loadable.swift in Sources */,

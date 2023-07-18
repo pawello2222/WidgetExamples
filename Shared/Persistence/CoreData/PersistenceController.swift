@@ -23,7 +23,7 @@
 import CoreData
 
 class PersistenceController {
-    static let shared = PersistenceController()
+    static var shared = PersistenceController()
 
     let container: NSPersistentContainer
 
@@ -86,11 +86,11 @@ extension PersistenceController {
 
 // MARK: - Convenience
 
-extension NSManagedObjectContext {
+extension PersistenceController {
     static var preview: PersistenceController = {
         let controller = PersistenceController(inMemory: true)
-        let viewContext = controller.container.viewContext
-        for _ in 0 ..< 10 {
+        let viewContext = controller.managedObjectContext
+        for _ in 0 ..< 3 {
             _ = Document(context: viewContext)
         }
         try? viewContext.save()

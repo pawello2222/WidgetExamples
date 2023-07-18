@@ -24,12 +24,11 @@ import SwiftUI
 
 @main
 struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
-
     var body: some Scene {
         WindowGroup {
+            let persistenceController = PersistenceController.shared
             ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
+                .environment(\.managedObjectContext, persistenceController.managedObjectContext)
                 .modelContainer(for: Product.self)
         }
     }

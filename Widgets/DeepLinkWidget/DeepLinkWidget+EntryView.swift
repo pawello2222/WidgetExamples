@@ -27,7 +27,7 @@ extension DeepLinkWidget {
     struct EntryView: View {
         @Environment(\.widgetFamily) var widgetFamily
 
-        var entry: Entry
+        let entry: Entry
 
         var body: some View {
             VStack(alignment: .leading) {

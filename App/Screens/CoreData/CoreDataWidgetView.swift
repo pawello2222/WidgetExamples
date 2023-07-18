@@ -111,7 +111,8 @@ extension CoreDataWidgetView {
 
 #Preview {
     NavigationStack {
+        let persistenceController = PersistenceController.preview
         CoreDataWidgetView()
-            .environment(\.managedObjectContext, .preview.managedObjectContext)
+            .environment(\.managedObjectContext, persistenceController.managedObjectContext)
     }
 }

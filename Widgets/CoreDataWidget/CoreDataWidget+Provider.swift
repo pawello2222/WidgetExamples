@@ -25,8 +25,8 @@ import WidgetKit
 
 extension CoreDataWidget {
     struct Provider: TimelineProvider {
-        static let container = PersistenceController()
-        let managedObjectContext = Self.container.managedObjectContext
+        static let persistenceController = PersistenceController()
+        let managedObjectContext = Self.persistenceController.managedObjectContext
 
         func placeholder(in context: Context) -> Entry {
             .placeholder

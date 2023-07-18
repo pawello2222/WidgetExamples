@@ -1,34 +1,48 @@
+// The MIT License (MIT)
 //
-//  Document.swift
-//  Widget Examples
+// Copyright (c) 2020-Present Paweł Wiszenko
 //
-//  Created by Pawel Wiszenko on 18/07/2023.
-//  Copyright © 2023 Tersacore. All rights reserved.
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
 //
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
 
 import CoreData
 import Foundation
 
 @objc(Document)
-public class Document: NSManagedObject, Identifiable {
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Document> {
+class Document: NSManagedObject, Identifiable {
+    @nonobjc class func fetchRequest() -> NSFetchRequest<Document> {
         NSFetchRequest<Document>(entityName: "Document")
     }
 
-    @NSManaged public var name: String
-    @NSManaged public var creationDate: Date
+    @NSManaged var name: String
+    @NSManaged var creationDate: Date
 
     @available(*, unavailable)
-    public init() {
+    init() {
         fatalError("\(#function) not implemented")
     }
 
     @available(*, unavailable)
-    public convenience init(context: NSManagedObjectContext) {
+    convenience init(context: NSManagedObjectContext) {
         fatalError("\(#function) not implemented")
     }
 
-    public init(
+    init(
         context: NSManagedObjectContext,
         name: String = "Document \(Int.random(in: 1 ... 99))",
         creationDate: Date = .now
@@ -39,8 +53,7 @@ public class Document: NSManagedObject, Identifiable {
         self.creationDate = creationDate
     }
 
-    @objc
-    override private init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
+    @objc override private init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
         super.init(entity: entity, insertInto: context)
     }
 }

@@ -23,8 +23,10 @@
 import SwiftUI
 import WidgetKit
 
-extension SwiftDataWidget {
+extension LockScreenWidget {
     struct EntryView: View {
+        @Environment(\.widgetFamily) var widgetFamily
+
         let entry: Entry
 
         var body: some View {
@@ -41,31 +43,38 @@ extension SwiftDataWidget {
 
 // MARK: - Content
 
-extension SwiftDataWidget.EntryView {
+extension LockScreenWidget.EntryView {
+    @ViewBuilder
     private var headerView: some View {
-        HStack {
-            Text("SwiftData")
-                .font(.headline)
-            Spacer()
+        if widgetFamily == .systemSmall {
+            HStack {
+                Text("Lock Screen")
+                    .font(.headline)
+                Spacer()
+            }
         }
     }
 
     @ViewBuilder
     private var contentView: some View {
-        if let productInfo = entry.productInfo {
-            Text("Count: \(productInfo.count)")
-                .font(.subheadline)
-                .bold()
-            if let lastProduct = productInfo.lastProduct {
-                Text("Last created:")
-                    .font(.subheadline)
-                Text(lastProduct.name)
-                    .font(.subheadline)
-            }
+        if widgetFamily == .accessoryCircular {
+            gaugeCircularView
         } else {
-            Text("Info unavailable")
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
+            gaugeLinearView
         }
+    }
+
+    private var gaugeCircularView: some View {
+        Gauge(value: entry.fractionOfDay) {
+            Image(systemName: "sun.max")
+        }
+        .gaugeStyle(.accessoryCircularCapacity)
+    }
+
+    private var gaugeLinearView: some View {
+        Gauge(value: entry.fractionOfDay) {
+            Text("Passed: \(entry.fractionOfDay * 100, specifier: "%.f")%")
+        }
+        .gaugeStyle(.accessoryLinearCapacity)
     }
 }
