@@ -21,16 +21,44 @@
 // SOFTWARE.
 
 import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+extension SwiftDataWidget {
+    struct EntryView: View {
+        var entry: Entry
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+        var body: some View {
+            VStack(alignment: .leading) {
+                headerView
+                Spacer()
+                contentView
+                Spacer()
+            }
+            .containerBackground(.clear, for: .widget)
+        }
+    }
+}
+
+// MARK: - Content
+
+extension SwiftDataWidget.EntryView {
+    private var headerView: some View {
+        HStack {
+            Text("SwiftData")
+                .font(.headline)
+            Spacer()
+        }
+    }
+
+    @ViewBuilder
+    private var contentView: some View {
+        if let productInfo = entry.productInfo {
+            Text("Count: \(productInfo.count)")
+            if let lastProduct = productInfo.lastProduct {
+                Text("Last: \(lastProduct.name)")
+            }
+        } else {
+            Text("Info unavailable")
         }
     }
 }

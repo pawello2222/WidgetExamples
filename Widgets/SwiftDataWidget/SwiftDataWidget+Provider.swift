@@ -20,17 +20,33 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftUI
+import SwiftData
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+extension SwiftDataWidget {
+    struct Provider: TimelineProvider {
+        static let container = try! ModelContainer(for: Product.self)
+        let modelContext = ModelContext(Self.container)
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+        func placeholder(in context: Context) -> Entry {
+            .placeholder
+        }
+
+        func getSnapshot(in context: Context, completion: @escaping (Entry) -> Void) {
+            completion(.placeholder)
+        }
+
+        func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
+            let products = try! modelContext.fetch(FetchDescriptor<Product>())
+                .sorted {
+                    $0.creationDate < $1.creationDate
+                }
+            let productInfo = Entry.ProductInfo(
+                count: products.count,
+                lastProduct: products.last
+            )
+            let entry = Entry(productInfo: productInfo)
+            completion(.init(entries: [entry], policy: .never))
         }
     }
 }

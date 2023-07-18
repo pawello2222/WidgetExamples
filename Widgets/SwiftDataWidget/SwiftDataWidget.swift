@@ -20,17 +20,27 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+import SwiftData
 import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+struct SwiftDataWidget: Widget {
+    private let kind = WidgetType.swiftData.kind
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: Provider()) {
+            EntryView(entry: $0)
         }
+        .configurationDisplayName("SwiftData Widget")
+        .description("A demo showcasing how to use SwiftData in a Widget.")
+        .supportedFamilies([.systemSmall])
     }
 }
+
+//// MARK: - Preview
+//
+// #Preview(as: .systemSmall) {
+//    SwiftDataWidget()
+// } timeline: {
+//    SwiftDataWidget.Entry.placeholder
+// }

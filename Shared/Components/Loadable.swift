@@ -20,17 +20,43 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftUI
+import Foundation
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+enum Loadable<Value> {
+    case notRequested
+    case isLoading
+    case loaded(value: Value)
+    case cached(value: Value)
+    case failed(error: String)
+}
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+// MARK: - Helpers
+
+extension Loadable {
+    var isLoading: Bool {
+        switch self {
+        case .isLoading:
+            true
+        default:
+            false
+        }
+    }
+
+    var value: Value? {
+        switch self {
+        case .loaded(let value), .cached(let value):
+            value
+        default:
+            nil
+        }
+    }
+
+    var error: String? {
+        switch self {
+        case .failed(let error):
+            error
+        default:
+            nil
         }
     }
 }

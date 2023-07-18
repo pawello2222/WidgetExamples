@@ -22,15 +22,45 @@
 
 import SwiftUI
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+struct SharedViewWidgetView: View {
+    @State private var source: String?
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+    var body: some View {
+        List {
+            Section {
+                contentView
+            } header: {
+                headerView
+            }
         }
+        .navigationTitle("Shared View")
+    }
+}
+
+// MARK: - Content
+
+extension SharedViewWidgetView {
+    private var headerView: some View {
+        Text("Shared View")
+    }
+
+    private var contentView: some View {
+        SharedViewWidgetEntryView(entry: .placeholder)
+            .scaledToFit()
+            .frame(width: 150, height: 150)
+            .cornerRadius(25)
+            .overlay {
+                RoundedRectangle(cornerRadius: 25)
+                    .stroke(.gray, lineWidth: 3)
+            }
+            .frame(maxWidth: .infinity)
+    }
+}
+
+// MARK: - Preview
+
+#Preview {
+    NavigationStack {
+        SharedViewWidgetView()
     }
 }

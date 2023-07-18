@@ -21,16 +21,25 @@
 // SOFTWARE.
 
 import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+struct EnvironmentWidget: Widget {
+    private let kind = WidgetType.environment.kind
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+            EntryView(entry: entry)
         }
+        .configurationDisplayName("Environment Widget")
+        .description("A demo showcasing how to adjust a Widget View depending on Environment variables.")
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
+}
+
+// MARK: - Preview
+
+#Preview(as: .systemSmall) {
+    EnvironmentWidget()
+} timeline: {
+    EnvironmentWidget.Entry.placeholder
 }

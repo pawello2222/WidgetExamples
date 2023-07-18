@@ -21,16 +21,50 @@
 // SOFTWARE.
 
 import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+extension DigitalClockWidget {
+    struct EntryView: View {
+        var entry: Entry
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+        var body: some View {
+            VStack(alignment: .leading) {
+                headerView
+                Spacer()
+                contentView
+                Spacer()
+            }
+            .containerBackground(.clear, for: .widget)
         }
     }
+}
+
+// MARK: - Content
+
+extension DigitalClockWidget.EntryView {
+    private var headerView: some View {
+        HStack {
+            Text("Digital Clock")
+                .font(.headline)
+            Spacer()
+        }
+    }
+
+    @ViewBuilder
+    private var contentView: some View {
+        Text("\(entry.date, formatter: Self.dateFormatter)")
+        Text(entry.date, style: .time)
+        Text(Calendar.current.startOfDay(for: .now), style: .timer)
+    }
+}
+
+// MARK: - Helpers
+
+extension DigitalClockWidget.EntryView {
+    private static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = .init(identifier: "en_US_POSIX")
+        formatter.dateFormat = "HH:mm"
+        return formatter
+    }()
 }

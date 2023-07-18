@@ -20,17 +20,32 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+extension InteractiveWidget {
+    struct Entry: TimelineEntry {
+        var date: Date = .now
+        var counter: EventCounter
+    }
+}
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
-        }
+// MARK: - EventCounter
+
+struct EventCounter: Identifiable {
+    var id: Int
+    var value: Int
+}
+
+// MARK: - Data
+
+extension InteractiveWidget.Entry {
+    static var placeholder: Self {
+        .init(counter: .default)
+    }
+}
+
+extension EventCounter {
+    static var `default`: Self {
+        .init(id: 1, value: 1)
     }
 }

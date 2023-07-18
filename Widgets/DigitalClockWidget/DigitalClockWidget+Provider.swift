@@ -20,17 +20,27 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+extension DigitalClockWidget {
+    struct Provider: TimelineProvider {
+        func placeholder(in context: Context) -> Entry {
+            .placeholder
+        }
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+        func getSnapshot(in context: Context, completion: @escaping (Entry) -> Void) {
+            completion(.placeholder)
+        }
+
+        func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
+            let currentDate = Date()
+            let seconds = Calendar.current.component(.second, from: currentDate)
+            let startDate = Calendar.current.date(byAdding: .second, value: -seconds, to: currentDate)!
+            let entries = (0 ..< 60).map {
+                let date = Calendar.current.date(byAdding: .minute, value: $0, to: startDate)!
+                return Entry(date: date)
+            }
+            completion(.init(entries: entries, policy: .atEnd))
         }
     }
 }

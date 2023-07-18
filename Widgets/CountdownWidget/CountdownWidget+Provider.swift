@@ -20,17 +20,31 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+extension CountdownWidget {
+    struct Provider: TimelineProvider {
+        func placeholder(in context: Context) -> Entry {
+            .placeholder
+        }
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+        func getSnapshot(in context: Context, completion: @escaping (Entry) -> Void) {
+            completion(.placeholder)
+        }
+
+        func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
+            let currentDate = Date()
+            let closeDate = Calendar.current.date(byAdding: .second, value: 20, to: currentDate)!
+            let endDate = Calendar.current.date(byAdding: .second, value: 30, to: currentDate)!
+
+            let entries = [
+                Entry(date: currentDate, displayDate: endDate, countdownState: .counting),
+                Entry(date: closeDate, displayDate: endDate, countdownState: .nearEnd),
+                Entry(date: endDate, displayDate: endDate, countdownState: .end)
+            ]
+
+            let timeline = Timeline(entries: entries, policy: .never)
+            completion(timeline)
         }
     }
 }

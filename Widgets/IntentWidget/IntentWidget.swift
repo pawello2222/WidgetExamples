@@ -21,16 +21,25 @@
 // SOFTWARE.
 
 import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+struct IntentWidget: Widget {
+    private let kind: String = WidgetType.intent.kind
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+    var body: some WidgetConfiguration {
+        AppIntentConfiguration(kind: kind, intent: IntentWidgetIntent.self, provider: Provider()) {
+            EntryView(entry: $0)
         }
+        .configurationDisplayName("Intent Widget")
+        .description("A Widget that has a configurable background color.")
+        .supportedFamilies([.systemSmall])
     }
+}
+
+// MARK: - Preview
+
+#Preview(as: .systemSmall) {
+    IntentWidget()
+} timeline: {
+    IntentWidget.Entry.placeholder
 }

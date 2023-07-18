@@ -20,17 +20,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftUI
+import Foundation
+import SwiftData
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+@Model
+final class Product {
+    @Attribute(.unique) var id: String
+    var name: String
+    var creationDate: Date
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
-        }
+    init() {
+        id = UUID().uuidString
+        name = "Product \(Int.random(in: 1 ... 99))"
+        creationDate = .now
     }
 }

@@ -21,16 +21,25 @@
 // SOFTWARE.
 
 import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+struct SharedViewWidget: Widget {
+    private let kind = WidgetType.sharedView.kind
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: Provider()) {
+            SharedViewWidgetEntryView(entry: $0)
         }
+        .configurationDisplayName("Shared View Widget")
+        .description("A demo showcasing how to share a View directly between the App and the Widget.")
+        .supportedFamilies([.systemSmall])
     }
+}
+
+// MARK: - Preview
+
+#Preview(as: .systemSmall) {
+    SharedViewWidget()
+} timeline: {
+    SharedViewWidgetEntry.placeholder
 }

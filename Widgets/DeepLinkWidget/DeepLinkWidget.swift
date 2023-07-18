@@ -21,16 +21,25 @@
 // SOFTWARE.
 
 import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+struct DeepLinkWidget: Widget {
+    private let kind = WidgetType.deepLink.kind
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: Provider()) {
+            EntryView(entry: $0)
         }
+        .configurationDisplayName("Deep Link Widget")
+        .description("A demo showcasing how to use Deep Links to pass information from a Widget to the parent App.")
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
+}
+
+// MARK: - Preview
+
+#Preview(as: .systemSmall) {
+    DeepLinkWidget()
+} timeline: {
+    DeepLinkWidget.Entry.placeholder
 }

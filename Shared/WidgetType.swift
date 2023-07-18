@@ -20,17 +20,29 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftUI
+import Foundation
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+enum WidgetType: String {
+    case appGroup
+    case coreData
+    case countdown
+    case deepLink
+    case digitalClock
+    case dynamicIntent
+    case environment
+    case intent
+    case interactive
+    case lockScreen
+    case network
+    case sharedView
+    case swiftData
+    case timer
+    case urlImage
+    case urlCachedImage
+}
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
-        }
+extension WidgetType {
+    var kind: String {
+        rawValue + "Widget"
     }
 }

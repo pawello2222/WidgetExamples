@@ -20,17 +20,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftUI
+import Foundation
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+extension UserDefaults {
+    func setArray<Element>(_ array: [Element], forKey key: String) where Element: Encodable {
+        let data = try? JSONEncoder().encode(array)
+        set(data, forKey: key)
+    }
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+    func getArray<Element>(forKey key: String) -> [Element]? where Element: Decodable {
+        guard let data = data(forKey: key) else {
+            return nil
         }
+        return try? JSONDecoder().decode([Element].self, from: data)
     }
 }

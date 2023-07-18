@@ -20,17 +20,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftUI
+import Foundation
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+// MARK: - FileManager
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
-        }
-    }
+extension FileManager {
+    static let appGroupContainerURL = FileManager.default.containerURL(
+        forSecurityApplicationGroupIdentifier: Shared.appGroupName
+    )!
+}
+
+// MARK: - UserDefaults
+
+extension UserDefaults {
+    static let appGroup = UserDefaults(suiteName: Shared.appGroupName)!
 }

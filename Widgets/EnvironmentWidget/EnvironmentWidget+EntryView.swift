@@ -21,16 +21,51 @@
 // SOFTWARE.
 
 import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+extension EnvironmentWidget {
+    struct EntryView: View {
+        @Environment(\.colorScheme) var colorScheme
+        @Environment(\.widgetFamily) var widgetFamily
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+        var entry: Entry
+
+        var body: some View {
+            VStack(alignment: .leading) {
+                headerView
+                Spacer()
+                contentView
+                Spacer()
+            }
+            .containerBackground(backgroundColor, for: .widget)
         }
+    }
+}
+
+// MARK: - Content
+
+extension EnvironmentWidget.EntryView {
+    private var headerView: some View {
+        HStack {
+            Text("Environment")
+                .font(.headline)
+            Spacer()
+        }
+    }
+
+    @ViewBuilder
+    private var contentView: some View {
+        Text("Widget family")
+            .font(.subheadline)
+            .bold()
+        Text(String(describing: widgetFamily))
+    }
+}
+
+// MARK: - Helpers
+
+extension EnvironmentWidget.EntryView {
+    private var backgroundColor: Color {
+        colorScheme == .dark ? .red : .orange
     }
 }

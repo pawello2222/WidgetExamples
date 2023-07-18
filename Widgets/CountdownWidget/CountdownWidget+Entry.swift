@@ -20,17 +20,30 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+extension CountdownWidget {
+    struct Entry: TimelineEntry {
+        var date: Date = .now
+        var displayDate: Date = .now
+        var countdownState: CountdownState
+    }
+}
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
-        }
+// MARK: - CountdownState
+
+extension CountdownWidget.Entry {
+    enum CountdownState {
+        case counting
+        case nearEnd
+        case end
+    }
+}
+
+// MARK: - Data
+
+extension CountdownWidget.Entry {
+    static var placeholder: Self {
+        .init(countdownState: .counting)
     }
 }

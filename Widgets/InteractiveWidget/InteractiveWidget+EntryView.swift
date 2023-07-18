@@ -21,16 +21,49 @@
 // SOFTWARE.
 
 import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+extension InteractiveWidget {
+    struct EntryView: View {
+        var entry: Entry
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+        var body: some View {
+            VStack(alignment: .leading) {
+                headerView
+                Spacer()
+                counterView
+                Spacer()
+                buttonsView
+            }
+            .containerBackground(.clear, for: .widget)
+        }
+    }
+}
+
+// MARK: - Content
+
+extension InteractiveWidget.EntryView {
+    private var headerView: some View {
+        HStack {
+            Text("Interactive")
+                .font(.headline)
+            Spacer()
+        }
+    }
+
+    private var counterView: some View {
+        Text("Counter: \(entry.counter.value)")
+            .font(.subheadline)
+    }
+
+    private var buttonsView: some View {
+        HStack {
+            Button(intent: InteractiveWidgetIncreaseIntent(counter: entry.counter)) {
+                Image(systemName: "plus")
+            }
+            Button(intent: InteractiveWidgetResetIntent(counter: entry.counter)) {
+                Image(systemName: "arrow.circlepath")
+            }
         }
     }
 }

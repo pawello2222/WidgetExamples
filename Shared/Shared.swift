@@ -20,17 +20,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftUI
+import Foundation
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+enum Shared {
+    static let appGroupName = "group.com.tersacore.WidgetExamples"
+    static let luckyNumberFilename = "LuckyNumber.txt"
+}
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
-        }
+extension Shared {
+    enum DeepLink {
+        static let scheme = "widget"
+        static let widgetFamily = "widgetFamily"
     }
 }

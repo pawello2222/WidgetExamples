@@ -20,17 +20,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+struct SharedViewWidgetEntry: TimelineEntry {
+    var date: Date = .now
+    var icon: String
+}
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
-        }
+// MARK: - Data
+
+extension SharedViewWidgetEntry {
+    static var placeholder: Self {
+        .init(icon: "star.fill")
     }
 }

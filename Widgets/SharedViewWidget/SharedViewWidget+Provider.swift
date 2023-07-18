@@ -20,17 +20,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+extension SharedViewWidget {
+    struct Provider: TimelineProvider {
+        func placeholder(in context: Context) -> SharedViewWidgetEntry {
+            .placeholder
+        }
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+        func getSnapshot(in context: Context, completion: @escaping (SharedViewWidgetEntry) -> Void) {
+            completion(.placeholder)
+        }
+
+        func getTimeline(in context: Context, completion: @escaping (Timeline<SharedViewWidgetEntry>) -> Void) {
+            completion(.init(entries: [.placeholder], policy: .never))
         }
     }
 }

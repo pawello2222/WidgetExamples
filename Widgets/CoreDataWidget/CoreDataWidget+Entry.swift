@@ -20,17 +20,47 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+extension CoreDataWidget {
+    struct Entry: TimelineEntry {
+        var date: Date = .now
+        var documentInfo: DocumentInfo?
+    }
+}
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
-        }
+// MARK: - DocumentInfo
+
+extension CoreDataWidget.Entry {
+    struct DocumentInfo {
+        let count: Int
+        let lastDocument: Document?
+    }
+}
+
+extension CoreDataWidget.Entry.DocumentInfo {
+    struct Document {
+        var name: String
+        var creationDate: Date
+    }
+}
+
+// MARK: - Data
+
+extension CoreDataWidget.Entry {
+    static var placeholder: Self {
+        .init(documentInfo: .placeholder)
+    }
+}
+
+extension CoreDataWidget.Entry.DocumentInfo {
+    static var placeholder: Self {
+        .init(count: 1, lastDocument: .placeholder)
+    }
+}
+
+extension CoreDataWidget.Entry.DocumentInfo.Document {
+    static var placeholder: Self {
+        .init(name: "Test", creationDate: .now)
     }
 }

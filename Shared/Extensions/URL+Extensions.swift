@@ -20,17 +20,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftUI
+import Foundation
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
-
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+extension URL {
+    func queryParameter(name: String) -> String? {
+        guard let url = URLComponents(string: absoluteString) else {
+            return nil
         }
+        return url.queryItems?.first(where: { $0.name == name })?.value
     }
 }

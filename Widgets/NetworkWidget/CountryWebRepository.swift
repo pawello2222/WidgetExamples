@@ -20,17 +20,54 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftUI
+import Combine
+import Foundation
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+class CountryWebRepository: WebRepository {
+    let session: URLSession
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
+}
+
+// MARK: - ErrorResponse
+
+extension CountryWebRepository {
+    struct ErrorResponse: ErrorResponseDecodable {
+        let message: String
+
+        var error: String {
+            message
         }
+    }
+}
+
+// MARK: - Resource
+
+struct CountryResource: APIResource {
+    let serverPath = "restcountries.com"
+    let methodPath: String
+    var queryItems: [URLQueryItem]?
+
+    init(code: String) {
+        methodPath = "/v3.1/alpha/\(code)"
+        queryItems = [.init(name: "fields", value: "name,capital")]
+    }
+}
+
+// MARK: - Response
+
+extension CountryResource {
+    struct Response: Decodable {
+        let name: Name
+        let capital: [String]
+    }
+}
+
+extension CountryResource.Response {
+    struct Name: Decodable {
+        let common: String
+        let official: String
     }
 }

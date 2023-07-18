@@ -22,15 +22,55 @@
 
 import SwiftUI
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+enum AppScreen: Hashable, CaseIterable {
+    case appGroup
+    case coreData
+    case dynamicIntent
+    case sharedView
+    case swiftData
+}
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+// MARK: - Identifiable
+
+extension AppScreen: Identifiable {
+    var id: AppScreen { self }
+}
+
+// MARK: - Computed Properties
+
+extension AppScreen {
+    var title: String {
+        switch self {
+        case .appGroup:
+            "App Group"
+        case .coreData:
+            "Core Data"
+        case .dynamicIntent:
+            "Dynamic Intent"
+        case .sharedView:
+            "Shared View"
+        case .swiftData:
+            "Swift Data"
+        }
+    }
+
+    var icon: String {
+        "square.grid.2x2.fill"
+    }
+
+    @ViewBuilder
+    var destination: some View {
+        switch self {
+        case .appGroup:
+            AppGroupWidgetView()
+        case .coreData:
+            CoreDataWidgetView()
+        case .dynamicIntent:
+            DynamicIntentWidgetView()
+        case .sharedView:
+            SharedViewWidgetView()
+        case .swiftData:
+            SwiftDataWidgetView()
         }
     }
 }

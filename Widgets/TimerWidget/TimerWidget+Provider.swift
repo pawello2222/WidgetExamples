@@ -20,17 +20,23 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+extension TimerWidget {
+    struct Provider: TimelineProvider {
+        func placeholder(in context: Context) -> Entry {
+            .placeholder
+        }
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+        func getSnapshot(in context: Context, completion: @escaping (Entry) -> Void) {
+            completion(.placeholder)
+        }
+
+        func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
+            let midnight = Calendar.current.startOfDay(for: .now)
+            let nextMidnight = Calendar.current.date(byAdding: .day, value: 1, to: midnight)!
+            let entries = [Entry(date: midnight)]
+            completion(.init(entries: entries, policy: .after(nextMidnight)))
         }
     }
 }

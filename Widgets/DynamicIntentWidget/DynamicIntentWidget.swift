@@ -21,16 +21,25 @@
 // SOFTWARE.
 
 import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+struct DynamicIntentWidget: Widget {
+    private let kind: String = WidgetType.dynamicIntent.kind
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+    var body: some WidgetConfiguration {
+        AppIntentConfiguration(kind: kind, intent: DynamicIntentWidgetIntent.self, provider: Provider()) {
+            EntryView(entry: $0)
         }
+        .configurationDisplayName("Dynamic Intent Widget")
+        .description("A Widget that has dynamically configurable data.")
+        .supportedFamilies([.systemSmall])
     }
+}
+
+// MARK: - Preview
+
+#Preview(as: .systemSmall) {
+    DynamicIntentWidget()
+} timeline: {
+    DynamicIntentWidget.Entry.placeholder
 }

@@ -20,17 +20,26 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+extension IntentWidget {
+    struct Entry: TimelineEntry {
+        var date: Date = .now
+        var background: IntentWidgetBackground = .init()
+    }
+}
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
-        }
+// MARK: - Background
+
+struct IntentWidgetBackground {
+    var type: IntentWidgetBackgroundType = .color
+    var colors: [IntentWidgetBackgroundColor?] = [.teal]
+}
+
+// MARK: - Data
+
+extension IntentWidget.Entry {
+    static var placeholder: Self {
+        .init()
     }
 }

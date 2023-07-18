@@ -21,16 +21,54 @@
 // SOFTWARE.
 
 import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+extension DynamicIntentWidget {
+    struct EntryView: View {
+        var entry: Entry
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+        var body: some View {
+            VStack(alignment: .leading) {
+                headerView
+                Spacer()
+                contentView
+                Spacer()
+            }
+            .containerBackground(.clear, for: .widget)
         }
+    }
+}
+
+// MARK: - Content
+
+extension DynamicIntentWidget.EntryView {
+    private var headerView: some View {
+        HStack {
+            Text("Dynamic Intent")
+                .font(.headline)
+            Spacer()
+        }
+    }
+
+    @ViewBuilder
+    private var contentView: some View {
+        if let person = entry.person {
+            personView(for: person)
+        } else {
+            Text("Edit Widget to choose person")
+        }
+    }
+
+    @ViewBuilder
+    private func personView(for person: Person) -> some View {
+        Text(person.name)
+            .font(.subheadline)
+            .bold()
+        Group {
+            Text("Date of birth:")
+            Text(person.dateOfBirth, style: .date)
+        }
+        .font(.footnote)
+        .foregroundStyle(.secondary)
     }
 }

@@ -22,15 +22,37 @@
 
 import SwiftUI
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+struct DeepLinkWidgetView: View {
+    var widgetFamily: String
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+    var body: some View {
+        List {
+            Section {
+                contentView
+            } header: {
+                headerView
+            }
         }
+        .navigationTitle("Deep Link")
+    }
+}
+
+// MARK: - Content
+
+extension DeepLinkWidgetView {
+    private var headerView: some View {
+        Text("Deep Link")
+    }
+
+    private var contentView: some View {
+        Text("Opened from widget: \(widgetFamily)")
+    }
+}
+
+// MARK: - Preview
+
+#Preview {
+    NavigationStack {
+        DeepLinkWidgetView(widgetFamily: "systemSmall")
     }
 }

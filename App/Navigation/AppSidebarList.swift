@@ -22,15 +22,25 @@
 
 import SwiftUI
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+struct AppSidebarList: View {
+    @Binding var selection: AppScreen?
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+    var body: some View {
+        List(AppScreen.allCases, selection: $selection) { screen in
+            NavigationLink(value: screen) {
+                Label(screen.title, systemImage: screen.icon)
+            }
         }
+        .navigationTitle("Widgets")
+    }
+}
+
+// MARK: - Preview
+
+#Preview {
+    NavigationSplitView {
+        AppSidebarList(selection: .constant(.appGroup))
+    } detail: {
+        Text(verbatim: "Detail column")
     }
 }

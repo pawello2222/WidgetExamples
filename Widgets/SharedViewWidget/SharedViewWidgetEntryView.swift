@@ -21,16 +21,40 @@
 // SOFTWARE.
 
 import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+struct SharedViewWidgetEntryView: View {
+    var entry: SharedViewWidgetEntry
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+    var body: some View {
+        GeometryReader { geometry in
+            ZStack {
+                circleView
+                iconView
+                    .frame(
+                        maxWidth: geometry.size.width / 2,
+                        maxHeight: geometry.size.height / 2
+                    )
+            }
         }
+        .containerBackground(.clear, for: .widget)
+    }
+}
+
+// MARK: - Content
+
+extension SharedViewWidgetEntryView {
+    private var circleView: some View {
+        Circle()
+            .fill(.teal)
+            .padding()
+    }
+
+    private var iconView: some View {
+        Image(systemName: entry.icon)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .foregroundStyle(.white)
+            .padding(4)
     }
 }

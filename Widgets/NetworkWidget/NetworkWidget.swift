@@ -21,16 +21,28 @@
 // SOFTWARE.
 
 import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+struct NetworkWidget: Widget {
+    private let kind: String = WidgetType.network.kind
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: Provider()) {
+            EntryView(entry: $0)
         }
+        .configurationDisplayName("Network Widget")
+        .description("A demo showcasing how to load data from a network request and populate the Widget Timeline.")
+        .supportedFamilies([.systemSmall])
     }
+}
+
+// MARK: - Preview
+
+#Preview(as: .systemSmall) {
+    NetworkWidget()
+} timeline: {
+    NetworkWidget.Entry(country: .notRequested)
+    NetworkWidget.Entry(country: .isLoading)
+    NetworkWidget.Entry(country: .loaded(value: .poland))
+    NetworkWidget.Entry(country: .failed(error: "Error"))
 }

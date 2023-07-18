@@ -65,7 +65,7 @@ A Widget that can be displayed on both the lock screen and the home screen.
 
 A demo showcasing how to load data from a network request and populate the Widget Timeline.
 
-### [Preview Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/PreviewWidget)
+### [Preview Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/SharedViewWidget)
 
 A demo showcasing how to display a Widget View directly in the parent App.
 
@@ -75,15 +75,11 @@ A Widget that displays the current time (including seconds) as a timer.
 
 ### [URL Image Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/URLImageWidget)
 
-A Widget that displays an Image downloaded from an external URL.
-
-### [URL Cached Image Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/URLCachedImageWidget)
-
 A Widget that displays an Image downloaded from an external URL and caches it.
 
 ## Notes
 
-Some examples depend on the App Group capability (e.g., [AppGroup Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/AppGroupWidget)) or integrate with the main App (e.g., [Preview Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/PreviewWidget)), so it's recommended to download the whole project to keep the configuration intact.
+Some examples depend on the App Group capability (e.g., [AppGroup Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/AppGroupWidget)) or integrate with the main App (e.g., [Preview Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/SharedViewWidget)), so it's recommended to download the whole project to keep the configuration intact.
 
 ## License
 

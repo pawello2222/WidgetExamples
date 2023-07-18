@@ -21,16 +21,20 @@
 // SOFTWARE.
 
 import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+extension URLImageWidget {
+    struct Entry: TimelineEntry {
+        var date: Date = .now
+        var image: Loadable<Image> = .notRequested
+        var requestCount = 0
+    }
+}
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
-        }
+// MARK: - Data
+
+extension URLImageWidget.Entry {
+    static var placeholder: Self {
+        .init(image: .loaded(value: .init(systemName: "photo")))
     }
 }

@@ -21,16 +21,37 @@
 // SOFTWARE.
 
 import SwiftUI
+import WidgetKit
 
 @main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+struct WidgetExamplesWidgetBundle: WidgetBundle {
+    var body: some Widget {
+        WidgetBundle1().body
+        WidgetBundle2().body
+    }
+}
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
-        }
+struct WidgetBundle1: WidgetBundle {
+    var body: some Widget {
+        AppGroupWidget()
+        CoreDataWidget()
+        CountdownWidget()
+        DeepLinkWidget()
+        DigitalClockWidget()
+        DynamicIntentWidget()
+        EnvironmentWidget()
+        IntentWidget()
+    }
+}
+
+struct WidgetBundle2: WidgetBundle {
+    var body: some Widget {
+        InteractiveWidget()
+        LockScreenWidget()
+        NetworkWidget()
+        SharedViewWidget()
+        SwiftDataWidget()
+        TimerWidget()
+        URLImageWidget()
     }
 }

@@ -21,16 +21,27 @@
 // SOFTWARE.
 
 import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+struct CountdownWidget: Widget {
+    private let kind = WidgetType.countdown.kind
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: Provider()) {
+            EntryView(entry: $0)
         }
+        .configurationDisplayName("Countdown Widget")
+        .description("A Widget that displays the remaining time in seconds and changes color when the end date is approaching.")
+        .supportedFamilies([.systemSmall])
     }
+}
+
+// MARK: - Preview
+
+#Preview(as: .systemSmall) {
+    CountdownWidget()
+} timeline: {
+    CountdownWidget.Entry(countdownState: .counting)
+    CountdownWidget.Entry(countdownState: .nearEnd)
+    CountdownWidget.Entry(countdownState: .end)
 }

@@ -21,16 +21,25 @@
 // SOFTWARE.
 
 import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+struct DigitalClockWidget: Widget {
+    private let kind = WidgetType.digitalClock.kind
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: Provider()) {
+            EntryView(entry: $0)
         }
+        .configurationDisplayName("Digital Clock Widget")
+        .description("A Widget that displays the current time and refreshes every minute.")
+        .supportedFamilies([.systemSmall])
     }
+}
+
+// MARK: - Preview
+
+#Preview(as: .systemSmall) {
+    DigitalClockWidget()
+} timeline: {
+    DigitalClockWidget.Entry.placeholder
 }

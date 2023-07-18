@@ -21,16 +21,59 @@
 // SOFTWARE.
 
 import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+struct DynamicIntentWidgetView: View {
+    @AppStorage(UserDefaultKey.persons, store: .appGroup)
+    private var persons: [Person] = Person.defaultFriends
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+    var body: some View {
+        List {
+            Section {
+                contentView
+            } header: {
+                headerView
+            } footer: {
+                footerView
+            }
         }
+        .navigationTitle("Dynamic Intent")
+        .onChange(of: persons) {
+            reloadWidgetTimelines()
+        }
+    }
+}
+
+// MARK: - Content
+
+extension DynamicIntentWidgetView {
+    private var headerView: some View {
+        Text("Persons")
+    }
+
+    private var footerView: some View {
+        Text("Count: \(persons.count)")
+    }
+
+    private var contentView: some View {
+        ForEach($persons) {
+            PersonView(person: $0)
+        }
+    }
+}
+
+// MARK: - Helpers
+
+extension DynamicIntentWidgetView {
+    private func reloadWidgetTimelines() {
+        WidgetCenter.shared.reloadTimelines(ofKind: WidgetType.dynamicIntent.kind)
+    }
+}
+
+// MARK: - Preview
+
+#Preview {
+    NavigationStack {
+        DynamicIntentWidgetView()
     }
 }

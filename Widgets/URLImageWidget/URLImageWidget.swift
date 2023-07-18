@@ -21,16 +21,29 @@
 // SOFTWARE.
 
 import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    private let managedObjectContext = PersistenceController.shared.managedObjectContext
+struct URLImageWidget: Widget {
+    private let kind: String = WidgetType.urlImage.kind
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .modelContainer(for: Product.self)
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: Provider()) {
+            EntryView(entry: $0)
         }
+        .configurationDisplayName("URLImage Widget")
+        .description("A Widget that displays an Image downloaded from an external URL and caches it.")
+        .supportedFamilies([.systemSmall])
     }
+}
+
+// MARK: - Preview
+
+#Preview(as: .systemSmall) {
+    URLImageWidget()
+} timeline: {
+    URLImageWidget.Entry(image: .notRequested)
+    URLImageWidget.Entry(image: .isLoading)
+    URLImageWidget.Entry(image: .loaded(value: Image(systemName: "photo")))
+    URLImageWidget.Entry(image: .cached(value: Image(systemName: "photo")))
+    URLImageWidget.Entry(image: .failed(error: "Error"))
 }
