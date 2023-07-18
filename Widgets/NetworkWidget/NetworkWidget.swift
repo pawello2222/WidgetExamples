@@ -31,7 +31,7 @@ struct NetworkWidget: Widget {
             EntryView(entry: $0)
         }
         .configurationDisplayName("Network Widget")
-        .description("A demo showcasing how to load data from a network request and populate the Widget Timeline.")
+        .description("Load data into the Widget from a network request.")
         .supportedFamilies([.systemSmall])
     }
 }

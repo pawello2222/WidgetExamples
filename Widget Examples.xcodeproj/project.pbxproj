@@ -94,10 +94,6 @@
 		E58BB8D52A62D89E00DA8303 /* SharedViewWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542140E2538AF8500CCC9C3 /* SharedViewWidgetEntryView.swift */; };
 		E58BB8D62A62D89E00DA8303 /* SharedViewWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542140A2538AF7800CCC9C3 /* SharedViewWidgetEntry.swift */; };
 		E58BB8D72A62D89E00DA8303 /* SharedViewWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54214022538AF2000CCC9C3 /* SharedViewWidget.swift */; };
-		E58BB8D82A62D8A300DA8303 /* TimerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213A92538829A00CCC9C3 /* TimerWidget.swift */; };
-		E58BB8D92A62D8A300DA8303 /* TimerWidget+Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E517B3612A621315009072A3 /* TimerWidget+Provider.swift */; };
-		E58BB8DA2A62D8A300DA8303 /* TimerWidget+Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E517B35D2A621306009072A3 /* TimerWidget+Entry.swift */; };
-		E58BB8DB2A62D8A300DA8303 /* TimerWidget+EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E517B35F2A62130E009072A3 /* TimerWidget+EntryView.swift */; };
 		E58BB8DD2A62D8A700DA8303 /* URLImageWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54213E62538A0C700CCC9C3 /* URLImageWidget.swift */; };
 		E58BB8DE2A62D8AA00DA8303 /* LockScreenWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D2325D28DA5283002855D1 /* LockScreenWidget.swift */; };
 		E58BB8E02A62D8AE00DA8303 /* IntentWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591C5712551666A002044C8 /* IntentWidget.swift */; };
@@ -163,9 +159,6 @@
 		E517B3572A6208BF009072A3 /* DeepLinkWidget+EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeepLinkWidget+EntryView.swift"; sourceTree = "<group>"; };
 		E517B3592A6208C5009072A3 /* DeepLinkWidget+Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeepLinkWidget+Provider.swift"; sourceTree = "<group>"; };
 		E517B35B2A62124B009072A3 /* SharedViewWidget+Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SharedViewWidget+Provider.swift"; sourceTree = "<group>"; };
-		E517B35D2A621306009072A3 /* TimerWidget+Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerWidget+Entry.swift"; sourceTree = "<group>"; };
-		E517B35F2A62130E009072A3 /* TimerWidget+EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerWidget+EntryView.swift"; sourceTree = "<group>"; };
-		E517B3612A621315009072A3 /* TimerWidget+Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerWidget+Provider.swift"; sourceTree = "<group>"; };
 		E517B3632A6213E5009072A3 /* CoreDataWidget+Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataWidget+Entry.swift"; sourceTree = "<group>"; };
 		E517B3652A6213EC009072A3 /* CoreDataWidget+EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataWidget+EntryView.swift"; sourceTree = "<group>"; };
 		E517B3672A6213F5009072A3 /* CoreDataWidget+Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataWidget+Provider.swift"; sourceTree = "<group>"; };
@@ -190,7 +183,6 @@
 		E542137425387A0300CCC9C3 /* WidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetBundle.swift; sourceTree = "<group>"; };
 		E542138225387A2400CCC9C3 /* DigitalClockWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalClockWidget.swift; sourceTree = "<group>"; };
 		E542139D253880EE00CCC9C3 /* CountdownWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownWidget.swift; sourceTree = "<group>"; };
-		E54213A92538829A00CCC9C3 /* TimerWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWidget.swift; sourceTree = "<group>"; };
 		E54213B0253884D200CCC9C3 /* NetworkWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWidget.swift; sourceTree = "<group>"; };
 		E54213B42538857F00CCC9C3 /* WebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRepository.swift; sourceTree = "<group>"; };
 		E54213BA2538864E00CCC9C3 /* CountryWebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryWebRepository.swift; sourceTree = "<group>"; };
@@ -347,7 +339,6 @@
 				E54213AF253884C300CCC9C3 /* NetworkWidget */,
 				E54214012538AF1100CCC9C3 /* SharedViewWidget */,
 				E58246872A644F21008180CC /* SwiftDataWidget */,
-				E54213A82538827100CCC9C3 /* TimerWidget */,
 				E54213E52538A0B500CCC9C3 /* URLImageWidget */,
 				E55498AF2552C0B30066870B /* Supporting Files */,
 			);
@@ -374,17 +365,6 @@
 				E517B36D2A6214F6009072A3 /* CountdownWidget+Provider.swift */,
 			);
 			path = CountdownWidget;
-			sourceTree = "<group>";
-		};
-		E54213A82538827100CCC9C3 /* TimerWidget */ = {
-			isa = PBXGroup;
-			children = (
-				E54213A92538829A00CCC9C3 /* TimerWidget.swift */,
-				E517B35D2A621306009072A3 /* TimerWidget+Entry.swift */,
-				E517B35F2A62130E009072A3 /* TimerWidget+EntryView.swift */,
-				E517B3612A621315009072A3 /* TimerWidget+Provider.swift */,
-			);
-			path = TimerWidget;
 			sourceTree = "<group>";
 		};
 		E54213AF253884C300CCC9C3 /* NetworkWidget */ = {
@@ -794,12 +774,10 @@
 				E58BB8D62A62D89E00DA8303 /* SharedViewWidgetEntry.swift in Sources */,
 				E58BB8F12A62D92700DA8303 /* PersistenceController.swift in Sources */,
 				E58BB8D32A62D89500DA8303 /* EnvironmentWidget+Entry.swift in Sources */,
-				E58BB8D82A62D8A300DA8303 /* TimerWidget.swift in Sources */,
 				E58BB8C62A62D88500DA8303 /* CountdownWidget+Provider.swift in Sources */,
 				E58BB8BF2A62D86D00DA8303 /* AppGroupWidget+EntryView.swift in Sources */,
 				E58246912A64560D008180CC /* InteractiveWidget+EntryView.swift in Sources */,
 				E58BB8E92A62D8FB00DA8303 /* WidgetType.swift in Sources */,
-				E58BB8DB2A62D8A300DA8303 /* TimerWidget+EntryView.swift in Sources */,
 				E58BB8C12A62D87200DA8303 /* CoreDataWidget+Entry.swift in Sources */,
 				E58BB8E82A62D8F900DA8303 /* UserDefaultKey.swift in Sources */,
 				E58246952A64561E008180CC /* InteractiveWidget+Intents.swift in Sources */,
@@ -814,7 +792,6 @@
 				E58BB8DD2A62D8A700DA8303 /* URLImageWidget.swift in Sources */,
 				E521D0582A63013C00F6749D /* DynamicIntentWidget+Intent.swift in Sources */,
 				E58BB8E12A62D8B100DA8303 /* DynamicIntentWidget.swift in Sources */,
-				E58BB8D92A62D8A300DA8303 /* TimerWidget+Provider.swift in Sources */,
 				E58BB8CB2A62D88A00DA8303 /* DeepLinkWidget+Entry.swift in Sources */,
 				E58BB8CA2A62D88A00DA8303 /* DeepLinkWidget.swift in Sources */,
 				E58246B52A65C943008180CC /* Product.swift in Sources */,
@@ -838,7 +815,6 @@
 				E58BB8C72A62D88500DA8303 /* CountdownWidget.swift in Sources */,
 				E58BB8C22A62D87200DA8303 /* CoreDataWidget.swift in Sources */,
 				E58BB8F92A62E32C00DA8303 /* IntentWidget+Intent.swift in Sources */,
-				E58BB8DA2A62D8A300DA8303 /* TimerWidget+Entry.swift in Sources */,
 				E58BB8D12A62D89500DA8303 /* EnvironmentWidget.swift in Sources */,
 				E521D0542A63012000F6749D /* DynamicIntentWidget+EntryView.swift in Sources */,
 				E58BB8BC2A62D86D00DA8303 /* AppGroupWidget.swift in Sources */,

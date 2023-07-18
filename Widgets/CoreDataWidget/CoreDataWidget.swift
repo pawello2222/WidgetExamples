@@ -31,7 +31,7 @@ struct CoreDataWidget: Widget {
             EntryView(entry: $0)
         }
         .configurationDisplayName("CoreData Widget")
-        .description("A demo showcasing how to use Core Data in a Widget.")
+        .description("Use Core Data to share data between the App and the Widget.")
         .supportedFamilies([.systemSmall])
     }
 }

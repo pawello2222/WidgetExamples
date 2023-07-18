@@ -31,7 +31,7 @@ struct AppGroupWidget: Widget {
             EntryView(entry: $0)
         }
         .configurationDisplayName("App Group Widget")
-        .description("A demo showcasing how to use an App Group to share data between an App and its Widget.")
+        .description("Use an App Group to share data between the App and the Widget.")
         .supportedFamilies([.systemSmall])
     }
 }

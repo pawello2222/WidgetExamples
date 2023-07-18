@@ -31,7 +31,7 @@ struct DeepLinkWidget: Widget {
             EntryView(entry: $0)
         }
         .configurationDisplayName("Deep Link Widget")
-        .description("A demo showcasing how to use Deep Links to pass information from a Widget to the parent App.")
+        .description("Use Deep Links to pass information from the Widget when opening the parent App.")
         .supportedFamilies([.systemSmall, .systemMedium])
     }
 }

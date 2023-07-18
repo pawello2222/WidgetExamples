@@ -31,7 +31,7 @@ struct DynamicIntentWidget: Widget {
             EntryView(entry: $0)
         }
         .configurationDisplayName("Dynamic Intent Widget")
-        .description("A Widget that has dynamically configurable data.")
+        .description("Configure the Widget with data that can be changed dynamically.")
         .supportedFamilies([.systemSmall])
     }
 }

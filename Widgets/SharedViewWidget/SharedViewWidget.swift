@@ -31,7 +31,7 @@ struct SharedViewWidget: Widget {
             SharedViewWidgetEntryView(entry: $0)
         }
         .configurationDisplayName("Shared View Widget")
-        .description("A demo showcasing how to share a View directly between the App and the Widget.")
+        .description("Display the Widget view directly in the parent App.")
         .supportedFamilies([.systemSmall])
     }
 }

@@ -51,7 +51,6 @@ struct WidgetBundle2: WidgetBundle {
         NetworkWidget()
         SharedViewWidget()
         SwiftDataWidget()
-        TimerWidget()
         URLImageWidget()
     }
 }

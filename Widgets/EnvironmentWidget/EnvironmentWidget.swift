@@ -31,7 +31,7 @@ struct EnvironmentWidget: Widget {
             EntryView(entry: entry)
         }
         .configurationDisplayName("Environment Widget")
-        .description("A demo showcasing how to adjust a Widget View depending on Environment variables.")
+        .description("Customize the Widget view depending on Environment variables.")
         .supportedFamilies([.systemSmall, .systemMedium])
     }
 }

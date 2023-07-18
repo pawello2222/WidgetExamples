@@ -31,7 +31,7 @@ struct URLImageWidget: Widget {
             EntryView(entry: $0)
         }
         .configurationDisplayName("URLImage Widget")
-        .description("A Widget that displays an Image downloaded from an external URL and caches it.")
+        .description("Display an image downloaded from an external URL and cache it.")
         .supportedFamilies([.systemSmall])
     }
 }

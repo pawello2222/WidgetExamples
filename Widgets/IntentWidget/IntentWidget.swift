@@ -31,7 +31,7 @@ struct IntentWidget: Widget {
             EntryView(entry: $0)
         }
         .configurationDisplayName("Intent Widget")
-        .description("A Widget that has a configurable background color.")
+        .description("Configure the Widget by changing its background type and color.")
         .supportedFamilies([.systemSmall])
     }
 }

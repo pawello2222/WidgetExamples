@@ -32,7 +32,7 @@ struct SwiftDataWidget: Widget {
             EntryView(entry: $0)
         }
         .configurationDisplayName("SwiftData Widget")
-        .description("A demo showcasing how to use SwiftData in a Widget.")
+        .description("Use SwiftData to share data between the App and the Widget.")
         .supportedFamilies([.systemSmall])
     }
 }

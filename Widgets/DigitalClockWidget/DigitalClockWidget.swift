@@ -31,7 +31,7 @@ struct DigitalClockWidget: Widget {
             EntryView(entry: $0)
         }
         .configurationDisplayName("Digital Clock Widget")
-        .description("A Widget that displays the current time and refreshes every minute.")
+        .description("Display a digital clock that shows time in various formats.")
         .supportedFamilies([.systemSmall])
     }
 }

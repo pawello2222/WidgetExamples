@@ -31,7 +31,7 @@ struct CountdownWidget: Widget {
             EntryView(entry: $0)
         }
         .configurationDisplayName("Countdown Widget")
-        .description("A Widget that displays the remaining time in seconds and changes color when the end date is approaching.")
+        .description("Display the remaining time in seconds and change color when the end date is approaching.")
         .supportedFamilies([.systemSmall])
     }
 }

@@ -15,72 +15,79 @@
 
 # Widget Examples
 
-A demo project showcasing different types of Widgets created with SwiftUI and WidgetKit.
+A demo project showing different types of Widgets created with SwiftUI and WidgetKit.
 
-## ⚠️ Important
+## Requirements
 
-This project is being refactored for iOS 17.
+This project has been updated for iOS 17.
 
-All changes remain on the branch [`ios17-refactor`](https://github.com/pawello2222/WidgetExamples/tree/ios17-refactor) and will be merged once iOS 17 is released. Pre-iOS 17 project will always be available under [v0.6.2](https://github.com/pawello2222/WidgetExamples/releases/tag/0.6.2).
+You can always access earlier versions for different deployment targets:
+- [v0.6.2](https://github.com/pawello2222/WidgetExamples/releases/tag/0.6.2) (iOS 16.1)
+- [v0.6.0](https://github.com/pawello2222/WidgetExamples/releases/tag/0.6.0) (iOS 16.0)
+- [v0.5.0](https://github.com/pawello2222/WidgetExamples/releases/tag/0.5.0) (iOS 14)
 
-## Contents
+## Widgets
 
-### [AppGroup Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/AppGroupWidget)
+### [App Group](./Widgets/AppGroupWidget)
 
-A demo showcasing how to use an App Group to share data between an App and its Widget.
+Use an App Group to share data between the App and the Widget.
 
-### [Clock Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/ClockWidget)
+### [Core Data](./Widgets/CoreDataWidget)
 
-A Widget that displays the current time (in various formats) and refreshes every minute.
+Use Core Data to share data between the App and the Widget.
 
-### [CoreData Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/CoreDataWidget)
+### [Countdown](./Widgets/CountdownWidget)
 
-A demo showcasing how to use Core Data in a Widget.
+Display the remaining time in seconds and change color when the end date is approaching.
 
-### [Countdown Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/CountdownWidget)
+### [Deep Link](./Widgets/DeepLinkWidget)
 
-A Widget that displays the remaining time in seconds and changes color when the end date is approaching.
+Use Deep Links to pass information from the Widget when opening the parent App.
 
-### [DeepLink Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/DeepLinkWidget)
+### [Digital Clock](./Widgets/DigitalClockWidget)
 
-A demo showcasing how to use Deep Links to pass events / information from a Widget to the parent App.
+Display a digital clock that shows time in various formats.
 
-### [Dynamic Intent Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/DynamicIntentWidget)
+### [Dynamic Intent](./Widgets/DynamicIntentWidget)
 
-A Widget that has dynamically configurable data.
+Configure the Widget with data that can be changed dynamically.
 
-### [Environment Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/EnvironmentWidget)
+### [Environment](./Widgets/EnvironmentWidget)
 
-A demo showcasing how to adjust a Widget View depending on Environment variables.
+Customize the Widget view depending on Environment variables.
 
-### [Intent Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/IntentWidget)
+### [Intent](./Widgets/IntentWidget)
 
-A Widget that has a configurable background color.
+Configure the Widget by changing its background type and color.
 
-### [Lock Screen Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/LockScreenWidget)
+### [Interactive](./Widgets/InteractiveWidget)
 
-A Widget that can be displayed on both the lock screen and the home screen.
+Interact with elements of the Widget.
 
-### [Network Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/NetworkWidget)
+### [Lock Screen](./Widgets/LockScreenWidget)
 
-A demo showcasing how to load data from a network request and populate the Widget Timeline.
+Display the Widget on both the lock screen and the home screen.
 
-### [Preview Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/SharedViewWidget)
+### [Network](./Widgets/NetworkWidget)
 
-A demo showcasing how to display a Widget View directly in the parent App.
+Load data into the Widget from a network request.
 
-### [Timer Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/TimerWidget)
+### [Shared View](./Widgets/SharedViewWidget)
 
-A Widget that displays the current time (including seconds) as a timer.
+Display the Widget view directly in the parent App.
 
-### [URL Image Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/URLImageWidget)
+### [SwiftData](./Widgets/SwiftDataWidget)
 
-A Widget that displays an Image downloaded from an external URL and caches it.
+Use SwiftData to share data between the App and the Widget.
+
+### [URL Image](./Widgets/URLImageWidget)
+
+Display an image downloaded from an external URL and cache it.
 
 ## Notes
 
-Some examples depend on the App Group capability (e.g., [AppGroup Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/AppGroupWidget)) or integrate with the main App (e.g., [Preview Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/SharedViewWidget)), so it's recommended to download the whole project to keep the configuration intact.
+Some widgets depend on the App Group capability (e.g., [App Group Widget](./Widgets/AppGroupWidget)) or integrate with the main App (e.g., [Shared View Widget](./Widgets/SharedViewWidget)), so it's recommended to download the whole project to keep the configuration intact.
 
 ## License
 
-Widget Examples project is available under the MIT license. See the [LICENSE](https://github.com/pawello2222/WidgetExamples/blob/main/LICENSE.md) file for more info.
+Widget Examples project is available under the MIT license. See the [LICENSE](./LICENSE.md) file for more info.

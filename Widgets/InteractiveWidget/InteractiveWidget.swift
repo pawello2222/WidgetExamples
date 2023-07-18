@@ -31,7 +31,7 @@ struct InteractiveWidget: Widget {
             EntryView(entry: $0)
         }
         .configurationDisplayName("Interactive Widget")
-        .description("A Widget that allows interaction with its elements.")
+        .description("Interact with elements of the Widget.")
         .supportedFamilies([.systemSmall])
     }
 }
