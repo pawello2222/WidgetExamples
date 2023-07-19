@@ -61,13 +61,13 @@ extension Person {
         .friend1, .friend2
     ]
 
-    static let friend1: Self = {
-        let date = Calendar.current.date(byAdding: .month, value: -2, to: .now)!
-        return .init(name: "Friend 1", dateOfBirth: date)
-    }()
+    static let friend1: Self = .init(
+        name: "Friend 1",
+        dateOfBirth: .now.adding(.month, value: -2)
+    )
 
-    static let friend2: Self = {
-        let date = Calendar.current.date(byAdding: .year, value: -3, to: .now)!
-        return .init(name: "Friend 2", dateOfBirth: date)
-    }()
+    static let friend2: Self = .init(
+        name: "Friend 2",
+        dateOfBirth: .now.adding(.year, value: -3)
+    )
 }

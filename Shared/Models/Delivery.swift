@@ -20,38 +20,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftUI
-import WidgetKit
+import Foundation
 
-@main
-struct WidgetExamplesWidgetBundle: WidgetBundle {
-    var body: some Widget {
-        WidgetBundle1().body
-        WidgetBundle2().body
-    }
+struct Delivery: Codable, Equatable {
+    var id = UUID().uuidString.prefix(4).uppercased()
+    var itemsCount: Int
+    var date: Date = .now
 }
 
-struct WidgetBundle1: WidgetBundle {
-    var body: some Widget {
-        AppGroupWidget()
-        CoreDataWidget()
-        CountdownWidget()
-        DeepLinkWidget()
-        DigitalClockWidget()
-        DynamicIntentWidget()
-        EnvironmentWidget()
-        IntentWidget()
-    }
-}
+// MARK: - Data
 
-struct WidgetBundle2: WidgetBundle {
-    var body: some Widget {
-        InteractiveWidget()
-        LiveActivityWidget()
-        LockScreenWidget()
-        NetworkWidget()
-        SharedViewWidget()
-        SwiftDataWidget()
-        URLImageWidget()
+extension Delivery {
+    static func sent(minutesAgo: Int = 0) -> Self {
+        .init(itemsCount: 3, date: .now.adding(.minute, value: -minutesAgo))
     }
 }

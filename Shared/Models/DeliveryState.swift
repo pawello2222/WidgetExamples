@@ -20,38 +20,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftUI
-import WidgetKit
+import Foundation
 
-@main
-struct WidgetExamplesWidgetBundle: WidgetBundle {
-    var body: some Widget {
-        WidgetBundle1().body
-        WidgetBundle2().body
-    }
+enum DeliveryState: Codable {
+    case sent
+    case delayed
+    case arrived
 }
 
-struct WidgetBundle1: WidgetBundle {
-    var body: some Widget {
-        AppGroupWidget()
-        CoreDataWidget()
-        CountdownWidget()
-        DeepLinkWidget()
-        DigitalClockWidget()
-        DynamicIntentWidget()
-        EnvironmentWidget()
-        IntentWidget()
-    }
-}
+// MARK: - Computed Properties
 
-struct WidgetBundle2: WidgetBundle {
-    var body: some Widget {
-        InteractiveWidget()
-        LiveActivityWidget()
-        LockScreenWidget()
-        NetworkWidget()
-        SharedViewWidget()
-        SwiftDataWidget()
-        URLImageWidget()
+extension DeliveryState {
+    var name: String {
+        switch self {
+        case .sent:
+            "In transit"
+        case .delayed:
+            "Delayed"
+        case .arrived:
+            "Arrived"
+        }
     }
 }

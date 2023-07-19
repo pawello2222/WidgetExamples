@@ -34,8 +34,8 @@ extension CountdownWidget {
 
         func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
             let currentDate = Date()
-            let closeDate = Calendar.current.date(byAdding: .second, value: 20, to: currentDate)!
-            let endDate = Calendar.current.date(byAdding: .second, value: 30, to: currentDate)!
+            let closeDate = currentDate.adding(.second, value: 20)
+            let endDate = currentDate.adding(.second, value: 20)
 
             let entries = [
                 Entry(date: currentDate, displayDate: endDate, countdownState: .counting),

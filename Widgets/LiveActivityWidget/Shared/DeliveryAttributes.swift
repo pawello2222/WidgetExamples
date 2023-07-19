@@ -20,38 +20,33 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftUI
-import WidgetKit
+import ActivityKit
+import Foundation
 
-@main
-struct WidgetExamplesWidgetBundle: WidgetBundle {
-    var body: some Widget {
-        WidgetBundle1().body
-        WidgetBundle2().body
+struct DeliveryAttributes: ActivityAttributes {
+    struct ContentState: Codable, Hashable {
+        let expectedArrivalDate: Date
+        let deliveryState: DeliveryState
     }
+
+    let delivery: Delivery
 }
 
-struct WidgetBundle1: WidgetBundle {
-    var body: some Widget {
-        AppGroupWidget()
-        CoreDataWidget()
-        CountdownWidget()
-        DeepLinkWidget()
-        DigitalClockWidget()
-        DynamicIntentWidget()
-        EnvironmentWidget()
-        IntentWidget()
-    }
-}
+// MARK: - Data
 
-struct WidgetBundle2: WidgetBundle {
-    var body: some Widget {
-        InteractiveWidget()
-        LiveActivityWidget()
-        LockScreenWidget()
-        NetworkWidget()
-        SharedViewWidget()
-        SwiftDataWidget()
-        URLImageWidget()
-    }
+extension DeliveryAttributes.ContentState {
+    static let sent: Self = .init(
+        expectedArrivalDate: .now.adding(.minute, value: 3),
+        deliveryState: .sent
+    )
+
+    static let delayed: Self = .init(
+        expectedArrivalDate: .now.adding(.minute, value: 10),
+        deliveryState: .delayed
+    )
+
+    static let arrived: Self = .init(
+        expectedArrivalDate: .now,
+        deliveryState: .arrived
+    )
 }

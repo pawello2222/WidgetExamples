@@ -116,6 +116,27 @@
 		E58BB8F52A62E32100DA8303 /* IntentWidget+EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58BB8F42A62E32100DA8303 /* IntentWidget+EntryView.swift */; };
 		E58BB8F72A62E32700DA8303 /* IntentWidget+Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58BB8F62A62E32700DA8303 /* IntentWidget+Provider.swift */; };
 		E58BB8F92A62E32C00DA8303 /* IntentWidget+Intent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58BB8F82A62E32C00DA8303 /* IntentWidget+Intent.swift */; };
+		E5B345222A67E37D00702B86 /* LiveActivityWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B345212A67E37D00702B86 /* LiveActivityWidget.swift */; };
+		E5B345242A67E3E400702B86 /* DeliveryAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B345232A67E3E400702B86 /* DeliveryAttributes.swift */; };
+		E5B345252A67E3E400702B86 /* DeliveryAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B345232A67E3E400702B86 /* DeliveryAttributes.swift */; };
+		E5B345272A67E56900702B86 /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B345262A67E56900702B86 /* Delivery.swift */; };
+		E5B345282A67E56900702B86 /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B345262A67E56900702B86 /* Delivery.swift */; };
+		E5B3452A2A67E60F00702B86 /* LiveActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B345292A67E60F00702B86 /* LiveActivityView.swift */; };
+		E5B3452B2A67E60F00702B86 /* LiveActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B345292A67E60F00702B86 /* LiveActivityView.swift */; };
+		E5B345362A67F8AD00702B86 /* LiveActivityWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B345352A67F8AD00702B86 /* LiveActivityWidgetView.swift */; };
+		E5B345382A67F9C900702B86 /* LiveActivityWidgetView+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B345372A67F9C900702B86 /* LiveActivityWidgetView+Model.swift */; };
+		E5B3453B2A682EB000702B86 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B3453A2A682EB000702B86 /* Date+Extensions.swift */; };
+		E5B3453C2A682EB000702B86 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B3453A2A682EB000702B86 /* Date+Extensions.swift */; };
+		E5DCA18D2A683DFC00C59A50 /* LiveActivityView+Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DCA18C2A683DFC00C59A50 /* LiveActivityView+Icon.swift */; };
+		E5DCA18E2A683DFC00C59A50 /* LiveActivityView+Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DCA18C2A683DFC00C59A50 /* LiveActivityView+Icon.swift */; };
+		E5DCA1902A683E2B00C59A50 /* LiveActivityView+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DCA18F2A683E2B00C59A50 /* LiveActivityView+Time.swift */; };
+		E5DCA1912A683E2B00C59A50 /* LiveActivityView+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DCA18F2A683E2B00C59A50 /* LiveActivityView+Time.swift */; };
+		E5DCA1932A683E6000C59A50 /* LiveActivityView+Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DCA1922A683E6000C59A50 /* LiveActivityView+Title.swift */; };
+		E5DCA1942A683E6000C59A50 /* LiveActivityView+Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DCA1922A683E6000C59A50 /* LiveActivityView+Title.swift */; };
+		E5DCA1962A683E8C00C59A50 /* LiveActivityView+Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DCA1952A683E8C00C59A50 /* LiveActivityView+Status.swift */; };
+		E5DCA1972A683E8C00C59A50 /* LiveActivityView+Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DCA1952A683E8C00C59A50 /* LiveActivityView+Status.swift */; };
+		E5DCA1992A6840BD00C59A50 /* DeliveryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DCA1982A6840BD00C59A50 /* DeliveryState.swift */; };
+		E5DCA19A2A6840BD00C59A50 /* DeliveryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DCA1982A6840BD00C59A50 /* DeliveryState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -239,7 +260,19 @@
 		E58BB8F62A62E32700DA8303 /* IntentWidget+Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IntentWidget+Provider.swift"; sourceTree = "<group>"; };
 		E58BB8F82A62E32C00DA8303 /* IntentWidget+Intent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IntentWidget+Intent.swift"; sourceTree = "<group>"; };
 		E591C5712551666A002044C8 /* IntentWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentWidget.swift; sourceTree = "<group>"; };
+		E5B345212A67E37D00702B86 /* LiveActivityWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityWidget.swift; sourceTree = "<group>"; };
+		E5B345232A67E3E400702B86 /* DeliveryAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryAttributes.swift; sourceTree = "<group>"; };
+		E5B345262A67E56900702B86 /* Delivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery.swift; sourceTree = "<group>"; };
+		E5B345292A67E60F00702B86 /* LiveActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityView.swift; sourceTree = "<group>"; };
+		E5B345352A67F8AD00702B86 /* LiveActivityWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityWidgetView.swift; sourceTree = "<group>"; };
+		E5B345372A67F9C900702B86 /* LiveActivityWidgetView+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LiveActivityWidgetView+Model.swift"; sourceTree = "<group>"; };
+		E5B3453A2A682EB000702B86 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		E5D2325D28DA5283002855D1 /* LockScreenWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenWidget.swift; sourceTree = "<group>"; };
+		E5DCA18C2A683DFC00C59A50 /* LiveActivityView+Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LiveActivityView+Icon.swift"; sourceTree = "<group>"; };
+		E5DCA18F2A683E2B00C59A50 /* LiveActivityView+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LiveActivityView+Time.swift"; sourceTree = "<group>"; };
+		E5DCA1922A683E6000C59A50 /* LiveActivityView+Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LiveActivityView+Title.swift"; sourceTree = "<group>"; };
+		E5DCA1952A683E8C00C59A50 /* LiveActivityView+Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LiveActivityView+Status.swift"; sourceTree = "<group>"; };
+		E5DCA1982A6840BD00C59A50 /* DeliveryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +301,7 @@
 				E58246CF2A66C646008180CC /* AppGroup */,
 				E58246D02A66C64C008180CC /* CoreData */,
 				E58246CC2A66A65B008180CC /* DynamicIntent */,
+				E5B345342A67F88E00702B86 /* LiveActivity */,
 				E58246D22A66C656008180CC /* SharedView */,
 				E58246D12A66C651008180CC /* SwiftData */,
 			);
@@ -278,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				E57C3DE82A66C8C2002CF144 /* Array+Extensions.swift */,
+				E5B3453A2A682EB000702B86 /* Date+Extensions.swift */,
 				E517B36F2A62B0A6009072A3 /* URL+Extensions.swift */,
 				E57C3DEB2A66CA11002CF144 /* UserDefaults+Extensions.swift */,
 			);
@@ -341,6 +376,7 @@
 				E54213BE253890CD00CCC9C3 /* EnvironmentWidget */,
 				E591C5752551666F002044C8 /* IntentWidget */,
 				E58246852A644F00008180CC /* InteractiveWidget */,
+				E5B345202A67E36A00702B86 /* LiveActivityWidget */,
 				E5D2325C28DA5265002855D1 /* LockScreenWidget */,
 				E54213AF253884C300CCC9C3 /* NetworkWidget */,
 				E54214012538AF1100CCC9C3 /* SharedViewWidget */,
@@ -447,9 +483,8 @@
 		E54214012538AF1100CCC9C3 /* SharedViewWidget */ = {
 			isa = PBXGroup;
 			children = (
+				E5B3452C2A67E6AD00702B86 /* Shared */,
 				E54214022538AF2000CCC9C3 /* SharedViewWidget.swift */,
-				E542140A2538AF7800CCC9C3 /* SharedViewWidgetEntry.swift */,
-				E542140E2538AF8500CCC9C3 /* SharedViewWidgetEntryView.swift */,
 				E517B35B2A62124B009072A3 /* SharedViewWidget+Provider.swift */,
 			);
 			path = SharedViewWidget;
@@ -490,6 +525,8 @@
 		E55498362551D1F40066870B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E5B345262A67E56900702B86 /* Delivery.swift */,
+				E5DCA1982A6840BD00C59A50 /* DeliveryState.swift */,
 				E57C3DEE2A66D33B002CF144 /* Document.swift */,
 				E55498372551D2160066870B /* Person.swift */,
 				E58246B42A65C943008180CC /* Product.swift */,
@@ -650,6 +687,46 @@
 			path = IntentWidget;
 			sourceTree = "<group>";
 		};
+		E5B345202A67E36A00702B86 /* LiveActivityWidget */ = {
+			isa = PBXGroup;
+			children = (
+				E5B3452D2A67E6C300702B86 /* Shared */,
+				E5B345212A67E37D00702B86 /* LiveActivityWidget.swift */,
+			);
+			path = LiveActivityWidget;
+			sourceTree = "<group>";
+		};
+		E5B3452C2A67E6AD00702B86 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				E542140A2538AF7800CCC9C3 /* SharedViewWidgetEntry.swift */,
+				E542140E2538AF8500CCC9C3 /* SharedViewWidgetEntryView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		E5B3452D2A67E6C300702B86 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				E5B345232A67E3E400702B86 /* DeliveryAttributes.swift */,
+				E5B345292A67E60F00702B86 /* LiveActivityView.swift */,
+				E5DCA18C2A683DFC00C59A50 /* LiveActivityView+Icon.swift */,
+				E5DCA18F2A683E2B00C59A50 /* LiveActivityView+Time.swift */,
+				E5DCA1922A683E6000C59A50 /* LiveActivityView+Title.swift */,
+				E5DCA1952A683E8C00C59A50 /* LiveActivityView+Status.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		E5B345342A67F88E00702B86 /* LiveActivity */ = {
+			isa = PBXGroup;
+			children = (
+				E5B345352A67F8AD00702B86 /* LiveActivityWidgetView.swift */,
+				E5B345372A67F9C900702B86 /* LiveActivityWidgetView+Model.swift */,
+			);
+			path = LiveActivity;
+			sourceTree = "<group>";
+		};
 		E5D2325C28DA5265002855D1 /* LockScreenWidget */ = {
 			isa = PBXGroup;
 			children = (
@@ -762,6 +839,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5DCA1942A683E6000C59A50 /* LiveActivityView+Title.swift in Sources */,
 				E58BB8D02A62D89500DA8303 /* EnvironmentWidget+Provider.swift in Sources */,
 				E582467B2A643D8E008180CC /* NetworkWidget+Entry.swift in Sources */,
 				E58BB8ED2A62D90C00DA8303 /* CountryWebRepository.swift in Sources */,
@@ -787,9 +865,14 @@
 				E58BB8D32A62D89500DA8303 /* EnvironmentWidget+Entry.swift in Sources */,
 				E58BB8C62A62D88500DA8303 /* CountdownWidget+Provider.swift in Sources */,
 				E58BB8BF2A62D86D00DA8303 /* AppGroupWidget+EntryView.swift in Sources */,
+				E5B345282A67E56900702B86 /* Delivery.swift in Sources */,
+				E5DCA18E2A683DFC00C59A50 /* LiveActivityView+Icon.swift in Sources */,
 				E58246912A64560D008180CC /* InteractiveWidget+EntryView.swift in Sources */,
 				E58BB8E92A62D8FB00DA8303 /* WidgetType.swift in Sources */,
 				E58BB8C12A62D87200DA8303 /* CoreDataWidget+Entry.swift in Sources */,
+				E5B345222A67E37D00702B86 /* LiveActivityWidget.swift in Sources */,
+				E5B3452B2A67E60F00702B86 /* LiveActivityView.swift in Sources */,
+				E5DCA1912A683E2B00C59A50 /* LiveActivityView+Time.swift in Sources */,
 				E58BB8E82A62D8F900DA8303 /* UserDefaultKey.swift in Sources */,
 				E58246952A64561E008180CC /* InteractiveWidget+Intents.swift in Sources */,
 				E521D0522A63011900F6749D /* DynamicIntentWidget+Entry.swift in Sources */,
@@ -803,7 +886,9 @@
 				E582466F2A630BF7008180CC /* URLImageWidget+EntryView.swift in Sources */,
 				E58BB8DD2A62D8A700DA8303 /* URLImageWidget.swift in Sources */,
 				E521D0582A63013C00F6749D /* DynamicIntentWidget+Intent.swift in Sources */,
+				E5B345252A67E3E400702B86 /* DeliveryAttributes.swift in Sources */,
 				E58BB8E12A62D8B100DA8303 /* DynamicIntentWidget.swift in Sources */,
+				E5DCA1972A683E8C00C59A50 /* LiveActivityView+Status.swift in Sources */,
 				E58BB8CB2A62D88A00DA8303 /* DeepLinkWidget+Entry.swift in Sources */,
 				E58BB8CA2A62D88A00DA8303 /* DeepLinkWidget.swift in Sources */,
 				E58246B52A65C943008180CC /* Product.swift in Sources */,
@@ -822,6 +907,7 @@
 				E58246B82A65CB9C008180CC /* SwiftDataWidget+Entry.swift in Sources */,
 				E58BB8E62A62D8F200DA8303 /* AppGroup.swift in Sources */,
 				E58BB8BD2A62D86D00DA8303 /* AppGroupWidget+Provider.swift in Sources */,
+				E5DCA19A2A6840BD00C59A50 /* DeliveryState.swift in Sources */,
 				E58BB8BB2A62D86500DA8303 /* WidgetBundle.swift in Sources */,
 				E58BB8F32A62E31900DA8303 /* IntentWidget+Entry.swift in Sources */,
 				E58BB8C72A62D88500DA8303 /* CountdownWidget.swift in Sources */,
@@ -831,6 +917,7 @@
 				E521D0542A63012000F6749D /* DynamicIntentWidget+EntryView.swift in Sources */,
 				E58BB8BC2A62D86D00DA8303 /* AppGroupWidget.swift in Sources */,
 				E57C3DEA2A66C8C2002CF144 /* Array+Extensions.swift in Sources */,
+				E5B3453C2A682EB000702B86 /* Date+Extensions.swift in Sources */,
 				E58BB8EC2A62D90C00DA8303 /* NetworkWidget.swift in Sources */,
 				E582467F2A643D9B008180CC /* NetworkWidget+Provider.swift in Sources */,
 				E58BB8EE2A62D90C00DA8303 /* WebRepository.swift in Sources */,
@@ -848,7 +935,9 @@
 				E542135C253879B700CCC9C3 /* ContentView.swift in Sources */,
 				E5638AEA265D859D00E73B05 /* WidgetType.swift in Sources */,
 				E517B33A2A61B36F009072A3 /* SharedViewWidgetView.swift in Sources */,
+				E5DCA1992A6840BD00C59A50 /* DeliveryState.swift in Sources */,
 				E57C3DEF2A66D33B002CF144 /* Document.swift in Sources */,
+				E5DCA18D2A683DFC00C59A50 /* LiveActivityView+Icon.swift in Sources */,
 				E517B33F2A61E080009072A3 /* AppGroup.swift in Sources */,
 				E517B3342A61AF28009072A3 /* CoreDataWidgetView.swift in Sources */,
 				E542135A253879B700CCC9C3 /* App.swift in Sources */,
@@ -862,9 +951,17 @@
 				E54214262538B77500CCC9C3 /* DataModel.xcdatamodeld in Sources */,
 				E58246752A6435C1008180CC /* Loadable.swift in Sources */,
 				E54214152538AFF000CCC9C3 /* SharedViewWidgetEntryView.swift in Sources */,
+				E5DCA1962A683E8C00C59A50 /* LiveActivityView+Status.swift in Sources */,
 				E517B3382A61B246009072A3 /* DynamicIntentWidgetView.swift in Sources */,
 				E57C3DEC2A66CA11002CF144 /* UserDefaults+Extensions.swift in Sources */,
 				E54214122538AFEC00CCC9C3 /* SharedViewWidgetEntry.swift in Sources */,
+				E5B345382A67F9C900702B86 /* LiveActivityWidgetView+Model.swift in Sources */,
+				E5B3452A2A67E60F00702B86 /* LiveActivityView.swift in Sources */,
+				E5DCA1932A683E6000C59A50 /* LiveActivityView+Title.swift in Sources */,
+				E5DCA1902A683E2B00C59A50 /* LiveActivityView+Time.swift in Sources */,
+				E5B3453B2A682EB000702B86 /* Date+Extensions.swift in Sources */,
+				E5B345272A67E56900702B86 /* Delivery.swift in Sources */,
+				E5B345362A67F8AD00702B86 /* LiveActivityWidgetView.swift in Sources */,
 				E517B3322A61A59D009072A3 /* AppGroupWidgetView.swift in Sources */,
 				E58246772A64369D008180CC /* WebRepository.swift in Sources */,
 				E517B3712A62B0EB009072A3 /* URL+Extensions.swift in Sources */,
@@ -872,6 +969,7 @@
 				E517B3362A61B067009072A3 /* DeepLinkWidgetView.swift in Sources */,
 				E54214292538B77900CCC9C3 /* PersistenceController.swift in Sources */,
 				E58246C62A669323008180CC /* AppSidebarList.swift in Sources */,
+				E5B345242A67E3E400702B86 /* DeliveryAttributes.swift in Sources */,
 				E58246B62A65CB8D008180CC /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1084,6 +1182,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1115,6 +1214,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

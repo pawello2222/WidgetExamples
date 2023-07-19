@@ -21,37 +21,23 @@
 // SOFTWARE.
 
 import SwiftUI
-import WidgetKit
 
-@main
-struct WidgetExamplesWidgetBundle: WidgetBundle {
-    var body: some Widget {
-        WidgetBundle1().body
-        WidgetBundle2().body
+extension LiveActivityView {
+    struct TitleView: View {
+        let delivery: Delivery
+
+        var body: some View {
+            Text("Delivery #\(delivery.id) - \(delivery.itemsCount) items")
+                .bold()
+        }
     }
 }
 
-struct WidgetBundle1: WidgetBundle {
-    var body: some Widget {
-        AppGroupWidget()
-        CoreDataWidget()
-        CountdownWidget()
-        DeepLinkWidget()
-        DigitalClockWidget()
-        DynamicIntentWidget()
-        EnvironmentWidget()
-        IntentWidget()
-    }
-}
+// MARK: - Preview
 
-struct WidgetBundle2: WidgetBundle {
-    var body: some Widget {
-        InteractiveWidget()
-        LiveActivityWidget()
-        LockScreenWidget()
-        NetworkWidget()
-        SharedViewWidget()
-        SwiftDataWidget()
-        URLImageWidget()
-    }
+#Preview {
+    LiveActivityView.TitleView(
+        delivery: .sent(minutesAgo: 3)
+    )
+    .border(.red)
 }

@@ -42,7 +42,7 @@ extension URLImageWidget {
         func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
             loadImage { image in
                 let currentDate = Date()
-                let nextDate = Calendar.current.date(byAdding: .minute, value: 1, to: currentDate)!
+                let nextDate = currentDate.adding(.minute, value: 1)
                 let entries = [
                     Entry(date: currentDate, image: image, requestCount: Self.requestCount),
                     Entry(date: nextDate, image: .isLoading, requestCount: Self.requestCount)

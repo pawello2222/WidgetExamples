@@ -41,7 +41,7 @@ extension NetworkWidget {
         func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
             loadCountry(code: Self.countryCodes.randomElement()!) { country in
                 let currentDate = Date()
-                let nextDate = Calendar.current.date(byAdding: .minute, value: 1, to: currentDate)!
+                let nextDate = currentDate.adding(.minute, value: 1)
                 let entries = [
                     Entry(date: currentDate, country: country),
                     Entry(date: nextDate, country: .isLoading)

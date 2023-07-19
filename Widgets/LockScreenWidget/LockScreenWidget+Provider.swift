@@ -40,7 +40,7 @@ extension LockScreenWidget {
                 .dateComponents([.hour], from: midnight, to: currentDate)
                 .hour ?? 0
             let fractionOfDay = Double(hoursPassed) / 24
-            let nextDate = Calendar.current.date(byAdding: .hour, value: hoursPassed + 1, to: midnight)!
+            let nextDate = midnight.adding(.hour, value: hoursPassed + 1)
 
             let entries = [Entry(date: currentDate, fractionOfDay: fractionOfDay)]
             let timeline = Timeline(entries: entries, policy: .after(nextDate))

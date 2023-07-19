@@ -21,37 +21,54 @@
 // SOFTWARE.
 
 import SwiftUI
-import WidgetKit
 
-@main
-struct WidgetExamplesWidgetBundle: WidgetBundle {
-    var body: some Widget {
-        WidgetBundle1().body
-        WidgetBundle2().body
+struct LiveActivityView: View {
+    let delivery: Delivery
+    let state: DeliveryAttributes.ContentState
+    let isStale: Bool
+
+    var body: some View {
+        VStack {
+            contentView
+            statusView
+        }
+        .padding()
     }
 }
 
-struct WidgetBundle1: WidgetBundle {
-    var body: some Widget {
-        AppGroupWidget()
-        CoreDataWidget()
-        CountdownWidget()
-        DeepLinkWidget()
-        DigitalClockWidget()
-        DynamicIntentWidget()
-        EnvironmentWidget()
-        IntentWidget()
+// MARK: - Content
+
+extension LiveActivityView {
+    private var contentView: some View {
+        ZStack {
+            HStack {
+                LiveActivityView.IconView(state: state, isStale: isStale)
+                Spacer()
+                LiveActivityView.TimeView(state: state)
+            }
+            .overlay {
+                LiveActivityView.TitleView(delivery: delivery)
+            }
+        }
+        .padding([.top, .horizontal])
+    }
+
+    private var statusView: some View {
+        LiveActivityView.StatusView(
+            delivery: delivery,
+            state: state
+        )
+        .padding(.horizontal)
     }
 }
 
-struct WidgetBundle2: WidgetBundle {
-    var body: some Widget {
-        InteractiveWidget()
-        LiveActivityWidget()
-        LockScreenWidget()
-        NetworkWidget()
-        SharedViewWidget()
-        SwiftDataWidget()
-        URLImageWidget()
-    }
+// MARK: - Preview
+
+#Preview {
+    LiveActivityView(
+        delivery: .sent(minutesAgo: 3),
+        state: .sent,
+        isStale: false
+    )
+    .border(.red)
 }

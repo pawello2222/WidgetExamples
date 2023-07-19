@@ -35,9 +35,9 @@ extension DigitalClockWidget {
         func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
             let currentDate = Date()
             let seconds = Calendar.current.component(.second, from: currentDate)
-            let startDate = Calendar.current.date(byAdding: .second, value: -seconds, to: currentDate)!
+            let startDate = currentDate.adding(.second, value: -seconds)
             let entries = (0 ..< 60).map {
-                let date = Calendar.current.date(byAdding: .minute, value: $0, to: startDate)!
+                let date = startDate.adding(.minute, value: $0)
                 return Entry(date: date)
             }
             completion(.init(entries: entries, policy: .atEnd))

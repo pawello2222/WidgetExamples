@@ -26,6 +26,7 @@ enum AppScreen: Hashable, CaseIterable {
     case appGroup
     case coreData
     case dynamicIntent
+    case liveActivity
     case sharedView
     case swiftData
 }
@@ -47,6 +48,8 @@ extension AppScreen {
             "Core Data"
         case .dynamicIntent:
             "Dynamic Intent"
+        case .liveActivity:
+            "Live Activity"
         case .sharedView:
             "Shared View"
         case .swiftData:
@@ -67,6 +70,8 @@ extension AppScreen {
             CoreDataWidgetView()
         case .dynamicIntent:
             DynamicIntentWidgetView()
+        case .liveActivity:
+            LiveActivityWidgetView()
         case .sharedView:
             SharedViewWidgetView()
         case .swiftData:

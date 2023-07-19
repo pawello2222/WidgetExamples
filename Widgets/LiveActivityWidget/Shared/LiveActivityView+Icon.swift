@@ -21,37 +21,45 @@
 // SOFTWARE.
 
 import SwiftUI
-import WidgetKit
 
-@main
-struct WidgetExamplesWidgetBundle: WidgetBundle {
-    var body: some Widget {
-        WidgetBundle1().body
-        WidgetBundle2().body
+extension LiveActivityView {
+    struct IconView: View {
+        let state: DeliveryAttributes.ContentState
+        let isStale: Bool
+
+        var body: some View {
+            Image(systemName: imageName)
+                .padding(3)
+                .background(Circle().fill(color))
+        }
     }
 }
 
-struct WidgetBundle1: WidgetBundle {
-    var body: some Widget {
-        AppGroupWidget()
-        CoreDataWidget()
-        CountdownWidget()
-        DeepLinkWidget()
-        DigitalClockWidget()
-        DynamicIntentWidget()
-        EnvironmentWidget()
-        IntentWidget()
+// MARK: - Helpers
+
+extension LiveActivityView.IconView {
+    private var imageName: String {
+        isStale ? "clock.badge.exclamationmark" : "shippingbox"
+    }
+
+    private var color: Color {
+        switch state.deliveryState {
+        case .sent:
+            .teal
+        case .delayed:
+            .orange
+        case .arrived:
+            .green
+        }
     }
 }
 
-struct WidgetBundle2: WidgetBundle {
-    var body: some Widget {
-        InteractiveWidget()
-        LiveActivityWidget()
-        LockScreenWidget()
-        NetworkWidget()
-        SharedViewWidget()
-        SwiftDataWidget()
-        URLImageWidget()
-    }
+// MARK: - Preview
+
+#Preview {
+    LiveActivityView.IconView(
+        state: .arrived,
+        isStale: false
+    )
+    .border(.red)
 }

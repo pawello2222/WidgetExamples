@@ -21,37 +21,36 @@
 // SOFTWARE.
 
 import SwiftUI
-import WidgetKit
 
-@main
-struct WidgetExamplesWidgetBundle: WidgetBundle {
-    var body: some Widget {
-        WidgetBundle1().body
-        WidgetBundle2().body
+extension LiveActivityView {
+    struct TimeView: View {
+        let state: DeliveryAttributes.ContentState
+
+        var body: some View {
+            if state.deliveryState == .arrived {
+                Image(systemName: "flag.checkered")
+                    .imageScale(.large)
+            } else {
+                Text("\(minutes)m")
+            }
+        }
     }
 }
 
-struct WidgetBundle1: WidgetBundle {
-    var body: some Widget {
-        AppGroupWidget()
-        CoreDataWidget()
-        CountdownWidget()
-        DeepLinkWidget()
-        DigitalClockWidget()
-        DynamicIntentWidget()
-        EnvironmentWidget()
-        IntentWidget()
+// MARK: - Helpers
+
+extension LiveActivityView.TimeView {
+    private var minutes: Int {
+        let seconds = Date().distance(to: state.expectedArrivalDate)
+        return Int(seconds / 60)
     }
 }
 
-struct WidgetBundle2: WidgetBundle {
-    var body: some Widget {
-        InteractiveWidget()
-        LiveActivityWidget()
-        LockScreenWidget()
-        NetworkWidget()
-        SharedViewWidget()
-        SwiftDataWidget()
-        URLImageWidget()
-    }
+// MARK: - Preview
+
+#Preview {
+    LiveActivityView.TimeView(
+        state: .arrived
+    )
+    .border(.red)
 }
