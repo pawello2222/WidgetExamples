@@ -31,6 +31,9 @@ struct LiveActivityWidgetView: View {
             contentView
         }
         .navigationTitle("Live Activity")
+        .onAppear {
+            model.loadDelivery()
+        }
     }
 }
 
@@ -40,8 +43,13 @@ extension LiveActivityWidgetView {
     @ViewBuilder
     private var contentView: some View {
         if let state = model.activityViewState {
-            updateDeliveryView
-            endDeliveryView
+            if state.isActive {
+                Group {
+                    updateDeliveryView
+                    endDeliveryView
+                }
+                .disabled(state.isUpdating)
+            }
             liveActivityView(state: state)
         } else {
             startDeliveryView
@@ -49,45 +57,52 @@ extension LiveActivityWidgetView {
     }
 
     private var startDeliveryView: some View {
-        Section("Start Delivery") {
-            Button("Start") {
-                model.onStartDelivery()
+        Section("Delivery") {
+            Button("Start delivery") {
+                model.startDelivery()
             }
         }
     }
 
     private var updateDeliveryView: some View {
-        Section("Update Delivery") {
-            Button("Update") {
-                model.onUpdateDelivery(isDelay: false)
+        Section {
+            Button("Refresh") {
+                model.updateDelivery(delayed: false)
             }
-            Button("Delay (with alert)") {
-                model.onUpdateDelivery(isDelay: true)
+            Button("Delay delivery (with alert)") {
+                model.updateDelivery(delayed: true)
             }
+        } header: {
+            Text("Update Delivery")
+        } footer: {
+            Text("The action will be delayed by 2 seconds.")
         }
     }
 
     private var endDeliveryView: some View {
-        Section("End Delivery") {
-            Button("Dismiss now") {
-                model.onEndDelivery(dismissTimeInterval: 0)
+        Section {
+            Button("End & dismiss immediately") {
+                model.endDelivery(dismissTimeInterval: 0)
             }
-            Button("Dismiss in 10 seconds") {
-                model.onEndDelivery(dismissTimeInterval: 10)
+            Button("End & dismiss in 10 seconds") {
+                model.endDelivery(dismissTimeInterval: 10)
             }
-            Button("Dismiss by system") {
-                model.onEndDelivery(dismissTimeInterval: nil)
+            Button("End & dismiss by system") {
+                model.endDelivery(dismissTimeInterval: nil)
             }
+        } header: {
+            Text("End Delivery")
         }
     }
 
     private func liveActivityView(state: LiveActivityWidgetViewModel.ActivityViewState) -> some View {
-        Section("Live Activity Preview") {
+        Section("Preview") {
             LiveActivityView(
                 delivery: state.delivery,
                 state: state.contentState,
                 isStale: state.isStale
             )
+            .background(.thinMaterial)
             .containerShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         }
     }

@@ -28,7 +28,7 @@ extension LiveActivityView {
 
         var body: some View {
             Text("Delivery #\(delivery.id) - \(delivery.itemsCount) items")
-                .bold()
+                .font(.headline)
         }
     }
 }

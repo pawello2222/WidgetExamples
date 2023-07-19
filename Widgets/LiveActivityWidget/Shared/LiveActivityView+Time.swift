@@ -31,7 +31,7 @@ extension LiveActivityView {
                 Image(systemName: "flag.checkered")
                     .imageScale(.large)
             } else {
-                Text("\(minutes)m")
+                Text("\(remainingTimeInMinutes)m")
             }
         }
     }
@@ -40,7 +40,7 @@ extension LiveActivityView {
 // MARK: - Helpers
 
 extension LiveActivityView.TimeView {
-    private var minutes: Int {
+    private var remainingTimeInMinutes: Int {
         let seconds = Date().distance(to: state.expectedArrivalDate)
         return Int(seconds / 60)
     }

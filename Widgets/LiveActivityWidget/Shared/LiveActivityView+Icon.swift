@@ -29,6 +29,7 @@ extension LiveActivityView {
 
         var body: some View {
             Image(systemName: imageName)
+                .symbolVariant(.fill)
                 .padding(3)
                 .background(Circle().fill(color))
         }

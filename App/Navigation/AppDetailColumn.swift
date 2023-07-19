@@ -45,6 +45,9 @@ struct AppDetailColumn: View {
                 if case .deepLink(let widgetFamily) = $0 {
                     DeepLinkWidgetView(widgetFamily: widgetFamily)
                 }
+                if case .liveActivity = $0 {
+                    LiveActivityWidgetView()
+                }
             }
         }
         .onOpenURL {
@@ -58,14 +61,23 @@ struct AppDetailColumn: View {
 extension AppDetailColumn {
     private func parse(url: URL) {
         print("Opened url: \(url)")
-        guard
-            url.scheme == Shared.DeepLink.scheme,
-            url.host == WidgetType.deepLink.kind,
-            let widgetFamily = url.queryParameter(name: Shared.DeepLink.widgetFamily)
-        else {
+        guard url.scheme == Shared.DeepLink.scheme else {
             return
         }
-        navigationPath.append(Route.deepLink(widgetFamily: widgetFamily))
+        var route: Route?
+        switch url.host {
+        case WidgetType.deepLink.kind:
+            if let widgetFamily = url.queryParameter(name: Shared.DeepLink.widgetFamily) {
+                route = .deepLink(widgetFamily: widgetFamily)
+            }
+        case WidgetType.liveActivity.kind:
+            route = .liveActivity
+        default:
+            route = nil
+        }
+        if let route {
+            navigationPath.append(route)
+        }
     }
 }
 

@@ -24,4 +24,5 @@ import Foundation
 
 enum Route: Hashable {
     case deepLink(widgetFamily: String)
+    case liveActivity
 }

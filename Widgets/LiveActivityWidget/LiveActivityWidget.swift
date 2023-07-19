@@ -31,13 +31,14 @@ struct LiveActivityWidget: Widget {
                 state: $0.state,
                 isStale: $0.isStale
             )
-            .activityBackgroundTint(Color.teal.opacity(0.25))
+            .widgetURL(deeplinkURL)
         } dynamicIsland: {
             dynamicIsland(
                 delivery: $0.attributes.delivery,
                 state: $0.state,
                 isStale: $0.isStale
             )
+            .widgetURL(deeplinkURL)
         }
     }
 }
@@ -86,21 +87,26 @@ extension LiveActivityWidget {
     }
 }
 
+// MARK: - Helpers
+
+extension LiveActivityWidget {
+    private var deeplinkURL: URL {
+        var components = URLComponents()
+        components.scheme = Shared.DeepLink.scheme
+        components.host = WidgetType.liveActivity.kind
+        return components.url!
+    }
+}
+
 // MARK: - Preview
 
-#Preview(as: .dynamicIsland(.expanded), using: DeliveryAttributes(delivery: .sent(minutesAgo: 3))) {
+#Preview(
+    as: .dynamicIsland(.expanded),
+    using: DeliveryAttributes(delivery: .sent(minutesAgo: 3))
+) {
     LiveActivityWidget()
 } contentStates: {
-    DeliveryAttributes.ContentState(
-        expectedArrivalDate: .now.adding(.minute, value: 3),
-        deliveryState: .sent
-    )
-    DeliveryAttributes.ContentState(
-        expectedArrivalDate: .now.adding(.minute, value: 8),
-        deliveryState: .delayed
-    )
-    DeliveryAttributes.ContentState(
-        expectedArrivalDate: .now,
-        deliveryState: .arrived
-    )
+    DeliveryAttributes.ContentState.sent
+    DeliveryAttributes.ContentState.delayed
+    DeliveryAttributes.ContentState.arrived
 }

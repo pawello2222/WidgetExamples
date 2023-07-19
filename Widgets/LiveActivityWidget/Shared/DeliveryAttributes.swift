@@ -41,7 +41,7 @@ extension DeliveryAttributes.ContentState {
     )
 
     static let delayed: Self = .init(
-        expectedArrivalDate: .now.adding(.minute, value: 10),
+        expectedArrivalDate: .now.adding(.minute, value: 12),
         deliveryState: .delayed
     )
 

@@ -67,7 +67,7 @@ extension LiveActivityView.StatusView {
             Image(systemName: "house")
         }
         .gaugeStyle(.accessoryLinear)
-        .tint(Gradient(colors: [.teal, .green]))
+        .tint(Gradient(colors: [.blue, .green]))
     }
 }
 
@@ -83,7 +83,7 @@ extension LiveActivityView.StatusView {
     }
 
     private var currentTimeInterval: TimeInterval {
-        Date().timeIntervalSince1970
+        min(Date().timeIntervalSince1970, endTimeInterval)
     }
 
     private var endTimeInterval: TimeInterval {

@@ -32,6 +32,7 @@ enum WidgetType: String {
     case environment
     case intent
     case interactive
+    case liveActivity
     case lockScreen
     case network
     case sharedView

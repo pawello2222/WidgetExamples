@@ -24,29 +24,40 @@ import ActivityKit
 import Foundation
 import Observation
 
+// swiftformat:disable redundantNilInit
+// swiftlint:disable redundant_optional_initialization
 @Observable
 final class LiveActivityWidgetViewModel {
-    // swiftformat:disable redundantNilInit
-    private(set) var activityViewState: ActivityViewState? = nil
+    typealias DeliveryActivity = Activity<DeliveryAttributes>
 
-    private var currentActivity: Activity<DeliveryAttributes>? = nil
+    private(set) var activityViewState: ActivityViewState? = nil
+    private var currentActivity: DeliveryActivity? = nil
 }
 
 // MARK: - Actions
 
 extension LiveActivityWidgetViewModel {
-    func onStartDelivery() {
+    func loadDelivery() {
+        guard let activity = DeliveryActivity.activities.first else {
+            return
+        }
+
+        setup(activity: activity, for: activity.attributes.delivery)
+    }
+
+    func startDelivery() {
+        let delivery = Delivery.sent()
+        let expectedArrivalDate = delivery.date
+            .adding(.minute, value: Int.random(in: 3 ... 5))
+        let attributes = DeliveryAttributes(delivery: delivery)
+        let state = DeliveryAttributes.ContentState(
+            expectedArrivalDate: expectedArrivalDate,
+            deliveryState: .sent
+        )
         do {
-            let delivery = Delivery.sent()
-            let expectedArrivalDate = delivery.date.adding(.minute, value: Int.random(in: 5 ... 10))
-            let attributes = DeliveryAttributes(delivery: delivery)
-            let state = DeliveryAttributes.ContentState(
-                expectedArrivalDate: expectedArrivalDate,
-                deliveryState: .sent
-            )
             let activity = try Activity.request(
                 attributes: attributes,
-                content: .init(state: state, staleDate: nil)
+                content: .init(state: state, staleDate: expectedArrivalDate)
             )
             setup(activity: activity, for: delivery)
         } catch {
@@ -54,17 +65,18 @@ extension LiveActivityWidgetViewModel {
         }
     }
 
-    func onUpdateDelivery(isDelay: Bool) {
+    func updateDelivery(delayed: Bool) {
         Task {
             activityViewState?.isUpdating = true
-            try await updateDelivery(isDelay: isDelay)
+            try await Task.sleep(for: .seconds(2))
+            try await updateActivity(delayed: delayed)
             activityViewState?.isUpdating = false
         }
     }
 
-    func onEndDelivery(dismissTimeInterval: Double?) {
+    func endDelivery(dismissTimeInterval: Double?) {
         Task {
-            await endDelivery(dismissTimeInterval: dismissTimeInterval)
+            await endActivity(dismissTimeInterval: dismissTimeInterval)
         }
     }
 }
@@ -72,19 +84,17 @@ extension LiveActivityWidgetViewModel {
 // MARK: - Activity
 
 extension LiveActivityWidgetViewModel {
-    private func setup(activity: Activity<DeliveryAttributes>, for delivery: Delivery) {
+    private func setup(activity: DeliveryActivity, for delivery: Delivery) {
         currentActivity = activity
-
         activityViewState = .init(
-            delivery: delivery,
             activityState: activity.activityState,
-            contentState: activity.content.state
+            contentState: activity.content.state,
+            delivery: delivery
         )
-
         observe(activity: activity)
     }
 
-    private func observe(activity: Activity<DeliveryAttributes>) {
+    private func observe(activity: DeliveryActivity) {
         Task {
             await withTaskGroup(of: Void.self) { group in
                 group.addTask { @MainActor in
@@ -110,49 +120,56 @@ extension LiveActivityWidgetViewModel {
         activityViewState = nil
     }
 
-    private func updateDelivery(isDelay: Bool) async throws {
+    private func updateActivity(delayed: Bool) async throws {
         guard let activity = currentActivity else {
             return
         }
 
-        try await Task.sleep(for: .seconds(2))
-
-        var alertConfig: AlertConfiguration?
-        let state: DeliveryAttributes.ContentState
-        if isDelay {
-            let delivery = activity.attributes.delivery
-
-            alertConfig = AlertConfiguration(
-                title: "Unexpected delay!",
-                body: "Delivery \(delivery.id) has been delayed!",
-                sound: .default
-            )
-
-            let delay = Int.random(in: 5 ... 15)
-            let expectedArrivalDate = activity.content.state.expectedArrivalDate.adding(.minute, value: Int.random(in: 1 ... 3))
-
-            state = DeliveryAttributes.ContentState(
-                expectedArrivalDate: expectedArrivalDate,
-                deliveryState: .delayed
-            )
-        } else {
-            state = DeliveryAttributes.ContentState(
-                expectedArrivalDate: activity.content.state.expectedArrivalDate,
-                deliveryState: .sent
-            )
+        guard delayed else {
+            try await refreshActivity()
+            return
         }
+
+        let delivery = activity.attributes.delivery
+        let alertConfiguration = AlertConfiguration(
+            title: "Unexpected delay!",
+            body: "Delivery #\(delivery.id) has been delayed!",
+            sound: .default
+        )
+
+        let delay = Int.random(in: 1 ... 3)
+        let expectedArrivalDate = activity.content.state.expectedArrivalDate
+            .adding(.minute, value: delay)
+        let state = DeliveryAttributes.ContentState(
+            expectedArrivalDate: expectedArrivalDate,
+            deliveryState: .delayed
+        )
 
         await activity.update(
             .init(
                 state: state,
-                staleDate: Date.now + 15,
-                relevanceScore: isDelay ? 100 : 50
+                staleDate: state.expectedArrivalDate,
+                relevanceScore: 1
             ),
-            alertConfiguration: alertConfig
+            alertConfiguration: alertConfiguration
         )
     }
 
-    fileprivate func endDelivery(dismissTimeInterval: Double?) async {
+    private func refreshActivity() async throws {
+        guard let activity = currentActivity else {
+            return
+        }
+
+        let state = activity.content.state
+        await activity.update(
+            .init(
+                state: state,
+                staleDate: state.expectedArrivalDate
+            )
+        )
+    }
+
+    private func endActivity(dismissTimeInterval: Double?) async {
         guard let activity = currentActivity else {
             return
         }
@@ -173,17 +190,23 @@ extension LiveActivityWidgetViewModel {
             dismissalPolicy = .default
         }
 
-        await activity.end(ActivityContent(state: state, staleDate: nil), dismissalPolicy: dismissalPolicy)
+        await activity.end(
+            .init(
+                state: state,
+                staleDate: nil
+            ),
+            dismissalPolicy: dismissalPolicy
+        )
     }
 }
 
 // MARK: - ActivityViewState
 
 extension LiveActivityWidgetViewModel {
-    struct ActivityViewState: Sendable {
-        var delivery: Delivery
+    struct ActivityViewState {
         var activityState: ActivityState
         var contentState: DeliveryAttributes.ContentState
+        var delivery: Delivery
 
         var isUpdating = false
 
