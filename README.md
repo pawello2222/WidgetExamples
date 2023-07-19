@@ -64,6 +64,10 @@ Configure the Widget by changing its background type and color.
 
 Interact with elements of the Widget.
 
+### [Live Activity](./Widgets/LiveActivityWidget)
+
+Create a Live Activity to show the delivery status.
+
 ### [Lock Screen](./Widgets/LockScreenWidget)
 
 Display the Widget on both the lock screen and the home screen.
