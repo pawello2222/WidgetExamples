@@ -24,14 +24,16 @@ import ActivityKit
 import Foundation
 import Observation
 
-// swiftformat:disable redundantNilInit
-// swiftlint:disable redundant_optional_initialization
 @Observable
 final class LiveActivityWidgetViewModel {
     typealias DeliveryActivity = Activity<DeliveryAttributes>
 
+    // swiftformat:disable redundantNilInit
+    // swiftlint:disable redundant_optional_initialization
     private(set) var activityViewState: ActivityViewState? = nil
     private var currentActivity: DeliveryActivity? = nil
+    // swiftformat:enable redundantNilInit
+    // swiftlint:enable redundant_optional_initialization
 }
 
 // MARK: - Actions

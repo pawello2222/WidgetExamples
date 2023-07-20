@@ -28,11 +28,17 @@ extension DynamicIntentWidget {
             .placeholder
         }
 
-        func snapshot(for configuration: DynamicIntentWidgetPersonIntent, in context: Context) async -> Entry {
+        func snapshot(
+            for configuration: DynamicIntentWidgetPersonIntent,
+            in context: Context
+        ) async -> Entry {
             .placeholder
         }
 
-        func timeline(for configuration: DynamicIntentWidgetPersonIntent, in context: Context) async -> Timeline<Entry> {
+        func timeline(
+            for configuration: DynamicIntentWidgetPersonIntent,
+            in context: Context
+        ) async -> Timeline<Entry> {
             let entry = Entry(person: person(for: configuration))
             return .init(entries: [entry], policy: .never)
         }

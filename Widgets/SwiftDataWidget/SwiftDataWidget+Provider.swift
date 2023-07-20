@@ -25,8 +25,7 @@ import WidgetKit
 
 extension SwiftDataWidget {
     struct Provider: TimelineProvider {
-        static let container = try! ModelContainer(for: Product.self)
-        let modelContext = ModelContext(Self.container)
+        private let modelContext = ModelContext(Self.container)
 
         func placeholder(in context: Context) -> Entry {
             .placeholder
@@ -49,6 +48,18 @@ extension SwiftDataWidget {
             completion(.init(entries: [entry], policy: .never))
         }
     }
+}
+
+// MARK: - ModelContainer
+
+extension SwiftDataWidget.Provider {
+    private static let container: ModelContainer = {
+        do {
+            return try ModelContainer(for: Product.self)
+        } catch {
+            fatalError("\(error)")
+        }
+    }()
 }
 
 // MARK: - Helpers

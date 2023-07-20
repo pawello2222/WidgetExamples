@@ -26,7 +26,8 @@ import WidgetKit
 
 extension URLImageWidget {
     struct Provider: TimelineProvider {
-        private static let imageURL = "https://raw.githubusercontent.com/pawello2222/country-flags/main/png1000px/pl.png"
+        private static let imageURL
+            = "https://raw.githubusercontent.com/pawello2222/country-flags/main/png1000px/pl.png"
         private static let cache = NSCache<NSURL, NSData>()
         private static var cancellables = Set<AnyCancellable>()
         private static var requestCount = 0

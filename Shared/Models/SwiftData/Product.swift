@@ -41,7 +41,7 @@ final class Product {
 // MARK: - Data
 
 extension Product {
-    static let `default`: Self = .init(
+    static let `default` = Product(
         name: "Product 1",
         creationDate: .now
     )

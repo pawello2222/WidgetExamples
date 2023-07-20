@@ -45,9 +45,9 @@ extension WebRepository {
             .eraseToAnyPublisher()
     }
 
-    func fetchAPIResource<Resource>(_ resource: Resource) -> AnyPublisher<Resource.Response, APIError>
-        where Resource: APIResource
-    {
+    func fetchAPIResource<Resource>(
+        _ resource: Resource
+    ) -> AnyPublisher<Resource.Response, APIError> where Resource: APIResource {
         guard let url = resource.url else {
             return Fail(error: .invalidRequest(description: "Invalid url"))
                 .eraseToAnyPublisher()
@@ -57,9 +57,9 @@ extension WebRepository {
             .eraseToAnyPublisher()
     }
 
-    private func decode<Response>(data: Data) -> AnyPublisher<Response, APIError>
-        where Response: Decodable
-    {
+    private func decode<Response>(
+        data: Data
+    ) -> AnyPublisher<Response, APIError> where Response: Decodable {
         if let response = try? JSONDecoder().decode(Response.self, from: data) {
             return Just(response)
                 .setFailureType(to: APIError.self)
