@@ -52,12 +52,6 @@ extension SwiftDataWidget.Entry {
 
 extension SwiftDataWidget.Entry.ProductInfo {
     static var placeholder: Self {
-        .init(count: 1, lastItem: .placeholder)
-    }
-}
-
-extension Product {
-    static var placeholder: Self {
-        .init(name: "Product 1", creationDate: .now)
+        .init(count: 1, lastItem: .default)
     }
 }

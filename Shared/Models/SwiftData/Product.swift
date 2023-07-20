@@ -21,17 +21,28 @@
 // SOFTWARE.
 
 import Foundation
+import SwiftData
 
-struct Delivery: Codable, Equatable {
-    var id = UUID().uuidString.prefix(4).uppercased()
-    var itemsCount: Int
-    var date: Date = .now
+@Model
+final class Product {
+    @Attribute(.unique) var id = UUID().uuidString
+    var name: String
+    var creationDate: Date
+
+    init(
+        name: String = "Product \(Int.random(in: 1 ... 99))",
+        creationDate: Date = .now
+    ) {
+        self.name = name
+        self.creationDate = creationDate
+    }
 }
 
 // MARK: - Data
 
-extension Delivery {
-    static func sent(minutesAgo: Int = 0) -> Self {
-        .init(itemsCount: 3, date: .now.adding(.minute, value: -minutesAgo))
-    }
+extension Product {
+    static let `default`: Self = .init(
+        name: "Product 1",
+        creationDate: .now
+    )
 }

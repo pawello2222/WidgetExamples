@@ -455,8 +455,6 @@
 				E58246742A6435B0008180CC /* Components */,
 				E517B33D2A61E068009072A3 /* Extensions */,
 				E55498362551D1F40066870B /* Models */,
-				E58246762A643690008180CC /* Network */,
-				E582466A2A630B8C008180CC /* Persistence */,
 				E517B3402A61E0C6009072A3 /* Shared.swift */,
 				E5638AE9265D859D00E73B05 /* WidgetType.swift */,
 			);
@@ -506,15 +504,6 @@
 			path = CoreDataWidget;
 			sourceTree = "<group>";
 		};
-		E54C257B2538D02C000FFA46 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				E542141D2538B68200CCC9C3 /* PersistenceController.swift */,
-				E54214212538B76C00CCC9C3 /* DataModel.xcdatamodeld */,
-			);
-			path = CoreData;
-			sourceTree = "<group>";
-		};
 		E55497C7255180B40066870B /* DynamicIntentWidget */ = {
 			isa = PBXGroup;
 			children = (
@@ -530,12 +519,10 @@
 		E55498362551D1F40066870B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E5B345262A67E56900702B86 /* Delivery.swift */,
-				E5B345232A67E3E400702B86 /* DeliveryAttributes.swift */,
-				E5DCA1982A6840BD00C59A50 /* DeliveryState.swift */,
-				E57C3DEE2A66D33B002CF144 /* Document.swift */,
-				E55498372551D2160066870B /* Person.swift */,
-				E58246B42A65C943008180CC /* Product.swift */,
+				E56181CD2A69D856002E0CB2 /* CoreData */,
+				E56181D02A69D8A3002E0CB2 /* DynamicIntent */,
+				E56181CF2A69D87C002E0CB2 /* LiveActivity */,
+				E56181CE2A69D86E002E0CB2 /* SwiftData */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -557,21 +544,39 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E582466A2A630B8C008180CC /* Persistence */ = {
+		E56181CD2A69D856002E0CB2 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				E54C257B2538D02C000FFA46 /* CoreData */,
-				E582466B2A630BA8008180CC /* UserDefaults */,
+				E54214212538B76C00CCC9C3 /* DataModel.xcdatamodeld */,
+				E57C3DEE2A66D33B002CF144 /* Document.swift */,
 			);
-			path = Persistence;
+			path = CoreData;
 			sourceTree = "<group>";
 		};
-		E582466B2A630BA8008180CC /* UserDefaults */ = {
+		E56181CE2A69D86E002E0CB2 /* SwiftData */ = {
 			isa = PBXGroup;
 			children = (
-				E517B33B2A61E022009072A3 /* UserDefaultKey.swift */,
+				E58246B42A65C943008180CC /* Product.swift */,
 			);
-			path = UserDefaults;
+			path = SwiftData;
+			sourceTree = "<group>";
+		};
+		E56181CF2A69D87C002E0CB2 /* LiveActivity */ = {
+			isa = PBXGroup;
+			children = (
+				E5B345262A67E56900702B86 /* Delivery.swift */,
+				E5B345232A67E3E400702B86 /* DeliveryAttributes.swift */,
+				E5DCA1982A6840BD00C59A50 /* DeliveryState.swift */,
+			);
+			path = LiveActivity;
+			sourceTree = "<group>";
+		};
+		E56181D02A69D8A3002E0CB2 /* DynamicIntent */ = {
+			isa = PBXGroup;
+			children = (
+				E55498372551D2160066870B /* Person.swift */,
+			);
+			path = DynamicIntent;
 			sourceTree = "<group>";
 		};
 		E58246742A6435B0008180CC /* Components */ = {
@@ -579,16 +584,11 @@
 			children = (
 				E5619C562A6986D900F94132 /* DeepLink.swift */,
 				E58246722A635A4B008180CC /* Loadable.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		E58246762A643690008180CC /* Network */ = {
-			isa = PBXGroup;
-			children = (
+				E542141D2538B68200CCC9C3 /* PersistenceController.swift */,
+				E517B33B2A61E022009072A3 /* UserDefaultKey.swift */,
 				E54213B42538857F00CCC9C3 /* WebRepository.swift */,
 			);
-			path = Network;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		E58246852A644F00008180CC /* InteractiveWidget */ = {

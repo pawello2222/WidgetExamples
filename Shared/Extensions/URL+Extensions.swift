@@ -27,6 +27,8 @@ extension URL {
         guard let url = URLComponents(string: absoluteString) else {
             return nil
         }
-        return url.queryItems?.first(where: { $0.name == name })?.value
+        return url.queryItems?
+            .first(where: { $0.name == name })?
+            .value
     }
 }

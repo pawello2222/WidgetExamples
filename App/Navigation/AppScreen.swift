@@ -37,7 +37,7 @@ extension AppScreen: Identifiable {
     var id: AppScreen { self }
 }
 
-// MARK: - Computed Properties
+// MARK: - Helpers
 
 extension AppScreen {
     var title: String {

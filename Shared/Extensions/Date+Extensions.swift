@@ -23,7 +23,11 @@
 import Foundation
 
 extension Date {
-    func adding(_ component: Calendar.Component, value: Int, in calendar: Calendar = .current) -> Self {
+    func adding(
+        _ component: Calendar.Component,
+        value: Int,
+        in calendar: Calendar = .current
+    ) -> Self {
         calendar.date(byAdding: component, value: value, to: self)!
     }
 }

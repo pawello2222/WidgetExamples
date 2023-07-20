@@ -42,6 +42,8 @@ enum WidgetType: String {
     case urlCachedImage
 }
 
+// MARK: - Helpers
+
 extension WidgetType {
     var kind: String {
         rawValue + "Widget"

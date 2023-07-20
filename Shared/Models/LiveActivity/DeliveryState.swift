@@ -28,7 +28,7 @@ enum DeliveryState: Codable {
     case arrived
 }
 
-// MARK: - Computed Properties
+// MARK: - Helpers
 
 extension DeliveryState {
     var name: String {

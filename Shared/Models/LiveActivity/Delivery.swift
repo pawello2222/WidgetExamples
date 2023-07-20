@@ -22,54 +22,19 @@
 
 import Foundation
 
-struct Person: Codable, Hashable, Identifiable {
-    var id = UUID().uuidString
-    var name: String
-    var dateOfBirth: Date
-}
-
-// MARK: - Helpers
-
-extension Person {
-    static func getAll() -> [Self] {
-        let key = UserDefaultKey.persons
-        guard let persons: [Self] = UserDefaults.appGroup.getArray(forKey: key) else {
-            let persons: [Person] = .defaultFriends
-            UserDefaults.appGroup.setArray(persons, forKey: key)
-            return persons
-        }
-        return persons
-    }
-}
-
-// MARK: - Convenience
-
-extension Person {
-    init?(identifier: String) {
-        if let person = Self.getAll().first(where: { $0.id == identifier }) {
-            self = person
-        } else {
-            return nil
-        }
-    }
+struct Delivery: Codable, Equatable {
+    var id = UUID().uuidString.prefix(4).uppercased()
+    var itemsCount: Int
+    var date: Date = .now
 }
 
 // MARK: - Data
 
-extension [Person] {
-    static let defaultFriends: Self = [
-        .friend1, .friend2
-    ]
-}
-
-extension Person {
-    static let friend1: Self = .init(
-        name: "Friend 1",
-        dateOfBirth: .now.adding(.month, value: -2)
-    )
-
-    static let friend2: Self = .init(
-        name: "Friend 2",
-        dateOfBirth: .now.adding(.year, value: -3)
-    )
+extension Delivery {
+    static func sent(minutesAgo: Int = 0) -> Self {
+        .init(
+            itemsCount: 3,
+            date: .now.adding(.minute, value: -minutesAgo)
+        )
+    }
 }
