@@ -91,10 +91,8 @@ extension LiveActivityWidget {
 
 extension LiveActivityWidget {
     private var deeplinkURL: URL {
-        var components = URLComponents()
-        components.scheme = Shared.DeepLink.scheme
-        components.host = WidgetType.liveActivity.kind
-        return components.url!
+        DeepLink.Builder(widget: .liveActivity)
+            .build()
     }
 }
 

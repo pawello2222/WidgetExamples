@@ -37,22 +37,37 @@ extension CoreDataWidget {
         }
 
         func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
-            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Document")
-            guard var documents = try? managedObjectContext.fetch(request) as? [Document] else {
-                completion(.init(entries: [.init()], policy: .never))
+            guard let documents = fetchDocuments() else {
+                completion(.init(entries: [.empty], policy: .never))
                 return
-            }
-            documents.sort {
-                $0.creationDate < $1.creationDate
             }
             let documentInfo = Entry.DocumentInfo(
                 count: documents.count,
-                lastDocument: documents.last.map {
+                lastItem: documents.last.map {
                     .init(name: $0.name, creationDate: $0.creationDate)
                 }
             )
             let entry = Entry(documentInfo: documentInfo)
             completion(.init(entries: [entry], policy: .never))
+        }
+    }
+}
+
+// MARK: - Helpers
+
+extension CoreDataWidget.Provider {
+    private func fetchDocuments() -> [Document]? {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Document")
+        do {
+            guard let documents = try managedObjectContext.fetch(request) as? [Document] else {
+                return nil
+            }
+            return documents.sorted {
+                $0.creationDate < $1.creationDate
+            }
+        } catch {
+            print(error)
+            return nil
         }
     }
 }

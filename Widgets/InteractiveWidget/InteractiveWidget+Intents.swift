@@ -38,7 +38,7 @@ struct InteractiveWidgetIncreaseIntent: AppIntent {
     init() {}
 
     func perform() async throws -> some IntentResult {
-        let key = UserDefaultKey.counter(id: counter.id)
+        let key = UserDefaultKey.eventCounter(id: counter.id)
         UserDefaults.appGroup.set(counter.value + 1, forKey: key)
         return .result()
     }
@@ -59,7 +59,7 @@ struct InteractiveWidgetResetIntent: AppIntent {
     init() {}
 
     func perform() async throws -> some IntentResult {
-        let key = UserDefaultKey.counter(id: counter.id)
+        let key = UserDefaultKey.eventCounter(id: counter.id)
         UserDefaults.appGroup.set(0, forKey: key)
         return .result()
     }
@@ -94,13 +94,13 @@ struct EventCounterEntity: AppEntity, Identifiable, Hashable {
 struct EventCounterEntityQuery: EntityQuery, Sendable {
     func entities(for identifiers: [EventCounterEntity.ID]) async throws -> [EventCounterEntity] {
         identifiers.map {
-            let key = UserDefaultKey.counter(id: $0)
+            let key = UserDefaultKey.eventCounter(id: $0)
             let value = UserDefaults.appGroup.integer(forKey: key)
             return .init(id: $0, value: value)
         }
     }
 
     func suggestedEntities() async throws -> [EventCounterEntity] {
-        [.init(from: .default)]
+        [.init(from: .placeholder)]
     }
 }

@@ -94,9 +94,14 @@ extension LiveActivityView.StatusView {
 // MARK: - Preview
 
 #Preview {
-    LiveActivityView.StatusView(
-        delivery: .sent(minutesAgo: 3),
-        state: .arrived
-    )
-    .border(.red)
+    VStack {
+        ForEach(DeliveryAttributes.previewStates, id: \.self) {
+            LiveActivityView.StatusView(
+                delivery: .sent(minutesAgo: 3),
+                state: $0
+            )
+            .border(.red)
+        }
+    }
+    .padding()
 }

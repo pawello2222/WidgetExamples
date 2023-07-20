@@ -20,9 +20,23 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import Foundation
+import SwiftUI
 
-enum Route: Hashable {
+enum AppRoute: Hashable {
     case deepLink(widgetFamily: String)
     case liveActivity
+}
+
+// MARK: - Destination
+
+extension AppRoute {
+    @ViewBuilder
+    var view: some View {
+        if case .deepLink(let widgetFamily) = self {
+            DeepLinkWidgetView(widgetFamily: widgetFamily)
+        }
+        if case .liveActivity = self {
+            LiveActivityWidgetView()
+        }
+    }
 }

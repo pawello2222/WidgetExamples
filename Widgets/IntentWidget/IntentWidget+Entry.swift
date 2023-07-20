@@ -25,7 +25,7 @@ import WidgetKit
 extension IntentWidget {
     struct Entry: TimelineEntry {
         var date: Date = .now
-        var background: IntentWidgetBackground = .init()
+        var background: IntentWidgetBackground
     }
 }
 
@@ -40,6 +40,14 @@ struct IntentWidgetBackground {
 
 extension IntentWidget.Entry {
     static var placeholder: Self {
-        .init()
+        .color
+    }
+
+    static var color: Self {
+        .init(background: .init(type: .color, colors: [.teal]))
+    }
+
+    static var gradient: Self {
+        .init(background: .init(type: .gradient, colors: [.teal, .yellow]))
     }
 }

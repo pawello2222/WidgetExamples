@@ -21,7 +21,6 @@
 // SOFTWARE.
 
 import SwiftUI
-import WidgetKit
 
 extension LockScreenWidget {
     struct EntryView: View {
@@ -57,10 +56,20 @@ extension LockScreenWidget.EntryView {
 
     @ViewBuilder
     private var contentView: some View {
-        if widgetFamily == .accessoryCircular {
+        if widgetFamily == .accessoryInline {
+            inlineView
+        } else if widgetFamily == .accessoryCircular {
             gaugeCircularView
         } else {
             gaugeLinearView
+        }
+    }
+
+    private var inlineView: some View {
+        Label {
+            textView
+        } icon: {
+            Image(systemName: "sun.max")
         }
     }
 
@@ -73,8 +82,12 @@ extension LockScreenWidget.EntryView {
 
     private var gaugeLinearView: some View {
         Gauge(value: entry.fractionOfDay) {
-            Text("Passed: \(entry.fractionOfDay * 100, specifier: "%.f")%")
+            textView
         }
         .gaugeStyle(.accessoryLinearCapacity)
+    }
+
+    private var textView: some View {
+        Text("Passed: \(entry.fractionOfDay * 100, specifier: "%.f")%")
     }
 }

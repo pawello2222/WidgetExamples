@@ -21,7 +21,6 @@
 // SOFTWARE.
 
 import SwiftUI
-import WidgetKit
 
 extension CountdownWidget {
     struct EntryView: View {
@@ -70,7 +69,11 @@ extension CountdownWidget.EntryView {
             Text("End")
         }
     }
+}
 
+// MARK: - Helpers
+
+extension CountdownWidget.EntryView {
     private var textColor: Color {
         switch entry.countdownState {
         case .counting:

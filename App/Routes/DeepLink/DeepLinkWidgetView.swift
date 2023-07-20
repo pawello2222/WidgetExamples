@@ -23,7 +23,7 @@
 import SwiftUI
 
 struct DeepLinkWidgetView: View {
-    var widgetFamily: String
+    let widgetFamily: String
 
     var body: some View {
         List {

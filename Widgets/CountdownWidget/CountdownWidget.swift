@@ -41,7 +41,7 @@ struct CountdownWidget: Widget {
 #Preview(as: .systemSmall) {
     CountdownWidget()
 } timeline: {
-    CountdownWidget.Entry(countdownState: .counting)
-    CountdownWidget.Entry(countdownState: .nearEnd)
-    CountdownWidget.Entry(countdownState: .end)
+    CountdownWidget.Entry.counting
+    CountdownWidget.Entry.nearEnd
+    CountdownWidget.Entry.end
 }

@@ -28,16 +28,16 @@ extension DynamicIntentWidget {
             .placeholder
         }
 
-        func snapshot(for configuration: DynamicIntentWidgetIntent, in context: Context) async -> Entry {
+        func snapshot(for configuration: DynamicIntentWidgetPersonIntent, in context: Context) async -> Entry {
             .placeholder
         }
 
-        func timeline(for configuration: DynamicIntentWidgetIntent, in context: Context) async -> Timeline<Entry> {
+        func timeline(for configuration: DynamicIntentWidgetPersonIntent, in context: Context) async -> Timeline<Entry> {
             let entry = Entry(person: person(for: configuration))
             return .init(entries: [entry], policy: .never)
         }
 
-        func recommendations() -> [AppIntentRecommendation<DynamicIntentWidgetIntent>] {
+        func recommendations() -> [AppIntentRecommendation<DynamicIntentWidgetPersonIntent>] {
             Person.getAll().map {
                 .init(
                     intent: .init(person: .init(id: $0.id, name: $0.name)),
@@ -51,7 +51,7 @@ extension DynamicIntentWidget {
 // MARK: - Helpers
 
 extension DynamicIntentWidget.Provider {
-    private func person(for configuration: DynamicIntentWidgetIntent) -> Person? {
+    private func person(for configuration: DynamicIntentWidgetPersonIntent) -> Person? {
         if let person = configuration.person {
             .init(identifier: person.id)
         } else {

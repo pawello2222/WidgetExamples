@@ -40,6 +40,7 @@ extension URLImageWidget {
         }
 
         func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
+            Self.requestCount += 1
             loadImage { image in
                 let currentDate = Date()
                 let nextDate = currentDate.adding(.minute, value: 1)
@@ -57,7 +58,6 @@ extension URLImageWidget {
 
 extension URLImageWidget.Provider {
     private func loadImage(completion: @escaping (Loadable<Image>) -> Void) {
-        Self.requestCount += 1
         guard let url = URL(string: Self.imageURL) else {
             completion(.failed(error: "Invalid URL"))
             return

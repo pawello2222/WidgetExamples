@@ -21,7 +21,6 @@
 // SOFTWARE.
 
 import SwiftUI
-import WidgetKit
 
 extension SwiftDataWidget {
     struct EntryView: View {
@@ -56,11 +55,12 @@ extension SwiftDataWidget.EntryView {
             Text("Count: \(productInfo.count)")
                 .font(.subheadline)
                 .bold()
-            if let lastProduct = productInfo.lastProduct {
-                Text("Last created:")
-                    .font(.subheadline)
-                Text(lastProduct.name)
-                    .font(.subheadline)
+            if let lastItem = productInfo.lastItem {
+                Group {
+                    Text("Last item:")
+                    Text(lastItem.name)
+                }
+                .font(.footnote)
             }
         } else {
             Text("Info unavailable")

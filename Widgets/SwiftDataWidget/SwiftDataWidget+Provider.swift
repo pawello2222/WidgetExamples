@@ -37,16 +37,32 @@ extension SwiftDataWidget {
         }
 
         func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
-            let products = try! modelContext.fetch(FetchDescriptor<Product>())
-                .sorted {
-                    $0.creationDate < $1.creationDate
-                }
+            guard let products = fetchProducts() else {
+                completion(.init(entries: [.empty], policy: .never))
+                return
+            }
             let productInfo = Entry.ProductInfo(
                 count: products.count,
-                lastProduct: products.last
+                lastItem: products.last
             )
             let entry = Entry(productInfo: productInfo)
             completion(.init(entries: [entry], policy: .never))
+        }
+    }
+}
+
+// MARK: - Helpers
+
+extension SwiftDataWidget.Provider {
+    private func fetchProducts() -> [Product]? {
+        do {
+            let products = try modelContext.fetch(FetchDescriptor<Product>())
+            return products.sorted {
+                $0.creationDate < $1.creationDate
+            }
+        } catch {
+            print(error)
+            return nil
         }
     }
 }

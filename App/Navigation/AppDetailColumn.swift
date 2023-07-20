@@ -29,29 +29,32 @@ struct AppDetailColumn: View {
 
     var body: some View {
         NavigationStack(path: $navigationPath) {
-            Group {
-                if let screen {
-                    screen.destination
-                } else {
-                    ContentUnavailableView(
-                        "Select a widget",
-                        systemImage: "square.grid.2x2",
-                        description: Text("Choose a widget to edit its settings.")
-                    )
+            contentView
+                .toolbarTitleDisplayMode(.inline)
+                .navigationDestination(for: AppRoute.self) {
+                    $0.view
                 }
-            }
-            .toolbarTitleDisplayMode(.inline)
-            .navigationDestination(for: Route.self) {
-                if case .deepLink(let widgetFamily) = $0 {
-                    DeepLinkWidgetView(widgetFamily: widgetFamily)
-                }
-                if case .liveActivity = $0 {
-                    LiveActivityWidgetView()
-                }
-            }
         }
         .onOpenURL {
-            parse(url: $0)
+            print("Opened url: \($0)")
+            parseDeepLink(url: $0)
+        }
+    }
+}
+
+// MARK: - Content
+
+extension AppDetailColumn {
+    @ViewBuilder
+    private var contentView: some View {
+        if let screen {
+            screen.view
+        } else {
+            ContentUnavailableView(
+                "Select a widget",
+                systemImage: "square.grid.2x2",
+                description: Text("Choose a widget to edit its settings.")
+            )
         }
     }
 }
@@ -59,25 +62,11 @@ struct AppDetailColumn: View {
 // MARK: - Helpers
 
 extension AppDetailColumn {
-    private func parse(url: URL) {
-        print("Opened url: \(url)")
-        guard url.scheme == Shared.DeepLink.scheme else {
+    private func parseDeepLink(url: URL) {
+        guard let route = DeepLink.Parser(url: url).route() else {
             return
         }
-        var route: Route?
-        switch url.host {
-        case WidgetType.deepLink.kind:
-            if let widgetFamily = url.queryParameter(name: Shared.DeepLink.widgetFamily) {
-                route = .deepLink(widgetFamily: widgetFamily)
-            }
-        case WidgetType.liveActivity.kind:
-            route = .liveActivity
-        default:
-            route = nil
-        }
-        if let route {
-            navigationPath.append(route)
-        }
+        navigationPath.append(route)
     }
 }
 

@@ -23,9 +23,9 @@
 import AppIntents
 import WidgetKit
 
-struct IntentWidgetIntent: WidgetConfigurationIntent {
+struct IntentWidgetBackgroundIntent: WidgetConfigurationIntent {
     static let title: LocalizedStringResource = "Background Color"
-    static let description = IntentDescription("Change the background color of the widget.")
+    static let description = IntentDescription("Change the background of the widget.")
 
     @Parameter(title: "Background", default: IntentWidgetBackgroundType.color)
     var background: IntentWidgetBackgroundType
@@ -37,8 +37,8 @@ struct IntentWidgetIntent: WidgetConfigurationIntent {
     var secondaryColor: IntentWidgetBackgroundColor?
 
     init(
-        background: IntentWidgetBackgroundType = .color,
-        primaryColor: IntentWidgetBackgroundColor = .teal,
+        background: IntentWidgetBackgroundType,
+        primaryColor: IntentWidgetBackgroundColor,
         secondaryColor: IntentWidgetBackgroundColor? = nil
     ) {
         self.background = background
@@ -64,7 +64,7 @@ struct IntentWidgetIntent: WidgetConfigurationIntent {
     }
 }
 
-// MARK: - BackgroundContent
+// MARK: - BackgroundType
 
 enum IntentWidgetBackgroundType: String, AppEnum {
     case color

@@ -22,16 +22,42 @@
 
 import Foundation
 
-// MARK: - FileManager
-
-extension FileManager {
-    static let appGroupContainerURL = FileManager.default.containerURL(
-        forSecurityApplicationGroupIdentifier: Shared.appGroupName
-    )!
+enum DeepLink {
+    static let widgetScheme = "widget"
+    static let widgetFamilyParamName = "widgetFamily"
 }
 
-// MARK: - UserDefaults
+// MARK: - Builder
 
-extension UserDefaults {
-    static let appGroup = UserDefaults(suiteName: Shared.appGroupName)!
+extension DeepLink {
+    class Builder {
+        private var components = URLComponents()
+
+        init(widget: WidgetType) {
+            components.scheme = DeepLink.widgetScheme
+            components.host = widget.kind
+        }
+
+        @discardableResult
+        func widgetFamily(_ value: String) -> Self {
+            createQueryItemsIfNeeded()
+            components.queryItems?.append(
+                .init(
+                    name: DeepLink.widgetFamilyParamName,
+                    value: value
+                )
+            )
+            return self
+        }
+
+        func build() -> URL {
+            components.url!
+        }
+
+        private func createQueryItemsIfNeeded() {
+            if components.queryItems == nil {
+                components.queryItems = []
+            }
+        }
+    }
 }

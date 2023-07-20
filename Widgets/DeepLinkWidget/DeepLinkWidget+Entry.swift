@@ -24,7 +24,7 @@ import WidgetKit
 
 extension DeepLinkWidget {
     struct Entry: TimelineEntry {
-        let date: Date = .now
+        var date: Date = .now
     }
 }
 

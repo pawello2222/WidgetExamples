@@ -25,7 +25,7 @@ import WidgetKit
 
 struct DynamicIntentWidgetView: View {
     @AppStorage(UserDefaultKey.persons, store: .appGroup)
-    private var persons: [Person] = Person.defaultFriends
+    private var persons: [Person] = .defaultFriends
 
     var body: some View {
         List {

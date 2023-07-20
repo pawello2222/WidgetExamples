@@ -23,8 +23,6 @@
 import SwiftUI
 
 struct SharedViewWidgetView: View {
-    @State private var source: String?
-
     var body: some View {
         List {
             Section {
@@ -41,17 +39,18 @@ struct SharedViewWidgetView: View {
 
 extension SharedViewWidgetView {
     private var headerView: some View {
-        Text("Shared View")
+        Text("Widget View")
     }
 
     private var contentView: some View {
         SharedViewWidgetEntryView(entry: .placeholder)
             .scaledToFit()
-            .frame(width: 150, height: 150)
+            .padding(20)
+            .frame(width: 200, height: 200)
             .cornerRadius(25)
             .overlay {
                 RoundedRectangle(cornerRadius: 25)
-                    .stroke(.gray, lineWidth: 3)
+                    .strokeBorder(.gray, lineWidth: 3)
             }
             .frame(maxWidth: .infinity)
     }

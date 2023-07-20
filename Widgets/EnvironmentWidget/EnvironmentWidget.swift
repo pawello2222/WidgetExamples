@@ -27,8 +27,8 @@ struct EnvironmentWidget: Widget {
     private let kind = WidgetType.environment.kind
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            EntryView(entry: entry)
+        StaticConfiguration(kind: kind, provider: Provider()) {
+            EntryView(entry: $0)
         }
         .configurationDisplayName("Environment Widget")
         .description("Customize the Widget view depending on Environment variables.")

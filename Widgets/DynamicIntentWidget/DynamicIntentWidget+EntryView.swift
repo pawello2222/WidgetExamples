@@ -21,7 +21,6 @@
 // SOFTWARE.
 
 import SwiftUI
-import WidgetKit
 
 extension DynamicIntentWidget {
     struct EntryView: View {
@@ -55,7 +54,9 @@ extension DynamicIntentWidget.EntryView {
         if let person = entry.person {
             personView(for: person)
         } else {
-            Text("Edit Widget to choose person")
+            Text("Edit Widget to choose a person")
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
         }
     }
 

@@ -25,7 +25,7 @@ import WidgetKit
 extension CountdownWidget {
     struct Entry: TimelineEntry {
         var date: Date = .now
-        var displayDate: Date = .now
+        var displayDate: Date
         var countdownState: CountdownState
     }
 }
@@ -44,6 +44,27 @@ extension CountdownWidget.Entry {
 
 extension CountdownWidget.Entry {
     static var placeholder: Self {
-        .init(countdownState: .counting)
+        .counting
+    }
+
+    static var counting: Self {
+        .init(
+            displayDate: .now.adding(.minute, value: 1),
+            countdownState: .counting
+        )
+    }
+
+    static var nearEnd: Self {
+        .init(
+            displayDate: .now.adding(.minute, value: 1),
+            countdownState: .nearEnd
+        )
+    }
+
+    static var end: Self {
+        .init(
+            displayDate: .now,
+            countdownState: .end
+        )
     }
 }

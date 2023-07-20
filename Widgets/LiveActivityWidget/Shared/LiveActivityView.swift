@@ -40,17 +40,14 @@ struct LiveActivityView: View {
 
 extension LiveActivityView {
     private var contentView: some View {
-        ZStack {
-            HStack {
-                LiveActivityView.IconView(state: state, isStale: isStale)
-                Spacer()
-                LiveActivityView.TimeView(state: state)
-            }
-            .overlay {
-                LiveActivityView.TitleView(delivery: delivery)
-            }
+        HStack {
+            LiveActivityView.IconView(state: state, isStale: isStale)
+            Spacer()
+            LiveActivityView.TimeView(state: state)
         }
-        .padding([.top, .horizontal])
+        .overlay {
+            LiveActivityView.TitleView(delivery: delivery)
+        }
     }
 
     private var statusView: some View {
@@ -58,17 +55,27 @@ extension LiveActivityView {
             delivery: delivery,
             state: state
         )
-        .padding(.horizontal)
     }
 }
 
 // MARK: - Preview
 
 #Preview {
-    LiveActivityView(
-        delivery: .sent(minutesAgo: 3),
-        state: .sent,
-        isStale: false
-    )
-    .border(.red)
+    VStack {
+        ForEach(DeliveryAttributes.previewStates, id: \.self) {
+            LiveActivityView(
+                delivery: .sent(minutesAgo: 3),
+                state: $0,
+                isStale: false
+            )
+            .border(.red)
+        }
+        LiveActivityView(
+            delivery: .sent(minutesAgo: 3),
+            state: .sent,
+            isStale: true
+        )
+        .border(.red)
+    }
+    .padding()
 }

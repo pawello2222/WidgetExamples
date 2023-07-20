@@ -25,6 +25,8 @@ import WidgetKit
 extension AppGroupWidget {
     struct Entry: TimelineEntry {
         var date: Date = .now
+        let numberFromUserDefaults: Int
+        let numberFromFile: Int
     }
 }
 
@@ -32,6 +34,6 @@ extension AppGroupWidget {
 
 extension AppGroupWidget.Entry {
     static var placeholder: Self {
-        .init()
+        .init(numberFromUserDefaults: 1, numberFromFile: 1)
     }
 }

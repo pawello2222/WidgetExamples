@@ -42,8 +42,8 @@ extension LockScreenWidget {
             let fractionOfDay = Double(hoursPassed) / 24
             let nextDate = midnight.adding(.hour, value: hoursPassed + 1)
 
-            let entries = [Entry(date: currentDate, fractionOfDay: fractionOfDay)]
-            let timeline = Timeline(entries: entries, policy: .after(nextDate))
+            let entry = Entry(date: currentDate, fractionOfDay: fractionOfDay)
+            let timeline = Timeline(entries: [entry], policy: .after(nextDate))
             completion(timeline)
         }
     }

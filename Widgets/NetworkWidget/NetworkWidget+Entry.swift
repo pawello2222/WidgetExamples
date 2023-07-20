@@ -25,7 +25,7 @@ import WidgetKit
 extension NetworkWidget {
     struct Entry: TimelineEntry {
         var date: Date = .now
-        var country: Loadable<Country> = .notRequested
+        var country: Loadable<Country>
     }
 }
 

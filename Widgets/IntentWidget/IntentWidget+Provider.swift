@@ -28,19 +28,32 @@ extension IntentWidget {
             .placeholder
         }
 
-        func snapshot(for configuration: IntentWidgetIntent, in context: Context) async -> Entry {
+        func snapshot(for configuration: IntentWidgetBackgroundIntent, in context: Context) async -> Entry {
             .placeholder
         }
 
-        func timeline(for configuration: IntentWidgetIntent, in context: Context) async -> Timeline<Entry> {
+        func timeline(for configuration: IntentWidgetBackgroundIntent, in context: Context) async -> Timeline<Entry> {
             let entry = Entry(background: background(for: configuration))
             return .init(entries: [entry], policy: .never)
         }
 
-        func recommendations() -> [AppIntentRecommendation<IntentWidgetIntent>] {
+        func recommendations() -> [AppIntentRecommendation<IntentWidgetBackgroundIntent>] {
             [
-                .init(intent: .init(background: .color), description: "Color Background"),
-                .init(intent: .init(background: .gradient), description: "Gradient Background")
+                .init(
+                    intent: .init(
+                        background: .color,
+                        primaryColor: .teal
+                    ),
+                    description: "Color Background"
+                ),
+                .init(
+                    intent: .init(
+                        background: .gradient,
+                        primaryColor: .teal,
+                        secondaryColor: .yellow
+                    ),
+                    description: "Gradient Background"
+                )
             ]
         }
     }
@@ -49,7 +62,7 @@ extension IntentWidget {
 // MARK: - Helpers
 
 extension IntentWidget.Provider {
-    private func background(for configuration: IntentWidgetIntent) -> IntentWidgetBackground {
+    private func background(for configuration: IntentWidgetBackgroundIntent) -> IntentWidgetBackground {
         .init(
             type: configuration.background,
             colors: [

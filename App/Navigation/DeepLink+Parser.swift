@@ -20,31 +20,44 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import WidgetKit
+import Foundation
 
-extension CountdownWidget {
-    struct Provider: TimelineProvider {
-        func placeholder(in context: Context) -> Entry {
-            .placeholder
+extension DeepLink {
+    class Parser {
+        private let url: URL
+
+        init(url: URL) {
+            self.url = url
         }
+    }
+}
 
-        func getSnapshot(in context: Context, completion: @escaping (Entry) -> Void) {
-            completion(.placeholder)
+// MARK: - AppRoute
+
+extension DeepLink.Parser {
+    func route() -> AppRoute? {
+        switch url.scheme {
+        case DeepLink.widgetScheme:
+            route(widget: url.host())
+        default:
+            nil
         }
+    }
 
-        func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
-            let currentDate = Date()
-            let nearEndDate = currentDate.adding(.second, value: 20)
-            let endDate = currentDate.adding(.second, value: 30)
-
-            let entries = [
-                Entry(date: currentDate, displayDate: endDate, countdownState: .counting),
-                Entry(date: nearEndDate, displayDate: endDate, countdownState: .nearEnd),
-                Entry(date: endDate, displayDate: endDate, countdownState: .end)
-            ]
-
-            let timeline = Timeline(entries: entries, policy: .never)
-            completion(timeline)
+    private func route(widget: String?) -> AppRoute? {
+        guard let widget else {
+            return nil
+        }
+        switch widget {
+        case WidgetType.deepLink.kind:
+            if let widgetFamily = url.queryParameter(name: DeepLink.widgetFamilyParamName) {
+                return .deepLink(widgetFamily: widgetFamily)
+            }
+            return nil
+        case WidgetType.liveActivity.kind:
+            return .liveActivity
+        default:
+            return nil
         }
     }
 }

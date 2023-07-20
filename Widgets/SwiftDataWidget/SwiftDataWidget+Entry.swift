@@ -34,13 +34,17 @@ extension SwiftDataWidget {
 extension SwiftDataWidget.Entry {
     struct ProductInfo {
         let count: Int
-        let lastProduct: Product?
+        let lastItem: Product?
     }
 }
 
 // MARK: - Data
 
 extension SwiftDataWidget.Entry {
+    static var empty: Self {
+        .init()
+    }
+
     static var placeholder: Self {
         .init(productInfo: .placeholder)
     }
@@ -48,6 +52,12 @@ extension SwiftDataWidget.Entry {
 
 extension SwiftDataWidget.Entry.ProductInfo {
     static var placeholder: Self {
-        .init(count: 1, lastProduct: .init())
+        .init(count: 1, lastItem: .placeholder)
+    }
+}
+
+extension Product {
+    static var placeholder: Self {
+        .init(name: "Product 1", creationDate: .now)
     }
 }

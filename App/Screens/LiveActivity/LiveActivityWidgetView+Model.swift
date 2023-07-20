@@ -115,11 +115,6 @@ extension LiveActivityWidgetViewModel {
         }
     }
 
-    private func resetActivity() {
-        currentActivity = nil
-        activityViewState = nil
-    }
-
     private func updateActivity(delayed: Bool) async throws {
         guard let activity = currentActivity else {
             return
@@ -197,6 +192,11 @@ extension LiveActivityWidgetViewModel {
             ),
             dismissalPolicy: dismissalPolicy
         )
+    }
+
+    private func resetActivity() {
+        currentActivity = nil
+        activityViewState = nil
     }
 }
 

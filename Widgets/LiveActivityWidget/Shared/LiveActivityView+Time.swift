@@ -27,12 +27,26 @@ extension LiveActivityView {
         let state: DeliveryAttributes.ContentState
 
         var body: some View {
-            if state.deliveryState == .arrived {
-                Image(systemName: "flag.checkered")
-                    .imageScale(.large)
-            } else {
-                Text("\(remainingTimeInMinutes)m")
-            }
+            Image(systemName: "square")
+                .hidden()
+                .padding(7)
+                .overlay {
+                    contentView
+                }
+        }
+    }
+}
+
+// MARK: - Content
+
+extension LiveActivityView.TimeView {
+    @ViewBuilder
+    private var contentView: some View {
+        if state.deliveryState == .arrived {
+            Image(systemName: "flag.checkered")
+                .imageScale(.large)
+        } else {
+            Text("\(remainingTimeInMinutes)m")
         }
     }
 }
@@ -49,8 +63,13 @@ extension LiveActivityView.TimeView {
 // MARK: - Preview
 
 #Preview {
-    LiveActivityView.TimeView(
-        state: .arrived
-    )
-    .border(.red)
+    HStack {
+        ForEach(DeliveryAttributes.previewStates, id: \.self) {
+            LiveActivityView.TimeView(
+                state: $0
+            )
+            .border(.red)
+        }
+    }
+    .scaleEffect(2)
 }

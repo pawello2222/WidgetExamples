@@ -21,7 +21,6 @@
 // SOFTWARE.
 
 import SwiftUI
-import WidgetKit
 
 extension NetworkWidget {
     struct EntryView: View {

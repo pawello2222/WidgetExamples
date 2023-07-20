@@ -21,7 +21,6 @@
 // SOFTWARE.
 
 import SwiftUI
-import WidgetKit
 
 extension AppGroupWidget {
     struct EntryView: View {
@@ -56,26 +55,10 @@ extension AppGroupWidget.EntryView {
             .font(.subheadline)
             .bold()
         Group {
-            Text("UserDefaults: \(luckyNumberFromUserDefaults)")
-            Text("TXT File: \(luckyNumberFromFile)")
+            Text("UserDefaults: \(entry.numberFromUserDefaults)")
+            Text("TXT File: \(entry.numberFromFile)")
         }
         .font(.footnote)
         .foregroundStyle(.secondary)
-    }
-}
-
-// MARK: - Helpers
-
-extension AppGroupWidget.EntryView {
-    private var luckyNumberFromUserDefaults: Int {
-        UserDefaults.appGroup.integer(forKey: UserDefaultKey.luckyNumber)
-    }
-
-    private var luckyNumberFromFile: Int {
-        let url = FileManager.appGroupContainerURL.appendingPathComponent(Shared.luckyNumberFilename)
-        guard let text = try? String(contentsOf: url, encoding: .utf8) else {
-            return 0
-        }
-        return Int(text) ?? 0
     }
 }

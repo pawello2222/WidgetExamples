@@ -34,6 +34,12 @@ struct DeliveryAttributes: ActivityAttributes {
 
 // MARK: - Data
 
+extension DeliveryAttributes {
+    static let previewStates: [DeliveryAttributes.ContentState] = [
+        .sent, .delayed, .arrived
+    ]
+}
+
 extension DeliveryAttributes.ContentState {
     static let sent: Self = .init(
         expectedArrivalDate: .now.adding(.minute, value: 3),

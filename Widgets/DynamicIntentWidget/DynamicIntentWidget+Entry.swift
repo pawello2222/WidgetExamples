@@ -32,6 +32,10 @@ extension DynamicIntentWidget {
 // MARK: - Data
 
 extension DynamicIntentWidget.Entry {
+    static var empty: Self {
+        .init()
+    }
+
     static var placeholder: Self {
         .init(person: .friend1)
     }

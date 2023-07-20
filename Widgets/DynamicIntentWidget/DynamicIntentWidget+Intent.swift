@@ -23,7 +23,7 @@
 import AppIntents
 import WidgetKit
 
-struct DynamicIntentWidgetIntent: WidgetConfigurationIntent {
+struct DynamicIntentWidgetPersonIntent: WidgetConfigurationIntent {
     static let title: LocalizedStringResource = "Person"
     static let description = IntentDescription("Person information.")
 

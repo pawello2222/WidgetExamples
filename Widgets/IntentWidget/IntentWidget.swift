@@ -27,7 +27,7 @@ struct IntentWidget: Widget {
     private let kind: String = WidgetType.intent.kind
 
     var body: some WidgetConfiguration {
-        AppIntentConfiguration(kind: kind, intent: IntentWidgetIntent.self, provider: Provider()) {
+        AppIntentConfiguration(kind: kind, intent: IntentWidgetBackgroundIntent.self, provider: Provider()) {
             EntryView(entry: $0)
         }
         .configurationDisplayName("Intent Widget")
@@ -41,5 +41,6 @@ struct IntentWidget: Widget {
 #Preview(as: .systemSmall) {
     IntentWidget()
 } timeline: {
-    IntentWidget.Entry.placeholder
+    IntentWidget.Entry.color
+    IntentWidget.Entry.gradient
 }

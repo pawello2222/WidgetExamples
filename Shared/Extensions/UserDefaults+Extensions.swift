@@ -35,3 +35,9 @@ extension UserDefaults {
         return try? JSONDecoder().decode([Element].self, from: data)
     }
 }
+
+// MARK: - App Group
+
+extension UserDefaults {
+    static let appGroup = UserDefaults(suiteName: Shared.appGroupName)!
+}

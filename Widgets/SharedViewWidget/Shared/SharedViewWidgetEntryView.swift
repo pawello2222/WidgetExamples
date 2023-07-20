@@ -21,7 +21,6 @@
 // SOFTWARE.
 
 import SwiftUI
-import WidgetKit
 
 struct SharedViewWidgetEntryView: View {
     var entry: SharedViewWidgetEntry
@@ -46,15 +45,13 @@ struct SharedViewWidgetEntryView: View {
 extension SharedViewWidgetEntryView {
     private var circleView: some View {
         Circle()
-            .fill(.teal)
-            .padding()
+            .fill(.teal.gradient)
     }
 
     private var iconView: some View {
         Image(systemName: entry.icon)
             .resizable()
-            .aspectRatio(contentMode: .fit)
-            .foregroundStyle(.white)
-            .padding(4)
+            .scaledToFit()
+            .foregroundStyle(.white.gradient)
     }
 }

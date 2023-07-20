@@ -21,7 +21,6 @@
 // SOFTWARE.
 
 import SwiftUI
-import WidgetKit
 
 extension URLImageWidget {
     struct EntryView: View {
@@ -84,7 +83,7 @@ extension URLImageWidget.EntryView {
             .cornerRadius(5)
             .overlay {
                 RoundedRectangle(cornerRadius: 5)
-                    .stroke(.gray, lineWidth: 1)
+                    .strokeBorder(.gray, lineWidth: 1)
             }
     }
 }

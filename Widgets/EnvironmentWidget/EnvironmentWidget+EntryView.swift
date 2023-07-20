@@ -21,7 +21,6 @@
 // SOFTWARE.
 
 import SwiftUI
-import WidgetKit
 
 extension EnvironmentWidget {
     struct EntryView: View {
@@ -37,7 +36,7 @@ extension EnvironmentWidget {
                 contentView
                 Spacer()
             }
-            .containerBackground(backgroundColor, for: .widget)
+            .containerBackground(backgroundColor.opacity(0.5), for: .widget)
         }
     }
 }
@@ -59,6 +58,7 @@ extension EnvironmentWidget.EntryView {
             .font(.subheadline)
             .bold()
         Text(String(describing: widgetFamily))
+            .font(.subheadline)
     }
 }
 

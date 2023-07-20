@@ -33,7 +33,29 @@ extension AppGroupWidget {
         }
 
         func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
-            completion(.init(entries: [.placeholder], policy: .never))
+            let entry = Entry(
+                numberFromUserDefaults: luckyNumberFromUserDefaults,
+                numberFromFile: luckyNumberFromFile
+            )
+            completion(.init(entries: [entry], policy: .never))
         }
+    }
+}
+
+// MARK: - Helpers
+
+extension AppGroupWidget.Provider {
+    private var luckyNumberFromUserDefaults: Int {
+        UserDefaults.appGroup.integer(forKey: UserDefaultKey.luckyNumber)
+    }
+
+    private var luckyNumberFromFile: Int {
+        let value = FileManager.loadStringFromFile(
+            filename: Shared.luckyNumberFilename
+        )
+        guard let value else {
+            return 0
+        }
+        return Int(value) ?? 0
     }
 }

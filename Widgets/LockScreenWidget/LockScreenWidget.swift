@@ -32,7 +32,7 @@ struct LockScreenWidget: Widget {
         }
         .configurationDisplayName("Lock Screen Widget")
         .description("Display the Widget on both the lock screen and the home screen.")
-        .supportedFamilies([.accessoryCircular, .accessoryRectangular, .systemSmall])
+        .supportedFamilies([.accessoryCircular, .accessoryInline, .accessoryRectangular, .systemSmall])
     }
 }
 

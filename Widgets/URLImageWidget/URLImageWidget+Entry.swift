@@ -26,7 +26,7 @@ import WidgetKit
 extension URLImageWidget {
     struct Entry: TimelineEntry {
         var date: Date = .now
-        var image: Loadable<Image> = .notRequested
+        var image: Loadable<Image>
         var requestCount = 0
     }
 }

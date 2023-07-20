@@ -21,7 +21,6 @@
 // SOFTWARE.
 
 import SwiftUI
-import WidgetKit
 
 extension CoreDataWidget {
     struct EntryView: View {
@@ -56,11 +55,12 @@ extension CoreDataWidget.EntryView {
             Text("Count: \(documentInfo.count)")
                 .font(.subheadline)
                 .bold()
-            if let lastDocument = documentInfo.lastDocument {
-                Text("Last created:")
-                    .font(.subheadline)
-                Text(lastDocument.name)
-                    .font(.subheadline)
+            if let lastItem = documentInfo.lastItem {
+                Group {
+                    Text("Last item:")
+                    Text(lastItem.name)
+                }
+                .font(.footnote)
             }
         } else {
             Text("Info unavailable")

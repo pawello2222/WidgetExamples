@@ -34,7 +34,7 @@ extension CoreDataWidget {
 extension CoreDataWidget.Entry {
     struct DocumentInfo {
         let count: Int
-        let lastDocument: Document?
+        let lastItem: Document?
     }
 }
 
@@ -48,6 +48,10 @@ extension CoreDataWidget.Entry.DocumentInfo {
 // MARK: - Data
 
 extension CoreDataWidget.Entry {
+    static var empty: Self {
+        .init()
+    }
+
     static var placeholder: Self {
         .init(documentInfo: .placeholder)
     }
@@ -55,12 +59,12 @@ extension CoreDataWidget.Entry {
 
 extension CoreDataWidget.Entry.DocumentInfo {
     static var placeholder: Self {
-        .init(count: 1, lastDocument: .placeholder)
+        .init(count: 1, lastItem: .placeholder)
     }
 }
 
 extension CoreDataWidget.Entry.DocumentInfo.Document {
     static var placeholder: Self {
-        .init(name: "Test", creationDate: .now)
+        .init(name: "Document 1", creationDate: .now)
     }
 }

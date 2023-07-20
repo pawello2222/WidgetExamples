@@ -25,13 +25,15 @@ import SwiftData
 
 @Model
 final class Product {
-    @Attribute(.unique) var id: String
+    @Attribute(.unique) var id = UUID().uuidString
     var name: String
     var creationDate: Date
 
-    init() {
-        id = UUID().uuidString
-        name = "Product \(Int.random(in: 1 ... 99))"
-        creationDate = .now
+    init(
+        name: String = "Product \(Int.random(in: 1 ... 99))",
+        creationDate: Date = .now
+    ) {
+        self.name = name
+        self.creationDate = creationDate
     }
 }

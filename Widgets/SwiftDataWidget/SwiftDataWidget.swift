@@ -20,7 +20,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftData
 import SwiftUI
 import WidgetKit
 
@@ -37,10 +36,11 @@ struct SwiftDataWidget: Widget {
     }
 }
 
-//// MARK: - Preview
-//
-// #Preview(as: .systemSmall) {
-//    SwiftDataWidget()
-// } timeline: {
-//    SwiftDataWidget.Entry.placeholder
-// }
+// MARK: - Preview
+
+#Preview(as: .systemSmall) {
+    SwiftDataWidget()
+} timeline: {
+    SwiftDataWidget.Entry.empty
+    SwiftDataWidget.Entry.placeholder
+}

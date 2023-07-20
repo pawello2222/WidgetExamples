@@ -30,8 +30,11 @@ extension LiveActivityView {
         var body: some View {
             Image(systemName: imageName)
                 .symbolVariant(.fill)
-                .padding(3)
-                .background(Circle().fill(color))
+                .padding(4)
+                .background(
+                    Circle()
+                        .fill(backgroundColor)
+                )
         }
     }
 }
@@ -43,7 +46,11 @@ extension LiveActivityView.IconView {
         isStale ? "clock.badge.exclamationmark" : "shippingbox"
     }
 
-    private var color: Color {
+    private var backgroundColor: Color {
+        isStale ? .brown : deliveryColor
+    }
+
+    private var deliveryColor: Color {
         switch state.deliveryState {
         case .sent:
             .teal
@@ -58,9 +65,17 @@ extension LiveActivityView.IconView {
 // MARK: - Preview
 
 #Preview {
-    LiveActivityView.IconView(
-        state: .arrived,
-        isStale: false
-    )
-    .border(.red)
+    HStack {
+        ForEach(DeliveryAttributes.previewStates, id: \.self) {
+            LiveActivityView.IconView(
+                state: $0,
+                isStale: false
+            )
+        }
+        LiveActivityView.IconView(
+            state: .sent,
+            isStale: true
+        )
+    }
+    .scaleEffect(2)
 }

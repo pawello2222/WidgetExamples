@@ -84,7 +84,7 @@ extension PersistenceController {
     }
 }
 
-// MARK: - Convenience
+// MARK: - Preview
 
 extension PersistenceController {
     static var preview: PersistenceController = {

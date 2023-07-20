@@ -34,7 +34,7 @@ extension Person {
     static func getAll() -> [Self] {
         let key = UserDefaultKey.persons
         guard let persons: [Self] = UserDefaults.appGroup.getArray(forKey: key) else {
-            let persons = Self.defaultFriends
+            let persons: [Person] = .defaultFriends
             UserDefaults.appGroup.setArray(persons, forKey: key)
             return persons
         }
@@ -56,11 +56,13 @@ extension Person {
 
 // MARK: - Data
 
-extension Person {
-    static let defaultFriends: [Self] = [
+extension [Person] {
+    static let defaultFriends: Self = [
         .friend1, .friend2
     ]
+}
 
+extension Person {
     static let friend1: Self = .init(
         name: "Friend 1",
         dateOfBirth: .now.adding(.month, value: -2)

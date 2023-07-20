@@ -40,12 +40,12 @@ struct EventCounter: Identifiable {
 
 extension InteractiveWidget.Entry {
     static var placeholder: Self {
-        .init(counter: .default)
+        .init(counter: .placeholder)
     }
 }
 
 extension EventCounter {
-    static var `default`: Self {
+    static var placeholder: Self {
         .init(id: 1, value: 1)
     }
 }

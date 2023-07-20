@@ -33,11 +33,11 @@ extension InteractiveWidget {
         }
 
         func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
-            let id = EventCounter.default.id
-            let key = UserDefaultKey.counter(id: id)
+            let id = EventCounter.placeholder.id
+            let key = UserDefaultKey.eventCounter(id: id)
             let value = UserDefaults.appGroup.integer(forKey: key)
-            let entries = [Entry(counter: .init(id: id, value: value))]
-            completion(.init(entries: entries, policy: .never))
+            let entry = Entry(counter: .init(id: id, value: value))
+            completion(.init(entries: [entry], policy: .never))
         }
     }
 }

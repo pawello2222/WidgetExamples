@@ -38,6 +38,7 @@ struct AppGroupWidgetView: View {
         .navigationTitle("App Group")
         .onChange(of: luckyNumber) {
             saveNumberToFile()
+            reloadWidgetTimelines()
         }
     }
 }
@@ -71,18 +72,15 @@ extension AppGroupWidgetView {
 // MARK: - Helpers
 
 extension AppGroupWidgetView {
-    private func saveNumberToFile() {
-        let url = FileManager.appGroupContainerURL.appendingPathComponent(Shared.luckyNumberFilename)
-        do {
-            try String(luckyNumber).write(to: url, atomically: false, encoding: .utf8)
-        } catch {
-            print(error)
-        }
-    }
-
     private func generateLuckyNumber() {
         luckyNumber = Int.random(in: 1 ... 99)
-        reloadWidgetTimelines()
+    }
+
+    private func saveNumberToFile() {
+        FileManager.saveStringToFile(
+            String(luckyNumber),
+            filename: Shared.luckyNumberFilename
+        )
     }
 
     private func reloadWidgetTimelines() {

@@ -41,5 +41,6 @@ struct CoreDataWidget: Widget {
 #Preview(as: .systemSmall) {
     CoreDataWidget()
 } timeline: {
+    CoreDataWidget.Entry.empty
     CoreDataWidget.Entry.placeholder
 }

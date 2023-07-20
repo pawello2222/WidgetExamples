@@ -21,7 +21,6 @@
 // SOFTWARE.
 
 import SwiftUI
-import WidgetKit
 
 extension IntentWidget {
     struct EntryView: View {
@@ -34,7 +33,7 @@ extension IntentWidget {
                 contentView
                 Spacer()
             }
-            .containerBackground(backgroundView, for: .widget)
+            .containerBackground(backgroundView.opacity(0.7), for: .widget)
         }
     }
 }
@@ -51,8 +50,9 @@ extension IntentWidget.EntryView {
     }
 
     private var contentView: some View {
-        Text("Edit widget to change the background.")
+        Text("Edit Widget to change the background")
             .font(.subheadline)
+            .foregroundStyle(.secondary)
     }
 
     private var backgroundView: some ShapeStyle {

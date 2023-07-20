@@ -60,9 +60,13 @@ extension AppScreen {
     var icon: String {
         "square.grid.2x2.fill"
     }
+}
 
+// MARK: - Destination
+
+extension AppScreen {
     @ViewBuilder
-    var destination: some View {
+    var view: some View {
         switch self {
         case .appGroup:
             AppGroupWidgetView()

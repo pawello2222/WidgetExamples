@@ -27,7 +27,7 @@ struct DynamicIntentWidget: Widget {
     private let kind: String = WidgetType.dynamicIntent.kind
 
     var body: some WidgetConfiguration {
-        AppIntentConfiguration(kind: kind, intent: DynamicIntentWidgetIntent.self, provider: Provider()) {
+        AppIntentConfiguration(kind: kind, intent: DynamicIntentWidgetPersonIntent.self, provider: Provider()) {
             EntryView(entry: $0)
         }
         .configurationDisplayName("Dynamic Intent Widget")
@@ -41,5 +41,6 @@ struct DynamicIntentWidget: Widget {
 #Preview(as: .systemSmall) {
     DynamicIntentWidget()
 } timeline: {
+    DynamicIntentWidget.Entry.empty
     DynamicIntentWidget.Entry.placeholder
 }

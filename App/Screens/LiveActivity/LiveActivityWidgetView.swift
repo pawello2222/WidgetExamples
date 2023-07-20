@@ -69,25 +69,25 @@ extension LiveActivityWidgetView {
             Button("Refresh") {
                 model.updateDelivery(delayed: false)
             }
-            Button("Delay delivery (with alert)") {
+            Button("Delay delivery (Alert)") {
                 model.updateDelivery(delayed: true)
             }
         } header: {
             Text("Update Delivery")
         } footer: {
-            Text("The action will be delayed by 2 seconds.")
+            Text("The action will be executed after 2 seconds.")
         }
     }
 
     private var endDeliveryView: some View {
         Section {
-            Button("End & dismiss immediately") {
+            Button("End & Dismiss immediately") {
                 model.endDelivery(dismissTimeInterval: 0)
             }
-            Button("End & dismiss in 10 seconds") {
+            Button("End & Dismiss in 10 seconds") {
                 model.endDelivery(dismissTimeInterval: 10)
             }
-            Button("End & dismiss by system") {
+            Button("End & Dismiss by system") {
                 model.endDelivery(dismissTimeInterval: nil)
             }
         } header: {
@@ -103,7 +103,7 @@ extension LiveActivityWidgetView {
                 isStale: state.isStale
             )
             .background(.thinMaterial)
-            .containerShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+            .containerShape(RoundedRectangle(cornerRadius: 20))
         }
     }
 }

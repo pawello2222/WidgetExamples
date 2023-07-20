@@ -26,10 +26,3 @@ enum Shared {
     static let appGroupName = "group.com.tersacore.widget-examples"
     static let luckyNumberFilename = "LuckyNumber.txt"
 }
-
-extension Shared {
-    enum DeepLink {
-        static let scheme = "widget"
-        static let widgetFamily = "widgetFamily"
-    }
-}

@@ -21,7 +21,6 @@
 // SOFTWARE.
 
 import SwiftUI
-import WidgetKit
 
 extension DynamicIntentWidgetView {
     struct PersonView: View {

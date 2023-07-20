@@ -26,7 +26,7 @@ enum UserDefaultKey {
     static var luckyNumber: String { #function }
     static var persons: String { #function }
 
-    static func counter(id: Int) -> String {
-        "counter-\(id)"
+    static func eventCounter(id: Int) -> String {
+        "eventCounter-\(id)"
     }
 }

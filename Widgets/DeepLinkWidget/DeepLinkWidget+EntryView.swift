@@ -21,7 +21,6 @@
 // SOFTWARE.
 
 import SwiftUI
-import WidgetKit
 
 extension DeepLinkWidget {
     struct EntryView: View {
@@ -67,12 +66,8 @@ extension DeepLinkWidget.EntryView {
 
 extension DeepLinkWidget.EntryView {
     private var deeplinkURL: URL {
-        var components = URLComponents()
-        components.scheme = Shared.DeepLink.scheme
-        components.host = WidgetType.deepLink.kind
-        components.queryItems = [
-            .init(name: Shared.DeepLink.widgetFamily, value: "\(widgetFamily)")
-        ]
-        return components.url!
+        DeepLink.Builder(widget: .deepLink)
+            .widgetFamily("\(widgetFamily)")
+            .build()
     }
 }

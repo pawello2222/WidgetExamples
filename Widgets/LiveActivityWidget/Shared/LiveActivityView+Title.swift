@@ -27,7 +27,7 @@ extension LiveActivityView {
         let delivery: Delivery
 
         var body: some View {
-            Text("Delivery #\(delivery.id) - \(delivery.itemsCount) items")
+            Text("#\(delivery.id) - \(delivery.itemsCount) items")
                 .font(.headline)
         }
     }
@@ -36,8 +36,6 @@ extension LiveActivityView {
 // MARK: - Preview
 
 #Preview {
-    LiveActivityView.TitleView(
-        delivery: .sent(minutesAgo: 3)
-    )
-    .border(.red)
+    LiveActivityView.TitleView(delivery: .sent())
+        .border(.red)
 }
