@@ -9,7 +9,7 @@ on:
 env:
   SCHEME: "Widget Examples"
   IOS_SDK: "iphonesimulator"
-  IOS_DESTINATION: "platform=iOS Simulator,name=Any iOS Simulator Device,OS=latest"
+  IOS_DESTINATION: "platform=iOS Simulator,name=Any iOS Simulator Device,OS=17.0"
 
 jobs:
   lint:
@@ -21,7 +21,7 @@ jobs:
         uses: norio-nomura/action-swiftlint@3.2.1
 
   build:
-    runs-on: macos-latest
+    runs-on: macos-14
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -30,4 +30,5 @@ jobs:
         xcodebuild clean build \
           -scheme "$SCHEME" \
           -sdk "$IOS_SDK" \
-          -destination "$IOS_DESTINATION"
+          -destination "$IOS_DESTINATION" \
+          CODE_SIGNING_ALLOWED=NO
