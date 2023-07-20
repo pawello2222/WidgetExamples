@@ -9,7 +9,7 @@ on:
 env:
   SCHEME: "Widget Examples"
   IOS_SDK: "iphonesimulator"
-  IOS_DESTINATION: "platform=iOS Simulator,name=iPhone 13 Pro,OS=latest"
+  IOS_DESTINATION: "platform=iOS Simulator,name=Any iOS Simulator Device,OS=latest"
 
 jobs:
   lint:
