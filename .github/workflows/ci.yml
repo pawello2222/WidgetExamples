@@ -7,8 +7,8 @@ on:
     branches: [ main ]
 
 env:
-  SCHEME: WidgetExamples
-  IOS_SDK: iphonesimulator
+  SCHEME: "Widget Examples"
+  IOS_SDK: "iphonesimulator"
   IOS_DESTINATION: "platform=iOS Simulator,name=iPhone 13 Pro,OS=latest"
 
 jobs:
