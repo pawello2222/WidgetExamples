@@ -23,7 +23,7 @@
 import Foundation
 
 enum Shared {
-    static let appGroupName = "group.com.tersacore.WidgetExamples"
+    static let appGroupName = "group.com.tersacore.widget-examples"
     static let luckyNumberFilename = "LuckyNumber.txt"
 }
 
