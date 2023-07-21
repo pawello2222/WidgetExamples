@@ -43,8 +43,8 @@ extension DigitalClockWidget {
 extension DigitalClockWidget.EntryView {
     @ViewBuilder
     private var contentView: some View {
-        Text("\(entry.date, formatter: Self.dateFormatter)")
-        Text(entry.date, style: .time)
+        Text("\(entry.date.adding(.second, value: 1), formatter: Self.dateFormatter)")
+        Text(entry.date.adding(.second, value: 1), style: .time)
         Text(Calendar.current.startOfDay(for: .now), style: .timer)
     }
 }

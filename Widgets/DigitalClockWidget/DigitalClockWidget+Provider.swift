@@ -37,7 +37,7 @@ extension DigitalClockWidget {
             let seconds = Calendar.current.component(.second, from: currentDate)
             let startDate = currentDate.adding(.second, value: -seconds)
             let entries = (0 ..< 60).map {
-                let date = startDate.adding(.minute, value: $0)
+                let date = startDate.adding(.second, value: $0 * 60 - 1)
                 return Entry(date: date)
             }
             completion(.init(entries: entries, policy: .atEnd))

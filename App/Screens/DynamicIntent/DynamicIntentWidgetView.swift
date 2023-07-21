@@ -24,8 +24,7 @@ import SwiftUI
 import WidgetKit
 
 struct DynamicIntentWidgetView: View {
-    @AppStorage(UserDefaultKey.persons, store: .appGroup)
-    private var persons: [Person] = .defaultFriends
+    @State private var persons = Person.getAll()
 
     var body: some View {
         List {
@@ -38,6 +37,7 @@ struct DynamicIntentWidgetView: View {
             }
         }
         .onChange(of: persons) {
+            savePersons()
             reloadWidgetTimelines()
         }
     }
@@ -64,6 +64,10 @@ extension DynamicIntentWidgetView {
 // MARK: - Helpers
 
 extension DynamicIntentWidgetView {
+    private func savePersons() {
+        UserDefaults.appGroup.setArray(persons, forKey: UserDefaultKey.persons)
+    }
+
     private func reloadWidgetTimelines() {
         WidgetCenter.shared.reloadTimelines(ofKind: WidgetType.dynamicIntent.kind)
     }
