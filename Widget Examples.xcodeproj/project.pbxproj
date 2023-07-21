@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E517B32F2A6194BC009072A3 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = E517B32E2A6194BC009072A3 /* LICENSE.md */; };
 		E517B3322A61A59D009072A3 /* AppGroupWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E517B3312A61A59D009072A3 /* AppGroupWidgetView.swift */; };
 		E517B3342A61AF28009072A3 /* CoreDataWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E517B3332A61AF28009072A3 /* CoreDataWidgetView.swift */; };
 		E517B3362A61B067009072A3 /* DeepLinkWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E517B3352A61B067009072A3 /* DeepLinkWidgetView.swift */; };
@@ -30,7 +29,6 @@
 		E54214262538B77500CCC9C3 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E54214212538B76C00CCC9C3 /* DataModel.xcdatamodeld */; };
 		E54214292538B77900CCC9C3 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542141D2538B68200CCC9C3 /* PersistenceController.swift */; };
 		E55498382551D2160066870B /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55498372551D2160066870B /* Person.swift */; };
-		E55551B328E1D3FF005A5321 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E55551B228E1D3FF005A5321 /* README.md */; };
 		E5619C572A6986D900F94132 /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5619C562A6986D900F94132 /* DeepLink.swift */; };
 		E5619C582A6986D900F94132 /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5619C562A6986D900F94132 /* DeepLink.swift */; };
 		E5619C5A2A6987D800F94132 /* DeepLink+Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5619C592A6987D800F94132 /* DeepLink+Parser.swift */; };
@@ -170,7 +168,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E517B32E2A6194BC009072A3 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		E517B3312A61A59D009072A3 /* AppGroupWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroupWidgetView.swift; sourceTree = "<group>"; };
 		E517B3332A61AF28009072A3 /* CoreDataWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWidgetView.swift; sourceTree = "<group>"; };
 		E517B3352A61B067009072A3 /* DeepLinkWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkWidgetView.swift; sourceTree = "<group>"; };
@@ -229,7 +226,6 @@
 		E54214222538B76C00CCC9C3 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		E55497C8255180D90066870B /* DynamicIntentWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicIntentWidget.swift; sourceTree = "<group>"; };
 		E55498372551D2160066870B /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		E55551B228E1D3FF005A5321 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E5619C562A6986D900F94132 /* DeepLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLink.swift; sourceTree = "<group>"; };
 		E5619C592A6987D800F94132 /* DeepLink+Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeepLink+Parser.swift"; sourceTree = "<group>"; };
 		E5638AE9265D859D00E73B05 /* WidgetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetType.swift; sourceTree = "<group>"; };
@@ -334,8 +330,6 @@
 		E542134D253879B700CCC9C3 = {
 			isa = PBXGroup;
 			children = (
-				E517B32E2A6194BC009072A3 /* LICENSE.md */,
-				E55551B228E1D3FF005A5321 /* README.md */,
 				E5421358253879B700CCC9C3 /* App */,
 				E542137325387A0300CCC9C3 /* Widgets */,
 				E54213D22538930900CCC9C3 /* Shared */,
@@ -868,9 +862,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E55551B328E1D3FF005A5321 /* README.md in Resources */,
 				E5757DD12A6AF2B500764349 /* Assets.xcassets in Resources */,
-				E517B32F2A6194BC009072A3 /* LICENSE.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
