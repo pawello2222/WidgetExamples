@@ -28,7 +28,7 @@ extension CountdownWidget {
 
         var body: some View {
             VStack(alignment: .leading) {
-                headerView
+                WidgetHeaderView(title: "Countdown")
                 Spacer()
                 contentView
                 Spacer()
@@ -41,14 +41,6 @@ extension CountdownWidget {
 // MARK: - Content
 
 extension CountdownWidget.EntryView {
-    private var headerView: some View {
-        HStack {
-            Text("Countdown")
-                .font(.headline)
-            Spacer()
-        }
-    }
-
     @ViewBuilder
     private var contentView: some View {
         HStack {

@@ -28,7 +28,7 @@ extension DigitalClockWidget {
 
         var body: some View {
             VStack(alignment: .leading) {
-                headerView
+                WidgetHeaderView(title: "Digital Clock")
                 Spacer()
                 contentView
                 Spacer()
@@ -41,14 +41,6 @@ extension DigitalClockWidget {
 // MARK: - Content
 
 extension DigitalClockWidget.EntryView {
-    private var headerView: some View {
-        HStack {
-            Text("Digital Clock")
-                .font(.headline)
-            Spacer()
-        }
-    }
-
     @ViewBuilder
     private var contentView: some View {
         Text("\(entry.date, formatter: Self.dateFormatter)")

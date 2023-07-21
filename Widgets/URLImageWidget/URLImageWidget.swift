@@ -41,9 +41,9 @@ struct URLImageWidget: Widget {
 #Preview(as: .systemSmall) {
     URLImageWidget()
 } timeline: {
-    URLImageWidget.Entry(image: .notRequested)
-    URLImageWidget.Entry(image: .isLoading)
-    URLImageWidget.Entry(image: .loaded(value: Image(systemName: "photo")))
-    URLImageWidget.Entry(image: .cached(value: Image(systemName: "photo")))
-    URLImageWidget.Entry(image: .failed(error: "Error"))
+    URLImageWidget.Entry.notRequested
+    URLImageWidget.Entry.isLoading
+    URLImageWidget.Entry.loaded
+    URLImageWidget.Entry.cached
+    URLImageWidget.Entry.failed
 }

@@ -34,6 +34,6 @@ extension AppGroupWidget {
 
 extension AppGroupWidget.Entry {
     static var placeholder: Self {
-        .init(numberFromUserDefaults: 1, numberFromFile: 1)
+        .init(numberFromUserDefaults: 7, numberFromFile: 7)
     }
 }

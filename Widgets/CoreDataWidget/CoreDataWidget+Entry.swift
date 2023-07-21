@@ -59,12 +59,12 @@ extension CoreDataWidget.Entry {
 
 extension CoreDataWidget.Entry.DocumentInfo {
     static var placeholder: Self {
-        .init(count: 1, lastItem: .placeholder)
+        .init(count: 3, lastItem: .placeholder)
     }
 }
 
 extension CoreDataWidget.Entry.DocumentInfo.Document {
     static var placeholder: Self {
-        .init(name: "Document 1", creationDate: .now)
+        .init(name: "Document #3", creationDate: .now)
     }
 }

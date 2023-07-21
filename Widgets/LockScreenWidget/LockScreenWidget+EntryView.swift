@@ -46,48 +46,59 @@ extension LockScreenWidget.EntryView {
     @ViewBuilder
     private var headerView: some View {
         if widgetFamily == .systemSmall {
-            HStack {
-                Text("Lock Screen")
-                    .font(.headline)
-                Spacer()
-            }
+            WidgetHeaderView(title: "Lock Screen")
         }
     }
 
     @ViewBuilder
     private var contentView: some View {
         if widgetFamily == .accessoryInline {
-            inlineView
+            accessoryInlineView
         } else if widgetFamily == .accessoryCircular {
-            gaugeCircularView
+            accessoryCircularView
+        } else if widgetFamily == .accessoryRectangular {
+            accessoryRectangularView
         } else {
-            gaugeLinearView
+            defaultView
         }
     }
 
-    private var inlineView: some View {
+    private var accessoryInlineView: some View {
         Label {
             textView
         } icon: {
             Image(systemName: "sun.max")
         }
+        .font(.subheadline)
     }
 
-    private var gaugeCircularView: some View {
+    private var accessoryCircularView: some View {
         Gauge(value: entry.fractionOfDay) {
             Image(systemName: "sun.max")
         }
         .gaugeStyle(.accessoryCircularCapacity)
     }
 
-    private var gaugeLinearView: some View {
+    private var accessoryRectangularView: some View {
+        linearGaugeView
+            .gaugeStyle(.accessoryLinearCapacity)
+    }
+
+    private var defaultView: some View {
+        linearGaugeView
+            .gaugeStyle(.linearCapacity)
+    }
+
+    private var linearGaugeView: some View {
         Gauge(value: entry.fractionOfDay) {
-            textView
+            HStack {
+                textView
+                Spacer()
+            }
         }
-        .gaugeStyle(.accessoryLinearCapacity)
     }
 
     private var textView: some View {
-        Text("Passed: \(entry.fractionOfDay * 100, specifier: "%.f")%")
+        Text("\(entry.fractionOfDay * 100, specifier: "%.f")% of day")
     }
 }

@@ -28,7 +28,7 @@ extension NetworkWidget {
 
         var body: some View {
             VStack(alignment: .leading) {
-                headerView
+                WidgetHeaderView(title: "Network")
                 Spacer()
                 contentView
                 Spacer()
@@ -41,14 +41,6 @@ extension NetworkWidget {
 // MARK: - Content
 
 extension NetworkWidget.EntryView {
-    private var headerView: some View {
-        HStack {
-            Text("Network")
-                .font(.headline)
-            Spacer()
-        }
-    }
-
     private var contentView: some View {
         Group {
             switch entry.country {

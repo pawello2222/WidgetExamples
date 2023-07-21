@@ -28,7 +28,7 @@ extension InteractiveWidget {
 
         var body: some View {
             VStack(alignment: .leading) {
-                headerView
+                WidgetHeaderView(title: "Interactive")
                 Spacer()
                 counterView
                 Spacer()
@@ -42,14 +42,6 @@ extension InteractiveWidget {
 // MARK: - Content
 
 extension InteractiveWidget.EntryView {
-    private var headerView: some View {
-        HStack {
-            Text("Interactive")
-                .font(.headline)
-            Spacer()
-        }
-    }
-
     private var counterView: some View {
         Text("Counter: \(entry.counter.value)")
             .font(.subheadline)
@@ -59,10 +51,12 @@ extension InteractiveWidget.EntryView {
         HStack {
             Button(intent: InteractiveWidgetIncreaseIntent(counter: entry.counter)) {
                 Image(systemName: "plus")
+                    .padding(2)
             }
             Button(intent: InteractiveWidgetResetIntent(counter: entry.counter)) {
                 Image(systemName: "arrow.circlepath")
             }
         }
+        .buttonStyle(.bordered)
     }
 }

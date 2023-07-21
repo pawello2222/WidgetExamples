@@ -33,3 +33,22 @@ struct WidgetExamplesApp: App {
         }
     }
 }
+
+// MARK: - Screenshots
+
+extension WidgetExamplesApp {
+    @MainActor
+    private func createScreenshot() {
+        let view = SharedViewWidgetEntryView(entry: .placeholder)
+            .padding(15)
+            .frame(width: 150, height: 150)
+            .background(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .padding(15)
+            .environment(\.locale, .init(identifier: "en_US"))
+        let renderer = ImageRenderer(content: view)
+        renderer.scale = 10
+        let filename = URL.documentsDirectory.appending(path: "SharedViewWidget.png")
+        try? renderer.uiImage?.pngData()?.write(to: filename)
+    }
+}

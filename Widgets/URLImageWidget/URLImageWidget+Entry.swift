@@ -37,4 +37,24 @@ extension URLImageWidget.Entry {
     static var placeholder: Self {
         .init(image: .loaded(value: .init(systemName: "photo")))
     }
+
+    static var notRequested: Self {
+        .init(image: .notRequested)
+    }
+
+    static var isLoading: Self {
+        .init(image: .isLoading)
+    }
+
+    static var loaded: Self {
+        .init(image: .loaded(value: .init(systemName: "photo")), requestCount: 1)
+    }
+
+    static var cached: Self {
+        .init(image: .cached(value: .init(systemName: "photo")), requestCount: 2)
+    }
+
+    static var failed: Self {
+        .init(image: .failed(error: "Error"))
+    }
 }

@@ -22,44 +22,15 @@
 
 import SwiftUI
 
-extension DeepLinkWidget {
-    struct EntryView: View {
-        @Environment(\.widgetFamily) var widgetFamily
+struct WidgetHeaderView: View {
+    var title: LocalizedStringResource
 
-        let entry: Entry
-
-        var body: some View {
-            VStack(alignment: .leading) {
-                WidgetHeaderView(title: "Deep Link")
-                Spacer()
-                contentView
-                Spacer()
-            }
-            .containerBackground(.clear, for: .widget)
+    var body: some View {
+        HStack {
+            Text(title)
+                .font(.headline)
+                .fixedSize()
+            Spacer(minLength: 0)
         }
-    }
-}
-
-// MARK: - Content
-
-extension DeepLinkWidget.EntryView {
-    @ViewBuilder
-    private var contentView: some View {
-        if widgetFamily == .systemSmall {
-            Text("Tap anywhere")
-                .widgetURL(deeplinkURL)
-        } else {
-            Link("Tap here", destination: deeplinkURL)
-        }
-    }
-}
-
-// MARK: - Helpers
-
-extension DeepLinkWidget.EntryView {
-    private var deeplinkURL: URL {
-        DeepLink.Builder(widget: .deepLink)
-            .widgetFamily("\(widgetFamily)")
-            .build()
     }
 }

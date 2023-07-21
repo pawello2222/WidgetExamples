@@ -28,7 +28,7 @@ extension IntentWidget {
 
         var body: some View {
             VStack(alignment: .leading) {
-                headerView
+                WidgetHeaderView(title: "Intent")
                 Spacer()
                 contentView
                 Spacer()
@@ -41,14 +41,6 @@ extension IntentWidget {
 // MARK: - Content
 
 extension IntentWidget.EntryView {
-    private var headerView: some View {
-        HStack {
-            Text("Intent")
-                .font(.headline)
-            Spacer()
-        }
-    }
-
     private var contentView: some View {
         Text("Edit Widget to change the background")
             .font(.subheadline)

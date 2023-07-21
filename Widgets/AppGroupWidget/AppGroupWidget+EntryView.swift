@@ -28,7 +28,7 @@ extension AppGroupWidget {
 
         var body: some View {
             VStack(alignment: .leading) {
-                headerView
+                WidgetHeaderView(title: "App Group")
                 Spacer()
                 contentView
                 Spacer()
@@ -41,14 +41,6 @@ extension AppGroupWidget {
 // MARK: - Content
 
 extension AppGroupWidget.EntryView {
-    private var headerView: some View {
-        HStack {
-            Text("App Group")
-                .font(.headline)
-            Spacer()
-        }
-    }
-
     @ViewBuilder
     private var contentView: some View {
         Text("Lucky number")

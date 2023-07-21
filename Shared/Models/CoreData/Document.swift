@@ -44,7 +44,7 @@ class Document: NSManagedObject, Identifiable {
 
     init(
         context: NSManagedObjectContext,
-        name: String = "Document \(Int.random(in: 1 ... 99))",
+        name: String = "Document #\(Int.random(in: 1 ... 99))",
         creationDate: Date = .now
     ) {
         let entity = NSEntityDescription.entity(forEntityName: "Document", in: context)!

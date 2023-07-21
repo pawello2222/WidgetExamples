@@ -31,7 +31,7 @@ extension EnvironmentWidget {
 
         var body: some View {
             VStack(alignment: .leading) {
-                headerView
+                WidgetHeaderView(title: "Environment")
                 Spacer()
                 contentView
                 Spacer()
@@ -44,14 +44,6 @@ extension EnvironmentWidget {
 // MARK: - Content
 
 extension EnvironmentWidget.EntryView {
-    private var headerView: some View {
-        HStack {
-            Text("Environment")
-                .font(.headline)
-            Spacer()
-        }
-    }
-
     @ViewBuilder
     private var contentView: some View {
         Text("Widget family")

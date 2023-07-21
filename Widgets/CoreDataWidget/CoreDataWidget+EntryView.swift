@@ -28,7 +28,7 @@ extension CoreDataWidget {
 
         var body: some View {
             VStack(alignment: .leading) {
-                headerView
+                WidgetHeaderView(title: "Core Data")
                 Spacer()
                 contentView
                 Spacer()
@@ -41,14 +41,6 @@ extension CoreDataWidget {
 // MARK: - Content
 
 extension CoreDataWidget.EntryView {
-    private var headerView: some View {
-        HStack {
-            Text("CoreData")
-                .font(.headline)
-            Spacer()
-        }
-    }
-
     @ViewBuilder
     private var contentView: some View {
         if let documentInfo = entry.documentInfo {

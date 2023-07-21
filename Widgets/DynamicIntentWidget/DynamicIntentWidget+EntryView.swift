@@ -28,7 +28,7 @@ extension DynamicIntentWidget {
 
         var body: some View {
             VStack(alignment: .leading) {
-                headerView
+                WidgetHeaderView(title: "Dynamic Intent")
                 Spacer()
                 contentView
                 Spacer()
@@ -41,14 +41,6 @@ extension DynamicIntentWidget {
 // MARK: - Content
 
 extension DynamicIntentWidget.EntryView {
-    private var headerView: some View {
-        HStack {
-            Text("Dynamic Intent")
-                .font(.headline)
-            Spacer()
-        }
-    }
-
     @ViewBuilder
     private var contentView: some View {
         if let person = entry.person {

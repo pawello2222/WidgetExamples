@@ -30,19 +30,10 @@ final class Product {
     var creationDate: Date
 
     init(
-        name: String = "Product \(Int.random(in: 1 ... 99))",
+        name: String = "Product #\(Int.random(in: 1 ... 99))",
         creationDate: Date = .now
     ) {
         self.name = name
         self.creationDate = creationDate
     }
-}
-
-// MARK: - Data
-
-extension Product {
-    static let `default` = Product(
-        name: "Product 1",
-        creationDate: .now
-    )
 }

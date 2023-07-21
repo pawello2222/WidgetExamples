@@ -28,7 +28,7 @@ extension URLImageWidget {
 
         var body: some View {
             VStack(alignment: .leading) {
-                headerView
+                WidgetHeaderView(title: "URL Image")
                 Spacer()
                 contentView
                 Spacer()
@@ -41,14 +41,6 @@ extension URLImageWidget {
 // MARK: - Content
 
 extension URLImageWidget.EntryView {
-    private var headerView: some View {
-        HStack {
-            Text("URL Image")
-                .font(.headline)
-            Spacer()
-        }
-    }
-
     private var contentView: some View {
         Group {
             Text("Request count: \(entry.requestCount)")

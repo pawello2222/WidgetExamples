@@ -56,7 +56,7 @@ extension CountdownWidget.Entry {
 
     static var nearEnd: Self {
         .init(
-            displayDate: .now.adding(.minute, value: 1),
+            displayDate: .now.adding(.second, value: 10),
             countdownState: .nearEnd
         )
     }

@@ -28,7 +28,7 @@ extension SwiftDataWidget {
 
         var body: some View {
             VStack(alignment: .leading) {
-                headerView
+                WidgetHeaderView(title: "SwiftData")
                 Spacer()
                 contentView
                 Spacer()
@@ -41,14 +41,6 @@ extension SwiftDataWidget {
 // MARK: - Content
 
 extension SwiftDataWidget.EntryView {
-    private var headerView: some View {
-        HStack {
-            Text("SwiftData")
-                .font(.headline)
-            Spacer()
-        }
-    }
-
     @ViewBuilder
     private var contentView: some View {
         if let productInfo = entry.productInfo {
