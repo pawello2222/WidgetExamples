@@ -49,6 +49,7 @@ extension AppDetailColumn {
     private var contentView: some View {
         if let screen {
             screen.view
+                .navigationTitle(screen.title)
         } else {
             ContentUnavailableView(
                 "Select a widget",

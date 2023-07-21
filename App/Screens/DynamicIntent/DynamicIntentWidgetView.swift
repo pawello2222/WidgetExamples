@@ -37,7 +37,6 @@ struct DynamicIntentWidgetView: View {
                 footerView
             }
         }
-        .navigationTitle("Dynamic Intent")
         .onChange(of: persons) {
             reloadWidgetTimelines()
         }

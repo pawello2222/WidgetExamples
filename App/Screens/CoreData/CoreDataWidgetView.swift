@@ -40,7 +40,6 @@ struct CoreDataWidgetView: View {
                 footerView
             }
         }
-        .navigationTitle("Core Data")
         .toolbar {
             Button(action: addItem) {
                 Label("Add Document", systemImage: "plus")

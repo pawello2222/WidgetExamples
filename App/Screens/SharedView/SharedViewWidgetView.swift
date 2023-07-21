@@ -31,7 +31,6 @@ struct SharedViewWidgetView: View {
                 headerView
             }
         }
-        .navigationTitle("Shared View")
     }
 }
 

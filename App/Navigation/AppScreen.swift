@@ -53,7 +53,7 @@ extension AppScreen {
         case .sharedView:
             "Shared View"
         case .swiftData:
-            "Swift Data"
+            "SwiftData"
         }
     }
 

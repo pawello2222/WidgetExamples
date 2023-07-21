@@ -38,7 +38,6 @@ struct SwiftDataWidgetView: View {
                 footerView
             }
         }
-        .navigationTitle("Swift Data")
         .toolbar {
             Button(action: addItem) {
                 Label("Add Product", systemImage: "plus")

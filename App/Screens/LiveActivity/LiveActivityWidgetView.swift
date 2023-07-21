@@ -30,7 +30,6 @@ struct LiveActivityWidgetView: View {
         List {
             contentView
         }
-        .navigationTitle("Live Activity")
         .onAppear {
             model.loadDelivery()
         }

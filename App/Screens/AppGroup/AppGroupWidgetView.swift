@@ -35,7 +35,6 @@ struct AppGroupWidgetView: View {
                 headerView
             }
         }
-        .navigationTitle("App Group")
         .onChange(of: luckyNumber) {
             saveNumberToFile()
             reloadWidgetTimelines()

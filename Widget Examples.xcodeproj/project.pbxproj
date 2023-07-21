@@ -38,6 +38,8 @@
 		E56D4CF02A69474E00742DFB /* FileManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56D4CEF2A69474E00742DFB /* FileManager+Extensions.swift */; };
 		E56D4CF12A69474E00742DFB /* FileManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56D4CEF2A69474E00742DFB /* FileManager+Extensions.swift */; };
 		E5757DB22A6AD4D700764349 /* WidgetHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5757DB12A6AD4D700764349 /* WidgetHeaderView.swift */; };
+		E5757DD12A6AF2B500764349 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5757DD02A6AF2B500764349 /* Assets.xcassets */; };
+		E5757DD42A6AF61F00764349 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5757DD32A6AF61F00764349 /* Assets.xcassets */; };
 		E57C3DE92A66C8C2002CF144 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C3DE82A66C8C2002CF144 /* Array+Extensions.swift */; };
 		E57C3DEA2A66C8C2002CF144 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C3DE82A66C8C2002CF144 /* Array+Extensions.swift */; };
 		E57C3DEC2A66CA11002CF144 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C3DEB2A66CA11002CF144 /* UserDefaults+Extensions.swift */; };
@@ -233,6 +235,8 @@
 		E5638AE9265D859D00E73B05 /* WidgetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetType.swift; sourceTree = "<group>"; };
 		E56D4CEF2A69474E00742DFB /* FileManager+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extensions.swift"; sourceTree = "<group>"; };
 		E5757DB12A6AD4D700764349 /* WidgetHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetHeaderView.swift; sourceTree = "<group>"; };
+		E5757DD02A6AF2B500764349 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E5757DD32A6AF61F00764349 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E57C3DE82A66C8C2002CF144 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		E57C3DEB2A66CA11002CF144 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		E57C3DEE2A66D33B002CF144 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -357,6 +361,7 @@
 				E58246C12A669273008180CC /* Navigation */,
 				E517B3302A61A582009072A3 /* Screens */,
 				E58246CB2A66948B008180CC /* Routes */,
+				E5757DCF2A6AF29400764349 /* Resources */,
 				E554989C2552BE150066870B /* Supporting Files */,
 			);
 			path = App;
@@ -391,6 +396,7 @@
 				E58246872A644F21008180CC /* SwiftDataWidget */,
 				E54213E52538A0B500CCC9C3 /* URLImageWidget */,
 				E5757DB32A6AD4DD00764349 /* Components */,
+				E5757DD22A6AF61F00764349 /* Resources */,
 				E55498AF2552C0B30066870B /* Supporting Files */,
 			);
 			path = Widgets;
@@ -588,6 +594,22 @@
 				E5757DB12A6AD4D700764349 /* WidgetHeaderView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		E5757DCF2A6AF29400764349 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E5757DD02A6AF2B500764349 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E5757DD22A6AF61F00764349 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E5757DD32A6AF61F00764349 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		E58246742A6435B0008180CC /* Components */ = {
@@ -838,6 +860,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5757DD42A6AF61F00764349 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -846,6 +869,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E55551B328E1D3FF005A5321 /* README.md in Resources */,
+				E5757DD12A6AF2B500764349 /* Assets.xcassets in Resources */,
 				E517B32F2A6194BC009072A3 /* LICENSE.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1010,12 +1034,13 @@
 		E517B3942A62D6B8009072A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "Widgets/Supporting Files/Widgets.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = Widgets/Resources/Assets.xcassets;
 				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1042,12 +1067,13 @@
 		E517B3952A62D6B8009072A3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "Widgets/Supporting Files/Widgets.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = Widgets/Resources/Assets.xcassets;
 				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1194,12 +1220,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = "";
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "App/Supporting Files/App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_ASSET_PATHS = App/Resources/Assets.xcassets;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1226,12 +1252,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = "";
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "App/Supporting Files/App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_ASSET_PATHS = App/Resources/Assets.xcassets;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
