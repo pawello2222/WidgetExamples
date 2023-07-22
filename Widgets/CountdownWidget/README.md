@@ -4,4 +4,4 @@ Display the remaining time in seconds and change color when the end date is appr
 
 ## Preview
 
-![Countdown Widget](../../Resources/Recordings/CountdownWidget.gif)
+![Countdown Widget](../../.resources/Recordings/CountdownWidget.gif)

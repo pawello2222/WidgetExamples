@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./Resources/AppIcon/icon-alt.png" alt="Widget Examples Logo" height=150>
+  <img src="./.resources/Assets/logo.png" alt="Widget Examples Logo" height=150>
 </p>
 <p align="center">
   <a href="https://github.com/pawello2222/WidgetExamples/actions?query=branch%3Amain">
@@ -51,22 +51,22 @@ A demo project showing different types of Widgets created with SwiftUI and Widge
   <tr>
     <td align="center">
       <a href="./Widgets/AppGroupWidget">
-        <img src="./Resources/Screenshots/AppGroupWidget.png" alt="App Group Widget">
+        <img src="./.resources/Screenshots/AppGroupWidget.png" alt="App Group Widget">
       </a>
     </td>
     <td align="center">
       <a href="./Widgets/CoreDataWidget">
-        <img src="./Resources/Screenshots/CoreDataWidget.png" alt="Core Data Widget">
+        <img src="./.resources/Screenshots/CoreDataWidget.png" alt="Core Data Widget">
       </a>
     </td>
     <td align="center">
       <a href="./Widgets/CountdownWidget">
-        <img src="./Resources/Screenshots/CountdownWidget.png" alt="Countdown Widget">
+        <img src="./.resources/Screenshots/CountdownWidget.png" alt="Countdown Widget">
       </a>
     </td>
     <td align="center">
       <a href="./Widgets/DeepLinkWidget">
-        <img src="./Resources/Screenshots/DeepLinkWidget.png" alt="Deep Link Widget">
+        <img src="./.resources/Screenshots/DeepLinkWidget.png" alt="Deep Link Widget">
       </a>
     </td>
   </tr>
@@ -87,22 +87,22 @@ A demo project showing different types of Widgets created with SwiftUI and Widge
   <tr>
     <td align="center">
       <a href="./Widgets/DigitalClockWidget">
-        <img src="./Resources/Screenshots/DigitalClockWidget.png" alt="Digital Clock Widget">
+        <img src="./.resources/Screenshots/DigitalClockWidget.png" alt="Digital Clock Widget">
       </a>
     </td>
     <td align="center">
       <a href="./Widgets/DynamicIntentWidget">
-        <img src="./Resources/Screenshots/DynamicIntentWidget.png" alt="Dynamic Intent Widget">
+        <img src="./.resources/Screenshots/DynamicIntentWidget.png" alt="Dynamic Intent Widget">
       </a>
     </td>
     <td align="center">
       <a href="./Widgets/EnvironmentWidget">
-        <img src="./Resources/Screenshots/EnvironmentWidget.png" alt="Environment Widget">
+        <img src="./.resources/Screenshots/EnvironmentWidget.png" alt="Environment Widget">
       </a>
     </td>
     <td align="center">
       <a href="./Widgets/IntentWidget">
-        <img src="./Resources/Screenshots/IntentWidget.png" alt="Intent Widget">
+        <img src="./.resources/Screenshots/IntentWidget.png" alt="Intent Widget">
       </a>
     </td>
   </tr>
@@ -120,17 +120,17 @@ A demo project showing different types of Widgets created with SwiftUI and Widge
   <tr>
     <td align="center">
       <a href="./Widgets/InteractiveWidget">
-        <img src="./Resources/Screenshots/InteractiveWidget.png" alt="Interactive Widget">
+        <img src="./.resources/Screenshots/InteractiveWidget.png" alt="Interactive Widget">
       </a>
     </td>
     <td align="center" colspan="2">
       <a href="./Widgets/LiveActivityWidget">
-        <img src="./Resources/Screenshots/LiveActivityWidget.png" alt="Live Activity Widget">
+        <img src="./.resources/Screenshots/LiveActivityWidget.png" alt="Live Activity Widget">
       </a>
     </td>
     <td align="center">
       <a href="./Widgets/LockScreenWidget">
-        <img src="./Resources/Screenshots/LockScreenWidget.png" alt="Lock Screen Widget">
+        <img src="./.resources/Screenshots/LockScreenWidget.png" alt="Lock Screen Widget">
       </a>
     </td>
   </tr>
@@ -151,22 +151,22 @@ A demo project showing different types of Widgets created with SwiftUI and Widge
   <tr>
     <td align="center">
       <a href="./Widgets/NetworkWidget">
-        <img src="./Resources/Screenshots/NetworkWidget.png" alt="Network Widget">
+        <img src="./.resources/Screenshots/NetworkWidget.png" alt="Network Widget">
       </a>
     </td>
     <td align="center">
       <a href="./Widgets/SharedViewWidget">
-        <img src="./Resources/Screenshots/SharedViewWidget.png" alt="Shared View Widget">
+        <img src="./.resources/Screenshots/SharedViewWidget.png" alt="Shared View Widget">
       </a>
     </td>
     <td align="center">
       <a href="./Widgets/SwiftDataWidget">
-        <img src="./Resources/Screenshots/SwiftDataWidget.png" alt="SwiftData Widget">
+        <img src="./.resources/Screenshots/SwiftDataWidget.png" alt="SwiftData Widget">
       </a>
     </td>
     <td align="center">
       <a href="./Widgets/URLImageWidget">
-        <img src="./Resources/Screenshots/URLImageWidget.png" alt="URL Image Widget">
+        <img src="./.resources/Screenshots/URLImageWidget.png" alt="URL Image Widget">
       </a>
     </td>
   </tr>

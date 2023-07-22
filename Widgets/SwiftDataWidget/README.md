@@ -4,4 +4,4 @@ Use SwiftData to share data between the App and the Widget.
 
 ## Preview
 
-![SwiftData Widget](../../Resources/Recordings/SwiftDataWidget.gif)
+![SwiftData Widget](../../.resources/Recordings/SwiftDataWidget.gif)

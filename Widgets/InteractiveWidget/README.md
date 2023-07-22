@@ -4,4 +4,4 @@ Interact with elements of the Widget.
 
 ## Preview
 
-![Interactive Widget](../../Resources/Recordings/InteractiveWidget.gif)
+![Interactive Widget](../../.resources/Recordings/InteractiveWidget.gif)

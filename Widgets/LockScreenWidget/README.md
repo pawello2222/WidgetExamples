@@ -4,4 +4,4 @@ Display the Widget on both the lock screen and the home screen.
 
 ## Preview
 
-![Lock Screen Widget](../../Resources/Recordings/LockScreenWidget.gif)
+![Lock Screen Widget](../../.resources/Recordings/LockScreenWidget.gif)

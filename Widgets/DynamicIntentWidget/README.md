@@ -4,4 +4,4 @@ Configure the Widget with data that can be changed dynamically.
 
 ## Preview
 
-![Dynamic Intent Widget](../../Resources/Recordings/DynamicIntentWidget.gif)
+![Dynamic Intent Widget](../../.resources/Recordings/DynamicIntentWidget.gif)
