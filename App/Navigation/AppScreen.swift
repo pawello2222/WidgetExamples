@@ -62,7 +62,7 @@ extension AppScreen {
     }
 }
 
-// MARK: - Destination
+// MARK: - View
 
 extension AppScreen {
     @ViewBuilder

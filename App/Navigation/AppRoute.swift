@@ -27,7 +27,7 @@ enum AppRoute: Hashable {
     case liveActivity
 }
 
-// MARK: - Destination
+// MARK: - View
 
 extension AppRoute {
     @ViewBuilder

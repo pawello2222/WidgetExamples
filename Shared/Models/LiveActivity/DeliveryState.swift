@@ -31,7 +31,7 @@ enum DeliveryState: Codable {
 // MARK: - Helpers
 
 extension DeliveryState {
-    var name: String {
+    var name: LocalizedStringResource {
         switch self {
         case .sent:
             "In transit"
