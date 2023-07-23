@@ -53,7 +53,7 @@
      inkscape:current-layer="layer1"
      inkscape:document-units="mm"
      inkscape:cy="95.892857"
-     inkscape:cx="67.232143"
+     inkscape:cx="65.178571"
      inkscape:zoom="5.6"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
@@ -88,10 +88,10 @@
        style="font-variation-settings:normal;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.311158;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.311158, 0.622315;stroke-dashoffset:0;stroke-opacity:0;stop-color:#000000"
        inkscape:export-xdpi="577.99115"
        inkscape:export-ydpi="577.99115"
-       inkscape:export-filename=".\rect2694.png" />
+       inkscape:export-filename="icon.png" />
     <text
        xml:space="preserve"
-       style="font-size:47.8308px;line-height:1.25;font-family:Wingdings;-inkscape-font-specification:Wingdings;fill:#40e6ff;fill-opacity:1;stroke:#40e6ff;stroke-width:1.11741;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       style="font-size:47.8308px;line-height:1.25;font-family:Wingdings;-inkscape-font-specification:Wingdings;fill:#00b1cc;fill-opacity:1;stroke:#00b1cc;stroke-width:1.11741;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        x="-21.323008"
        y="-18.072725"
        id="text892-4"
@@ -102,7 +102,7 @@
          id="tspan890-4"
          x="-21.323008"
          y="-18.072725"
-         style="fill:#40e6ff;fill-opacity:1;stroke:#40e6ff;stroke-width:1.11741;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal">v</tspan></text>
+         style="fill:#00b1cc;fill-opacity:1;stroke:#00b1cc;stroke-width:1.11741;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal">v</tspan></text>
   </g>
   <script
      id="mesh_polyfill"
