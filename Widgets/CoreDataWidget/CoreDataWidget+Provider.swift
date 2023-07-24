@@ -21,6 +21,7 @@
 // SOFTWARE.
 
 import CoreData
+import OSLog
 import WidgetKit
 
 extension CoreDataWidget {
@@ -66,7 +67,7 @@ extension CoreDataWidget.Provider {
                 $0.creationDate < $1.creationDate
             }
         } catch {
-            print(error)
+            Logger.widgets.error("Error fetching documents: \(error)")
             return nil
         }
     }

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./.resources/Assets/logo.png" alt="Widget Examples Logo" height=150>
+  <img src="./.resources/Assets/logo.png" alt="Widget Examples logo" height=150>
 </p>
 <p align="center">
   <a href="https://github.com/pawello2222/WidgetExamples/actions?query=branch%3Amain">

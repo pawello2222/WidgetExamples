@@ -23,6 +23,7 @@
 import ActivityKit
 import Foundation
 import Observation
+import OSLog
 
 @Observable
 final class LiveActivityWidgetViewModel {
@@ -63,7 +64,7 @@ extension LiveActivityWidgetViewModel {
             )
             setup(activity: activity, for: delivery)
         } catch {
-            print("Couldn't start activity: \(String(describing: error))")
+            Logger.app.error("Error starting live activity: \(error)")
         }
     }
 

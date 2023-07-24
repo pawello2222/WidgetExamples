@@ -21,6 +21,7 @@
 // SOFTWARE.
 
 import CoreData
+import OSLog
 
 class PersistenceController {
     static var shared = PersistenceController()
@@ -38,7 +39,9 @@ class PersistenceController {
         container.persistentStoreDescriptions = [.init(url: storeURL)]
         container.loadPersistentStores { _, error in
             if let nsError = error as NSError? {
-                print(nsError)
+                Logger.coreData.error("Error creating persistence controller: \(nsError)")
+            } else {
+                Logger.coreData.notice("Created persistence controller: \(storeURL)")
             }
         }
         container.viewContext.automaticallyMergesChangesFromParent = true
@@ -58,7 +61,7 @@ extension PersistenceController {
                 do {
                     try managedObjectContext.save()
                 } catch {
-                    print(error)
+                    Logger.coreData.error("Error saving context: \(error)")
                 }
             }
         }
@@ -79,7 +82,7 @@ extension PersistenceController {
             try context.save()
             saveContext()
         } catch {
-            print(error)
+            Logger.coreData.error("Error saving working context: \(error)")
         }
     }
 }

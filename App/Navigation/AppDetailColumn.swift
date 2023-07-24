@@ -20,6 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+import OSLog
 import SwiftUI
 
 struct AppDetailColumn: View {
@@ -36,7 +37,7 @@ struct AppDetailColumn: View {
                 }
         }
         .onOpenURL {
-            print("Opened url: \($0)")
+            Logger.app.notice("Opened url: \($0)")
             parseDeepLink(url: $0)
         }
     }

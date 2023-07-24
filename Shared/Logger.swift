@@ -20,36 +20,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import Foundation
 import OSLog
 
-private let logger = Logger()
+extension Logger {
+    private static var subsystem = Bundle.main.bundleIdentifier!
 
-extension FileManager {
-    static func loadStringFromFile(filename: String) -> String? {
-        let url = appGroupContainerURL.appendingPathComponent(filename)
-        do {
-            return try String(contentsOf: url, encoding: .utf8)
-        } catch {
-            Logger.fileManager.error("Error reading from file: \(error)")
-        }
-        return nil
-    }
+    static let app = Logger(subsystem: subsystem, category: "App")
+    static let widgets = Logger(subsystem: subsystem, category: "Widgets")
 
-    static func saveStringToFile(_ value: String, filename: String) {
-        let url = appGroupContainerURL.appendingPathComponent(filename)
-        do {
-            try value.write(to: url, atomically: false, encoding: .utf8)
-        } catch {
-            Logger.fileManager.error("Error writing to file: \(error)")
-        }
-    }
-}
-
-// MARK: - App Group
-
-extension FileManager {
-    static let appGroupContainerURL = FileManager.default.containerURL(
-        forSecurityApplicationGroupIdentifier: Shared.appGroupName
-    )!
+    static let coreData = Logger(subsystem: subsystem, category: "CoreData")
+    static let fileManager = Logger(subsystem: subsystem, category: "FileManager")
 }

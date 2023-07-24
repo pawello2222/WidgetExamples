@@ -20,6 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+import OSLog
 import SwiftData
 import WidgetKit
 
@@ -72,7 +73,7 @@ extension SwiftDataWidget.Provider {
                 $0.creationDate < $1.creationDate
             }
         } catch {
-            print(error)
+            Logger.widgets.error("Error fetching products: \(error)")
             return nil
         }
     }

@@ -47,6 +47,8 @@
 		E57C3E112A674183002CF144 /* LockScreenWidget+Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C3E102A674183002CF144 /* LockScreenWidget+Entry.swift */; };
 		E57C3E132A674189002CF144 /* LockScreenWidget+EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C3E122A674189002CF144 /* LockScreenWidget+EntryView.swift */; };
 		E57C3E152A674190002CF144 /* LockScreenWidget+Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C3E142A674190002CF144 /* LockScreenWidget+Provider.swift */; };
+		E580A5D62A6E9A270007BA39 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580A5D52A6E9A270007BA39 /* Logger.swift */; };
+		E580A5D72A6E9A270007BA39 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580A5D52A6E9A270007BA39 /* Logger.swift */; };
 		E582466D2A630BF0008180CC /* URLImageWidget+Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E582466C2A630BF0008180CC /* URLImageWidget+Entry.swift */; };
 		E582466F2A630BF7008180CC /* URLImageWidget+EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E582466E2A630BF7008180CC /* URLImageWidget+EntryView.swift */; };
 		E58246712A630BFE008180CC /* URLImageWidget+Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58246702A630BFE008180CC /* URLImageWidget+Provider.swift */; };
@@ -239,6 +241,7 @@
 		E57C3E102A674183002CF144 /* LockScreenWidget+Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LockScreenWidget+Entry.swift"; sourceTree = "<group>"; };
 		E57C3E122A674189002CF144 /* LockScreenWidget+EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LockScreenWidget+EntryView.swift"; sourceTree = "<group>"; };
 		E57C3E142A674190002CF144 /* LockScreenWidget+Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LockScreenWidget+Provider.swift"; sourceTree = "<group>"; };
+		E580A5D52A6E9A270007BA39 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		E582466C2A630BF0008180CC /* URLImageWidget+Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLImageWidget+Entry.swift"; sourceTree = "<group>"; };
 		E582466E2A630BF7008180CC /* URLImageWidget+EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLImageWidget+EntryView.swift"; sourceTree = "<group>"; };
 		E58246702A630BFE008180CC /* URLImageWidget+Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLImageWidget+Provider.swift"; sourceTree = "<group>"; };
@@ -458,6 +461,7 @@
 				E58246742A6435B0008180CC /* Components */,
 				E517B33D2A61E068009072A3 /* Extensions */,
 				E55498362551D1F40066870B /* Models */,
+				E580A5D52A6E9A270007BA39 /* Logger.swift */,
 				E517B3402A61E0C6009072A3 /* Shared.swift */,
 				E5638AE9265D859D00E73B05 /* WidgetType.swift */,
 			);
@@ -896,6 +900,7 @@
 				E5757DB22A6AD4D700764349 /* WidgetHeaderView.swift in Sources */,
 				E58BB8D62A62D89E00DA8303 /* SharedViewWidgetEntry.swift in Sources */,
 				E57C3E112A674183002CF144 /* LockScreenWidget+Entry.swift in Sources */,
+				E580A5D72A6E9A270007BA39 /* Logger.swift in Sources */,
 				E58BB8F12A62D92700DA8303 /* PersistenceController.swift in Sources */,
 				E58BB8D32A62D89500DA8303 /* EnvironmentWidget+Entry.swift in Sources */,
 				E58BB8C62A62D88500DA8303 /* CountdownWidget+Provider.swift in Sources */,
@@ -982,6 +987,7 @@
 				E517B3412A61E0C6009072A3 /* Shared.swift in Sources */,
 				E58246CE2A66A66F008180CC /* DynamicIntentWidgetView+Person.swift in Sources */,
 				E55498382551D2160066870B /* Person.swift in Sources */,
+				E580A5D62A6E9A270007BA39 /* Logger.swift in Sources */,
 				E58246CA2A66934C008180CC /* AppRoute.swift in Sources */,
 				E58246BF2A65CBBB008180CC /* SwiftDataWidgetView.swift in Sources */,
 				E54214262538B77500CCC9C3 /* DataModel.xcdatamodeld in Sources */,
