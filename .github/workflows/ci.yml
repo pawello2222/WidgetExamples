@@ -21,10 +21,16 @@ jobs:
         uses: norio-nomura/action-swiftlint@3.2.1
 
   build:
-    runs-on: macos-latest
+    runs-on: macos-13
     steps:
     - name: Checkout
       uses: actions/checkout@v3
+    - name: Install Swift
+      uses: slashmo/install-swift@v0.4.0
+      with:
+        version: swift-5.9-DEVELOPMENT-SNAPSHOT-2023-07-04-a
+    - run: ls /Applications
+    - run: sudo xcode-select -s '/Applications/Xcode_15.0.app/Contents/Developer'
     - name: Build
       run: |
         xcodebuild clean build \
