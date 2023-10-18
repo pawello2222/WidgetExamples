@@ -1,4 +1,7 @@
 <p align="center">
+  <img src="./.resources/Assets/logo.png" alt="Widget Examples logo" height=150>
+</p>
+<p align="center">
   <a href="https://github.com/pawello2222/WidgetExamples/actions?query=branch%3Amain">
     <img src="https://img.shields.io/github/actions/workflow/status/pawello2222/WidgetExamples/ci.yml?logo=github" alt="Build">
   </a>
@@ -15,76 +18,174 @@
 
 # Widget Examples
 
-A demo project showcasing different types of Widgets created with SwiftUI and WidgetKit.
+A demo project showing different types of Widgets created with SwiftUI and WidgetKit.
 
-## ⚠️ Important
+<details>
+  <summary>
+    <b>Table of Contents</b>
+  </summary>
 
-This project is being refactored for iOS 17.
+  1. [Gallery](#gallery)
+  2. [Installation](#installation)
+  3. [License](#license)
 
-All changes remain on the branch [`ios17-refactor`](https://github.com/pawello2222/WidgetExamples/tree/ios17-refactor) and will be merged once iOS 17 is released. Pre-iOS 17 project will always be available under [v0.6.2](https://github.com/pawello2222/WidgetExamples/releases/tag/0.6.2).
+</details>
 
-## Contents
+## Gallery <a name="gallery"></a>
 
-### [AppGroup Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/AppGroupWidget)
+<table>
+  <tr>
+    <th align="center" width="25%">
+      <a href="./Widgets/AppGroupWidget">App&nbsp;Group</a>
+    </th>
+    <th align="center" width="25%">
+      <a href="./Widgets/CoreDataWidget">Core&nbsp;Data</a>
+    </th>
+    <th align="center" width="25%">
+      <a href="./Widgets/CountdownWidget">Countdown</a>
+    </th>
+    <th align="center" width="25%">
+      <a href="./Widgets/DeepLinkWidget">Deep&nbsp;Link</a>
+    </th>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="./Widgets/AppGroupWidget">
+        <img src="./.resources/Screenshots/AppGroupWidget.png" alt="App Group Widget">
+      </a>
+    </td>
+    <td align="center">
+      <a href="./Widgets/CoreDataWidget">
+        <img src="./.resources/Screenshots/CoreDataWidget.png" alt="Core Data Widget">
+      </a>
+    </td>
+    <td align="center">
+      <a href="./Widgets/CountdownWidget">
+        <img src="./.resources/Screenshots/CountdownWidget.png" alt="Countdown Widget">
+      </a>
+    </td>
+    <td align="center">
+      <a href="./Widgets/DeepLinkWidget">
+        <img src="./.resources/Screenshots/DeepLinkWidget.png" alt="Deep Link Widget">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th align="center">
+      <a href="./Widgets/DigitalClockWidget">Digital&nbsp;Clock</a>
+    </th>
+    <th align="center">
+      <a href="./Widgets/DynamicIntentWidget">Dynamic&nbsp;Intent</a>
+    </th>
+    <th align="center">
+      <a href="./Widgets/EnvironmentWidget">Environment</a>
+    </th>
+    <th align="center">
+      <a href="./Widgets/IntentWidget">Intent</a>
+    </th>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="./Widgets/DigitalClockWidget">
+        <img src="./.resources/Screenshots/DigitalClockWidget.png" alt="Digital Clock Widget">
+      </a>
+    </td>
+    <td align="center">
+      <a href="./Widgets/DynamicIntentWidget">
+        <img src="./.resources/Screenshots/DynamicIntentWidget.png" alt="Dynamic Intent Widget">
+      </a>
+    </td>
+    <td align="center">
+      <a href="./Widgets/EnvironmentWidget">
+        <img src="./.resources/Screenshots/EnvironmentWidget.png" alt="Environment Widget">
+      </a>
+    </td>
+    <td align="center">
+      <a href="./Widgets/IntentWidget">
+        <img src="./.resources/Screenshots/IntentWidget.png" alt="Intent Widget">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th align="center">
+      <a href="./Widgets/InteractiveWidget">Interactive</a>
+    </th>
+    <th align="center" colspan="2">
+      <a href="./Widgets/LiveActivityWidget">Live&nbsp;Activity</a>
+    </th>
+    <th align="center">
+      <a href="./Widgets/LockScreenWidget">Lock&nbsp;Screen</a>
+    </th>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="./Widgets/InteractiveWidget">
+        <img src="./.resources/Screenshots/InteractiveWidget.png" alt="Interactive Widget">
+      </a>
+    </td>
+    <td align="center" colspan="2">
+      <a href="./Widgets/LiveActivityWidget">
+        <img src="./.resources/Screenshots/LiveActivityWidget.png" alt="Live Activity Widget">
+      </a>
+    </td>
+    <td align="center">
+      <a href="./Widgets/LockScreenWidget">
+        <img src="./.resources/Screenshots/LockScreenWidget.png" alt="Lock Screen Widget">
+      </a>
+    </td>
+  </tr>
+    <tr>
+    <th align="center">
+      <a href="./Widgets/NetworkWidget">Network</a>
+    </th>
+    <th align="center">
+      <a href="./Widgets/SharedViewWidget">Shared&nbsp;View</a>
+    </th>
+    <th align="center">
+      <a href="./Widgets/SwiftDataWidget">SwiftData</a>
+    </th>
+    <th align="center">
+      <a href="./Widgets/URLImageWidget">URL&nbsp;Image</a>
+    </th>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="./Widgets/NetworkWidget">
+        <img src="./.resources/Screenshots/NetworkWidget.png" alt="Network Widget">
+      </a>
+    </td>
+    <td align="center">
+      <a href="./Widgets/SharedViewWidget">
+        <img src="./.resources/Screenshots/SharedViewWidget.png" alt="Shared View Widget">
+      </a>
+    </td>
+    <td align="center">
+      <a href="./Widgets/SwiftDataWidget">
+        <img src="./.resources/Screenshots/SwiftDataWidget.png" alt="SwiftData Widget">
+      </a>
+    </td>
+    <td align="center">
+      <a href="./Widgets/URLImageWidget">
+        <img src="./.resources/Screenshots/URLImageWidget.png" alt="URL Image Widget">
+      </a>
+    </td>
+  </tr>
+</table>
 
-A demo showcasing how to use an App Group to share data between an App and its Widget.
+## Installation <a name="installation"></a>
 
-### [Clock Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/ClockWidget)
+It is recommended to download the whole project to keep the configuration intact as some widgets depend on the App Group capability or integrate with the main App.
 
-A Widget that displays the current time (in various formats) and refreshes every minute.
 
-### [CoreData Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/CoreDataWidget)
+### Versions
 
-A demo showcasing how to use Core Data in a Widget.
+This project requires iOS 17.
 
-### [Countdown Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/CountdownWidget)
+You can also download releases for previous deployment targets:
+- [v0.6.2](https://github.com/pawello2222/WidgetExamples/releases/tag/0.6.2) (iOS 16.1+)
+- [v0.6.0](https://github.com/pawello2222/WidgetExamples/releases/tag/0.6.0) (iOS 16.0+)
+- [v0.5.0](https://github.com/pawello2222/WidgetExamples/releases/tag/0.5.0) (iOS 14.0+)
 
-A Widget that displays the remaining time in seconds and changes color when the end date is approaching.
+## License <a name="license"></a>
 
-### [DeepLink Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/DeepLinkWidget)
-
-A demo showcasing how to use Deep Links to pass events / information from a Widget to the parent App.
-
-### [Dynamic Intent Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/DynamicIntentWidget)
-
-A Widget that has dynamically configurable data.
-
-### [Environment Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/EnvironmentWidget)
-
-A demo showcasing how to adjust a Widget View depending on Environment variables.
-
-### [Intent Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/IntentWidget)
-
-A Widget that has a configurable background color.
-
-### [Lock Screen Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/LockScreenWidget)
-
-A Widget that can be displayed on both the lock screen and the home screen.
-
-### [Network Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/NetworkWidget)
-
-A demo showcasing how to load data from a network request and populate the Widget Timeline.
-
-### [Preview Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/PreviewWidget)
-
-A demo showcasing how to display a Widget View directly in the parent App.
-
-### [Timer Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/TimerWidget)
-
-A Widget that displays the current time (including seconds) as a timer.
-
-### [URL Image Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/URLImageWidget)
-
-A Widget that displays an Image downloaded from an external URL.
-
-### [URL Cached Image Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/URLCachedImageWidget)
-
-A Widget that displays an Image downloaded from an external URL and caches it.
-
-## Notes
-
-Some examples depend on the App Group capability (e.g., [AppGroup Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/AppGroupWidget)) or integrate with the main App (e.g., [Preview Widget](https://github.com/pawello2222/WidgetExamples/tree/main/WidgetExtension/PreviewWidget)), so it's recommended to download the whole project to keep the configuration intact.
-
-## License
-
-Widget Examples project is available under the MIT license. See the [LICENSE](https://github.com/pawello2222/WidgetExamples/blob/main/LICENSE.md) file for more info.
+Widget Examples project is available under the MIT license. See the [LICENSE](./LICENSE.md) file for more info.

@@ -25,10 +25,30 @@ import SwiftUI
 @main
 struct WidgetExamplesApp: App {
     var body: some Scene {
-        let moc = CoreDataStack.shared.managedObjectContext
-        return WindowGroup {
+        WindowGroup {
+            let persistenceController = PersistenceController.shared
             ContentView()
-                .environment(\.managedObjectContext, moc)
+                .environment(\.managedObjectContext, persistenceController.managedObjectContext)
+                .modelContainer(for: Product.self)
         }
+    }
+}
+
+// MARK: - Screenshots
+
+extension WidgetExamplesApp {
+    @MainActor
+    private func createScreenshot() {
+        let view = SharedViewWidgetEntryView(entry: .placeholder)
+            .padding(15)
+            .frame(width: 150, height: 150)
+            .background(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .padding(15)
+            .environment(\.locale, .init(identifier: "en_US"))
+        let renderer = ImageRenderer(content: view)
+        renderer.scale = 10
+        let filename = URL.documentsDirectory.appending(path: "SharedViewWidget.png")
+        try? renderer.uiImage?.pngData()?.write(to: filename)
     }
 }
