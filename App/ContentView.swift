@@ -27,7 +27,7 @@ struct ContentView: View {
 
     var body: some View {
         NavigationSplitView(
-            columnVisibility: .doubleColumn,
+            columnVisibility: .constant(.doubleColumn),
             preferredCompactColumn: .constant(.sidebar)
         ) {
             AppSidebarList(selection: $selection)
