@@ -44,34 +44,77 @@ extension AnalogClockWidget {
 extension AnalogClockWidget.EntryView {
     private var contentView: some View {
         Circle()
-            .fill(.white)
-            .stroke(.brown)
+            .fill(.background)
+            .stroke(.gray)
             .overlay {
-                RoundedRectangle(cornerRadius: 8)
-                    .fill(.blue)
-                    .modifier(
-                        ClockRotationModifier(
-                            period: .secondHand,
-                            timezone: .current,
-                            anchor: .top
-                        )
-                    )
+                hourHandView
             }
+            .overlay {
+                minuteHandView
+            }
+            .overlay {
+                secondHandView
+            }
+            .overlay {
+                knobView
+            }
+            .frame(width: 100, height: 100)
+            .frame(maxWidth: .infinity)
     }
 
-    private var handView: some View {
-        RoundedRectangle(cornerRadius: 8)
-            .fill(.blue)
+    private var hourHandView: some View {
+        RoundedRectangle(cornerRadius: 10)
+            .fill(gradient())
+            .frame(width: 4, height: 50)
+            .clockRotation(.hourHand)
+    }
+
+    private var minuteHandView: some View {
+        RoundedRectangle(cornerRadius: 10)
+            .fill(gradient())
+            .frame(width: 3, height: 70)
+            .clockRotation(.miniuteHand)
+    }
+
+    private var secondHandView: some View {
+        RoundedRectangle(cornerRadius: 10)
+            .fill(gradient())
+            .frame(width: 2, height: 90)
+            .clockRotation(.secondHand)
+    }
+
+    private var knobView: some View {
+        Circle()
+            .fill(.brown)
+            .frame(width: 3, height: 3)
     }
 }
 
 // MARK: - Helpers
 
 extension AnalogClockWidget.EntryView {
-    private static let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.locale = .init(identifier: "en_US_POSIX")
-        formatter.dateFormat = "HH:mm"
-        return formatter
-    }()
+    private func gradient() -> LinearGradient {
+        .init(
+            gradient: .init(
+                stops: [
+                    .init(color: .brown, location: 0.5),
+                    .init(color: .clear, location: 0.5)
+                ]
+            ),
+            startPoint: .top,
+            endPoint: .bottom
+        )
+    }
+}
+
+extension View {
+    fileprivate func clockRotation(_ period: ClockRotationPeriod) -> some View {
+        modifier(
+            ClockRotationModifier(
+                period: period,
+                timezone: .current,
+                anchor: .center
+            )
+        )
+    }
 }
