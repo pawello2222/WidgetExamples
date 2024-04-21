@@ -26,8 +26,9 @@ A demo project showing different types of Widgets created with SwiftUI and Widge
   </summary>
 
   1. [Gallery](#gallery)
-  2. [Installation](#installation)
-  3. [License](#license)
+  2. [Unofficial gallery](#unofficial)
+  3. [Installation](#installation)
+  4. [License](#license)
 
 </details>
 
@@ -169,6 +170,31 @@ A demo project showing different types of Widgets created with SwiftUI and Widge
         <img src="./.resources/Screenshots/URLImageWidget.png" alt="URL Image Widget">
       </a>
     </td>
+  </tr>
+</table>
+
+## Unofficial gallery <a name="unofficial"></a>
+
+Please be aware that the folowing widgets use private API. This means they not necessarily have to pass Apple Review and you use them at your own risk.
+
+<table>
+  <tr>
+    <th align="center" width="25%">
+      <a href="./Widgets/AnalogClockWidget">Analog&nbsp;Clock</a>
+    </th>
+    <th align="center" width="25%"></th>
+    <th align="center" width="25%"></th>
+    <th align="center" width="25%"></th>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="./Widgets/AnalogClockWidget">
+        <img src="./.resources/Screenshots/AnalogClockWidget.png" alt="Analog Clock Widget">
+      </a>
+    </td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
   </tr>
 </table>
 

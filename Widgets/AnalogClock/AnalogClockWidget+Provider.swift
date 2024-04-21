@@ -20,33 +20,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import Foundation
+import WidgetKit
 
-enum WidgetType: String {
-    case analogClock
-    case appGroup
-    case coreData
-    case countdown
-    case deepLink
-    case digitalClock
-    case dynamicIntent
-    case environment
-    case intent
-    case interactive
-    case liveActivity
-    case lockScreen
-    case network
-    case sharedView
-    case swiftData
-    case timer
-    case urlImage
-    case urlCachedImage
-}
+extension AnalogClockWidget {
+    struct Provider: TimelineProvider {
+        func placeholder(in context: Context) -> Entry {
+            .placeholder
+        }
 
-// MARK: - Helpers
+        func getSnapshot(in context: Context, completion: @escaping (Entry) -> Void) {
+            completion(.placeholder)
+        }
 
-extension WidgetType {
-    var kind: String {
-        rawValue + "Widget"
+        func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
+            completion(.init(entries: [.placeholder], policy: .never))
+        }
     }
 }

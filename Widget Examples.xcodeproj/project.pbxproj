@@ -28,6 +28,11 @@
 		E54214152538AFF000CCC9C3 /* SharedViewWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542140E2538AF8500CCC9C3 /* SharedViewWidgetEntryView.swift */; };
 		E54214262538B77500CCC9C3 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E54214212538B76C00CCC9C3 /* DataModel.xcdatamodeld */; };
 		E54214292538B77900CCC9C3 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542141D2538B68200CCC9C3 /* PersistenceController.swift */; };
+		E542EED92BD565CD00964BEB /* AnalogClockWidget+EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542EED52BD565CD00964BEB /* AnalogClockWidget+EntryView.swift */; };
+		E542EEDA2BD565CD00964BEB /* AnalogClockWidget+Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542EED62BD565CD00964BEB /* AnalogClockWidget+Provider.swift */; };
+		E542EEDB2BD565CD00964BEB /* AnalogClockWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542EED72BD565CD00964BEB /* AnalogClockWidget.swift */; };
+		E542EEDC2BD565CD00964BEB /* AnalogClockWidget+Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542EED82BD565CD00964BEB /* AnalogClockWidget+Entry.swift */; };
+		E542EEDE2BD56EE700964BEB /* ClockRotationEffect.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E542EEDD2BD56EE700964BEB /* ClockRotationEffect.xcframework */; };
 		E55498382551D2160066870B /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55498372551D2160066870B /* Person.swift */; };
 		E5619C572A6986D900F94132 /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5619C562A6986D900F94132 /* DeepLink.swift */; };
 		E5619C582A6986D900F94132 /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5619C562A6986D900F94132 /* DeepLink.swift */; };
@@ -226,6 +231,11 @@
 		E54214192538B58600CCC9C3 /* CoreDataWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWidget.swift; sourceTree = "<group>"; };
 		E542141D2538B68200CCC9C3 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		E54214222538B76C00CCC9C3 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		E542EED52BD565CD00964BEB /* AnalogClockWidget+EntryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnalogClockWidget+EntryView.swift"; sourceTree = "<group>"; };
+		E542EED62BD565CD00964BEB /* AnalogClockWidget+Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnalogClockWidget+Provider.swift"; sourceTree = "<group>"; };
+		E542EED72BD565CD00964BEB /* AnalogClockWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalogClockWidget.swift; sourceTree = "<group>"; };
+		E542EED82BD565CD00964BEB /* AnalogClockWidget+Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnalogClockWidget+Entry.swift"; sourceTree = "<group>"; };
+		E542EEDD2BD56EE700964BEB /* ClockRotationEffect.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ClockRotationEffect.xcframework; path = Frameworks/ClockRotationEffect.xcframework; sourceTree = "<group>"; };
 		E55497C8255180D90066870B /* DynamicIntentWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicIntentWidget.swift; sourceTree = "<group>"; };
 		E55498372551D2160066870B /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		E5619C562A6986D900F94132 /* DeepLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLink.swift; sourceTree = "<group>"; };
@@ -291,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E517B3832A62D6B7009072A3 /* SwiftUI.framework in Frameworks */,
+				E542EEDE2BD56EE700964BEB /* ClockRotationEffect.xcframework in Frameworks */,
 				E517B3822A62D6B7009072A3 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,6 +341,17 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		E52FE12F2BD552CE00141AC0 /* AnalogClock */ = {
+			isa = PBXGroup;
+			children = (
+				E542EED72BD565CD00964BEB /* AnalogClockWidget.swift */,
+				E542EED82BD565CD00964BEB /* AnalogClockWidget+Entry.swift */,
+				E542EED52BD565CD00964BEB /* AnalogClockWidget+EntryView.swift */,
+				E542EED62BD565CD00964BEB /* AnalogClockWidget+Provider.swift */,
+			);
+			path = AnalogClock;
+			sourceTree = "<group>";
+		};
 		E542134D253879B700CCC9C3 = {
 			isa = PBXGroup;
 			children = (
@@ -367,6 +389,7 @@
 		E542136E25387A0200CCC9C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E542EEDD2BD56EE700964BEB /* ClockRotationEffect.xcframework */,
 				E542136F25387A0200CCC9C3 /* WidgetKit.framework */,
 				E542137125387A0200CCC9C3 /* SwiftUI.framework */,
 			);
@@ -377,6 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				E542137425387A0300CCC9C3 /* WidgetBundle.swift */,
+				E52FE12F2BD552CE00141AC0 /* AnalogClock */,
 				E54213C7253891CB00CCC9C3 /* AppGroupWidget */,
 				E54214182538B57400CCC9C3 /* CoreDataWidget */,
 				E542139A2538806F00CCC9C3 /* CountdownWidget */,
@@ -903,8 +927,10 @@
 				E580A5D72A6E9A270007BA39 /* Logger.swift in Sources */,
 				E58BB8F12A62D92700DA8303 /* PersistenceController.swift in Sources */,
 				E58BB8D32A62D89500DA8303 /* EnvironmentWidget+Entry.swift in Sources */,
+				E542EEDA2BD565CD00964BEB /* AnalogClockWidget+Provider.swift in Sources */,
 				E58BB8C62A62D88500DA8303 /* CountdownWidget+Provider.swift in Sources */,
 				E58BB8BF2A62D86D00DA8303 /* AppGroupWidget+EntryView.swift in Sources */,
+				E542EEDB2BD565CD00964BEB /* AnalogClockWidget.swift in Sources */,
 				E5B345282A67E56900702B86 /* Delivery.swift in Sources */,
 				E5DCA18E2A683DFC00C59A50 /* LiveActivityView+Icon.swift in Sources */,
 				E58246912A64560D008180CC /* InteractiveWidget+EntryView.swift in Sources */,
@@ -952,6 +978,7 @@
 				E58BB8BB2A62D86500DA8303 /* WidgetBundle.swift in Sources */,
 				E58BB8F32A62E31900DA8303 /* IntentWidget+Entry.swift in Sources */,
 				E58BB8C72A62D88500DA8303 /* CountdownWidget.swift in Sources */,
+				E542EED92BD565CD00964BEB /* AnalogClockWidget+EntryView.swift in Sources */,
 				E58BB8C22A62D87200DA8303 /* CoreDataWidget.swift in Sources */,
 				E58BB8F92A62E32C00DA8303 /* IntentWidget+Intent.swift in Sources */,
 				E58BB8D12A62D89500DA8303 /* EnvironmentWidget.swift in Sources */,
@@ -960,6 +987,7 @@
 				E57C3DEA2A66C8C2002CF144 /* Array+Extensions.swift in Sources */,
 				E5B3453C2A682EB000702B86 /* Date+Extensions.swift in Sources */,
 				E58BB8EC2A62D90C00DA8303 /* NetworkWidget.swift in Sources */,
+				E542EEDC2BD565CD00964BEB /* AnalogClockWidget+Entry.swift in Sources */,
 				E582467F2A643D9B008180CC /* NetworkWidget+Provider.swift in Sources */,
 				E58BB8EE2A62D90C00DA8303 /* WebRepository.swift in Sources */,
 				E58BB8F02A62D92400DA8303 /* DataModel.xcdatamodeld in Sources */,
@@ -1044,7 +1072,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Widgets/Supporting Files/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Widgets;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2020-Present Paweł Wiszenko.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2020-Present Paweł Wiszenko";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1077,7 +1105,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Widgets/Supporting Files/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Widgets;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2020-Present Paweł Wiszenko.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2020-Present Paweł Wiszenko";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

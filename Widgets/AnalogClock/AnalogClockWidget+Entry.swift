@@ -20,33 +20,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import Foundation
+import WidgetKit
 
-enum WidgetType: String {
-    case analogClock
-    case appGroup
-    case coreData
-    case countdown
-    case deepLink
-    case digitalClock
-    case dynamicIntent
-    case environment
-    case intent
-    case interactive
-    case liveActivity
-    case lockScreen
-    case network
-    case sharedView
-    case swiftData
-    case timer
-    case urlImage
-    case urlCachedImage
+extension AnalogClockWidget {
+    struct Entry: TimelineEntry {
+        var date: Date = .now
+    }
 }
 
-// MARK: - Helpers
+// MARK: - Data
 
-extension WidgetType {
-    var kind: String {
-        rawValue + "Widget"
+extension AnalogClockWidget.Entry {
+    static var placeholder: Self {
+        .init()
     }
 }

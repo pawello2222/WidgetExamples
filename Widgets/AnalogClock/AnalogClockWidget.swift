@@ -20,33 +20,26 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import Foundation
+import SwiftUI
+import WidgetKit
 
-enum WidgetType: String {
-    case analogClock
-    case appGroup
-    case coreData
-    case countdown
-    case deepLink
-    case digitalClock
-    case dynamicIntent
-    case environment
-    case intent
-    case interactive
-    case liveActivity
-    case lockScreen
-    case network
-    case sharedView
-    case swiftData
-    case timer
-    case urlImage
-    case urlCachedImage
+struct AnalogClockWidget: Widget {
+    private let kind = WidgetType.analogClock.kind
+
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: Provider()) {
+            EntryView(entry: $0)
+        }
+        .configurationDisplayName("Analog Clock Widget")
+        .description("Display an analog clock that animates the rotation of its hands.")
+        .supportedFamilies([.systemSmall])
+    }
 }
 
-// MARK: - Helpers
+// MARK: - Preview
 
-extension WidgetType {
-    var kind: String {
-        rawValue + "Widget"
-    }
+#Preview(as: .systemSmall) {
+    AnalogClockWidget()
+} timeline: {
+    AnalogClockWidget.Entry.placeholder
 }
