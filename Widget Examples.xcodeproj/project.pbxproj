@@ -341,7 +341,7 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		E52FE12F2BD552CE00141AC0 /* AnalogClock */ = {
+		E52FE12F2BD552CE00141AC0 /* AnalogClockWidget */ = {
 			isa = PBXGroup;
 			children = (
 				E542EED72BD565CD00964BEB /* AnalogClockWidget.swift */,
@@ -349,7 +349,7 @@
 				E542EED52BD565CD00964BEB /* AnalogClockWidget+EntryView.swift */,
 				E542EED62BD565CD00964BEB /* AnalogClockWidget+Provider.swift */,
 			);
-			path = AnalogClock;
+			path = AnalogClockWidget;
 			sourceTree = "<group>";
 		};
 		E542134D253879B700CCC9C3 = {
@@ -400,7 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				E542137425387A0300CCC9C3 /* WidgetBundle.swift */,
-				E52FE12F2BD552CE00141AC0 /* AnalogClock */,
+				E52FE12F2BD552CE00141AC0 /* AnalogClockWidget */,
 				E54213C7253891CB00CCC9C3 /* AppGroupWidget */,
 				E54214182538B57400CCC9C3 /* CoreDataWidget */,
 				E542139A2538806F00CCC9C3 /* CountdownWidget */,
