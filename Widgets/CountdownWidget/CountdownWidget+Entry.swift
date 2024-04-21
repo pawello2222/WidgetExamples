@@ -33,7 +33,7 @@ extension CountdownWidget {
 // MARK: - CountdownState
 
 extension CountdownWidget.Entry {
-    enum CountdownState {
+    enum CountdownState: Codable {
         case counting
         case nearEnd
         case end

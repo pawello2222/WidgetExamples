@@ -1,7 +1,7 @@
-# Animated Clock Widget
+# Analog Clock Widget
 
-Display a animated clock that shows time in various formats.
+Display an analog clock that animates the rotation of its hands.
 
 ## Preview
 
-![Animated Clock Widget](../../.resources/Recordings/AnimatedClockWidget.gif)
+![Analog Clock Widget](../../.resources/Recordings/AnalogClockWidget.gif)
