@@ -43,21 +43,19 @@ extension AnalogClockWidget {
 
 extension AnalogClockWidget.EntryView {
     private var contentView: some View {
+        ZStack {
+            faceView
+            hourHandView
+            minuteHandView
+            secondHandView
+            knobView
+        }
+    }
+
+    private var faceView: some View {
         Circle()
             .fill(.background)
             .stroke(.gray)
-            .overlay {
-                hourHandView
-            }
-            .overlay {
-                minuteHandView
-            }
-            .overlay {
-                secondHandView
-            }
-            .overlay {
-                knobView
-            }
             .frame(width: 100, height: 100)
             .frame(maxWidth: .infinity)
     }
