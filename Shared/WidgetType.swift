@@ -23,7 +23,7 @@
 import Foundation
 
 enum WidgetType: String {
-    case animatedClock
+    case analogClock
     case appGroup
     case coreData
     case countdown

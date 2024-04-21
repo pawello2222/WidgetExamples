@@ -23,7 +23,7 @@
 import ClockRotationEffect
 import SwiftUI
 
-extension AnimatedClockWidget {
+extension AnalogClockWidget {
     struct EntryView: View {
         let entry: Entry
 
@@ -41,7 +41,7 @@ extension AnimatedClockWidget {
 
 // MARK: - Content
 
-extension AnimatedClockWidget.EntryView {
+extension AnalogClockWidget.EntryView {
     private var contentView: some View {
         Circle()
             .fill(.white)
@@ -67,7 +67,7 @@ extension AnimatedClockWidget.EntryView {
 
 // MARK: - Helpers
 
-extension AnimatedClockWidget.EntryView {
+extension AnalogClockWidget.EntryView {
     private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.locale = .init(identifier: "en_US_POSIX")

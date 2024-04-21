@@ -23,8 +23,8 @@
 import SwiftUI
 import WidgetKit
 
-struct AnimatedClockWidget: Widget {
-    private let kind = WidgetType.animatedClock.kind
+struct AnalogClockWidget: Widget {
+    private let kind = WidgetType.analogClock.kind
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) {
@@ -39,7 +39,7 @@ struct AnimatedClockWidget: Widget {
 // MARK: - Preview
 
 #Preview(as: .systemSmall) {
-    AnimatedClockWidget()
+    AnalogClockWidget()
 } timeline: {
-    AnimatedClockWidget.Entry.placeholder
+    AnalogClockWidget.Entry.placeholder
 }

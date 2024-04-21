@@ -22,7 +22,7 @@
 
 import WidgetKit
 
-extension AnimatedClockWidget {
+extension AnalogClockWidget {
     struct Entry: TimelineEntry {
         var date: Date = .now
     }
@@ -30,7 +30,7 @@ extension AnimatedClockWidget {
 
 // MARK: - Data
 
-extension AnimatedClockWidget.Entry {
+extension AnalogClockWidget.Entry {
     static var placeholder: Self {
         .init()
     }

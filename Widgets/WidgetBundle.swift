@@ -33,7 +33,7 @@ struct WidgetExamplesWidgetBundle: WidgetBundle {
 
 struct WidgetBundle1: WidgetBundle {
     var body: some Widget {
-        AnimatedClockWidget()
+        AnalogClockWidget()
         AppGroupWidget()
         CoreDataWidget()
         CountdownWidget()

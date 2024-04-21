@@ -22,7 +22,7 @@
 
 import WidgetKit
 
-extension AnimatedClockWidget {
+extension AnalogClockWidget {
     struct Provider: TimelineProvider {
         func placeholder(in context: Context) -> Entry {
             .placeholder
