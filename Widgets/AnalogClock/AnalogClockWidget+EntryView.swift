@@ -29,7 +29,7 @@ extension AnalogClockWidget {
 
         var body: some View {
             VStack(alignment: .leading) {
-                WidgetHeaderView(title: "Animated Clock")
+                WidgetHeaderView(title: "Analog Clock")
                 Spacer()
                 contentView
                 Spacer()

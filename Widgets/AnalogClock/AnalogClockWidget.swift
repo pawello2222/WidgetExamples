@@ -30,8 +30,8 @@ struct AnalogClockWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) {
             EntryView(entry: $0)
         }
-        .configurationDisplayName("Animated Clock Widget")
-        .description("Display an animated clock that has rotating hour, minute and second hands.")
+        .configurationDisplayName("Analog Clock Widget")
+        .description("Display an analog clock that animates the rotation of its hands.")
         .supportedFamilies([.systemSmall])
     }
 }
