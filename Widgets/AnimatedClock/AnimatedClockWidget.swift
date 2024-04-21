@@ -20,33 +20,26 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import Foundation
+import SwiftUI
+import WidgetKit
 
-enum WidgetType: String {
-    case animatedClock
-    case appGroup
-    case coreData
-    case countdown
-    case deepLink
-    case digitalClock
-    case dynamicIntent
-    case environment
-    case intent
-    case interactive
-    case liveActivity
-    case lockScreen
-    case network
-    case sharedView
-    case swiftData
-    case timer
-    case urlImage
-    case urlCachedImage
+struct AnimatedClockWidget: Widget {
+    private let kind = WidgetType.animatedClock.kind
+
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: Provider()) {
+            EntryView(entry: $0)
+        }
+        .configurationDisplayName("Animated Clock Widget")
+        .description("Display an animated clock that has rotating hour, minute and second hands.")
+        .supportedFamilies([.systemSmall])
+    }
 }
 
-// MARK: - Helpers
+// MARK: - Preview
 
-extension WidgetType {
-    var kind: String {
-        rawValue + "Widget"
-    }
+#Preview(as: .systemSmall) {
+    AnimatedClockWidget()
+} timeline: {
+    AnimatedClockWidget.Entry.placeholder
 }
