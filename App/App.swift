@@ -50,5 +50,6 @@ extension WidgetExamplesApp {
         renderer.scale = 10
         let filename = URL.documentsDirectory.appending(path: "SharedViewWidget.png")
         try? renderer.uiImage?.pngData()?.write(to: filename)
+        print(filename)
     }
 }

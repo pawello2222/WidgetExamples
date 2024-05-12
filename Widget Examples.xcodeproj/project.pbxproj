@@ -26,6 +26,9 @@
 		E53E0F2B2BF104A300681CA8 /* AudioPlaybackWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53E0F2A2BF104A300681CA8 /* AudioPlaybackWidgetView.swift */; };
 		E53E0F2E2BF106AD00681CA8 /* AudioPlaybackWidgetButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53E0F2D2BF106AD00681CA8 /* AudioPlaybackWidgetButtonsView.swift */; };
 		E53E0F2F2BF106AD00681CA8 /* AudioPlaybackWidgetButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53E0F2D2BF106AD00681CA8 /* AudioPlaybackWidgetButtonsView.swift */; };
+		E53E0F342BF10C8100681CA8 /* WidgetHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5757DB12A6AD4D700764349 /* WidgetHeaderView.swift */; };
+		E53E0F372BF10CF600681CA8 /* AudioPlaybackWidget+EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AE31612BF0F27B00280186 /* AudioPlaybackWidget+EntryView.swift */; };
+		E53E0F382BF10CF900681CA8 /* AudioPlaybackWidget+Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AE31602BF0F27B00280186 /* AudioPlaybackWidget+Entry.swift */; };
 		E542135A253879B700CCC9C3 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5421359253879B700CCC9C3 /* App.swift */; };
 		E542135C253879B700CCC9C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542135B253879B700CCC9C3 /* ContentView.swift */; };
 		E54214122538AFEC00CCC9C3 /* SharedViewWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542140A2538AF7800CCC9C3 /* SharedViewWidgetEntry.swift */; };
@@ -132,8 +135,6 @@
 		E58BB8F72A62E32700DA8303 /* IntentWidget+Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58BB8F62A62E32700DA8303 /* IntentWidget+Provider.swift */; };
 		E58BB8F92A62E32C00DA8303 /* IntentWidget+Intent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58BB8F82A62E32C00DA8303 /* IntentWidget+Intent.swift */; };
 		E5AE31662BF0F27B00280186 /* AudioPlaybackWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AE315F2BF0F27B00280186 /* AudioPlaybackWidget.swift */; };
-		E5AE31672BF0F27B00280186 /* AudioPlaybackWidget+Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AE31602BF0F27B00280186 /* AudioPlaybackWidget+Entry.swift */; };
-		E5AE31682BF0F27B00280186 /* AudioPlaybackWidget+EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AE31612BF0F27B00280186 /* AudioPlaybackWidget+EntryView.swift */; };
 		E5AE31692BF0F27B00280186 /* AudioPlaybackWidget+Intents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AE31622BF0F27B00280186 /* AudioPlaybackWidget+Intents.swift */; };
 		E5AE316A2BF0F27B00280186 /* AudioPlaybackWidget+Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AE31632BF0F27B00280186 /* AudioPlaybackWidget+Provider.swift */; };
 		E5AE316B2BF0F27B00280186 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E5AE31642BF0F27B00280186 /* README.md */; };
@@ -977,7 +978,6 @@
 				E5DCA1942A683E6000C59A50 /* LiveActivityView+Title.swift in Sources */,
 				E58BB8D02A62D89500DA8303 /* EnvironmentWidget+Provider.swift in Sources */,
 				E5AE31722BF0F67200280186 /* AudioPlayer.swift in Sources */,
-				E5AE31672BF0F27B00280186 /* AudioPlaybackWidget+Entry.swift in Sources */,
 				E582467B2A643D8E008180CC /* NetworkWidget+Entry.swift in Sources */,
 				E58BB8ED2A62D90C00DA8303 /* CountryWebRepository.swift in Sources */,
 				E58BB8F72A62E32700DA8303 /* IntentWidget+Provider.swift in Sources */,
@@ -1007,7 +1007,9 @@
 				E58BB8C62A62D88500DA8303 /* CountdownWidget+Provider.swift in Sources */,
 				E58BB8BF2A62D86D00DA8303 /* AppGroupWidget+EntryView.swift in Sources */,
 				E542EEDB2BD565CD00964BEB /* AnalogClockWidget.swift in Sources */,
+				E53E0F382BF10CF900681CA8 /* AudioPlaybackWidget+Entry.swift in Sources */,
 				E5B345282A67E56900702B86 /* Delivery.swift in Sources */,
+				E53E0F372BF10CF600681CA8 /* AudioPlaybackWidget+EntryView.swift in Sources */,
 				E5DCA18E2A683DFC00C59A50 /* LiveActivityView+Icon.swift in Sources */,
 				E58246912A64560D008180CC /* InteractiveWidget+EntryView.swift in Sources */,
 				E5AE316A2BF0F27B00280186 /* AudioPlaybackWidget+Provider.swift in Sources */,
@@ -1040,7 +1042,6 @@
 				E58246B52A65C943008180CC /* Product.swift in Sources */,
 				E58BB8E72A62D8F500DA8303 /* Shared.swift in Sources */,
 				E58BB8D42A62D89E00DA8303 /* SharedViewWidget+Provider.swift in Sources */,
-				E5AE31682BF0F27B00280186 /* AudioPlaybackWidget+EntryView.swift in Sources */,
 				E58246712A630BFE008180CC /* URLImageWidget+Provider.swift in Sources */,
 				E58BB8F52A62E32100DA8303 /* IntentWidget+EntryView.swift in Sources */,
 				E58BB8C02A62D87200DA8303 /* CoreDataWidget+Provider.swift in Sources */,
@@ -1087,6 +1088,7 @@
 				E5638AEA265D859D00E73B05 /* WidgetType.swift in Sources */,
 				E517B33A2A61B36F009072A3 /* SharedViewWidgetView.swift in Sources */,
 				E5DCA1992A6840BD00C59A50 /* DeliveryState.swift in Sources */,
+				E53E0F342BF10C8100681CA8 /* WidgetHeaderView.swift in Sources */,
 				E57C3DEF2A66D33B002CF144 /* Document.swift in Sources */,
 				E5DCA18D2A683DFC00C59A50 /* LiveActivityView+Icon.swift in Sources */,
 				E517B3342A61AF28009072A3 /* CoreDataWidgetView.swift in Sources */,

@@ -2,18 +2,10 @@
   <img src="./.resources/Assets/logo.png" alt="Widget Examples logo" height=150>
 </p>
 <p align="center">
-  <a href="https://github.com/pawello2222/WidgetExamples/actions?query=branch%3Amain">
-    <img src="https://img.shields.io/github/actions/workflow/status/pawello2222/WidgetExamples/ci.yml?logo=github" alt="Build">
-  </a>
-  <a href="https://github.com/pawello2222/WidgetExamples">
-    <img src="https://img.shields.io/badge/language-swift-orange.svg" alt="Language">
-  </a>
-  <a href="https://github.com/pawello2222/WidgetExamples/releases">
-    <img src="https://img.shields.io/github/v/release/pawello2222/WidgetExamples" alt="Release version">
-  </a>
-  <a href="https://github.com/pawello2222/WidgetExamples/blob/main/LICENSE.md">
-    <img src="https://img.shields.io/github/license/pawello2222/WidgetExamples" alt="License">
-  </a>
+  <a href="https://github.com/pawello2222/WidgetExamples/actions?query=branch%3Amain"><img src="https://img.shields.io/github/actions/workflow/status/pawello2222/WidgetExamples/ci.yml?logo=github" alt="Build"></a>
+  <a href="https://github.com/pawello2222/WidgetExamples"><img src="https://img.shields.io/badge/language-swift-orange.svg" alt="Language"></a>
+  <a href="https://github.com/pawello2222/WidgetExamples/releases"><img src="https://img.shields.io/github/v/release/pawello2222/WidgetExamples" alt="Release version"></a>
+  <a href="https://github.com/pawello2222/WidgetExamples/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/pawello2222/WidgetExamples" alt="License"></a>
 </p>
 
 # Widget Examples
@@ -25,14 +17,15 @@ A demo project showing different types of Widgets created with SwiftUI and Widge
     <b>Table of Contents</b>
   </summary>
 
-  1. [Gallery](#gallery)
-  2. [Unofficial gallery](#unofficial)
+  1. [Basic widgets](#basic)
+  2. [Intent widgets](#intent)
+  2. [Unofficial widgets](#unofficial)
   3. [Installation](#installation)
   4. [License](#license)
 
 </details>
 
-## Gallery <a name="gallery"></a>
+## Basic widgets <a name="basic"></a>
 
 <table>
   <tr>
@@ -75,14 +68,11 @@ A demo project showing different types of Widgets created with SwiftUI and Widge
     <th align="center">
       <a href="./Widgets/DigitalClockWidget">Digital&nbsp;Clock</a>
     </th>
-    <th align="center">
-      <a href="./Widgets/DynamicIntentWidget">Dynamic&nbsp;Intent</a>
+    <th align="center" colspan="2">
+      <a href="./Widgets/LiveActivityWidget">Live&nbsp;Activity</a>
     </th>
     <th align="center">
       <a href="./Widgets/EnvironmentWidget">Environment</a>
-    </th>
-    <th align="center">
-      <a href="./Widgets/IntentWidget">Intent</a>
     </th>
   </tr>
   <tr>
@@ -91,9 +81,9 @@ A demo project showing different types of Widgets created with SwiftUI and Widge
         <img src="./.resources/Screenshots/DigitalClockWidget.png" alt="Digital Clock Widget">
       </a>
     </td>
-    <td align="center">
-      <a href="./Widgets/DynamicIntentWidget">
-        <img src="./.resources/Screenshots/DynamicIntentWidget.png" alt="Dynamic Intent Widget">
+    <td align="center" colspan="2">
+      <a href="./Widgets/LiveActivityWidget">
+        <img src="./.resources/Screenshots/LiveActivityWidget.png" alt="Live Activity Widget">
       </a>
     </td>
     <td align="center">
@@ -101,41 +91,11 @@ A demo project showing different types of Widgets created with SwiftUI and Widge
         <img src="./.resources/Screenshots/EnvironmentWidget.png" alt="Environment Widget">
       </a>
     </td>
-    <td align="center">
-      <a href="./Widgets/IntentWidget">
-        <img src="./.resources/Screenshots/IntentWidget.png" alt="Intent Widget">
-      </a>
-    </td>
   </tr>
-  <tr>
-    <th align="center">
-      <a href="./Widgets/InteractiveWidget">Interactive</a>
-    </th>
-    <th align="center" colspan="2">
-      <a href="./Widgets/LiveActivityWidget">Live&nbsp;Activity</a>
-    </th>
+    <tr>
     <th align="center">
       <a href="./Widgets/LockScreenWidget">Lock&nbsp;Screen</a>
     </th>
-  </tr>
-  <tr>
-    <td align="center">
-      <a href="./Widgets/InteractiveWidget">
-        <img src="./.resources/Screenshots/InteractiveWidget.png" alt="Interactive Widget">
-      </a>
-    </td>
-    <td align="center" colspan="2">
-      <a href="./Widgets/LiveActivityWidget">
-        <img src="./.resources/Screenshots/LiveActivityWidget.png" alt="Live Activity Widget">
-      </a>
-    </td>
-    <td align="center">
-      <a href="./Widgets/LockScreenWidget">
-        <img src="./.resources/Screenshots/LockScreenWidget.png" alt="Lock Screen Widget">
-      </a>
-    </td>
-  </tr>
-    <tr>
     <th align="center">
       <a href="./Widgets/NetworkWidget">Network</a>
     </th>
@@ -145,11 +105,13 @@ A demo project showing different types of Widgets created with SwiftUI and Widge
     <th align="center">
       <a href="./Widgets/SwiftDataWidget">SwiftData</a>
     </th>
-    <th align="center">
-      <a href="./Widgets/URLImageWidget">URL&nbsp;Image</a>
-    </th>
   </tr>
   <tr>
+    <td align="center">
+      <a href="./Widgets/LockScreenWidget">
+        <img src="./.resources/Screenshots/LockScreenWidget.png" alt="Lock Screen Widget">
+      </a>
+    </td>
     <td align="center">
       <a href="./Widgets/NetworkWidget">
         <img src="./.resources/Screenshots/NetworkWidget.png" alt="Network Widget">
@@ -165,17 +127,73 @@ A demo project showing different types of Widgets created with SwiftUI and Widge
         <img src="./.resources/Screenshots/SwiftDataWidget.png" alt="SwiftData Widget">
       </a>
     </td>
+  </tr>
+  <tr>
+    <th align="center" width="25%">
+      <a href="./Widgets/URLImageWidget">URL&nbsp;Image</a>
+    </th>
+    <th align="center" width="25%"></th>
+    <th align="center" width="25%"></th>
+    <th align="center" width="25%"></th>
+  </tr>
+  <tr>
     <td align="center">
       <a href="./Widgets/URLImageWidget">
         <img src="./.resources/Screenshots/URLImageWidget.png" alt="URL Image Widget">
       </a>
     </td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
   </tr>
 </table>
 
-## Unofficial gallery <a name="unofficial"></a>
+## Intent widgets <a name="intent"></a>
 
-Please be aware that the folowing widgets use private API. This means they not necessarily have to pass Apple Review and you use them at your own risk.
+The following widgets use Intents. Please refer to the [documentation](https://developer.apple.com/documentation/appintents/appintent) for a more detailed explanation.
+
+<table>
+  <tr>
+    <th align="center">
+      <a href="./Widgets/AudioPlaybackWidget">Audio&nbsp;Playback</a>
+    </th>
+    <th align="center">
+      <a href="./Widgets/DynamicIntentWidget">Dynamic&nbsp;Intent</a>
+    </th>
+    <th align="center">
+      <a href="./Widgets/IntentWidget">Intent</a>
+    </th>
+    <th align="center">
+      <a href="./Widgets/InteractiveWidget">Interactive</a>
+    </th>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="./Widgets/AudioPlaybackWidget">
+        <img src="./.resources/Screenshots/AudioPlaybackWidget" alt="Audio Playback Widget">
+      </a>
+    </td>
+    <td align="center">
+      <a href="./Widgets/DynamicIntentWidget">
+        <img src="./.resources/Screenshots/DynamicIntentWidget.png" alt="Dynamic Intent Widget">
+      </a>
+    </td>
+    <td align="center">
+      <a href="./Widgets/IntentWidget">
+        <img src="./.resources/Screenshots/IntentWidget.png" alt="Intent Widget">
+      </a>
+    </td>
+    <td align="center">
+      <a href="./Widgets/InteractiveWidget">
+        <img src="./.resources/Screenshots/InteractiveWidget.png" alt="Interactive Widget">
+      </a>
+    </td>
+  </tr>
+</table>
+
+## Unofficial widgets <a name="unofficial"></a>
+
+The folowing widgets use private API. Please bear in mind that they don't necessarily have to pass the Apple review process and you use them at your own risk.
 
 <table>
   <tr>
