@@ -25,6 +25,7 @@ import Foundation
 enum WidgetType: String {
     case analogClock
     case appGroup
+    case audioPlayback
     case coreData
     case countdown
     case deepLink

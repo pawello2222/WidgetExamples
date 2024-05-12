@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2020-Present Paweł Wiszenko
+// Copyright (c) 2024-Present Paweł Wiszenko
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,37 +23,58 @@
 import SwiftUI
 import WidgetKit
 
-@main
-struct WidgetExamplesWidgetBundle: WidgetBundle {
-    var body: some Widget {
-        WidgetBundle1().body
-        WidgetBundle2().body
+struct AudioPlaybackWidgetView: View {
+    @AppStorage(UserDefaultKey.isAudioPlaying, store: .appGroup)
+    private var isPlaying = false
+
+    var body: some View {
+        List {
+            Section {
+                contentView
+            } header: {
+                headerView
+            }
+        }
+        .onChange(of: isPlaying) {
+            reloadWidgetTimelines()
+        }
     }
 }
 
-struct WidgetBundle1: WidgetBundle {
-    var body: some Widget {
-        AnalogClockWidget()
-        AppGroupWidget()
-        AudioPlaybackWidget()
-        CoreDataWidget()
-        CountdownWidget()
-        DeepLinkWidget()
-        DigitalClockWidget()
-        DynamicIntentWidget()
-        EnvironmentWidget()
-        IntentWidget()
+// MARK: - Content
+
+extension AudioPlaybackWidgetView {
+    private var headerView: some View {
+        Text("Audio Playback")
+    }
+
+    @ViewBuilder
+    private var contentView: some View {
+        stateView
+        buttonsView
+    }
+
+    private var stateView: some View {
+        Text(isPlaying ? "Playing..." : "Paused")
+    }
+
+    private var buttonsView: some View {
+        AudioPlaybackWidgetButtonsView(isPlaying: isPlaying)
     }
 }
 
-struct WidgetBundle2: WidgetBundle {
-    var body: some Widget {
-        InteractiveWidget()
-        LiveActivityWidget()
-        LockScreenWidget()
-        NetworkWidget()
-        SharedViewWidget()
-        SwiftDataWidget()
-        URLImageWidget()
+// MARK: - Helpers
+
+extension AudioPlaybackWidgetView {
+    private func reloadWidgetTimelines() {
+        WidgetCenter.shared.reloadTimelines(ofKind: WidgetType.audioPlayback.kind)
+    }
+}
+
+// MARK: - Preview
+
+#Preview {
+    NavigationStack {
+        AudioPlaybackWidgetView()
     }
 }

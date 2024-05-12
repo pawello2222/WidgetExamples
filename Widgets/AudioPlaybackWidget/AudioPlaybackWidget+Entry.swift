@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2020-Present Paweł Wiszenko
+// Copyright (c) 2024-Present Paweł Wiszenko
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,36 +20,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    var body: some Scene {
-        WindowGroup {
-            let persistenceController = PersistenceController.shared
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.managedObjectContext)
-                .modelContainer(for: Product.self)
-        }
+extension AudioPlaybackWidget {
+    struct Entry: TimelineEntry {
+        var date: Date = .now
+        var isPlaying: Bool
     }
 }
 
-// MARK: - Screenshots
+// MARK: - Data
 
-extension WidgetExamplesApp {
-    @MainActor
-    private func createScreenshot() {
-        let view = SharedViewWidgetEntryView(entry: .placeholder)
-            .padding(15)
-            .frame(width: 150, height: 150)
-            .background(.white)
-            .clipShape(RoundedRectangle(cornerRadius: 20))
-            .padding(15)
-            .environment(\.locale, .init(identifier: "en_US"))
-        let renderer = ImageRenderer(content: view)
-        renderer.scale = 10
-        let filename = URL.documentsDirectory.appending(path: "SharedViewWidget.png")
-        try? renderer.uiImage?.pngData()?.write(to: filename)
-        print(filename)
+extension AudioPlaybackWidget.Entry {
+    static var placeholder: Self {
+        .init(isPlaying: false)
     }
 }

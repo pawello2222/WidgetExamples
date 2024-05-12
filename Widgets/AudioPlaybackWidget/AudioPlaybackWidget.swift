@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2020-Present Paweł Wiszenko
+// Copyright (c) 2024-Present Paweł Wiszenko
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,35 +21,26 @@
 // SOFTWARE.
 
 import SwiftUI
+import WidgetKit
 
-@main
-struct WidgetExamplesApp: App {
-    var body: some Scene {
-        WindowGroup {
-            let persistenceController = PersistenceController.shared
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.managedObjectContext)
-                .modelContainer(for: Product.self)
+struct AudioPlaybackWidget: Widget {
+    private let kind: String = WidgetType.audioPlayback.kind
+
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: Provider()) {
+            EntryView(entry: $0)
         }
+        .configurationDisplayName("Audio Playback Widget")
+        .description("Play music in the background directly from the Widget.")
+        .supportedFamilies([.systemSmall])
     }
 }
 
-// MARK: - Screenshots
+// MARK: - Preview
 
-extension WidgetExamplesApp {
-    @MainActor
-    private func createScreenshot() {
-        let view = SharedViewWidgetEntryView(entry: .placeholder)
-            .padding(15)
-            .frame(width: 150, height: 150)
-            .background(.white)
-            .clipShape(RoundedRectangle(cornerRadius: 20))
-            .padding(15)
-            .environment(\.locale, .init(identifier: "en_US"))
-        let renderer = ImageRenderer(content: view)
-        renderer.scale = 10
-        let filename = URL.documentsDirectory.appending(path: "SharedViewWidget.png")
-        try? renderer.uiImage?.pngData()?.write(to: filename)
-        print(filename)
-    }
+#Preview(as: .systemSmall) {
+    AudioPlaybackWidget()
+} timeline: {
+    AudioPlaybackWidget.Entry(isPlaying: false)
+    AudioPlaybackWidget.Entry(isPlaying: true)
 }

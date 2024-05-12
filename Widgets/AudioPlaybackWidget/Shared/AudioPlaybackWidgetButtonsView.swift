@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2020-Present Paweł Wiszenko
+// Copyright (c) 2024-Present Paweł Wiszenko
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,34 +22,34 @@
 
 import SwiftUI
 
-@main
-struct WidgetExamplesApp: App {
-    var body: some Scene {
-        WindowGroup {
-            let persistenceController = PersistenceController.shared
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.managedObjectContext)
-                .modelContainer(for: Product.self)
+struct AudioPlaybackWidgetButtonsView: View {
+    let isPlaying: Bool
+
+    var body: some View {
+        if isPlaying {
+            pauseButton
+        } else {
+            playButton
         }
     }
 }
 
-// MARK: - Screenshots
+// MARK: - Content
 
-extension WidgetExamplesApp {
-    @MainActor
-    private func createScreenshot() {
-        let view = SharedViewWidgetEntryView(entry: .placeholder)
-            .padding(15)
-            .frame(width: 150, height: 150)
-            .background(.white)
-            .clipShape(RoundedRectangle(cornerRadius: 20))
-            .padding(15)
-            .environment(\.locale, .init(identifier: "en_US"))
-        let renderer = ImageRenderer(content: view)
-        renderer.scale = 10
-        let filename = URL.documentsDirectory.appending(path: "SharedViewWidget.png")
-        try? renderer.uiImage?.pngData()?.write(to: filename)
-        print(filename)
+extension AudioPlaybackWidgetButtonsView {
+    private var playButton: some View {
+        Button(intent: AudioPlaybackWidgetPlayIntent(sound: .main)) {
+            Image(systemName: "play")
+                .padding(2)
+        }
+        .buttonStyle(.bordered)
+    }
+
+    private var pauseButton: some View {
+        Button(intent: AudioPlaybackWidgetPauseIntent()) {
+            Image(systemName: "pause")
+                .padding(2)
+        }
+        .buttonStyle(.bordered)
     }
 }
