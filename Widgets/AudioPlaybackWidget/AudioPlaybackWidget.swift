@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2020-Present Paweł Wiszenko
+// Copyright (c) 2024-Present Paweł Wiszenko
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,37 +23,24 @@
 import SwiftUI
 import WidgetKit
 
-@main
-struct WidgetExamplesWidgetBundle: WidgetBundle {
-    var body: some Widget {
-        WidgetBundle1().body
-        WidgetBundle2().body
+struct AudioPlaybackWidget: Widget {
+    private let kind: String = WidgetType.audioPlayback.kind
+
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: Provider()) {
+            EntryView(entry: $0)
+        }
+        .configurationDisplayName("Audio Playback Widget")
+        .description("Play music in the background directly from the Widget.")
+        .supportedFamilies([.systemSmall])
     }
 }
 
-struct WidgetBundle1: WidgetBundle {
-    var body: some Widget {
-        AnalogClockWidget()
-        AppGroupWidget()
-        AudioPlaybackWidget()
-        CoreDataWidget()
-        CountdownWidget()
-        DeepLinkWidget()
-        DigitalClockWidget()
-        DynamicIntentWidget()
-        EnvironmentWidget()
-        IntentWidget()
-    }
-}
+// MARK: - Preview
 
-struct WidgetBundle2: WidgetBundle {
-    var body: some Widget {
-        InteractiveWidget()
-        LiveActivityWidget()
-        LockScreenWidget()
-        NetworkWidget()
-        SharedViewWidget()
-        SwiftDataWidget()
-        URLImageWidget()
-    }
+#Preview(as: .systemSmall) {
+    AudioPlaybackWidget()
+} timeline: {
+    AudioPlaybackWidget.Entry(isPlaying: false)
+    AudioPlaybackWidget.Entry(isPlaying: true)
 }

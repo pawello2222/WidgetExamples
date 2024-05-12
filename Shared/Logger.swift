@@ -28,6 +28,7 @@ extension Logger {
     static let app = Logger(subsystem: subsystem, category: "App")
     static let widgets = Logger(subsystem: subsystem, category: "Widgets")
 
+    static let audioPlayer = Logger(subsystem: subsystem, category: "AudioPlayer")
     static let coreData = Logger(subsystem: subsystem, category: "CoreData")
     static let fileManager = Logger(subsystem: subsystem, category: "FileManager")
 }

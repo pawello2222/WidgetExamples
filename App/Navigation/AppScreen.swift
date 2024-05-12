@@ -24,6 +24,7 @@ import SwiftUI
 
 enum AppScreen: Hashable, CaseIterable {
     case appGroup
+    case audioPlayback
     case coreData
     case dynamicIntent
     case liveActivity
@@ -44,6 +45,8 @@ extension AppScreen {
         switch self {
         case .appGroup:
             "App Group"
+        case .audioPlayback:
+            "Audio Playback"
         case .coreData:
             "Core Data"
         case .dynamicIntent:
@@ -70,6 +73,8 @@ extension AppScreen {
         switch self {
         case .appGroup:
             AppGroupWidgetView()
+        case .audioPlayback:
+            AudioPlaybackWidgetView()
         case .coreData:
             CoreDataWidgetView()
         case .dynamicIntent:

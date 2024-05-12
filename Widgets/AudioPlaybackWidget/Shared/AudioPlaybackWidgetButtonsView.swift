@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2020-Present Paweł Wiszenko
+// Copyright (c) 2024-Present Paweł Wiszenko
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,39 +21,35 @@
 // SOFTWARE.
 
 import SwiftUI
-import WidgetKit
 
-@main
-struct WidgetExamplesWidgetBundle: WidgetBundle {
-    var body: some Widget {
-        WidgetBundle1().body
-        WidgetBundle2().body
+struct AudioPlaybackWidgetButtonsView: View {
+    let isPlaying: Bool
+
+    var body: some View {
+        if isPlaying {
+            pauseButton
+        } else {
+            playButton
+        }
     }
 }
 
-struct WidgetBundle1: WidgetBundle {
-    var body: some Widget {
-        AnalogClockWidget()
-        AppGroupWidget()
-        AudioPlaybackWidget()
-        CoreDataWidget()
-        CountdownWidget()
-        DeepLinkWidget()
-        DigitalClockWidget()
-        DynamicIntentWidget()
-        EnvironmentWidget()
-        IntentWidget()
-    }
-}
+// MARK: - Content
 
-struct WidgetBundle2: WidgetBundle {
-    var body: some Widget {
-        InteractiveWidget()
-        LiveActivityWidget()
-        LockScreenWidget()
-        NetworkWidget()
-        SharedViewWidget()
-        SwiftDataWidget()
-        URLImageWidget()
+extension AudioPlaybackWidgetButtonsView {
+    private var playButton: some View {
+        Button(intent: AudioPlaybackWidgetPlayIntent(sound: .main)) {
+            Image(systemName: "play")
+                .padding(2)
+        }
+        .buttonStyle(.bordered)
+    }
+
+    private var pauseButton: some View {
+        Button(intent: AudioPlaybackWidgetPauseIntent()) {
+            Image(systemName: "pause")
+                .padding(2)
+        }
+        .buttonStyle(.bordered)
     }
 }
