@@ -170,7 +170,7 @@ The following widgets use Intents. Please refer to the [documentation](https://d
   <tr>
     <td align="center">
       <a href="./Widgets/AudioPlaybackWidget">
-        <img src="./.resources/Screenshots/AudioPlaybackWidget" alt="Audio Playback Widget">
+        <img src="./.resources/Screenshots/AudioPlaybackWidget.png" alt="Audio Playback Widget">
       </a>
     </td>
     <td align="center">
