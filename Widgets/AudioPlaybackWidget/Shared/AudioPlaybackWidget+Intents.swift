@@ -54,8 +54,6 @@ struct AudioPlaybackWidgetPlayIntent: AudioPlaybackIntent {
 struct AudioPlaybackWidgetPauseIntent: AudioPlaybackIntent {
     static var title: LocalizedStringResource = "Pause Music"
 
-    init() {}
-
     func perform() async throws -> some IntentResult {
         AudioPlayer.shared.pause()
         UserDefaults.appGroup.set(
